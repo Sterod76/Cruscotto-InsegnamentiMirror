@@ -197,21 +197,36 @@
 </div>
 <div class="prog_en sub-item-programma">
 <div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
-<span class="contenuto_programma">During the oral exam the student must be able to demonstrate his/her knowledge
-of the course material and be able to discuss the principles and methods 
-with appropriate terminology.
-The student will be assessed on his/her demonstrated ability to put 
-into practice and to execute, with critical awareness, the activities 
-illustrated or carried out during the laboratory. 
-
-
-
-
-<p>Methods:<ul><li>Final oral exam</li><li>Laboratory report</li></ul></p><p>Further information:<br>final oral exam 60%; laboratory report 40%
-
-
-
-
+<span class="contenuto_programma">During the oral exam the student must be able to demonstrate his/her knowledge
+
+of the course material and be able to discuss the principles and methods 
+
+with appropriate terminology.
+
+The student will be assessed on his/her demonstrated ability to put 
+
+into practice and to execute, with critical awareness, the activities 
+
+illustrated or carried out during the laboratory. 
+
+
+
+
+
+
+
+
+
+<p>Methods:<ul><li>Final oral exam</li><li>Laboratory report</li></ul></p><p>Further information:<br>final oral exam 60%; laboratory report 40%
+
+
+
+
+
+
+
+
+
 </p></span>
 </div>
 <div class="prog_en" >
@@ -220,25 +235,40 @@ illustrated or carried out during the laboratory.
 </div>
 <div class="prog_en" >
 <div class="titolo-elemento-programma">Syllabus</div>
-<span class="contenuto_programma">Classical Bloch equations and basic quantum mechanical description
-Magnetization 
-Interaction with RF; rotating frame
-Receiving and acquiring data 
-Simple sequences to measure relaxation times; 
-Gradient echo, spin echo and stimulated echo, inversion recovery
-Reconstruction imaging: slice selection, Phase and Frequency encoding (k space)
-Basic spectroscopy, and advanced imaging techniques 
-Components of an MR scanner 
+<span class="contenuto_programma">Classical Bloch equations and basic quantum mechanical description
+
+Magnetization 
+
+Interaction with RF; rotating frame
+
+Receiving and acquiring data 
+
+Simple sequences to measure relaxation times; 
+
+Gradient echo, spin echo and stimulated echo, inversion recovery
+
+Reconstruction imaging: slice selection, Phase and Frequency encoding (k space)
+
+Basic spectroscopy, and advanced imaging techniques 
+
+Components of an MR scanner 
+
 Interactions of MR fields with biological tissues</span>
 </div>
 <div class="prog_en" >
 <div class="titolo-elemento-programma">Bibliography</div>
-<span class="contenuto_programma">Recommended reading:
-[1] Magnetic Resonance Imaging: Physical Principles and Sequence Design. E.M Haacke, R W. Brown, M.R. Thompson, R. Venkatesan. Ed Wiley-Liss, 1999. 
-
-Further bibliography
-[2] In Vivo NMR Spectroscopy:  Principles and Techniques.  Robin A. de Graaf. Ed. John Wiley & Sons, 2013.
-[3]Quantitative MRI of the Brain:  Measuring Changes Caused by Disease.  Paul Tofts. Ed.  John Wiley and Sons, 2003.
+<span class="contenuto_programma">Recommended reading:
+
+[1] Magnetic Resonance Imaging: Physical Principles and Sequence Design. E.M Haacke, R W. Brown, M.R. Thompson, R. Venkatesan. Ed Wiley-Liss, 1999. 
+
+
+
+Further bibliography
+
+[2] In Vivo NMR Spectroscopy:  Principles and Techniques.  Robin A. de Graaf. Ed. John Wiley & Sons, 2013.
+
+[3]Quantitative MRI of the Brain:  Measuring Changes Caused by Disease.  Paul Tofts. Ed.  John Wiley and Sons, 2003.
+
 [4] Ultra High Field Magnetic Resonance Imaging. Pierre-Marie Robitaille, Lawrence Berliner. Ed. Springer, 2007.</span>
 </div>
 <div style="float:right; font-style:italic;">Ultimo aggiornamento 14/11/2016 17:27</div>
@@ -293,6 +323,91 @@ Further bibliography
 	window.onload = adjustParentHeight;
 	window.addEventListener('resize', adjustParentHeight);
 </script>
+
+<!-- ===== TABLE SORT INJECTION ===== -->
+<style>
+  /* Header con thead: cursor pointer su <th> */
+  table thead th { cursor: pointer; user-select: none; position: relative; }
+  table thead th:hover { background: rgba(0,0,0,0.05); }
+  /* Header senza thead: prima riga (label-programma) come "header" */
+  table td.label-programma { cursor: pointer; user-select: none; position: relative; }
+  table td.label-programma:hover { background: rgba(0,0,0,0.05); }
+  .sort-arrow {
+    font-size: 0.75em; margin-left: 4px; opacity: 0.7;
+    display: inline-block; vertical-align: middle;
+  }
+</style>
+<script>
+(function() {
+  var numericRe = /^-?[\d.,\s]+$/;
+  function sortRows(rows, colIdx, dir) {
+    rows.sort(function(a, b) {
+      var ca = (a.cells[colIdx] ? a.cells[colIdx].textContent : '').trim();
+      var cb = (b.cells[colIdx] ? b.cells[colIdx].textContent : '').trim();
+      var na = parseFloat(ca.replace(',', '.'));
+      var nb = parseFloat(cb.replace(',', '.'));
+      var cmp;
+      if (!isNaN(na) && !isNaN(nb) && numericRe.test(ca) && numericRe.test(cb)) {
+        cmp = na - nb;
+      } else {
+        cmp = ca.toLowerCase().localeCompare(cb.toLowerCase(), 'it');
+      }
+      return dir === 'asc' ? cmp : -cmp;
+    });
+    return rows;
+  }
+  function attachSorter(table, headerCells, getDataRows, getParent) {
+    headerCells.forEach(function(hc, colIdx) {
+      hc.addEventListener('click', function() {
+        var rows = getDataRows();
+        var dir = hc.dataset.sortDir === 'asc' ? 'desc' : 'asc';
+        headerCells.forEach(function(t) {
+          t.dataset.sortDir = '';
+          var a = t.querySelector('.sort-arrow');
+          if (a) a.remove();
+        });
+        hc.dataset.sortDir = dir;
+        var arrow = document.createElement('span');
+        arrow.className = 'sort-arrow';
+        arrow.textContent = dir === 'asc' ? '▲' : '▼';
+        hc.appendChild(arrow);
+        sortRows(rows, colIdx, dir);
+        var parent = getParent();
+        rows.forEach(function(r) { parent.appendChild(r); });
+      });
+    });
+  }
+  document.querySelectorAll('table').forEach(function(table) {
+    // Caso A: tabella con <thead><th> + <tbody>
+    var ths = table.querySelectorAll('thead th');
+    if (ths.length) {
+      var tbody = table.querySelector('tbody');
+      if (!tbody) return;
+      attachSorter(table, Array.prototype.slice.call(ths),
+        function() { return Array.prototype.slice.call(tbody.querySelectorAll('tr')); },
+        function() { return tbody; });
+      return;
+    }
+    // Caso B: tabella senza thead → prima riga con td.label-programma fa da header
+    var firstRow = table.querySelector('tr');
+    if (!firstRow) return;
+    var labels = firstRow.querySelectorAll('td.label-programma');
+    if (labels.length < 2) return;  // tabella troppo piccola o non format-programma
+    attachSorter(table, Array.prototype.slice.call(labels),
+      function() {
+        // tutte le tr eccetto la prima
+        var all = Array.prototype.slice.call(table.querySelectorAll('tr'));
+        return all.filter(function(r) { return r !== firstRow; });
+      },
+      function() {
+        // append nel parent (tbody se esiste, altrimenti table direttamente)
+        return firstRow.parentNode;
+      });
+  });
+})();
+</script>
+<!-- ===== END TABLE SORT INJECTION ===== -->
+
 </body>
 </html>
 <script>

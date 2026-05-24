@@ -197,9 +197,12 @@
 </div>
 <div class="prog_en sub-item-programma">
 <div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
-<span class="contenuto_programma">The student will be assessed on:
-- clarity of the seminar presentation and grasp of the contents 
-- knowledge of the topics covered in the lectures
+<span class="contenuto_programma">The student will be assessed on:
+
+- clarity of the seminar presentation and grasp of the contents 
+
+- knowledge of the topics covered in the lectures
+
 - ability to voice informed opinions on questions relating to the contents of the lectures <p>Methods:<ul><li>Final oral exam</li></ul></p><p>Further information:<br>The final exam will consist of a seminar-type presentation (about 20 minutes)  given by the student on a topic relevant to the contents of the course (to be chosen together with the lecturer) and a brief oral exam (about 10 minutes). </p></span>
 </div>
 <div class="prog_en" >
@@ -208,19 +211,28 @@
 </div>
 <div class="prog_en" >
 <div class="titolo-elemento-programma">Syllabus</div>
-<span class="contenuto_programma">- Cryptography and key distribution; the BB84 protocol; experimental quantum cryptography
-- Principles of computation and algorithms; reversibility of logic gates; deterministic and probabilistic algorithms
-- The concept of the quantum-bit; one- and two-qubit quantum gates; quantum control and the Bloch sphere
-- Entanglement; quantum teleportation and dense coding
-- Quantum algorithms: Deutsch, Grover and Shor algorithms; the quantum Fourier transform
-- Quantum error correction
+<span class="contenuto_programma">- Cryptography and key distribution; the BB84 protocol; experimental quantum cryptography
+
+- Principles of computation and algorithms; reversibility of logic gates; deterministic and probabilistic algorithms
+
+- The concept of the quantum-bit; one- and two-qubit quantum gates; quantum control and the Bloch sphere
+
+- Entanglement; quantum teleportation and dense coding
+
+- Quantum algorithms: Deutsch, Grover and Shor algorithms; the quantum Fourier transform
+
+- Quantum error correction
+
 - Practical implementations of quantum computation: trapped ions, quantum dots, Josephson junctions, photons</span>
 </div>
 <div class="prog_en" >
 <div class="titolo-elemento-programma">Bibliography</div>
-<span class="contenuto_programma">Recommended reading: 
-Kaye, Laflamme and Mosca: "An introduction to quantum computing", Oxford University Press (2007)
-
+<span class="contenuto_programma">Recommended reading: 
+
+Kaye, Laflamme and Mosca: "An introduction to quantum computing", Oxford University Press (2007)
+
+
+
 Further bibliography will be indicated during the course</span>
 </div>
 <div style="float:right; font-style:italic;">Ultimo aggiornamento 14/11/2016 17:27</div>
@@ -275,6 +287,91 @@ Further bibliography will be indicated during the course</span>
 	window.onload = adjustParentHeight;
 	window.addEventListener('resize', adjustParentHeight);
 </script>
+
+<!-- ===== TABLE SORT INJECTION ===== -->
+<style>
+  /* Header con thead: cursor pointer su <th> */
+  table thead th { cursor: pointer; user-select: none; position: relative; }
+  table thead th:hover { background: rgba(0,0,0,0.05); }
+  /* Header senza thead: prima riga (label-programma) come "header" */
+  table td.label-programma { cursor: pointer; user-select: none; position: relative; }
+  table td.label-programma:hover { background: rgba(0,0,0,0.05); }
+  .sort-arrow {
+    font-size: 0.75em; margin-left: 4px; opacity: 0.7;
+    display: inline-block; vertical-align: middle;
+  }
+</style>
+<script>
+(function() {
+  var numericRe = /^-?[\d.,\s]+$/;
+  function sortRows(rows, colIdx, dir) {
+    rows.sort(function(a, b) {
+      var ca = (a.cells[colIdx] ? a.cells[colIdx].textContent : '').trim();
+      var cb = (b.cells[colIdx] ? b.cells[colIdx].textContent : '').trim();
+      var na = parseFloat(ca.replace(',', '.'));
+      var nb = parseFloat(cb.replace(',', '.'));
+      var cmp;
+      if (!isNaN(na) && !isNaN(nb) && numericRe.test(ca) && numericRe.test(cb)) {
+        cmp = na - nb;
+      } else {
+        cmp = ca.toLowerCase().localeCompare(cb.toLowerCase(), 'it');
+      }
+      return dir === 'asc' ? cmp : -cmp;
+    });
+    return rows;
+  }
+  function attachSorter(table, headerCells, getDataRows, getParent) {
+    headerCells.forEach(function(hc, colIdx) {
+      hc.addEventListener('click', function() {
+        var rows = getDataRows();
+        var dir = hc.dataset.sortDir === 'asc' ? 'desc' : 'asc';
+        headerCells.forEach(function(t) {
+          t.dataset.sortDir = '';
+          var a = t.querySelector('.sort-arrow');
+          if (a) a.remove();
+        });
+        hc.dataset.sortDir = dir;
+        var arrow = document.createElement('span');
+        arrow.className = 'sort-arrow';
+        arrow.textContent = dir === 'asc' ? '▲' : '▼';
+        hc.appendChild(arrow);
+        sortRows(rows, colIdx, dir);
+        var parent = getParent();
+        rows.forEach(function(r) { parent.appendChild(r); });
+      });
+    });
+  }
+  document.querySelectorAll('table').forEach(function(table) {
+    // Caso A: tabella con <thead><th> + <tbody>
+    var ths = table.querySelectorAll('thead th');
+    if (ths.length) {
+      var tbody = table.querySelector('tbody');
+      if (!tbody) return;
+      attachSorter(table, Array.prototype.slice.call(ths),
+        function() { return Array.prototype.slice.call(tbody.querySelectorAll('tr')); },
+        function() { return tbody; });
+      return;
+    }
+    // Caso B: tabella senza thead → prima riga con td.label-programma fa da header
+    var firstRow = table.querySelector('tr');
+    if (!firstRow) return;
+    var labels = firstRow.querySelectorAll('td.label-programma');
+    if (labels.length < 2) return;  // tabella troppo piccola o non format-programma
+    attachSorter(table, Array.prototype.slice.call(labels),
+      function() {
+        // tutte le tr eccetto la prima
+        var all = Array.prototype.slice.call(table.querySelectorAll('tr'));
+        return all.filter(function(r) { return r !== firstRow; });
+      },
+      function() {
+        // append nel parent (tbody se esiste, altrimenti table direttamente)
+        return firstRow.parentNode;
+      });
+  });
+})();
+</script>
+<!-- ===== END TABLE SORT INJECTION ===== -->
+
 </body>
 </html>
 <script>

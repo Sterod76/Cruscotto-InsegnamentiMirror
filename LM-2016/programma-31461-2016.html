@@ -197,13 +197,20 @@
 </div>
 <div class="prog_it" >
 <div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
-<span class="contenuto_programma"><ul>
-<li>Elementi teorici.&nbsp; Teorie di gauge non abeliane. Rottura di simmetria. Rinormalizzazione e sua interpretazione moderna come teoria effettiva. Anomalia di scala. Viene discusso come rapidamente fare stime di effetti in teorie di campo e come far fare calcoli analitici ad un computer.</li>
-<li>Il modello standard: in che modo &egrave; suggerito e finora confermato dagli esperimenti. Test di precisione. Fisica del flavor.<br />Scoperta dell'Higgs come esempio della connessione fra teoria ed esperimenti che &egrave; possibile fare ai collider. LHC.</li>
-<li>Cosmologia. Big-bang: espansione di radiazione e materia non-relativistica con densita'uniforme. Anisotropie: Il modello cosmologico standard: perch&eacute; da qualche anno si crede che fluttuazioni quantistiche nella densit&agrave; &nbsp;della materia oscura, generate durante l'inflazione, siano state amplificate dalla gravit&agrave; &nbsp;fino a formare le strutture che oggi osserviamo. Inventario cosmico: in che modo i dati indicano che l'universo attuale e'composto al 73% di "energia oscura", al 23% di "materia oscura", e per il resto di particelle note.&nbsp;</li>
-<li>Possibili estensioni del Modello Standard che spieghino la materia oscura, l'energia oscura/costante cosmologica e loro test sperimentali.</li>
-<li>Oscillazioni&nbsp;di neutrini. Come si &egrave; scoperto che i neutrini hanno massa, cosa rimane da chiarire.</li>
-<li>Il 'problema' della naturalezza:&nbsp;perch&eacute; molti teorici ritegono che ci debba essere molta fisica nuova alle energie che LHC va ad esplorare: supersimmetria, technicolor, dimensioni extra. &nbsp;L'alternativa antropica e the string landscape.</li>
+<span class="contenuto_programma"><ul>
+
+<li>Elementi teorici.&nbsp; Teorie di gauge non abeliane. Rottura di simmetria. Rinormalizzazione e sua interpretazione moderna come teoria effettiva. Anomalia di scala. Viene discusso come rapidamente fare stime di effetti in teorie di campo e come far fare calcoli analitici ad un computer.</li>
+
+<li>Il modello standard: in che modo &egrave; suggerito e finora confermato dagli esperimenti. Test di precisione. Fisica del flavor.<br />Scoperta dell'Higgs come esempio della connessione fra teoria ed esperimenti che &egrave; possibile fare ai collider. LHC.</li>
+
+<li>Cosmologia. Big-bang: espansione di radiazione e materia non-relativistica con densita'uniforme. Anisotropie: Il modello cosmologico standard: perch&eacute; da qualche anno si crede che fluttuazioni quantistiche nella densit&agrave; &nbsp;della materia oscura, generate durante l'inflazione, siano state amplificate dalla gravit&agrave; &nbsp;fino a formare le strutture che oggi osserviamo. Inventario cosmico: in che modo i dati indicano che l'universo attuale e'composto al 73% di "energia oscura", al 23% di "materia oscura", e per il resto di particelle note.&nbsp;</li>
+
+<li>Possibili estensioni del Modello Standard che spieghino la materia oscura, l'energia oscura/costante cosmologica e loro test sperimentali.</li>
+
+<li>Oscillazioni&nbsp;di neutrini. Come si &egrave; scoperto che i neutrini hanno massa, cosa rimane da chiarire.</li>
+
+<li>Il 'problema' della naturalezza:&nbsp;perch&eacute; molti teorici ritegono che ci debba essere molta fisica nuova alle energie che LHC va ad esplorare: supersimmetria, technicolor, dimensioni extra. &nbsp;L'alternativa antropica e the string landscape.</li>
+
 </ul></span>
 </div>
 <div class="prog_it" >
@@ -274,6 +281,91 @@
 	window.onload = adjustParentHeight;
 	window.addEventListener('resize', adjustParentHeight);
 </script>
+
+<!-- ===== TABLE SORT INJECTION ===== -->
+<style>
+  /* Header con thead: cursor pointer su <th> */
+  table thead th { cursor: pointer; user-select: none; position: relative; }
+  table thead th:hover { background: rgba(0,0,0,0.05); }
+  /* Header senza thead: prima riga (label-programma) come "header" */
+  table td.label-programma { cursor: pointer; user-select: none; position: relative; }
+  table td.label-programma:hover { background: rgba(0,0,0,0.05); }
+  .sort-arrow {
+    font-size: 0.75em; margin-left: 4px; opacity: 0.7;
+    display: inline-block; vertical-align: middle;
+  }
+</style>
+<script>
+(function() {
+  var numericRe = /^-?[\d.,\s]+$/;
+  function sortRows(rows, colIdx, dir) {
+    rows.sort(function(a, b) {
+      var ca = (a.cells[colIdx] ? a.cells[colIdx].textContent : '').trim();
+      var cb = (b.cells[colIdx] ? b.cells[colIdx].textContent : '').trim();
+      var na = parseFloat(ca.replace(',', '.'));
+      var nb = parseFloat(cb.replace(',', '.'));
+      var cmp;
+      if (!isNaN(na) && !isNaN(nb) && numericRe.test(ca) && numericRe.test(cb)) {
+        cmp = na - nb;
+      } else {
+        cmp = ca.toLowerCase().localeCompare(cb.toLowerCase(), 'it');
+      }
+      return dir === 'asc' ? cmp : -cmp;
+    });
+    return rows;
+  }
+  function attachSorter(table, headerCells, getDataRows, getParent) {
+    headerCells.forEach(function(hc, colIdx) {
+      hc.addEventListener('click', function() {
+        var rows = getDataRows();
+        var dir = hc.dataset.sortDir === 'asc' ? 'desc' : 'asc';
+        headerCells.forEach(function(t) {
+          t.dataset.sortDir = '';
+          var a = t.querySelector('.sort-arrow');
+          if (a) a.remove();
+        });
+        hc.dataset.sortDir = dir;
+        var arrow = document.createElement('span');
+        arrow.className = 'sort-arrow';
+        arrow.textContent = dir === 'asc' ? '▲' : '▼';
+        hc.appendChild(arrow);
+        sortRows(rows, colIdx, dir);
+        var parent = getParent();
+        rows.forEach(function(r) { parent.appendChild(r); });
+      });
+    });
+  }
+  document.querySelectorAll('table').forEach(function(table) {
+    // Caso A: tabella con <thead><th> + <tbody>
+    var ths = table.querySelectorAll('thead th');
+    if (ths.length) {
+      var tbody = table.querySelector('tbody');
+      if (!tbody) return;
+      attachSorter(table, Array.prototype.slice.call(ths),
+        function() { return Array.prototype.slice.call(tbody.querySelectorAll('tr')); },
+        function() { return tbody; });
+      return;
+    }
+    // Caso B: tabella senza thead → prima riga con td.label-programma fa da header
+    var firstRow = table.querySelector('tr');
+    if (!firstRow) return;
+    var labels = firstRow.querySelectorAll('td.label-programma');
+    if (labels.length < 2) return;  // tabella troppo piccola o non format-programma
+    attachSorter(table, Array.prototype.slice.call(labels),
+      function() {
+        // tutte le tr eccetto la prima
+        var all = Array.prototype.slice.call(table.querySelectorAll('tr'));
+        return all.filter(function(r) { return r !== firstRow; });
+      },
+      function() {
+        // append nel parent (tbody se esiste, altrimenti table direttamente)
+        return firstRow.parentNode;
+      });
+  });
+})();
+</script>
+<!-- ===== END TABLE SORT INJECTION ===== -->
+
 </body>
 </html>
 <script>

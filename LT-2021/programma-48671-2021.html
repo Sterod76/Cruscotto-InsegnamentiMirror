@@ -197,7 +197,8 @@
 </div>
 <div class="prog_it sub-item-programma">
 <div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
-<span class="contenuto_programma"><p>Lo studente deve dimostrare di saper mettere in pratica e di seguire, con spirito critico, le attivit&agrave; illustrate o svolte sotto la guida del docente durante il corso. La risoluzione di problemi rappresenta lo strumento principale per valutare le conoscenze. Durante l'esame orale lo studente deve anche dimostrare di saper usare la terminologia corretta.</p>
+<span class="contenuto_programma"><p>Lo studente deve dimostrare di saper mettere in pratica e di seguire, con spirito critico, le attivit&agrave; illustrate o svolte sotto la guida del docente durante il corso. La risoluzione di problemi rappresenta lo strumento principale per valutare le conoscenze. Durante l'esame orale lo studente deve anche dimostrare di saper usare la terminologia corretta.</p>
+
 <p><strong>Metodi</strong><br /><br />&nbsp;&nbsp;&nbsp; Esame finale&nbsp;scritto<br />&nbsp;&nbsp;&nbsp; Esame finale orale<br />&nbsp;&nbsp;&nbsp; Prove in itinere</p></span>
 </div>
 <div class="prog_it sub-item-programma">
@@ -222,7 +223,8 @@
 </div>
 <div class="prog_it" >
 <div class="titolo-elemento-programma">Indicazioni metodologiche</div>
-<span class="contenuto_programma"><p>Lezioni frontali, si raccomanda di seguire le lezioni.</p>
+<span class="contenuto_programma"><p>Lezioni frontali, si raccomanda di seguire le lezioni.</p>
+
 <p><strong>Attivit&agrave; di apprendimento:</strong><br /><br />&nbsp;&nbsp;&nbsp; Seguire le lezioni<br />&nbsp;&nbsp;&nbsp; Partecipare a seminari<br />&nbsp;&nbsp;&nbsp; Preparazione di rapporti scritti o orali<br />&nbsp;&nbsp;&nbsp; Participazione a discussioni<br />&nbsp;&nbsp;&nbsp; Studio individuale<br />&nbsp;&nbsp;&nbsp; Esercizi<br /><br />Metodi d'insegnamento:<br /><br />&nbsp;&nbsp;&nbsp; Lezioni<br />&nbsp;&nbsp;&nbsp; Seminari<br />&nbsp;&nbsp;&nbsp; Esercitazioni su compiti e problemi, indagini</p></span>
 </div>
 <div class="prog_it" >
@@ -235,7 +237,8 @@
 </div>
 <div class="prog_it" >
 <div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
-<span class="contenuto_programma"><p>L'esame consiste in una prova scritta e una orale. La prova scritta pu&ograve; essere sostituita dalle prove in itinere. La prova scritta consiste nella risoluzione di&nbsp;esercizi che hanno una relazione con problemi discussi durante l'anno. Le soluzioni devono essere giustificate con ragionamenti fisici. La prova orale consiste in una discussione di problemi ispirati dal programma del corso.<br /><br /><strong>Prove in itinere</strong><br /><br />Durante il corso si terranno 3 prove in itinere.</p>
+<span class="contenuto_programma"><p>L'esame consiste in una prova scritta e una orale. La prova scritta pu&ograve; essere sostituita dalle prove in itinere. La prova scritta consiste nella risoluzione di&nbsp;esercizi che hanno una relazione con problemi discussi durante l'anno. Le soluzioni devono essere giustificate con ragionamenti fisici. La prova orale consiste in una discussione di problemi ispirati dal programma del corso.<br /><br /><strong>Prove in itinere</strong><br /><br />Durante il corso si terranno 3 prove in itinere.</p>
+
 <p><strong>Regole:</strong><br /><br />&nbsp;&nbsp;&nbsp; Se non si partecipa ad una prova in itinere (compitino) questa viene valutata 0 punti.<br />&nbsp;&nbsp;&nbsp; La sufficienza &egrave; raggiunta se la media dei voti delle&nbsp; prove in itinere (compitini), oppure il voto del compito scritto, &egrave; maggiore o uguale a 15,0<br />&nbsp;&nbsp;&nbsp; Il voto delle prove in itinere &egrave; valido fino all'ultimo appello della sessione estiva<br />&nbsp;&nbsp;&nbsp; Chi consegna uno scritto cancella il voto degli scritti precedenti, compreso il risultato delle prove in itinere<br />&nbsp;&nbsp;&nbsp; Chi sostiene il colloquio orale e rifiuta il voto proposto, dovr&agrave; sostenere nuovamente sia lo scritto che il colloquio orale.<br />&nbsp;&nbsp;&nbsp; La parte orale dell'esame deve essere sostenuta entro l'appello immediatamente successivo a quello della prova scritta, rimanendo per&ograve; all'interno della stessa sessione d'esame. Se ci&ograve; non avviene, lo studente deve ripetere la prova scritta.</p></span>
 </div>
 <div style="float:right; font-style:italic;">Ultimo aggiornamento 31/08/2021 16:49</div>
@@ -290,6 +293,91 @@
 	window.onload = adjustParentHeight;
 	window.addEventListener('resize', adjustParentHeight);
 </script>
+
+<!-- ===== TABLE SORT INJECTION ===== -->
+<style>
+  /* Header con thead: cursor pointer su <th> */
+  table thead th { cursor: pointer; user-select: none; position: relative; }
+  table thead th:hover { background: rgba(0,0,0,0.05); }
+  /* Header senza thead: prima riga (label-programma) come "header" */
+  table td.label-programma { cursor: pointer; user-select: none; position: relative; }
+  table td.label-programma:hover { background: rgba(0,0,0,0.05); }
+  .sort-arrow {
+    font-size: 0.75em; margin-left: 4px; opacity: 0.7;
+    display: inline-block; vertical-align: middle;
+  }
+</style>
+<script>
+(function() {
+  var numericRe = /^-?[\d.,\s]+$/;
+  function sortRows(rows, colIdx, dir) {
+    rows.sort(function(a, b) {
+      var ca = (a.cells[colIdx] ? a.cells[colIdx].textContent : '').trim();
+      var cb = (b.cells[colIdx] ? b.cells[colIdx].textContent : '').trim();
+      var na = parseFloat(ca.replace(',', '.'));
+      var nb = parseFloat(cb.replace(',', '.'));
+      var cmp;
+      if (!isNaN(na) && !isNaN(nb) && numericRe.test(ca) && numericRe.test(cb)) {
+        cmp = na - nb;
+      } else {
+        cmp = ca.toLowerCase().localeCompare(cb.toLowerCase(), 'it');
+      }
+      return dir === 'asc' ? cmp : -cmp;
+    });
+    return rows;
+  }
+  function attachSorter(table, headerCells, getDataRows, getParent) {
+    headerCells.forEach(function(hc, colIdx) {
+      hc.addEventListener('click', function() {
+        var rows = getDataRows();
+        var dir = hc.dataset.sortDir === 'asc' ? 'desc' : 'asc';
+        headerCells.forEach(function(t) {
+          t.dataset.sortDir = '';
+          var a = t.querySelector('.sort-arrow');
+          if (a) a.remove();
+        });
+        hc.dataset.sortDir = dir;
+        var arrow = document.createElement('span');
+        arrow.className = 'sort-arrow';
+        arrow.textContent = dir === 'asc' ? '▲' : '▼';
+        hc.appendChild(arrow);
+        sortRows(rows, colIdx, dir);
+        var parent = getParent();
+        rows.forEach(function(r) { parent.appendChild(r); });
+      });
+    });
+  }
+  document.querySelectorAll('table').forEach(function(table) {
+    // Caso A: tabella con <thead><th> + <tbody>
+    var ths = table.querySelectorAll('thead th');
+    if (ths.length) {
+      var tbody = table.querySelector('tbody');
+      if (!tbody) return;
+      attachSorter(table, Array.prototype.slice.call(ths),
+        function() { return Array.prototype.slice.call(tbody.querySelectorAll('tr')); },
+        function() { return tbody; });
+      return;
+    }
+    // Caso B: tabella senza thead → prima riga con td.label-programma fa da header
+    var firstRow = table.querySelector('tr');
+    if (!firstRow) return;
+    var labels = firstRow.querySelectorAll('td.label-programma');
+    if (labels.length < 2) return;  // tabella troppo piccola o non format-programma
+    attachSorter(table, Array.prototype.slice.call(labels),
+      function() {
+        // tutte le tr eccetto la prima
+        var all = Array.prototype.slice.call(table.querySelectorAll('tr'));
+        return all.filter(function(r) { return r !== firstRow; });
+      },
+      function() {
+        // append nel parent (tbody se esiste, altrimenti table direttamente)
+        return firstRow.parentNode;
+      });
+  });
+})();
+</script>
+<!-- ===== END TABLE SORT INJECTION ===== -->
+
 </body>
 </html>
 <script>

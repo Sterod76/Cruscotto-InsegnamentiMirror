@@ -148,35 +148,64 @@
 <li><a href="https://esami.unipi.it/esami2/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
 	</ol>
 	</div>
-</div><div class="row">
-	<div id="dati_studente"></div>
-	<div class="col-xs-12 col-sm-12">
-		<div class="box">
-			<div class="box-header">
-				<div class="box-name">
-					<i class="fa fa-search"></i>
-					<span>Programmi - Ricerca nel testo</span>
-				</div>
-				
-				<div class="no-move"> </div> 
-			</div>
-			<div class="box-content">
-				<form class="form-horizontal" role="form" id="searchform">
-                <input type="hidden" name="go" value="1">
-				<input type='hidden' name='seed' value='e3d7a46448187a4b7748398a966f9c2a202ed232'>				<fieldset>
-						<input type="hidden" name="from" value="squest">
-						<div class="form-group">
-							<label class="col-sm-3 control-label">Programma</label>
-							<div class="col-sm-5">
-								<input type="text" class="form-control" name="testo" id="testo" data-toggle="tooltip" data-placement="bottom" title="Testo presente nel programma d'esame" value=""/>
-								<input type="radio" checked name="lang" id="lang" title="Language" value="italian"> <img src="../_assets/ita-57b8ccba.gif" alt="Italiano">
-								<input type="radio"  name="lang" id="lang" title="Language" value="english"> <img src="../_assets/uk-8e6319ba.gif" alt="English">
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-3 control-label">Seleziona un anno accademico</label>
-							<div class="col-sm-5">
-								<select name="aa" id="aa" class="populate placeholder">
+</div><div class="row">
+
+	<div id="dati_studente"></div>
+
+	<div class="col-xs-12 col-sm-12">
+
+		<div class="box">
+
+			<div class="box-header">
+
+				<div class="box-name">
+
+					<i class="fa fa-search"></i>
+
+					<span>Programmi - Ricerca nel testo</span>
+
+				</div>
+
+				
+
+				<div class="no-move"> </div> 
+
+			</div>
+
+			<div class="box-content">
+
+				<form class="form-horizontal" role="form" id="searchform">
+
+                <input type="hidden" name="go" value="1">
+
+				<input type='hidden' name='seed' value='e3d7a46448187a4b7748398a966f9c2a202ed232'>				<fieldset>
+
+						<input type="hidden" name="from" value="squest">
+
+						<div class="form-group">
+
+							<label class="col-sm-3 control-label">Programma</label>
+
+							<div class="col-sm-5">
+
+								<input type="text" class="form-control" name="testo" id="testo" data-toggle="tooltip" data-placement="bottom" title="Testo presente nel programma d'esame" value=""/>
+
+								<input type="radio" checked name="lang" id="lang" title="Language" value="italian"> <img src="../_assets/ita-57b8ccba.gif" alt="Italiano">
+
+								<input type="radio"  name="lang" id="lang" title="Language" value="english"> <img src="../_assets/uk-8e6319ba.gif" alt="English">
+
+							</div>
+
+						</div>
+
+						<div class="form-group">
+
+							<label class="col-sm-3 control-label">Seleziona un anno accademico</label>
+
+							<div class="col-sm-5">
+
+								<select name="aa" id="aa" class="populate placeholder">
+
 									<option value="2023">2023/24</option>
 <option value="2022">2022/23</option>
 <option value="2021">2021/22</option>
@@ -185,70 +214,134 @@
 <option value="2018">2018/19</option>
 <option value="2017">2017/18</option>
 <option value="2016">2016/17</option>
-								</select>
-							</div>
-						</div>
-					</fieldset>
-					<div class="form-group">&nbsp;
-					</div>
-					<div class="form-group">
-						<div class="row">
-							<div class="col-xs-offset-2 col-xs-2">
-								<button type="button" class="btn btn-primary" id="cerca" name="cerca" class="btn btn-primary">
-									Cerca								</button>
-							</div>
-							<div class="col-xs-2">
-								<button type="button" class="btn btn-default" id="searchReset">
-									Cancella								</button>
-							</div>
-						</div>
-					</div>
-					<div class="form-group" id="loadergif" style="display:none;">
-                    <div class="row">
-							<div class="col-xs-offset-2 col-xs-10">
-                                <img src="../_assets/loaderbar-a79a7653.gif">
-                            </div>
-                        </div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</div> 
-<div class="row" id="risultati-elenco" style="display:none;">
-	<div class="col-xs-12">
-		<div class="box">
-			<div class="box-header">
-				<div class="box-name">
-					<i class="fa fa-pencil-square-o"></i>
-					<span>Elenco corsi trovati</span>
-				</div>
-				<div class="no-move"></div>
-			</div>
-			<div class="box-content no-padding" style="overflow:auto; overflow-y:hidden; width:100%">
-				<table class="table table-bordered table-hover table-heading table-datatable table-corsi" id="datatable-ric-programmi">
-					<thead>
-						<tr>
-							<th></th>
-							<th>CdS</th>
-							<th>Insegnamento</th>
-							<th>Codice</th>
-							<th>CFU</th>
-							<th>Periodo</th>
-							<th>Docente</th>
-							<th>Moduli</th>
-						</tr>
-					</thead>
-					<tbody>
-										</tbody>
-				</table>
-				<div style="padding-left:30px;">
-					<i class="fa fa-info-circle"></i> Programma presente				</div>
-			</div>
-		</div>
-	</div>
-</div>
-		
+								</select>
+
+							</div>
+
+						</div>
+
+					</fieldset>
+
+					<div class="form-group">&nbsp;
+
+					</div>
+
+					<div class="form-group">
+
+						<div class="row">
+
+							<div class="col-xs-offset-2 col-xs-2">
+
+								<button type="button" class="btn btn-primary" id="cerca" name="cerca" class="btn btn-primary">
+
+									Cerca								</button>
+
+							</div>
+
+							<div class="col-xs-2">
+
+								<button type="button" class="btn btn-default" id="searchReset">
+
+									Cancella								</button>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="form-group" id="loadergif" style="display:none;">
+
+                    <div class="row">
+
+							<div class="col-xs-offset-2 col-xs-10">
+
+                                <img src="../_assets/loaderbar-a79a7653.gif">
+
+                            </div>
+
+                        </div>
+
+					</div>
+
+				</form>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div> 
+
+<div class="row" id="risultati-elenco" style="display:none;">
+
+	<div class="col-xs-12">
+
+		<div class="box">
+
+			<div class="box-header">
+
+				<div class="box-name">
+
+					<i class="fa fa-pencil-square-o"></i>
+
+					<span>Elenco corsi trovati</span>
+
+				</div>
+
+				<div class="no-move"></div>
+
+			</div>
+
+			<div class="box-content no-padding" style="overflow:auto; overflow-y:hidden; width:100%">
+
+				<table class="table table-bordered table-hover table-heading table-datatable table-corsi" id="datatable-ric-programmi">
+
+					<thead>
+
+						<tr>
+
+							<th></th>
+
+							<th>CdS</th>
+
+							<th>Insegnamento</th>
+
+							<th>Codice</th>
+
+							<th>CFU</th>
+
+							<th>Periodo</th>
+
+							<th>Docente</th>
+
+							<th>Moduli</th>
+
+						</tr>
+
+					</thead>
+
+					<tbody>
+
+										</tbody>
+
+				</table>
+
+				<div style="padding-left:30px;">
+
+					<i class="fa fa-info-circle"></i> Programma presente				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+		
+
 		
 		</div> <!-- content -->
 	</div> <!-- row -->
@@ -294,49 +387,177 @@
 	window.onload = adjustParentHeight;
 	window.addEventListener('resize', adjustParentHeight);
 </script>
+
+<!-- ===== TABLE SORT INJECTION ===== -->
+<style>
+  /* Header con thead: cursor pointer su <th> */
+  table thead th { cursor: pointer; user-select: none; position: relative; }
+  table thead th:hover { background: rgba(0,0,0,0.05); }
+  /* Header senza thead: prima riga (label-programma) come "header" */
+  table td.label-programma { cursor: pointer; user-select: none; position: relative; }
+  table td.label-programma:hover { background: rgba(0,0,0,0.05); }
+  .sort-arrow {
+    font-size: 0.75em; margin-left: 4px; opacity: 0.7;
+    display: inline-block; vertical-align: middle;
+  }
+</style>
+<script>
+(function() {
+  var numericRe = /^-?[\d.,\s]+$/;
+  function sortRows(rows, colIdx, dir) {
+    rows.sort(function(a, b) {
+      var ca = (a.cells[colIdx] ? a.cells[colIdx].textContent : '').trim();
+      var cb = (b.cells[colIdx] ? b.cells[colIdx].textContent : '').trim();
+      var na = parseFloat(ca.replace(',', '.'));
+      var nb = parseFloat(cb.replace(',', '.'));
+      var cmp;
+      if (!isNaN(na) && !isNaN(nb) && numericRe.test(ca) && numericRe.test(cb)) {
+        cmp = na - nb;
+      } else {
+        cmp = ca.toLowerCase().localeCompare(cb.toLowerCase(), 'it');
+      }
+      return dir === 'asc' ? cmp : -cmp;
+    });
+    return rows;
+  }
+  function attachSorter(table, headerCells, getDataRows, getParent) {
+    headerCells.forEach(function(hc, colIdx) {
+      hc.addEventListener('click', function() {
+        var rows = getDataRows();
+        var dir = hc.dataset.sortDir === 'asc' ? 'desc' : 'asc';
+        headerCells.forEach(function(t) {
+          t.dataset.sortDir = '';
+          var a = t.querySelector('.sort-arrow');
+          if (a) a.remove();
+        });
+        hc.dataset.sortDir = dir;
+        var arrow = document.createElement('span');
+        arrow.className = 'sort-arrow';
+        arrow.textContent = dir === 'asc' ? '▲' : '▼';
+        hc.appendChild(arrow);
+        sortRows(rows, colIdx, dir);
+        var parent = getParent();
+        rows.forEach(function(r) { parent.appendChild(r); });
+      });
+    });
+  }
+  document.querySelectorAll('table').forEach(function(table) {
+    // Caso A: tabella con <thead><th> + <tbody>
+    var ths = table.querySelectorAll('thead th');
+    if (ths.length) {
+      var tbody = table.querySelector('tbody');
+      if (!tbody) return;
+      attachSorter(table, Array.prototype.slice.call(ths),
+        function() { return Array.prototype.slice.call(tbody.querySelectorAll('tr')); },
+        function() { return tbody; });
+      return;
+    }
+    // Caso B: tabella senza thead → prima riga con td.label-programma fa da header
+    var firstRow = table.querySelector('tr');
+    if (!firstRow) return;
+    var labels = firstRow.querySelectorAll('td.label-programma');
+    if (labels.length < 2) return;  // tabella troppo piccola o non format-programma
+    attachSorter(table, Array.prototype.slice.call(labels),
+      function() {
+        // tutte le tr eccetto la prima
+        var all = Array.prototype.slice.call(table.querySelectorAll('tr'));
+        return all.filter(function(r) { return r !== firstRow; });
+      },
+      function() {
+        // append nel parent (tbody se esiste, altrimenti table direttamente)
+        return firstRow.parentNode;
+      });
+  });
+})();
+</script>
+<!-- ===== END TABLE SORT INJECTION ===== -->
+
 </body>
 </html>
-<script>
-function AllTables(){
-
-	TableCorsiRicProgrammi('it','#datatable-ric-programmi');
-	PopulateChild('#datatable-ric-programmi');
-	RedrawTableCorsi('#datatable-ric-programmi',false);
-
-	LoadSelect2Script(MakeSelect2);
-}
-function MakeSelect2(){
-	if(!dm())
-		$('select').select2();
-	$('.dataTables_filter').each(function(){
-		$(this).find('label input[type=text]').attr('placeholder', 'Search');
-	});
-}
-
-$(document).ready(function() {
-	LoadDataTablesScripts(AllTables);
-	// Reset manuale del campo select
-	$("#searchReset").click( function() {
-		$("#docente").val("");
-		$("#insegnamento").val("");
-		$("#sd").val("");
-		$("#sd").change();
-		$("#aa").val("0");
-		$("#aa").change();
-		$("#risultati-elenco").hide();
-	});
-	$("#datatable-ric-programmi th").click(
-		function(e) {
-			RedrawTableCorsi('#datatable-ric-programmi', true);
-		}
-	);
-    $("#cerca").click(function(e) {
-        e.preventDefault();
-        $("#cerca").prop('disabled', true);
-        $("#loadergif").show();
-        $("#risultati-elenco").hide();
-        $("#searchform").submit();
-    });
-});
-
+<script>
+
+function AllTables(){
+
+
+
+	TableCorsiRicProgrammi('it','#datatable-ric-programmi');
+
+	PopulateChild('#datatable-ric-programmi');
+
+	RedrawTableCorsi('#datatable-ric-programmi',false);
+
+
+
+	LoadSelect2Script(MakeSelect2);
+
+}
+
+function MakeSelect2(){
+
+	if(!dm())
+
+		$('select').select2();
+
+	$('.dataTables_filter').each(function(){
+
+		$(this).find('label input[type=text]').attr('placeholder', 'Search');
+
+	});
+
+}
+
+
+
+$(document).ready(function() {
+
+	LoadDataTablesScripts(AllTables);
+
+	// Reset manuale del campo select
+
+	$("#searchReset").click( function() {
+
+		$("#docente").val("");
+
+		$("#insegnamento").val("");
+
+		$("#sd").val("");
+
+		$("#sd").change();
+
+		$("#aa").val("0");
+
+		$("#aa").change();
+
+		$("#risultati-elenco").hide();
+
+	});
+
+	$("#datatable-ric-programmi th").click(
+
+		function(e) {
+
+			RedrawTableCorsi('#datatable-ric-programmi', true);
+
+		}
+
+	);
+
+    $("#cerca").click(function(e) {
+
+        e.preventDefault();
+
+        $("#cerca").prop('disabled', true);
+
+        $("#loadergif").show();
+
+        $("#risultati-elenco").hide();
+
+        $("#searchform").submit();
+
+    });
+
+});
+
+
+
 </script>

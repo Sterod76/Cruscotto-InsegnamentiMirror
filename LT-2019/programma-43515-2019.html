@@ -205,33 +205,56 @@
 </div>
 <div class="prog_it" >
 <div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
-<span class="contenuto_programma"><p>1. &nbsp;Gruppi e assiomi &nbsp; &nbsp;:</p>
-<p>Assiomi del gruppo. Gruppo finito e infinito. &nbsp;Esempi. Gruppi SN . Gruppo continuo e discreto.&nbsp;</p>
-<p>Gruppo Abeliano e non Abeliano. Sottogruppi e sottogruppi invariati.&nbsp;</p>
-<p>Isomorfismo e omomorfismo tra i gruppi. Gruppi semplici e semi-semplici.&nbsp;</p>
-<p>2. &nbsp;Gruppi di Lie e algebra di Lie &nbsp;:</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp;Gruppi di Lie e algebra di Lie. Costante di struttura. Esempi. &nbsp; &nbsp;</p>
-<p>&nbsp;3. &nbsp; Teoria delle rappresentazioni &nbsp;:</p>
-<p>&nbsp; &nbsp; &nbsp; Rappresentazione del gruppo. Rappresentazioni irriducibili. Lemma di Schur. Caratteri.</p>
-<p>&nbsp; 4. &nbsp; Gruppo fondamentale / gruppi di omotopie &nbsp;:</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp;Gruppo fondamentale e gruppi di omotopie generali. Successione esatte.&nbsp;</p>
-<p>&nbsp;5. &nbsp; Gruppo SU(2), SO(3) e SU(3) &nbsp;:&nbsp;</p>
-<p>&nbsp; &nbsp; &nbsp; Gruppi e algebra di SU(2), SO(3) e SU(3). &nbsp;Isospin. Spin e rotazioni in R3. &nbsp;Teorema di Wigner-Eckart.</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; Tableaux di Young&nbsp;</p>
-<p>6. &nbsp;Rappresentazioni del gruppo SO(4), del gruppo di Lorentz SO(3,1)</p>
-<p>&nbsp; &nbsp; e di Poincar&eacute; &nbsp;:&nbsp; &nbsp;Gruppo e algebra di SO(4). Vettori di Lenz e atomo di idrogeno. &nbsp;Gruppo di Lorentz.</p>
-<p>7. &nbsp;Radici e pesi; diagrammi di Dynkin :</p>
+<span class="contenuto_programma"><p>1. &nbsp;Gruppi e assiomi &nbsp; &nbsp;:</p>
+
+<p>Assiomi del gruppo. Gruppo finito e infinito. &nbsp;Esempi. Gruppi SN . Gruppo continuo e discreto.&nbsp;</p>
+
+<p>Gruppo Abeliano e non Abeliano. Sottogruppi e sottogruppi invariati.&nbsp;</p>
+
+<p>Isomorfismo e omomorfismo tra i gruppi. Gruppi semplici e semi-semplici.&nbsp;</p>
+
+<p>2. &nbsp;Gruppi di Lie e algebra di Lie &nbsp;:</p>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp;Gruppi di Lie e algebra di Lie. Costante di struttura. Esempi. &nbsp; &nbsp;</p>
+
+<p>&nbsp;3. &nbsp; Teoria delle rappresentazioni &nbsp;:</p>
+
+<p>&nbsp; &nbsp; &nbsp; Rappresentazione del gruppo. Rappresentazioni irriducibili. Lemma di Schur. Caratteri.</p>
+
+<p>&nbsp; 4. &nbsp; Gruppo fondamentale / gruppi di omotopie &nbsp;:</p>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp;Gruppo fondamentale e gruppi di omotopie generali. Successione esatte.&nbsp;</p>
+
+<p>&nbsp;5. &nbsp; Gruppo SU(2), SO(3) e SU(3) &nbsp;:&nbsp;</p>
+
+<p>&nbsp; &nbsp; &nbsp; Gruppi e algebra di SU(2), SO(3) e SU(3). &nbsp;Isospin. Spin e rotazioni in R3. &nbsp;Teorema di Wigner-Eckart.</p>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; Tableaux di Young&nbsp;</p>
+
+<p>6. &nbsp;Rappresentazioni del gruppo SO(4), del gruppo di Lorentz SO(3,1)</p>
+
+<p>&nbsp; &nbsp; e di Poincar&eacute; &nbsp;:&nbsp; &nbsp;Gruppo e algebra di SO(4). Vettori di Lenz e atomo di idrogeno. &nbsp;Gruppo di Lorentz.</p>
+
+<p>7. &nbsp;Radici e pesi; diagrammi di Dynkin :</p>
+
 <p>&nbsp; &nbsp;Vettori di radici e di pesi. Diagrammi di Dynkin e la classificazione dei gruppi compatti.&nbsp;</p></span>
 </div>
 <div class="prog_it" >
 <div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
-<span class="contenuto_programma"><p>L.S. Pontryagin, &nbsp;Topological Groups;</p>
-<p>K. Konishi, Group Theory for Physics;</p>
-<p>H. Georgi, &nbsp;Lie Algebras in Particle Physics;</p>
-<p>W-K Tung, Group Theory in Physics;</p>
-<p>B. Wyborne, &nbsp;Classical Groups for Physicists;</p>
-<p>K. Yamanouchi, &nbsp;連続群論入門 (Introduction to Continuous Groups).</p>
-<p>&nbsp;</p>
+<span class="contenuto_programma"><p>L.S. Pontryagin, &nbsp;Topological Groups;</p>
+
+<p>K. Konishi, Group Theory for Physics;</p>
+
+<p>H. Georgi, &nbsp;Lie Algebras in Particle Physics;</p>
+
+<p>W-K Tung, Group Theory in Physics;</p>
+
+<p>B. Wyborne, &nbsp;Classical Groups for Physicists;</p>
+
+<p>K. Yamanouchi, &nbsp;連続群論入門 (Introduction to Continuous Groups).</p>
+
+<p>&nbsp;</p>
+
 <p>&nbsp;</p></span>
 </div>
 <div class="prog_it" >
@@ -298,6 +321,91 @@
 	window.onload = adjustParentHeight;
 	window.addEventListener('resize', adjustParentHeight);
 </script>
+
+<!-- ===== TABLE SORT INJECTION ===== -->
+<style>
+  /* Header con thead: cursor pointer su <th> */
+  table thead th { cursor: pointer; user-select: none; position: relative; }
+  table thead th:hover { background: rgba(0,0,0,0.05); }
+  /* Header senza thead: prima riga (label-programma) come "header" */
+  table td.label-programma { cursor: pointer; user-select: none; position: relative; }
+  table td.label-programma:hover { background: rgba(0,0,0,0.05); }
+  .sort-arrow {
+    font-size: 0.75em; margin-left: 4px; opacity: 0.7;
+    display: inline-block; vertical-align: middle;
+  }
+</style>
+<script>
+(function() {
+  var numericRe = /^-?[\d.,\s]+$/;
+  function sortRows(rows, colIdx, dir) {
+    rows.sort(function(a, b) {
+      var ca = (a.cells[colIdx] ? a.cells[colIdx].textContent : '').trim();
+      var cb = (b.cells[colIdx] ? b.cells[colIdx].textContent : '').trim();
+      var na = parseFloat(ca.replace(',', '.'));
+      var nb = parseFloat(cb.replace(',', '.'));
+      var cmp;
+      if (!isNaN(na) && !isNaN(nb) && numericRe.test(ca) && numericRe.test(cb)) {
+        cmp = na - nb;
+      } else {
+        cmp = ca.toLowerCase().localeCompare(cb.toLowerCase(), 'it');
+      }
+      return dir === 'asc' ? cmp : -cmp;
+    });
+    return rows;
+  }
+  function attachSorter(table, headerCells, getDataRows, getParent) {
+    headerCells.forEach(function(hc, colIdx) {
+      hc.addEventListener('click', function() {
+        var rows = getDataRows();
+        var dir = hc.dataset.sortDir === 'asc' ? 'desc' : 'asc';
+        headerCells.forEach(function(t) {
+          t.dataset.sortDir = '';
+          var a = t.querySelector('.sort-arrow');
+          if (a) a.remove();
+        });
+        hc.dataset.sortDir = dir;
+        var arrow = document.createElement('span');
+        arrow.className = 'sort-arrow';
+        arrow.textContent = dir === 'asc' ? '▲' : '▼';
+        hc.appendChild(arrow);
+        sortRows(rows, colIdx, dir);
+        var parent = getParent();
+        rows.forEach(function(r) { parent.appendChild(r); });
+      });
+    });
+  }
+  document.querySelectorAll('table').forEach(function(table) {
+    // Caso A: tabella con <thead><th> + <tbody>
+    var ths = table.querySelectorAll('thead th');
+    if (ths.length) {
+      var tbody = table.querySelector('tbody');
+      if (!tbody) return;
+      attachSorter(table, Array.prototype.slice.call(ths),
+        function() { return Array.prototype.slice.call(tbody.querySelectorAll('tr')); },
+        function() { return tbody; });
+      return;
+    }
+    // Caso B: tabella senza thead → prima riga con td.label-programma fa da header
+    var firstRow = table.querySelector('tr');
+    if (!firstRow) return;
+    var labels = firstRow.querySelectorAll('td.label-programma');
+    if (labels.length < 2) return;  // tabella troppo piccola o non format-programma
+    attachSorter(table, Array.prototype.slice.call(labels),
+      function() {
+        // tutte le tr eccetto la prima
+        var all = Array.prototype.slice.call(table.querySelectorAll('tr'));
+        return all.filter(function(r) { return r !== firstRow; });
+      },
+      function() {
+        // append nel parent (tbody se esiste, altrimenti table direttamente)
+        return firstRow.parentNode;
+      });
+  });
+})();
+</script>
+<!-- ===== END TABLE SORT INJECTION ===== -->
+
 </body>
 </html>
 <script>

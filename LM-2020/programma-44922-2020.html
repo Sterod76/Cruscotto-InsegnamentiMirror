@@ -257,64 +257,110 @@
 </div>
 <div class="prog_it" >
 <div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
-<span class="contenuto_programma"><p>Segnali in fisica. Segnali a tempo continuo e a tempo discreto. Segnali a valori continui e a valori discreti.Segnali analogici e segnali digitali. Campionamento e quantizzazione. Classificazione dei segnali. Energia e potenza di un segnale. Segnali periodici.</p>
-<p>Operazioni tra segnali: somma, differenza, prodotto. Correlazione incrociata e correlazione media incrociata. Esempio di correlazione come filtro. Convoluzione. Correlazione e convoluzione circolari.</p>
-<p>Processi aleatori. Media sull'ensemble: media, varianza, deviazione standard ed autocorrelazione di un processo. Stazionariet&agrave; in senso stretto ed in senso lato. Processi ergodici. Rumore bianco a tempo discreto ed a tempo continuo, media a due punti di un rumore bianco, rumore bianco filtrato con un filtro ad un polo. Stima della media e della funzione di autocorrelazione: stime biased ed unbiased.</p>
-<p>Serie, trasformate di Fourier a tempo continuo e a tempo discreto: definizione, formule di sintesi e di analisi. Cenni sulla FFT. Trasformata di Fourier generalizzata. Zero padding. Il teorema della convoluzione. Calcolo numerico della convoluzione.</p>
-<p>Teorema di Parseval per tutte le trasformate. Spettro di energia e spettro di potenza. Teorema di Wiener Kintchine:Densit&agrave; di energia spettrale nei processi stocastici stazionarii a tempo continuo e a tempo discreto.</p>
-<p>Il teorema di Nyquist: spettro a tempo discreto di un segnale a tempo continuo campionato. Il criterio di Nyquist. Formula di inversione per segnali che soddisfano il criterio di Nyquist.</p>
-<p>Stima dello spettro in energia di segnali campionati. Stima dello spettro di potenza di processi aleatori a partire da una singola realizzazione campionata: periodogramma, metodo di Bartlett, metodo di Welch, metodo di Tukey. Finestre. Risoluzione in frequenza. Sommadi processi stazionarii indipendenti. Limite di quantizzazione.</p>
-<p>Sistemi. Definizione. Sistemi dinamici, sistemi lineari, sistemi rilassati, invarianza temporale.</p>
-<p>Sistemi LTI: caratterizzazione tramite la risposta in impulso. Risposta di un sistema LTI ad un esponenziale complesso. Risposta in frequenza di un sitema LTI.</p>
-<p>Sistemi lineari descritti da una equazione alle differenze finite. Calcolo della risposta in frequenza di un sistema definito da una equazione alle differenze finite.</p>
-<p>Trasformata z. Esempi. Definizione di regione di convergenza (ROC) Propriet&agrave; della trasformazione. Funzione caratteristica, o di trasferimento, di un sistema descritto da una equazione alle differenze finite. Analisi di una funzione razionale. Poli e zeri di una funzione di trasferimento. Inversione di una funzione razionale in z. Stabilit&agrave; del sistema.</p>
-<p>Filtri ideali e filtri reali: passa basso, passa alto, passa banda e blocca banda. Fase lineare.</p>
-<p>Filtri FIR: diversi tipi di risposta in impulso simmetrica ed antisimmetrica. Disegno tramite finestratura. Disegno tramite DFT. Filtri derivativi. Il filtro adattato e quello di Wiener.</p>
-<p>Filtri IIR. Disegno di semplici filtri: polo singolo, risuonatore, notch, integratore.</p>
-<p>Cenni alla trasformata di Laplace. Poli e zeri nel piano s. Trasformazione tra i piani s e z.</p>
-<p>Filtri di uso comune: butterworth, Chebychev I e I.</p>
-<p>Combinazione di filtri IIR, trasformazione di un passa basso in un passa alto. Combinatione di filtri in modo tale da ottenere un passa banda o un blocca banda.</p>
-<p>Filtri a fase zero. Transiente e risposta allo scalino.</p>
-<p>Stima della risposta in frequenza di un sistema.</p>
+<span class="contenuto_programma"><p>Segnali in fisica. Segnali a tempo continuo e a tempo discreto. Segnali a valori continui e a valori discreti.Segnali analogici e segnali digitali. Campionamento e quantizzazione. Classificazione dei segnali. Energia e potenza di un segnale. Segnali periodici.</p>
+
+<p>Operazioni tra segnali: somma, differenza, prodotto. Correlazione incrociata e correlazione media incrociata. Esempio di correlazione come filtro. Convoluzione. Correlazione e convoluzione circolari.</p>
+
+<p>Processi aleatori. Media sull'ensemble: media, varianza, deviazione standard ed autocorrelazione di un processo. Stazionariet&agrave; in senso stretto ed in senso lato. Processi ergodici. Rumore bianco a tempo discreto ed a tempo continuo, media a due punti di un rumore bianco, rumore bianco filtrato con un filtro ad un polo. Stima della media e della funzione di autocorrelazione: stime biased ed unbiased.</p>
+
+<p>Serie, trasformate di Fourier a tempo continuo e a tempo discreto: definizione, formule di sintesi e di analisi. Cenni sulla FFT. Trasformata di Fourier generalizzata. Zero padding. Il teorema della convoluzione. Calcolo numerico della convoluzione.</p>
+
+<p>Teorema di Parseval per tutte le trasformate. Spettro di energia e spettro di potenza. Teorema di Wiener Kintchine:Densit&agrave; di energia spettrale nei processi stocastici stazionarii a tempo continuo e a tempo discreto.</p>
+
+<p>Il teorema di Nyquist: spettro a tempo discreto di un segnale a tempo continuo campionato. Il criterio di Nyquist. Formula di inversione per segnali che soddisfano il criterio di Nyquist.</p>
+
+<p>Stima dello spettro in energia di segnali campionati. Stima dello spettro di potenza di processi aleatori a partire da una singola realizzazione campionata: periodogramma, metodo di Bartlett, metodo di Welch, metodo di Tukey. Finestre. Risoluzione in frequenza. Sommadi processi stazionarii indipendenti. Limite di quantizzazione.</p>
+
+<p>Sistemi. Definizione. Sistemi dinamici, sistemi lineari, sistemi rilassati, invarianza temporale.</p>
+
+<p>Sistemi LTI: caratterizzazione tramite la risposta in impulso. Risposta di un sistema LTI ad un esponenziale complesso. Risposta in frequenza di un sitema LTI.</p>
+
+<p>Sistemi lineari descritti da una equazione alle differenze finite. Calcolo della risposta in frequenza di un sistema definito da una equazione alle differenze finite.</p>
+
+<p>Trasformata z. Esempi. Definizione di regione di convergenza (ROC) Propriet&agrave; della trasformazione. Funzione caratteristica, o di trasferimento, di un sistema descritto da una equazione alle differenze finite. Analisi di una funzione razionale. Poli e zeri di una funzione di trasferimento. Inversione di una funzione razionale in z. Stabilit&agrave; del sistema.</p>
+
+<p>Filtri ideali e filtri reali: passa basso, passa alto, passa banda e blocca banda. Fase lineare.</p>
+
+<p>Filtri FIR: diversi tipi di risposta in impulso simmetrica ed antisimmetrica. Disegno tramite finestratura. Disegno tramite DFT. Filtri derivativi. Il filtro adattato e quello di Wiener.</p>
+
+<p>Filtri IIR. Disegno di semplici filtri: polo singolo, risuonatore, notch, integratore.</p>
+
+<p>Cenni alla trasformata di Laplace. Poli e zeri nel piano s. Trasformazione tra i piani s e z.</p>
+
+<p>Filtri di uso comune: butterworth, Chebychev I e I.</p>
+
+<p>Combinazione di filtri IIR, trasformazione di un passa basso in un passa alto. Combinatione di filtri in modo tale da ottenere un passa banda o un blocca banda.</p>
+
+<p>Filtri a fase zero. Transiente e risposta allo scalino.</p>
+
+<p>Stima della risposta in frequenza di un sistema.</p>
+
 <p>Decimazione e sovracampionamento. La conversione A/D e D/A rivisitata. Techniche multirate.</p></span>
 </div>
 <div class="prog_en" >
 <div class="titolo-elemento-programma">Syllabus</div>
-<span class="contenuto_programma"><p>&nbsp;&nbsp;&nbsp; Signals in physics; Discrete and continuous time signals; discrete and continuous values signals; Analogue and digital signals; Sampling and quantization. Signal classification: even and odd signals, causal and anticausal signals, random and deterministic signals. Energy and power of a signal, periodic signals.</p>
-<p>Operations among signals: sum, difference, product. Cross correlation and mean cross correlation: definition and properties. Example of correlation as a filter to enhance s/n ratio. Convolution: definition and properties. Circular correlation and circular convolution.</p>
-<p>&nbsp;&nbsp;&nbsp; Random signals. Stochastic processes: definition. Ensemble average; mean, variance, standard deviation and autocorrelation function. Strict stationarity: consequences on mean, variance and correlation function. Wide-sense stationarity. Ergodic process. Discrete time white noise, random walk, two-points average of white noise, white noise filtered with a single pole recursive filter.</p>
-<p>Estimation of mean, variance and correlation function of a stationary ergodic random process using a single realization. Biased and unbiased estimates of the correlation function. Introduction to Fourier transforms. Fourier series for periodic, continuous time signals. Use of complex numbers.</p>
-<p>Properties of Fourier series. Fourier transform: definition, properties. Example of Fourier transform: rectangular function, exponential, truncated cosine. Finite duration signals: use of Fourier series or Fourier transform. Relation among Fourier transform and coefficients of series.</p>
-<p>Discrete Time Fourier Transform (DTFT): definition, synthesis and analysis formulas, frequency domain periodicity, properties. Rectangle function, decreasing exponential. Discrete Fourier Transform: definition, properties. Fourier transform of finite length segments: use of DFT or DTFT and relation among the two transforms. Fast Fourier Transform.</p>
-<p>Generalized Fourier Transform. Zero padding. Convolution theorem for FS, FT, DTFT and DFT. Some properties of FFT. Numerical calculation of convolutions through DFT.</p>
-<p>Parseval's theorem for TF, DTFT, FS and DFT. Energy spectral density: definition for continuous and discrete time signals. Power spectrum for periodic signals. Power spectral density for aperiodic signals. Wiener-Kintchine theorem: definition of power spectrum density for stationary stochastic processes. Examples: white noise in discrete and continuous time, power spectrum in an RC circuit, power spectrum of white noise filtered with a two- point moving average or a single pole filter.</p>
-<p>The Nyquist theorem: discrete time spectrum of a sampled continuous time signal. Nyquist criterion. Inversion formula for signals satisfying Nyquist criterion.</p>
-<p>Practical applications of Nyquist criterion. Energy spectrum estimate of a sampled continuous time signal. Power spectrum estimate of a random stationary process: periodogram, Bartlett, Welch and Tukey methods to overcome periodogram problems. Definition of frequency resolution. Spectrogram. Sum of independent stationary processes. Quantization noise limit.</p>
-<p>Signals and systems. Dynamical systems. Stationarity. Linearity. LTI systems: impulse response, frequency response. Linear system through finite difference equations. Examples. Frequency response of FDE systems. Z transform. Examples. ROC of z transform. Properties of z transform.</p>
-<p>Transfer function, or characteristic function, for systems defined by a finite difference equation. Analysis of rational functions. Zeros and poles. Decomposition as sum of single pole systems. Inversion of rational z transforms, calculation of the impulse response. System stability.</p>
-<p>Ideal filter: low pass, high pass, bandpass and band stop. Difference among ideal and real filters; linear phase.</p>
-<p>FIR filters. Different types of symmetric and antisymmetric impulse response. Filter design through windowing. Filter design through DFT. Derivative filters. A simple derivation of the matched filter and of the Wiener filter.</p>
-<p>IIR filters. Design of simple filters. One pole filter; resonator; notch; comb filter; integrators.</p>
-<p>Continuous time Systems: recall of Laplace transform. Poles and zeroes in s plane. Transformation between s and z planes: approximation of derivatives, impulse response invariance, bilinear transformation. Commonly used IIR filters: Butterworth and Chebyshev type I and type II. Combination of iir filters, transformation of low pass in high pass filter, combination of filters to obtain a band pass or band stop filter.</p>
-<p>&nbsp;Zero - phase filtering. Transient and step response. Parametric spectral estimate: solution of all-pole model. Whitening filter. Linear predictor. Estimation of impulse response and frequency response of a phisical linear system: use of white noise and of MLS sequence.</p>
+<span class="contenuto_programma"><p>&nbsp;&nbsp;&nbsp; Signals in physics; Discrete and continuous time signals; discrete and continuous values signals; Analogue and digital signals; Sampling and quantization. Signal classification: even and odd signals, causal and anticausal signals, random and deterministic signals. Energy and power of a signal, periodic signals.</p>
+
+<p>Operations among signals: sum, difference, product. Cross correlation and mean cross correlation: definition and properties. Example of correlation as a filter to enhance s/n ratio. Convolution: definition and properties. Circular correlation and circular convolution.</p>
+
+<p>&nbsp;&nbsp;&nbsp; Random signals. Stochastic processes: definition. Ensemble average; mean, variance, standard deviation and autocorrelation function. Strict stationarity: consequences on mean, variance and correlation function. Wide-sense stationarity. Ergodic process. Discrete time white noise, random walk, two-points average of white noise, white noise filtered with a single pole recursive filter.</p>
+
+<p>Estimation of mean, variance and correlation function of a stationary ergodic random process using a single realization. Biased and unbiased estimates of the correlation function. Introduction to Fourier transforms. Fourier series for periodic, continuous time signals. Use of complex numbers.</p>
+
+<p>Properties of Fourier series. Fourier transform: definition, properties. Example of Fourier transform: rectangular function, exponential, truncated cosine. Finite duration signals: use of Fourier series or Fourier transform. Relation among Fourier transform and coefficients of series.</p>
+
+<p>Discrete Time Fourier Transform (DTFT): definition, synthesis and analysis formulas, frequency domain periodicity, properties. Rectangle function, decreasing exponential. Discrete Fourier Transform: definition, properties. Fourier transform of finite length segments: use of DFT or DTFT and relation among the two transforms. Fast Fourier Transform.</p>
+
+<p>Generalized Fourier Transform. Zero padding. Convolution theorem for FS, FT, DTFT and DFT. Some properties of FFT. Numerical calculation of convolutions through DFT.</p>
+
+<p>Parseval's theorem for TF, DTFT, FS and DFT. Energy spectral density: definition for continuous and discrete time signals. Power spectrum for periodic signals. Power spectral density for aperiodic signals. Wiener-Kintchine theorem: definition of power spectrum density for stationary stochastic processes. Examples: white noise in discrete and continuous time, power spectrum in an RC circuit, power spectrum of white noise filtered with a two- point moving average or a single pole filter.</p>
+
+<p>The Nyquist theorem: discrete time spectrum of a sampled continuous time signal. Nyquist criterion. Inversion formula for signals satisfying Nyquist criterion.</p>
+
+<p>Practical applications of Nyquist criterion. Energy spectrum estimate of a sampled continuous time signal. Power spectrum estimate of a random stationary process: periodogram, Bartlett, Welch and Tukey methods to overcome periodogram problems. Definition of frequency resolution. Spectrogram. Sum of independent stationary processes. Quantization noise limit.</p>
+
+<p>Signals and systems. Dynamical systems. Stationarity. Linearity. LTI systems: impulse response, frequency response. Linear system through finite difference equations. Examples. Frequency response of FDE systems. Z transform. Examples. ROC of z transform. Properties of z transform.</p>
+
+<p>Transfer function, or characteristic function, for systems defined by a finite difference equation. Analysis of rational functions. Zeros and poles. Decomposition as sum of single pole systems. Inversion of rational z transforms, calculation of the impulse response. System stability.</p>
+
+<p>Ideal filter: low pass, high pass, bandpass and band stop. Difference among ideal and real filters; linear phase.</p>
+
+<p>FIR filters. Different types of symmetric and antisymmetric impulse response. Filter design through windowing. Filter design through DFT. Derivative filters. A simple derivation of the matched filter and of the Wiener filter.</p>
+
+<p>IIR filters. Design of simple filters. One pole filter; resonator; notch; comb filter; integrators.</p>
+
+<p>Continuous time Systems: recall of Laplace transform. Poles and zeroes in s plane. Transformation between s and z planes: approximation of derivatives, impulse response invariance, bilinear transformation. Commonly used IIR filters: Butterworth and Chebyshev type I and type II. Combination of iir filters, transformation of low pass in high pass filter, combination of filters to obtain a band pass or band stop filter.</p>
+
+<p>&nbsp;Zero - phase filtering. Transient and step response. Parametric spectral estimate: solution of all-pole model. Whitening filter. Linear predictor. Estimation of impulse response and frequency response of a phisical linear system: use of white noise and of MLS sequence.</p>
+
 <p>Decimation and oversampling. A/D and D/A conversion revised: multirate techniques.</p></span>
 </div>
 <div class="prog_it" >
 <div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
-<span class="contenuto_programma"><p>In Italiano:</p>
-<p>Isidoro Ferrante, "<strong>Analisi dei segnali per la fisica</strong>" Pisa University Press</p>
-<p>Luise, Vitetta: "<strong>Teoria dei segnal</strong>i", Mc Graw Hill</p>
-<p>In English:</p>
-<p>Prohakis, Manolakis, <strong>Digital signal processing</strong>, Pearson</p>
+<span class="contenuto_programma"><p>In Italiano:</p>
+
+<p>Isidoro Ferrante, "<strong>Analisi dei segnali per la fisica</strong>" Pisa University Press</p>
+
+<p>Luise, Vitetta: "<strong>Teoria dei segnal</strong>i", Mc Graw Hill</p>
+
+<p>In English:</p>
+
+<p>Prohakis, Manolakis, <strong>Digital signal processing</strong>, Pearson</p>
+
 <p>Steven W. Smith,<strong> The scientist and engineer guide to Digital Signal Processing</strong>, Californina Technical Publishing.</p></span>
 </div>
 <div class="prog_en" >
 <div class="titolo-elemento-programma">Bibliography</div>
-<span class="contenuto_programma"><p>In Italiano:</p>
-<p>Isidoro Ferrante, "<strong>Analisi dei segnali per la fisica</strong>" Pisa University Press</p>
-<p>Luise, Vitetta: "<strong>Teoria dei segnal</strong>i", Mc Graw Hill</p>
-<p>In English:</p>
-<p>Prohakis, Manolakis, <strong>Digital signal processing</strong>, Pearson</p>
+<span class="contenuto_programma"><p>In Italiano:</p>
+
+<p>Isidoro Ferrante, "<strong>Analisi dei segnali per la fisica</strong>" Pisa University Press</p>
+
+<p>Luise, Vitetta: "<strong>Teoria dei segnal</strong>i", Mc Graw Hill</p>
+
+<p>In English:</p>
+
+<p>Prohakis, Manolakis, <strong>Digital signal processing</strong>, Pearson</p>
+
 <p>Steven W. Smith,<strong> The scientist and engineer guide to Digital Signal Processing</strong>, Californina Technical Publishing.</p></span>
 </div>
 <div class="prog_it" >
@@ -335,14 +381,18 @@
 </div>
 <div class="prog_it" >
 <div class="titolo-elemento-programma">Altri riferimenti web</div>
-<span class="contenuto_programma"><p><a href="http://www.dspguide.com/" target="_blank">http://www.dspguide.com/</a></p>
-<p><a href="https://octave.org/doc/v4.2.1/Signal-Processing.html">https://octave.org/doc/v4.2.1/Signal-Processing.html </a></p>
+<span class="contenuto_programma"><p><a href="http://www.dspguide.com/" target="_blank">http://www.dspguide.com/</a></p>
+
+<p><a href="https://octave.org/doc/v4.2.1/Signal-Processing.html">https://octave.org/doc/v4.2.1/Signal-Processing.html </a></p>
+
 <p><a href="https://www.scilab.org/">https://www.scilab.org/</a></p></span>
 </div>
 <div class="prog_en" >
 <div class="titolo-elemento-programma">Additional web pages</div>
-<span class="contenuto_programma"><p><a href="http://www.dspguide.com/">http://www.dspguide.com/</a></p>
-<p><a href="https://octave.org/doc/v4.2.1/Signal-Processing.html">https://octave.org/doc/v4.2.1/Signal-Processing.html</a></p>
+<span class="contenuto_programma"><p><a href="http://www.dspguide.com/">http://www.dspguide.com/</a></p>
+
+<p><a href="https://octave.org/doc/v4.2.1/Signal-Processing.html">https://octave.org/doc/v4.2.1/Signal-Processing.html</a></p>
+
 <p><a href="https://www.scilab.org/">https://www.scilab.org/</a></p></span>
 </div>
 <div style="float:right; font-style:italic;">Ultimo aggiornamento 10/09/2020 10:30</div>
@@ -397,6 +447,91 @@
 	window.onload = adjustParentHeight;
 	window.addEventListener('resize', adjustParentHeight);
 </script>
+
+<!-- ===== TABLE SORT INJECTION ===== -->
+<style>
+  /* Header con thead: cursor pointer su <th> */
+  table thead th { cursor: pointer; user-select: none; position: relative; }
+  table thead th:hover { background: rgba(0,0,0,0.05); }
+  /* Header senza thead: prima riga (label-programma) come "header" */
+  table td.label-programma { cursor: pointer; user-select: none; position: relative; }
+  table td.label-programma:hover { background: rgba(0,0,0,0.05); }
+  .sort-arrow {
+    font-size: 0.75em; margin-left: 4px; opacity: 0.7;
+    display: inline-block; vertical-align: middle;
+  }
+</style>
+<script>
+(function() {
+  var numericRe = /^-?[\d.,\s]+$/;
+  function sortRows(rows, colIdx, dir) {
+    rows.sort(function(a, b) {
+      var ca = (a.cells[colIdx] ? a.cells[colIdx].textContent : '').trim();
+      var cb = (b.cells[colIdx] ? b.cells[colIdx].textContent : '').trim();
+      var na = parseFloat(ca.replace(',', '.'));
+      var nb = parseFloat(cb.replace(',', '.'));
+      var cmp;
+      if (!isNaN(na) && !isNaN(nb) && numericRe.test(ca) && numericRe.test(cb)) {
+        cmp = na - nb;
+      } else {
+        cmp = ca.toLowerCase().localeCompare(cb.toLowerCase(), 'it');
+      }
+      return dir === 'asc' ? cmp : -cmp;
+    });
+    return rows;
+  }
+  function attachSorter(table, headerCells, getDataRows, getParent) {
+    headerCells.forEach(function(hc, colIdx) {
+      hc.addEventListener('click', function() {
+        var rows = getDataRows();
+        var dir = hc.dataset.sortDir === 'asc' ? 'desc' : 'asc';
+        headerCells.forEach(function(t) {
+          t.dataset.sortDir = '';
+          var a = t.querySelector('.sort-arrow');
+          if (a) a.remove();
+        });
+        hc.dataset.sortDir = dir;
+        var arrow = document.createElement('span');
+        arrow.className = 'sort-arrow';
+        arrow.textContent = dir === 'asc' ? '▲' : '▼';
+        hc.appendChild(arrow);
+        sortRows(rows, colIdx, dir);
+        var parent = getParent();
+        rows.forEach(function(r) { parent.appendChild(r); });
+      });
+    });
+  }
+  document.querySelectorAll('table').forEach(function(table) {
+    // Caso A: tabella con <thead><th> + <tbody>
+    var ths = table.querySelectorAll('thead th');
+    if (ths.length) {
+      var tbody = table.querySelector('tbody');
+      if (!tbody) return;
+      attachSorter(table, Array.prototype.slice.call(ths),
+        function() { return Array.prototype.slice.call(tbody.querySelectorAll('tr')); },
+        function() { return tbody; });
+      return;
+    }
+    // Caso B: tabella senza thead → prima riga con td.label-programma fa da header
+    var firstRow = table.querySelector('tr');
+    if (!firstRow) return;
+    var labels = firstRow.querySelectorAll('td.label-programma');
+    if (labels.length < 2) return;  // tabella troppo piccola o non format-programma
+    attachSorter(table, Array.prototype.slice.call(labels),
+      function() {
+        // tutte le tr eccetto la prima
+        var all = Array.prototype.slice.call(table.querySelectorAll('tr'));
+        return all.filter(function(r) { return r !== firstRow; });
+      },
+      function() {
+        // append nel parent (tbody se esiste, altrimenti table direttamente)
+        return firstRow.parentNode;
+      });
+  });
+})();
+</script>
+<!-- ===== END TABLE SORT INJECTION ===== -->
+
 </body>
 </html>
 <script>

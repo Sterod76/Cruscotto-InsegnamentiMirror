@@ -194,25 +194,40 @@
 </div>
 <div class="prog_en sub-item-programma">
 <div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
-<span class="contenuto_programma">The student who successfully completes the course will have the ability to:
-- perform simple measurements related to mechanics
-- perform simple measurements related to geometrical optics
-- estimate uncertainty associated with the measurements
-- use the computer to plot and analyze data
-- correctly apply statistical tools to perform data analysis
-- evaluate the confidence level of the measurements performed, including errors, according to basic statistical parameters
+<span class="contenuto_programma">The student who successfully completes the course will have the ability to:
+
+- perform simple measurements related to mechanics
+
+- perform simple measurements related to geometrical optics
+
+- estimate uncertainty associated with the measurements
+
+- use the computer to plot and analyze data
+
+- correctly apply statistical tools to perform data analysis
+
+- evaluate the confidence level of the measurements performed, including errors, according to basic statistical parameters
+
 - test the compatibility between the measurements and the hypothesized physical law (Chi-squared test).</span>
 </div>
 <div class="prog_en sub-item-programma">
 <div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
-<span class="contenuto_programma">The student must demonstrate the ability to put into practice and to execute, with critical awareness, the activities illustrated or carried out under the guidance of the teacher during the course.
-
-
-
-<p>Methods:<ul><li>Final oral exam</li><li>Laboratory report</li><li>Laboratory practical</li></ul></p><p>Further information:<br>The exam consists of both a lab practice with written report and a final oral exam.
-
-
-
+<span class="contenuto_programma">The student must demonstrate the ability to put into practice and to execute, with critical awareness, the activities illustrated or carried out under the guidance of the teacher during the course.
+
+
+
+
+
+
+
+<p>Methods:<ul><li>Final oral exam</li><li>Laboratory report</li><li>Laboratory practical</li></ul></p><p>Further information:<br>The exam consists of both a lab practice with written report and a final oral exam.
+
+
+
+
+
+
+
 </p></span>
 </div>
 <div class="prog_en" >
@@ -221,12 +236,18 @@
 </div>
 <div class="prog_en" >
 <div class="titolo-elemento-programma">Syllabus</div>
-<span class="contenuto_programma">- Measurements, units, errors
-- Data reduction and representation: tables, graphs, scatter plots
-- Elementary probability theory, discrete and continuous distributions, expected value, variance and rms
-- Elementary statistical theory, estimation of parameters
-- Parameter fit, least squares, maximum likelihood
-- The Central Limit Theorem
+<span class="contenuto_programma">- Measurements, units, errors
+
+- Data reduction and representation: tables, graphs, scatter plots
+
+- Elementary probability theory, discrete and continuous distributions, expected value, variance and rms
+
+- Elementary statistical theory, estimation of parameters
+
+- Parameter fit, least squares, maximum likelihood
+
+- The Central Limit Theorem
+
 - Experiments performed during the Course: density of bodies; simple, damped, forced, coupled pendulums; inclined plane; moment of inertia; thermal conductivity; focal length of lenses; index of refraction of plexiglass and water.</span>
 </div>
 <div class="prog_en" >
@@ -285,6 +306,91 @@
 	window.onload = adjustParentHeight;
 	window.addEventListener('resize', adjustParentHeight);
 </script>
+
+<!-- ===== TABLE SORT INJECTION ===== -->
+<style>
+  /* Header con thead: cursor pointer su <th> */
+  table thead th { cursor: pointer; user-select: none; position: relative; }
+  table thead th:hover { background: rgba(0,0,0,0.05); }
+  /* Header senza thead: prima riga (label-programma) come "header" */
+  table td.label-programma { cursor: pointer; user-select: none; position: relative; }
+  table td.label-programma:hover { background: rgba(0,0,0,0.05); }
+  .sort-arrow {
+    font-size: 0.75em; margin-left: 4px; opacity: 0.7;
+    display: inline-block; vertical-align: middle;
+  }
+</style>
+<script>
+(function() {
+  var numericRe = /^-?[\d.,\s]+$/;
+  function sortRows(rows, colIdx, dir) {
+    rows.sort(function(a, b) {
+      var ca = (a.cells[colIdx] ? a.cells[colIdx].textContent : '').trim();
+      var cb = (b.cells[colIdx] ? b.cells[colIdx].textContent : '').trim();
+      var na = parseFloat(ca.replace(',', '.'));
+      var nb = parseFloat(cb.replace(',', '.'));
+      var cmp;
+      if (!isNaN(na) && !isNaN(nb) && numericRe.test(ca) && numericRe.test(cb)) {
+        cmp = na - nb;
+      } else {
+        cmp = ca.toLowerCase().localeCompare(cb.toLowerCase(), 'it');
+      }
+      return dir === 'asc' ? cmp : -cmp;
+    });
+    return rows;
+  }
+  function attachSorter(table, headerCells, getDataRows, getParent) {
+    headerCells.forEach(function(hc, colIdx) {
+      hc.addEventListener('click', function() {
+        var rows = getDataRows();
+        var dir = hc.dataset.sortDir === 'asc' ? 'desc' : 'asc';
+        headerCells.forEach(function(t) {
+          t.dataset.sortDir = '';
+          var a = t.querySelector('.sort-arrow');
+          if (a) a.remove();
+        });
+        hc.dataset.sortDir = dir;
+        var arrow = document.createElement('span');
+        arrow.className = 'sort-arrow';
+        arrow.textContent = dir === 'asc' ? '▲' : '▼';
+        hc.appendChild(arrow);
+        sortRows(rows, colIdx, dir);
+        var parent = getParent();
+        rows.forEach(function(r) { parent.appendChild(r); });
+      });
+    });
+  }
+  document.querySelectorAll('table').forEach(function(table) {
+    // Caso A: tabella con <thead><th> + <tbody>
+    var ths = table.querySelectorAll('thead th');
+    if (ths.length) {
+      var tbody = table.querySelector('tbody');
+      if (!tbody) return;
+      attachSorter(table, Array.prototype.slice.call(ths),
+        function() { return Array.prototype.slice.call(tbody.querySelectorAll('tr')); },
+        function() { return tbody; });
+      return;
+    }
+    // Caso B: tabella senza thead → prima riga con td.label-programma fa da header
+    var firstRow = table.querySelector('tr');
+    if (!firstRow) return;
+    var labels = firstRow.querySelectorAll('td.label-programma');
+    if (labels.length < 2) return;  // tabella troppo piccola o non format-programma
+    attachSorter(table, Array.prototype.slice.call(labels),
+      function() {
+        // tutte le tr eccetto la prima
+        var all = Array.prototype.slice.call(table.querySelectorAll('tr'));
+        return all.filter(function(r) { return r !== firstRow; });
+      },
+      function() {
+        // append nel parent (tbody se esiste, altrimenti table direttamente)
+        return firstRow.parentNode;
+      });
+  });
+})();
+</script>
+<!-- ===== END TABLE SORT INJECTION ===== -->
+
 </body>
 </html>
 <script>

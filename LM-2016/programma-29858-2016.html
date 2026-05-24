@@ -193,19 +193,28 @@
 </div>
 <div class="prog_en sub-item-programma">
 <div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
-<span class="contenuto_programma">The student who successfully completes the course will be able to demonstrate a basic knowledge in Particle Physics.
-He will have the tools to understand the experimental approach to the data analysis of a modern high energy experiment. 
+<span class="contenuto_programma">The student who successfully completes the course will be able to demonstrate a basic knowledge in Particle Physics.
+
+He will have the tools to understand the experimental approach to the data analysis of a modern high energy experiment. 
+
 He will be able to afford the preparation of a good thesis of Laurea Magistrale in Physics.</span>
 </div>
 <div class="prog_en sub-item-programma">
 <div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
-<span class="contenuto_programma">The student should demonstrate to be able to calculate in detail one simple process.
-He should prove the basic understanding of fundamental properties of particles.
-The oral examination is usually lasting 1 Hour to 1 Hour and 1/2.
-The capability of clear presentation with precise language  is highly appreciated,
-together with possible critical comments to  some experiments. 
-<p>Methods:<ul><li>Final oral exam</li></ul></p><p>Further information:<br>The student is  asked to evaluate the cross section or decay widths for a given process.The  discussion of  a possible measurement and the experimental features are  required.
-The discoveries of some important properties of  are also discussed.
+<span class="contenuto_programma">The student should demonstrate to be able to calculate in detail one simple process.
+
+He should prove the basic understanding of fundamental properties of particles.
+
+The oral examination is usually lasting 1 Hour to 1 Hour and 1/2.
+
+The capability of clear presentation with precise language  is highly appreciated,
+
+together with possible critical comments to  some experiments. 
+
+<p>Methods:<ul><li>Final oral exam</li></ul></p><p>Further information:<br>The student is  asked to evaluate the cross section or decay widths for a given process.The  discussion of  a possible measurement and the experimental features are  required.
+
+The discoveries of some important properties of  are also discussed.
+
 </p></span>
 </div>
 <div class="prog_en" >
@@ -214,18 +223,26 @@ The discoveries of some important properties of  are also discussed.
 </div>
 <div class="prog_en" >
 <div class="titolo-elemento-programma">Syllabus</div>
-<span class="contenuto_programma">Study of fundamental processes in QED. Form factors and Deep Inelastic scattering : phenomenology and experiments. The experimental basis of quark parton model.
-Beta decays and basic of weak interaction. Weak decays a la Fermi. Discrete Symmetries and symmetry violation. 
-Introduction of Standard Model, test and measurement of the Standard Model parameters.
+<span class="contenuto_programma">Study of fundamental processes in QED. Form factors and Deep Inelastic scattering : phenomenology and experiments. The experimental basis of quark parton model.
+
+Beta decays and basic of weak interaction. Weak decays a la Fermi. Discrete Symmetries and symmetry violation. 
+
+Introduction of Standard Model, test and measurement of the Standard Model parameters.
+
 Measurement of CKM parameters.</span>
 </div>
 <div class="prog_en" >
 <div class="titolo-elemento-programma">Bibliography</div>
-<span class="contenuto_programma">A.Bettini- Introduction to Elementary Particle Physics.
-F.Halzen & A.d. Martin  - Quarks and Leptons. Introductory Course in Modern Particle Physics.
- Copies of original papers containing  some important experimental measurements,  are supplied  by the Teacher.
- Copy of M.A.G. report on CP Violation is also supplied.
-Reading and referring to some part of
+<span class="contenuto_programma">A.Bettini- Introduction to Elementary Particle Physics.
+
+F.Halzen & A.d. Martin  - Quarks and Leptons. Introductory Course in Modern Particle Physics.
+
+ Copies of original papers containing  some important experimental measurements,  are supplied  by the Teacher.
+
+ Copy of M.A.G. report on CP Violation is also supplied.
+
+Reading and referring to some part of
+
  I.J.R. Aitchison & A.J.G. Hey - Gauge Theories in Particle Physics is advised.</span>
 </div>
 <div style="float:right; font-style:italic;">Ultimo aggiornamento 14/11/2016 17:27</div>
@@ -280,6 +297,91 @@ Reading and referring to some part of
 	window.onload = adjustParentHeight;
 	window.addEventListener('resize', adjustParentHeight);
 </script>
+
+<!-- ===== TABLE SORT INJECTION ===== -->
+<style>
+  /* Header con thead: cursor pointer su <th> */
+  table thead th { cursor: pointer; user-select: none; position: relative; }
+  table thead th:hover { background: rgba(0,0,0,0.05); }
+  /* Header senza thead: prima riga (label-programma) come "header" */
+  table td.label-programma { cursor: pointer; user-select: none; position: relative; }
+  table td.label-programma:hover { background: rgba(0,0,0,0.05); }
+  .sort-arrow {
+    font-size: 0.75em; margin-left: 4px; opacity: 0.7;
+    display: inline-block; vertical-align: middle;
+  }
+</style>
+<script>
+(function() {
+  var numericRe = /^-?[\d.,\s]+$/;
+  function sortRows(rows, colIdx, dir) {
+    rows.sort(function(a, b) {
+      var ca = (a.cells[colIdx] ? a.cells[colIdx].textContent : '').trim();
+      var cb = (b.cells[colIdx] ? b.cells[colIdx].textContent : '').trim();
+      var na = parseFloat(ca.replace(',', '.'));
+      var nb = parseFloat(cb.replace(',', '.'));
+      var cmp;
+      if (!isNaN(na) && !isNaN(nb) && numericRe.test(ca) && numericRe.test(cb)) {
+        cmp = na - nb;
+      } else {
+        cmp = ca.toLowerCase().localeCompare(cb.toLowerCase(), 'it');
+      }
+      return dir === 'asc' ? cmp : -cmp;
+    });
+    return rows;
+  }
+  function attachSorter(table, headerCells, getDataRows, getParent) {
+    headerCells.forEach(function(hc, colIdx) {
+      hc.addEventListener('click', function() {
+        var rows = getDataRows();
+        var dir = hc.dataset.sortDir === 'asc' ? 'desc' : 'asc';
+        headerCells.forEach(function(t) {
+          t.dataset.sortDir = '';
+          var a = t.querySelector('.sort-arrow');
+          if (a) a.remove();
+        });
+        hc.dataset.sortDir = dir;
+        var arrow = document.createElement('span');
+        arrow.className = 'sort-arrow';
+        arrow.textContent = dir === 'asc' ? '▲' : '▼';
+        hc.appendChild(arrow);
+        sortRows(rows, colIdx, dir);
+        var parent = getParent();
+        rows.forEach(function(r) { parent.appendChild(r); });
+      });
+    });
+  }
+  document.querySelectorAll('table').forEach(function(table) {
+    // Caso A: tabella con <thead><th> + <tbody>
+    var ths = table.querySelectorAll('thead th');
+    if (ths.length) {
+      var tbody = table.querySelector('tbody');
+      if (!tbody) return;
+      attachSorter(table, Array.prototype.slice.call(ths),
+        function() { return Array.prototype.slice.call(tbody.querySelectorAll('tr')); },
+        function() { return tbody; });
+      return;
+    }
+    // Caso B: tabella senza thead → prima riga con td.label-programma fa da header
+    var firstRow = table.querySelector('tr');
+    if (!firstRow) return;
+    var labels = firstRow.querySelectorAll('td.label-programma');
+    if (labels.length < 2) return;  // tabella troppo piccola o non format-programma
+    attachSorter(table, Array.prototype.slice.call(labels),
+      function() {
+        // tutte le tr eccetto la prima
+        var all = Array.prototype.slice.call(table.querySelectorAll('tr'));
+        return all.filter(function(r) { return r !== firstRow; });
+      },
+      function() {
+        // append nel parent (tbody se esiste, altrimenti table direttamente)
+        return firstRow.parentNode;
+      });
+  });
+})();
+</script>
+<!-- ===== END TABLE SORT INJECTION ===== -->
+
 </body>
 </html>
 <script>

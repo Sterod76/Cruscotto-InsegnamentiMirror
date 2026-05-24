@@ -197,11 +197,16 @@
 </div>
 <div class="prog_en sub-item-programma">
 <div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
-<span class="contenuto_programma">The student must be able to demonstrate his/her knowledge of the course material and the ability of solving related exercises or problems.
-
-
-
-
+<span class="contenuto_programma">The student must be able to demonstrate his/her knowledge of the course material and the ability of solving related exercises or problems.
+
+
+
+
+
+
+
+
+
 <p>Methods:<ul><li>Final oral exam</li></ul></p></span>
 </div>
 <div class="prog_en" >
@@ -210,23 +215,36 @@
 </div>
 <div class="prog_en" >
 <div class="titolo-elemento-programma">Syllabus</div>
-<span class="contenuto_programma">Jordan canonical form (in particular over the complex and real fields);
-Duality and basic isomorphisms induced by a non degenerate scalar product.
-The Hermitian spectral tehorem for normal operators.
+<span class="contenuto_programma">Jordan canonical form (in particular over the complex and real fields);
+
+Duality and basic isomorphisms induced by a non degenerate scalar product.
+
+The Hermitian spectral tehorem for normal operators.
+
 Witt's thory. Fundamental results on the representation theory of finite groups.</span>
 </div>
 <div class="prog_en" >
 <div class="titolo-elemento-programma">Bibliography</div>
-<span class="contenuto_programma">There are not required reading and the course will not follow any specific text.
-The following (among many others) are useful books:
-
-M. Nacinovich, Elementi di geometria analitica, Liguori 1996
-
-S. Lang, Algebra lineare, Bollati-Boringhieri
-
-C. Ciliberto, Algebra lineare, Bollati-Boringhieri
-
-J-P. Serre, Linear Representations of Finite Groups, Graduate Texts in Mathemat-
+<span class="contenuto_programma">There are not required reading and the course will not follow any specific text.
+
+The following (among many others) are useful books:
+
+
+
+M. Nacinovich, Elementi di geometria analitica, Liguori 1996
+
+
+
+S. Lang, Algebra lineare, Bollati-Boringhieri
+
+
+
+C. Ciliberto, Algebra lineare, Bollati-Boringhieri
+
+
+
+J-P. Serre, Linear Representations of Finite Groups, Graduate Texts in Mathemat-
+
 ics, 42. New YorkHeidelberg: Springer-Verlag 1977.</span>
 </div>
 <div style="float:right; font-style:italic;">Ultimo aggiornamento 14/11/2016 17:27</div>
@@ -281,6 +299,91 @@ ics, 42. New YorkHeidelberg: Springer-Verlag 1977.</span>
 	window.onload = adjustParentHeight;
 	window.addEventListener('resize', adjustParentHeight);
 </script>
+
+<!-- ===== TABLE SORT INJECTION ===== -->
+<style>
+  /* Header con thead: cursor pointer su <th> */
+  table thead th { cursor: pointer; user-select: none; position: relative; }
+  table thead th:hover { background: rgba(0,0,0,0.05); }
+  /* Header senza thead: prima riga (label-programma) come "header" */
+  table td.label-programma { cursor: pointer; user-select: none; position: relative; }
+  table td.label-programma:hover { background: rgba(0,0,0,0.05); }
+  .sort-arrow {
+    font-size: 0.75em; margin-left: 4px; opacity: 0.7;
+    display: inline-block; vertical-align: middle;
+  }
+</style>
+<script>
+(function() {
+  var numericRe = /^-?[\d.,\s]+$/;
+  function sortRows(rows, colIdx, dir) {
+    rows.sort(function(a, b) {
+      var ca = (a.cells[colIdx] ? a.cells[colIdx].textContent : '').trim();
+      var cb = (b.cells[colIdx] ? b.cells[colIdx].textContent : '').trim();
+      var na = parseFloat(ca.replace(',', '.'));
+      var nb = parseFloat(cb.replace(',', '.'));
+      var cmp;
+      if (!isNaN(na) && !isNaN(nb) && numericRe.test(ca) && numericRe.test(cb)) {
+        cmp = na - nb;
+      } else {
+        cmp = ca.toLowerCase().localeCompare(cb.toLowerCase(), 'it');
+      }
+      return dir === 'asc' ? cmp : -cmp;
+    });
+    return rows;
+  }
+  function attachSorter(table, headerCells, getDataRows, getParent) {
+    headerCells.forEach(function(hc, colIdx) {
+      hc.addEventListener('click', function() {
+        var rows = getDataRows();
+        var dir = hc.dataset.sortDir === 'asc' ? 'desc' : 'asc';
+        headerCells.forEach(function(t) {
+          t.dataset.sortDir = '';
+          var a = t.querySelector('.sort-arrow');
+          if (a) a.remove();
+        });
+        hc.dataset.sortDir = dir;
+        var arrow = document.createElement('span');
+        arrow.className = 'sort-arrow';
+        arrow.textContent = dir === 'asc' ? '▲' : '▼';
+        hc.appendChild(arrow);
+        sortRows(rows, colIdx, dir);
+        var parent = getParent();
+        rows.forEach(function(r) { parent.appendChild(r); });
+      });
+    });
+  }
+  document.querySelectorAll('table').forEach(function(table) {
+    // Caso A: tabella con <thead><th> + <tbody>
+    var ths = table.querySelectorAll('thead th');
+    if (ths.length) {
+      var tbody = table.querySelector('tbody');
+      if (!tbody) return;
+      attachSorter(table, Array.prototype.slice.call(ths),
+        function() { return Array.prototype.slice.call(tbody.querySelectorAll('tr')); },
+        function() { return tbody; });
+      return;
+    }
+    // Caso B: tabella senza thead → prima riga con td.label-programma fa da header
+    var firstRow = table.querySelector('tr');
+    if (!firstRow) return;
+    var labels = firstRow.querySelectorAll('td.label-programma');
+    if (labels.length < 2) return;  // tabella troppo piccola o non format-programma
+    attachSorter(table, Array.prototype.slice.call(labels),
+      function() {
+        // tutte le tr eccetto la prima
+        var all = Array.prototype.slice.call(table.querySelectorAll('tr'));
+        return all.filter(function(r) { return r !== firstRow; });
+      },
+      function() {
+        // append nel parent (tbody se esiste, altrimenti table direttamente)
+        return firstRow.parentNode;
+      });
+  });
+})();
+</script>
+<!-- ===== END TABLE SORT INJECTION ===== -->
+
 </body>
 </html>
 <script>

@@ -197,9 +197,12 @@
 </div>
 <div class="prog_en sub-item-programma">
 <div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
-<span class="contenuto_programma">The student is tested on his/her ability of exposing a topic, first. His/her capability of going through the topic, of understanding the details and the basic physics underlying given phenomena is also ascertained, beyond the knowledge of the topic itself.
-His/her capability of making connections with other topics treated in the course or with topics considered to be in the background of a student at this stage of his studies, is also checked. The student must demonstrate his/her capability of rationally deducing consequences from given facts, and of critically addressing the topics. Finally, the capability of making his/her own bibliographic research is also appreciated.<p>Methods:<ul><li>Final oral exam</li></ul></p><p>Further information:<br>The final exam is oral. Students have two options 1. they are interviewed directly on the whole program of the course or 2. Students are suggested to focus on a specific topic, by (autonomously or with the teacher help) searching bibliography on it and writing a very short report. The exam starts with the oral presentation of the topic (5-7 mins), and then the candidate is interviewed on other topics of the course. 
-The student is completely free to choose among the two options, although up to now everyone has chosen option 2. In any case, the knowledge of the whole program is tested and the written report is not considered in the final evaluation.
+<span class="contenuto_programma">The student is tested on his/her ability of exposing a topic, first. His/her capability of going through the topic, of understanding the details and the basic physics underlying given phenomena is also ascertained, beyond the knowledge of the topic itself.
+
+His/her capability of making connections with other topics treated in the course or with topics considered to be in the background of a student at this stage of his studies, is also checked. The student must demonstrate his/her capability of rationally deducing consequences from given facts, and of critically addressing the topics. Finally, the capability of making his/her own bibliographic research is also appreciated.<p>Methods:<ul><li>Final oral exam</li></ul></p><p>Further information:<br>The final exam is oral. Students have two options 1. they are interviewed directly on the whole program of the course or 2. Students are suggested to focus on a specific topic, by (autonomously or with the teacher help) searching bibliography on it and writing a very short report. The exam starts with the oral presentation of the topic (5-7 mins), and then the candidate is interviewed on other topics of the course. 
+
+The student is completely free to choose among the two options, although up to now everyone has chosen option 2. In any case, the knowledge of the whole program is tested and the written report is not considered in the final evaluation.
+
 </p></span>
 </div>
 <div class="prog_en" >
@@ -208,13 +211,20 @@ The student is completely free to choose among the two options, although up to n
 </div>
 <div class="prog_en" >
 <div class="titolo-elemento-programma">Syllabus</div>
-<span class="contenuto_programma">Biochemistry (basic);
-Cell biology (basic), an introduction to tissue biology;
-Techniques for the determination of biomolecules structure (X-ray crystallography, NMR, electron microscopy);
-Optical and near optical spectroscopic techniques for biomolecules (UV, IR, Raman);
-Techniques based on fluorescence microscopy and spectroscopy for sub cellular and mulecular imaging and analysis;
-Modeling and computer simulation techniques for biomolecules;
-Meso-scopic biophysics (analysis and modeling of the transmission of signals in nerves);
+<span class="contenuto_programma">Biochemistry (basic);
+
+Cell biology (basic), an introduction to tissue biology;
+
+Techniques for the determination of biomolecules structure (X-ray crystallography, NMR, electron microscopy);
+
+Optical and near optical spectroscopic techniques for biomolecules (UV, IR, Raman);
+
+Techniques based on fluorescence microscopy and spectroscopy for sub cellular and mulecular imaging and analysis;
+
+Modeling and computer simulation techniques for biomolecules;
+
+Meso-scopic biophysics (analysis and modeling of the transmission of signals in nerves);
+
 Recent bio-medical applications.</span>
 </div>
 <div class="prog_en" >
@@ -273,6 +283,91 @@ Recent bio-medical applications.</span>
 	window.onload = adjustParentHeight;
 	window.addEventListener('resize', adjustParentHeight);
 </script>
+
+<!-- ===== TABLE SORT INJECTION ===== -->
+<style>
+  /* Header con thead: cursor pointer su <th> */
+  table thead th { cursor: pointer; user-select: none; position: relative; }
+  table thead th:hover { background: rgba(0,0,0,0.05); }
+  /* Header senza thead: prima riga (label-programma) come "header" */
+  table td.label-programma { cursor: pointer; user-select: none; position: relative; }
+  table td.label-programma:hover { background: rgba(0,0,0,0.05); }
+  .sort-arrow {
+    font-size: 0.75em; margin-left: 4px; opacity: 0.7;
+    display: inline-block; vertical-align: middle;
+  }
+</style>
+<script>
+(function() {
+  var numericRe = /^-?[\d.,\s]+$/;
+  function sortRows(rows, colIdx, dir) {
+    rows.sort(function(a, b) {
+      var ca = (a.cells[colIdx] ? a.cells[colIdx].textContent : '').trim();
+      var cb = (b.cells[colIdx] ? b.cells[colIdx].textContent : '').trim();
+      var na = parseFloat(ca.replace(',', '.'));
+      var nb = parseFloat(cb.replace(',', '.'));
+      var cmp;
+      if (!isNaN(na) && !isNaN(nb) && numericRe.test(ca) && numericRe.test(cb)) {
+        cmp = na - nb;
+      } else {
+        cmp = ca.toLowerCase().localeCompare(cb.toLowerCase(), 'it');
+      }
+      return dir === 'asc' ? cmp : -cmp;
+    });
+    return rows;
+  }
+  function attachSorter(table, headerCells, getDataRows, getParent) {
+    headerCells.forEach(function(hc, colIdx) {
+      hc.addEventListener('click', function() {
+        var rows = getDataRows();
+        var dir = hc.dataset.sortDir === 'asc' ? 'desc' : 'asc';
+        headerCells.forEach(function(t) {
+          t.dataset.sortDir = '';
+          var a = t.querySelector('.sort-arrow');
+          if (a) a.remove();
+        });
+        hc.dataset.sortDir = dir;
+        var arrow = document.createElement('span');
+        arrow.className = 'sort-arrow';
+        arrow.textContent = dir === 'asc' ? '▲' : '▼';
+        hc.appendChild(arrow);
+        sortRows(rows, colIdx, dir);
+        var parent = getParent();
+        rows.forEach(function(r) { parent.appendChild(r); });
+      });
+    });
+  }
+  document.querySelectorAll('table').forEach(function(table) {
+    // Caso A: tabella con <thead><th> + <tbody>
+    var ths = table.querySelectorAll('thead th');
+    if (ths.length) {
+      var tbody = table.querySelector('tbody');
+      if (!tbody) return;
+      attachSorter(table, Array.prototype.slice.call(ths),
+        function() { return Array.prototype.slice.call(tbody.querySelectorAll('tr')); },
+        function() { return tbody; });
+      return;
+    }
+    // Caso B: tabella senza thead → prima riga con td.label-programma fa da header
+    var firstRow = table.querySelector('tr');
+    if (!firstRow) return;
+    var labels = firstRow.querySelectorAll('td.label-programma');
+    if (labels.length < 2) return;  // tabella troppo piccola o non format-programma
+    attachSorter(table, Array.prototype.slice.call(labels),
+      function() {
+        // tutte le tr eccetto la prima
+        var all = Array.prototype.slice.call(table.querySelectorAll('tr'));
+        return all.filter(function(r) { return r !== firstRow; });
+      },
+      function() {
+        // append nel parent (tbody se esiste, altrimenti table direttamente)
+        return firstRow.parentNode;
+      });
+  });
+})();
+</script>
+<!-- ===== END TABLE SORT INJECTION ===== -->
+
 </body>
 </html>
 <script>

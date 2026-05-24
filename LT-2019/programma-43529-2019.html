@@ -221,18 +221,26 @@
 </div>
 <div class="prog_it" >
 <div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
-<span class="contenuto_programma"><p>Introduzione alle funzioni di Green in diversi contesti.</p>
-<p>Teoria formale dello scattering. Scattering da potenziale.</p>
-<p>Approssimazione di piccole lunghezze d'onda, metodo di Glauber, metodo WKB, approssimazione di Born. Invarianze della matrice S.</p>
-<p>Problema del decadimento di stati metastabili. Scattering a bassa energia, risonanze.</p>
+<span class="contenuto_programma"><p>Introduzione alle funzioni di Green in diversi contesti.</p>
+
+<p>Teoria formale dello scattering. Scattering da potenziale.</p>
+
+<p>Approssimazione di piccole lunghezze d'onda, metodo di Glauber, metodo WKB, approssimazione di Born. Invarianze della matrice S.</p>
+
+<p>Problema del decadimento di stati metastabili. Scattering a bassa energia, risonanze.</p>
+
 <p>Introduzione alla trattazione quantistica della interazione luce-materia.</p></span>
 </div>
 <div class="prog_it" >
 <div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
-<span class="contenuto_programma"><p>Dispense distribuite durante il corso.</p>
-<p>L.D.Landau-E.M.Lifsits, Meccanica Quantistica, teoria non relativistica. Editori Runiti.</p>
-<p>R.G.Newton, Scattering Theory of Waves and Fields, Dover Publications.</p>
-<p>J.R.Taylor, Scattering Theory, John Wiley &amp; Sons.</p>
+<span class="contenuto_programma"><p>Dispense distribuite durante il corso.</p>
+
+<p>L.D.Landau-E.M.Lifsits, Meccanica Quantistica, teoria non relativistica. Editori Runiti.</p>
+
+<p>R.G.Newton, Scattering Theory of Waves and Fields, Dover Publications.</p>
+
+<p>J.R.Taylor, Scattering Theory, John Wiley &amp; Sons.</p>
+
 <p>C.Cohen-Tannoudji, J.Dupont-Roc,G.Grynberg, Atom-Photon Interactions, Wiley.</p></span>
 </div>
 <div class="prog_it" >
@@ -295,6 +303,91 @@
 	window.onload = adjustParentHeight;
 	window.addEventListener('resize', adjustParentHeight);
 </script>
+
+<!-- ===== TABLE SORT INJECTION ===== -->
+<style>
+  /* Header con thead: cursor pointer su <th> */
+  table thead th { cursor: pointer; user-select: none; position: relative; }
+  table thead th:hover { background: rgba(0,0,0,0.05); }
+  /* Header senza thead: prima riga (label-programma) come "header" */
+  table td.label-programma { cursor: pointer; user-select: none; position: relative; }
+  table td.label-programma:hover { background: rgba(0,0,0,0.05); }
+  .sort-arrow {
+    font-size: 0.75em; margin-left: 4px; opacity: 0.7;
+    display: inline-block; vertical-align: middle;
+  }
+</style>
+<script>
+(function() {
+  var numericRe = /^-?[\d.,\s]+$/;
+  function sortRows(rows, colIdx, dir) {
+    rows.sort(function(a, b) {
+      var ca = (a.cells[colIdx] ? a.cells[colIdx].textContent : '').trim();
+      var cb = (b.cells[colIdx] ? b.cells[colIdx].textContent : '').trim();
+      var na = parseFloat(ca.replace(',', '.'));
+      var nb = parseFloat(cb.replace(',', '.'));
+      var cmp;
+      if (!isNaN(na) && !isNaN(nb) && numericRe.test(ca) && numericRe.test(cb)) {
+        cmp = na - nb;
+      } else {
+        cmp = ca.toLowerCase().localeCompare(cb.toLowerCase(), 'it');
+      }
+      return dir === 'asc' ? cmp : -cmp;
+    });
+    return rows;
+  }
+  function attachSorter(table, headerCells, getDataRows, getParent) {
+    headerCells.forEach(function(hc, colIdx) {
+      hc.addEventListener('click', function() {
+        var rows = getDataRows();
+        var dir = hc.dataset.sortDir === 'asc' ? 'desc' : 'asc';
+        headerCells.forEach(function(t) {
+          t.dataset.sortDir = '';
+          var a = t.querySelector('.sort-arrow');
+          if (a) a.remove();
+        });
+        hc.dataset.sortDir = dir;
+        var arrow = document.createElement('span');
+        arrow.className = 'sort-arrow';
+        arrow.textContent = dir === 'asc' ? '▲' : '▼';
+        hc.appendChild(arrow);
+        sortRows(rows, colIdx, dir);
+        var parent = getParent();
+        rows.forEach(function(r) { parent.appendChild(r); });
+      });
+    });
+  }
+  document.querySelectorAll('table').forEach(function(table) {
+    // Caso A: tabella con <thead><th> + <tbody>
+    var ths = table.querySelectorAll('thead th');
+    if (ths.length) {
+      var tbody = table.querySelector('tbody');
+      if (!tbody) return;
+      attachSorter(table, Array.prototype.slice.call(ths),
+        function() { return Array.prototype.slice.call(tbody.querySelectorAll('tr')); },
+        function() { return tbody; });
+      return;
+    }
+    // Caso B: tabella senza thead → prima riga con td.label-programma fa da header
+    var firstRow = table.querySelector('tr');
+    if (!firstRow) return;
+    var labels = firstRow.querySelectorAll('td.label-programma');
+    if (labels.length < 2) return;  // tabella troppo piccola o non format-programma
+    attachSorter(table, Array.prototype.slice.call(labels),
+      function() {
+        // tutte le tr eccetto la prima
+        var all = Array.prototype.slice.call(table.querySelectorAll('tr'));
+        return all.filter(function(r) { return r !== firstRow; });
+      },
+      function() {
+        // append nel parent (tbody se esiste, altrimenti table direttamente)
+        return firstRow.parentNode;
+      });
+  });
+})();
+</script>
+<!-- ===== END TABLE SORT INJECTION ===== -->
+
 </body>
 </html>
 <script>
