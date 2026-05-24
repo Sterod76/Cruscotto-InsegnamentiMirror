@@ -358,6 +358,59 @@
 	window.onload = adjustParentHeight;
 	window.addEventListener('resize', adjustParentHeight);
 </script>
+
+<!-- ===== TABLE SORT INJECTION ===== -->
+<style>
+  table thead th { cursor: pointer; user-select: none; position: relative; }
+  table thead th:hover { background: rgba(0,0,0,0.05); }
+  table thead th .sort-arrow {
+    font-size: 0.75em; margin-left: 4px; opacity: 0.7;
+    display: inline-block; vertical-align: middle;
+  }
+</style>
+<script>
+(function() {
+  document.querySelectorAll('table').forEach(function(table) {
+    var ths = table.querySelectorAll('thead th');
+    if (!ths.length) return;
+    var tbody = table.querySelector('tbody');
+    if (!tbody) return;
+    ths.forEach(function(th, colIdx) {
+      th.addEventListener('click', function() {
+        var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr'));
+        var dir = th.dataset.sortDir === 'asc' ? 'desc' : 'asc';
+        ths.forEach(function(t) {
+          t.dataset.sortDir = '';
+          var a = t.querySelector('.sort-arrow');
+          if (a) a.remove();
+        });
+        th.dataset.sortDir = dir;
+        var arrow = document.createElement('span');
+        arrow.className = 'sort-arrow';
+        arrow.textContent = dir === 'asc' ? '▲' : '▼';
+        th.appendChild(arrow);
+        var numericRe = /^-?[\d.,\s]+$/;
+        rows.sort(function(a, b) {
+          var ca = (a.cells[colIdx] ? a.cells[colIdx].textContent : '').trim();
+          var cb = (b.cells[colIdx] ? b.cells[colIdx].textContent : '').trim();
+          var na = parseFloat(ca.replace(',', '.'));
+          var nb = parseFloat(cb.replace(',', '.'));
+          var cmp;
+          if (!isNaN(na) && !isNaN(nb) && numericRe.test(ca) && numericRe.test(cb)) {
+            cmp = na - nb;
+          } else {
+            cmp = ca.toLowerCase().localeCompare(cb.toLowerCase(), 'it');
+          }
+          return dir === 'asc' ? cmp : -cmp;
+        });
+        rows.forEach(function(r) { tbody.appendChild(r); });
+      });
+    });
+  });
+})();
+</script>
+<!-- ===== END TABLE SORT INJECTION ===== -->
+
 </body>
 </html>
 <script>
