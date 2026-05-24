@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-dc764708.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5d307d3a.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-b777fb69.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-adef06ea.css" rel="stylesheet">
+		<link href="../_assets/style_v1-429eb70e.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-32df6655.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7c4d2527.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-57b8ccba.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-8e6319ba.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/esami2/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/esami2/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/esami2/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/esami2/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/esami2/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/esami2/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/esami2/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/esami2/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esami2/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/esami2/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/esami2/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/esami2/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/esami2/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/esami2/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/esami2/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/esami2/index.php">Home</a></li><li><a href="https://esami.unipi.it/esami2/programmi_insegnamenti.php?aa=2019&cid=1&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">DOSIMETRY / DOSIMETRIA</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">MARIA GIUSEPPINA BISOGNI</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2019/20</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">198BB</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">6</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Secondo semestre</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>DOSIMETRIA</TD><TD class='value-programma'>FIS/07</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>36</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>MARIA GIUSEPPINA BISOGNI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=4252' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/esami2/pdfProgCorsoStu.php?language=it&c=44313" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_en alert alert-warning">Programma non disponibile nella lingua selezionata</div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma"></div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p>Il corso di dosimetria&nbsp;&nbsp;presenta una introduzione alla dosimetria delle radiazioni ionizzanti. In esso vengono illustrati concetti quali l&rsquo;equilibrio di radiazione, l&rsquo;equilibrio delle particelle cariche, il teorema di reciprocit&agrave; e la teoria delle cavit&agrave; applicata a semplici calcoli di dose.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><ul>
+<li>Per l'accertamento delle conoscenze saranno svolte delle prove in itinere utilizzando test e/o incontri tra il docente e il gruppo di studenti che sviluppa il progetto</li>
+<li>La verifica delle conoscenze sar&agrave; oggetto della valutazione dell'elaborato scritto previsto all'inizio di ogni sessione d'esame</li>
+</ul></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Capacit&agrave;</div>
+<span class="contenuto_programma"><p>alla fine del corso lo studente sara' in grado di eseguire semplici calcoli di dose in&nbsp;applicazioni di interesse radioportezionistico, radiodiagnostico e radioterapeutico</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle capacit&agrave;</div>
+<span class="contenuto_programma"><p>verranno svolti esercizi numerici in classe&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Comportamenti</div>
+<span class="contenuto_programma"><ul>
+<li>Lo studente potr&agrave; acquisire e/o sviluppare sensibilit&agrave; alle problematiche&nbsp;radioprotezionistiche connesse con il rischio di esposizione a radiazioni ionizzanti</li>
+</ul></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica dei comportamenti</div>
+<span class="contenuto_programma"><p>Durante le sessioni di esercitazione saranno valutati il grado di accuratezza e precisione delle attivit&agrave; svolte</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><p>-elementi di interazione radiazione-materia</p>
+<p>-introduzione al funzionamento di rivelatori di radiazione ionizzante</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni metodologiche</div>
+<span class="contenuto_programma"><p>-lezioni frontali</p>
+<p>-esercitazioni numeriche</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p>1) <u>Nozioni di base per la dosimetria</u></p>
+<p><em>- Le radiazioni ionizzanti (definizione e classificazione), le radiazioni ionizzanti presenti nell&rsquo;ambiente e quelle di uso medico, le sorgenti naturali di radiazione (raggi cosmici, radioattivit&agrave; terrestre) e quelle artificiali (macchine e radioisotopi).</em></p>
+<p><em>- Le grandezze fisiche che caratterizzano il campo di radiazione: fluenza di particelle, fluenza di energia, energia radiante, radianza.</em></p>
+<p><em>- I coefficienti d&rsquo;interazione della radiazione direttamente e indirettamente ionizzante con un mezzo:</em></p>
+<p><em>- coefficiente di attenuazione, di trasferimento di energia e di assorbimento di energia per la radiazione indirettamente ionizzante (fotoni e neutroni);</em></p>
+<p><em>- potere frenante (elettronico e radiativo) per la radiazione direttamente ionizzante (particelle cariche);</em></p>
+<p><em>- potere frenante ristretto e LET.</em></p>
+<p><em>- Energia media per formare una coppia di ioni.</em></p>
+<p><em>- Cammino libero medio e lunghezza di radiazione.</em></p>
+<p><em>- Le grandezze dosimetriche di base: la dose assorbita, il kerma e l&rsquo;esposizione.</em></p>
+<p><em>- L&rsquo;equivalente di dose come conseguenza della diversa efficacia biologica della radiazione (ad alto e basso LET).</em></p>
+<p><em>- L&rsquo;equilibrio delle particelle cariche (CPE). </em></p>
+<p><em>- Correlazioni fra le grandezze dosimetriche in condizioni di CPE: relazioni fra dose assorbita, kerma ed esposizione, relazione fra dose assorbita e fluenza in funzione dei coefficienti di kerma (per neutroni).</em></p>
+<p><em>- La radioattivit&agrave;: i modi di decadimento e l&rsquo;attivit&agrave; dei radionuclidi (cenni sulle famiglie radioattive e sulle reazione di attivazione). La costante del rateo di esposizione e di kerma in aria</em>.</p>
+<p><em>- Il coefficiente di taratura di un sistema di misura, misure assolute e misure relative, i campioni di misura e il ruolo del sistema metrologico nella dosimetria.</em></p>
+<p><em>&nbsp;</em></p>
+<p>2) <u>Dosimetria in radioprotezione</u></p>
+<p><em>- Condizioni di irradiazione esterna e di irradiazione interna.</em></p>
+<p><em>- Le grandezze radioprotezionistiche: dose efficace, dose equivalente.</em></p>
+<p><em>- Monitoraggio di area e individuale (irradiazione esterna).</em></p>
+<p><em>- Le grandezze dosimetriche operative per il monitoraggio di area e individuale: equivalente di dose ambientale, direzionale e personale.</em></p>
+<p><em>- Metodi dosimetrici in radioprotezione:</em></p>
+<p><em>&nbsp;&nbsp; - caratteristiche generali di uno strumento di misura da usare per dosimetria ambientale o per dosimetria individuale (sensibilit&agrave;, linearit&agrave;, efficienza per radiazioni di diverso tipo); </em></p>
+<p><strong><em>&nbsp;&nbsp; - </em></strong><em>la risposta di un dosimetro e la sua dipendenza dalla direzione e dall&rsquo;energia della radiazione; </em></p>
+<p><em>&nbsp;&nbsp; - tipi di taratura dei dosimetri per la misura delle diverse grandezze operative</em></p>
+<p><em>&nbsp;&nbsp; - i rivelatori per la dosimetria in radioprotezione: rivelatori a gas (camere a ionizzazione, contatori proporzionali, contatori G-M), rivelatori a scintillazione, a semiconduttore, a tracce, a termoluminescenza, a radiofotoluminescenza, a luminescenza otticamente stimolata, a bolle surriscaldate.</em></p>
+<p><em>- Metodi di misura dell&rsquo;attivit&agrave; dei radionuclidi nelle situazioni di irradiazione interna (inalazione e ingestione di radionuclidi):</em></p>
+<p><em>&nbsp;&nbsp; - spettrometria gamma e alfa con semiconduttori e scintillatori, sistemi a scintillatori liquidi per radiazione beta, sistemi di misura del radon, misura della contaminazione al corpo intero &ldquo;whole body counter&rdquo;). </em></p>
+<p><em>- Conversione da attivit&agrave; a: equivalente di dose, dose efficace, dose equivalente.</em></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>3) <u>Dosimetria in radioterapia e in radiodiagnostica</u></p>
+<p><em>- Generalit&agrave; sulle sorgenti di radiazione in radioterapia e radiodiagnostica:</em></p>
+<p><em>&nbsp;&nbsp; -&nbsp; irradiatori con Co-60, acceleratori lineari e circolari di elettroni, protoni e ioni pesanti;</em></p>
+<p><em>&nbsp;&nbsp; - sorgenti e impianti per brachiterapia, macchine a raggi x.</em></p>
+<p>- <em>Caratterizzazione dei campi di radiazione in radioterapia e radiodiagnostica: </em></p>
+<p><em>- analisi delle diverse modalit&agrave; di assorbimento dei fasci di fotoni, elettroni e particelle&nbsp; cariche pesanti in funzione della profondit&agrave; nel mezzo (curve di PDD in acqua);&nbsp; </em></p>
+<p><em>&nbsp;&nbsp;&nbsp; - gli indicatori della qualita&rsquo; della radiazione per fasci di fotoni (HVL e TPR 20/10);</em></p>
+<p><em>&nbsp; - gli indicatori della qualita&rsquo; della radiazione per fasci di elettroni, protoni e ioni pesanti (R50 e Rres).</em></p>
+<p>- <em>Determinazione della dose assorbita in acqua in fasci di fotoni e di particelle cariche:</em></p>
+<p><em>&nbsp;&nbsp; - teoria della cavit&agrave; di Bragg-Gray (B-G); </em></p>
+<p>&nbsp;&nbsp; - <em>l&rsquo;effetto dei raggi delta e la revisione di Spencer-Attix (S-A) della teoria di B-G -&nbsp; determinazione del rapporto dei poteri frenanti acqua-aria secondo S-A.</em></p>
+<p><em>-</em><em> Le camere a ionizzazione a cavit&agrave;: camere sferiche/cilindriche e camere a elettrodi piani paralleli.</em></p>
+<p><em>- Misura della dose assorbita in acqua (Dw) con camere a ionizzazione a cavit&agrave;:</em></p>
+<p><em>&nbsp;&nbsp; - espressione di Dw con camere a cavit&agrave; tarate in termini di kerma in aria (&ldquo;approccio NK o NDa&rdquo;), analisi degli effetti di perturbazione causati dalla camera nel mezzo omogeneo (l&rsquo;acqua);</em></p>
+<p><em>&nbsp;&nbsp; - </em><em>fattori correttivi nelle misure di carica con camere a ionizzazione dovuti a: effetto della ricombinazione ionica generale e iniziale, effetto di polarit&agrave;, effetto della temperatura, pressione e umidit&agrave; dell&rsquo;aria;</em></p>
+<p><em>&nbsp;&nbsp; - espressione di Dw e analisi dei fattori di perturbazione con camere a cavit&agrave; tarate in termini di Dw (&ldquo;approccio NDw&rdquo;).</em></p>
+<p>- <em>Caratteristiche dei sistemi di misura complementari per la dosimetria in radioterapia e radiodiagnostica: </em></p>
+<p>&nbsp;&nbsp; - <em>&nbsp;dosimetri termoluminescenti,&nbsp; film radiocromici, dosimetri a ESR, diodi a stato solido (silicio, diamante). </em></p>
+<p><em>- Determinazione della dose assorbita in acqua (Dw) in brachiterapia:</em></p>
+<p><em>&nbsp;&nbsp; - espressione e calcolo di Dw nell&rsquo;uso di sorgenti solide;</em></p>
+<p><em>&nbsp;&nbsp; - caratterizzazione delle sorgenti (rateo di kerma in aria di riferimento e rateo di dose assorbita di riferimento) per il calcolo di Dw,</em></p>
+<p><em>&nbsp;&nbsp; - cenni sulla determinazione di Dw nell&rsquo;uso di sorgenti liquide (dosimetria interna per la radioterapia metabolica);</em></p>
+<p><em>&nbsp;&nbsp; - problemi nella misura di distribuzioni di dose in fantoccio in brachiterapia. </em></p>
+<p><em>- Generalit&agrave; sulla dosimetria nella radiodiagnostica con raggi x: grandezze di riferimento (kerma incidente, prodotto kerma-area, indici per la TC, ecc.) e loro conversione in dose efficace.</em></p>
+<p><em>- I protocolli internazionali per la dosimetria in radioterapia e in radiodiagnostica: loro ruolo e importanza per contenere entro limiti accettabili l&rsquo;incertezza nelle misure dosimetriche.</em></p>
+<p><em>- Cenni sui principali sistemi di misura campione basati su metodi ionimetrici, calorimetrici e di conteggio di particelle.</em></p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p>- Laitano R. F. <em>Fondamenti di Dosimetria delle Radiazioni Ionizzanti - </em>III edizione,&nbsp; ENEA, Roma 2013.</p>
+<p>- Attix F. H., <em>Introduction to Radiological Physics a</em><em>nd Radiation Dosimetry</em>, John Wiley &amp; Sons, 1986.</p>
+<p>- Podgorsak E. B. (Ed.), <em>Radiation Oncology Physics, A Handbook for Teachers and Students</em>, International Atomic Energy Agency, Vienna, 2005.</p>
+<p>- Khan F. M., <em>The Physics of Radiation Therapy</em>, Lippincott Williams &amp; Wilkins &ndash; Wolters Kluwer, Baltimore-Philadelphia, 2010.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p>Elaborato scritto e colloquio orale</p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 03/10/2019 12:37</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/esami2/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-4e345eba.js"></script>
+<script src="../_assets/jquery-ui.min-e93c00aa.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-19dbc6e0.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-c8ee7689.js"></script> 
+<script src="../_assets/tinymce.min-e9308fd1.js"></script>
+<script src="../_assets/jquery.tinymce.min-65f0b191.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-3beded5a.js"></script>
+<script src="../_assets/unipi-3293f5f6.js"></script>
+<script src="../_assets/dm-10a06b2c.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

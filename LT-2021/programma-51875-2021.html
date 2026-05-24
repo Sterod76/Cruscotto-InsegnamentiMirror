@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-9d88d2d3.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5e6adf09.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-3e1acd97.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-0be77ad4.css" rel="stylesheet">
+		<link href="../_assets/style_v1-8d07d3cb.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-795b32e7.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7ea9ead7.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-ce428c17.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-23a80404.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/index.php">Home</a></li><li><a href="https://esami.unipi.it/programmi_insegnamenti.php?aa=2021&cid=135&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">LABORATORIO 1 CON ELEMENTI DI COMPUTAZIONE</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">LUCA BALDINI</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2021/22</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">367BB</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">15</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Annuale</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"><img src="../_assets/SDG-icon-IT-RGB-04-8ecdfaae.jpg" style="width:100px"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>ELEMENTI DI PROGRAMMAZIONE</TD><TD class='value-programma'>FIS/01</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>32</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>ANDREA TOMADIN <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=136627' target='_blank'>unimap</a></td></tr></table></TD></TR>
+<TR><TD class='value-programma'>LABORATORIO DI FISICA</TD><TD class='value-programma'>FIS/01</TD><TD class='value-programma'>LABORATORI</TD><TD class='value-programma'>180</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>LUCA BALDINI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=87263' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>VALERIO BOSCHI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=96464' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>GIULIA CASAROSA <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=123769' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>ANNA DRIUTTI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=169198' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>SERGIO GIUDICI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=132' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>ANGELA PAPA <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=21476' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>CARMELO SGRO' <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=168645' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/pdfProgCorsoStu.php?language=it&c=51875" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p>Le conoscenze di base che il corso punta a trasmettere sono le seguenti</p>
+<ul>
+<li>il concetto di incertezza di misura;</li>
+<li>rappresentazione e riduzione dei dati;</li>
+<li>i concetti di base della statistica applicata all'analisi dei dati in Fisica;</li>
+<li>le leggi dell'ottica geometrica;</li>
+<li>le basi della comunicazione scientifica;</li>
+<li>algoritmi e strutture dati</li>
+<li>struttura del linguaggio di programmazione Python ed ecosistema scientifico;</li>
+</ul>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p>The course is aiming at in troducing:</p>
+<ul>
+<li>the concept of measurement error;</li>
+<li>data representation and reduction;</li>
+<li>basic statistical concepts related to data analysis in Physics;</li>
+<li>the law of geometrical optics;</li>
+<li>the basics of scientific communication;</li>
+<li>algorithms and data structures;</li>
+<li>the Python programming language and its scientific ecosystem.</li>
+</ul></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><p>Lo studente dovr&agrave; dimostrare l'abilit&agrave; di mettere in pratica criticamente gli argomenti del corso durante esperienze pratiche che verranno assegnate.</p>
+<p>Sar&agrave; richiesta la stesura di relazioni di laboratorio settimanali relative alle attivit&agrave; pratiche. L'esame finale consister&agrave; in una parte pratica/scritta (una relazione individuale su un esperimento specifico) ed una parte orale.</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
+<span class="contenuto_programma"><p>The students must demonstrate the ability to put into practice and to execute, with critical awareness, the activities illustrated or carried out under the guidance of the teacher during the course.</p>
+<p>The students are required to produce weekly laboratory reports throughout the academic year. The final exam will consists of a practical/witten part (with an individual report on a specific experiment) and an oral part.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Capacit&agrave;</div>
+<span class="contenuto_programma"><p>Al completamento del corso lo studente avr&agrave; acquisito le capacit&agrave; di</p>
+<ul>
+<li>eseguire semplici misure di meccanica, termologia ed ottica geometrica;</li>
+<li>stimare le incertezze di misura ad esse associate;</li>
+<li>applicare gli strumenti statistici di base per l'analisi dei dati;</li>
+<li>utilizzare il calcolatore per rappresentare ed analizzare le misure;</li>
+<li>valutare la compatibilit&agrave; tra un insieme di misure sperimentali ed un modello;</li>
+<li>descrivere il risultato di una misura nella forma di una relazione scritta;</li>
+<li>utilizzare criticamente il calcolatore</li>
+<li>scrivere ed eseguire un script Python per analisi e presentazione dei dati;</li>
+<li>utilizzare LaTeX per la redazione delle relazioni.</li>
+</ul></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Skills</div>
+<span class="contenuto_programma"><p>The student who successfully completes the course will have the ability to:</p>
+<ul>
+<li>perform simple measurements related to mechanics, thermologi and geometric optics;</li>
+<li>estimate the uncertainties associated with the measurements;</li>
+<li>apply the basic statistical tools to experimental data analysis;</li>
+<li>use the computer to plot and analyze data;</li>
+<li>test the compatibility between the measurements and a give model;</li>
+<li>describe a specific measurement in the form of a written report;</li>
+<li>consciously operate a traditional desktop computer</li>
+<li>write and execute a Python script for data analysis and presentation;</li>
+<li>use LaTeX for the written reports.</li>
+</ul></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle capacit&agrave;</div>
+<span class="contenuto_programma"><p>Lo studente dovr&agrave; dimostrare l'abilit&agrave; di mettere in pratica criticamente gli argomenti del corso durante esperienze pratiche che verranno assegnate.</p>
+<p>Sar&agrave; richiesta la stesura di relazioni di laboratorio settimanali relative alle attivit&agrave; pratiche. L'esame finale consister&agrave; in una parte pratica/scritta (una relazione individuale su un esperimento specifico) ed una parte orale.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of skills</div>
+<span class="contenuto_programma"><p>The students must demonstrate the ability to put into practice and to execute, with critical awareness, the activities illustrated or carried out under the guidance of the teacher during the course.</p>
+<p>The students are required to produce weekly laboratory reports (in groups) throughout the academic year. The final exam will consists of a practical/witten part (with an individual report on a specific experiment) and an oral part.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><p>I prerequisiti del corso sono costituiti essenzialmente dalla matematica delle scuole superiori:</p>
+<ul>
+<li>aritmetica ed algebra elementari;</li>
+<li>funzioni e grafici cartesiani;</li>
+<li>logaritmi, esponenziali, leggi di potenza, funzioni trigonometriche;</li>
+<li>sommatorie;</li>
+<li>element di calcolo infinitesimale: limiti, derivate, integrali;</li>
+<li>conoscenza elementare della lingua Inglese;</li>
+<li>utilizzo di un browser.</li>
+</ul></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites</div>
+<span class="contenuto_programma"><p>The prerequisites of the course consist in the basic high-school-level math:</p>
+<ul>
+<li>arithmetics and algebra;</li>
+<li>functions and cartesian graphs;</li>
+<li>logarithms, exponentials, power laws, trigonometric functions;</li>
+<li>sums;</li>
+<li>basic calculus: limits, derivatives, integrals;</li>
+<li>basic knowledge of the English language;</li>
+<li>knowledge of a web browser.</li>
+</ul></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni metodologiche</div>
+<span class="contenuto_programma"><p>Le attivit&agrave; includono:</p>
+<ul>
+<li>lezioni teoriche;</li>
+<li>esperienze pratiche;</li>
+<li>esperienze al calcolatore;</li>
+<li>preparazione di relazioni scritte.</li>
+</ul></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Teaching methods</div>
+<span class="contenuto_programma"><p>Learning activities include:</p>
+<ul>
+<li>theory lectures;</li>
+<li>practical experiments;</li>
+<li>practical computer activity;</li>
+<li>preparation of written reports.</li>
+</ul></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p>Argomeniti del programma:</p>
+<ul>
+<li>misure, unit&agrave;, incertezze;</li>
+<li>riduzione e rappresentazione dei dati: tabelle, grafici, istogrammi;</li>
+<li>teoria delle probabilit&agrave;: distribuzioni discrete e continue, valori di aspettazioni, varianza e deviazione standard;</li>
+<li>statistica elementare, stima dei parametri;</li>
+<li>covarianza e correlazione;</li>
+<li>il teorema centrale del limite.</li>
+<li>metodi di fit, fit dei minimi quadrati;</li>
+<li>introduzione al calcolatore;</li>
+<li>la shell di Unix;</li>
+<li>linguaggi di programmazione compilati ed interpretati;</li>
+<li>Python: sintassi, tipi di dati, controllo di flusso, oggetti, I/O;</li>
+<li>l'ecosistema scientifico di Python;</li>
+<li>LaTeX.</li>
+</ul></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p>Topics:</p>
+<ul>
+<li>measurements, units, errors;</li>
+<li>data reduction and representation: tables, graphs, scatter plots, histograms;</li>
+<li>elementary probability theory, discrete and continuous distributions, expected value, variance and standard deviation;</li>
+<li>elementary statistical theory, estimation of parameters;</li>
+<li>covariance and correlation</li>
+<li>the central limit theorem</li>
+<li>parameter fit, least squares fitting;</li>
+<li>introduction to digital computers;</li>
+<li>the unix shell;</li>
+<li>interpreted and compiled programming languages;</li>
+<li>Python: syntax, data types, flow control, objects, I/O;</li>
+<li>the Python scientific ecosystem;</li>
+<li>LaTeX.</li>
+</ul></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p>Le dispense del corso contengono tutto il materiale necessario per o studio, e sono liberamente reperibili a</p>
+<p>https://bitbucket.org/lbaldini/statnotes/wiki/Home</p>
+<p>Ulteriori risorse potenzialmente utili:</p>
+<ul>
+<li><span style="line-height: 1.4;"><a href="https://bitbucket.org/lbaldini/computing/wiki/Home">Breve introduzione a Python</a> ed al software in uso in laboratorio</span></li>
+<li><span style="line-height: 1.4;"><a href="https://bitbucket.org/lbaldini/dispenselab1/downloads">Vecchie dispense</a> del corso di Laboratorio di Fisica 1</span></li>
+<li><span style="line-height: 1.4;"><a href="http://wwwcdf.pd.infn.it/labo/INDEX.html">Teoria degli errori e fondamenti di statistica</a>, di Maurizio Loreti</span></li>
+<li><span style="line-height: 1.4;"><a href="http://www.pi.infn.it/atlas/documenti/note/statistica.ps.gz">Methods of Statistical Data Analysis in High Energy Physics</a>, di T. Del Prete (in Inglese)</span></li>
+<li><span style="line-height: 1.4;"><a href="http://www.astro.unipd.it/ciroi/espfis2/dispense2014.pdf">Dispense di ottica</a> di S. Ciroi</span></li>
+<li><span style="line-height: 1.4;">Python Scripting for Computational Science, Hans Petter Langtangen</span></li>
+<li><span style="line-height: 1.4;">Programming Python, Mark Lutz</span></li>
+<li><a href="https://tobi.oetiker.ch/lshort/lshort.pdf">The not so short introduction to LaTeX2e</a><span style="line-height: 1.4;">, Tobias Oetiker</span></li>
+</ul></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Bibliography</div>
+<span class="contenuto_programma"><p>The course syllabus is, for the vast majority, covered by the lecture notes (in Italian) freely available at</p>
+<p>https://bitbucket.org/lbaldini/statnotes/wiki/Home</p>
+<p>More useful resources (mainly in Italian):</p>
+<ul>
+<li><span style="line-height: 1.4;"><a href="https://bitbucket.org/lbaldini/computing/wiki/Home">Breve introduzione a Python</a> ed al software in uso in laboratorio</span></li>
+<li><span style="line-height: 1.4;"><a href="https://bitbucket.org/lbaldini/dispenselab1/downloads">Vecchie dispense</a> del corso di Laboratorio di Fisica 1</span></li>
+<li><span style="line-height: 1.4;"><a href="http://wwwcdf.pd.infn.it/labo/INDEX.html">Teoria degli errori e fondamenti di statistica</a>, di Maurizio Loreti</span></li>
+<li><span style="line-height: 1.4;"><a href="http://www.pi.infn.it/atlas/documenti/note/statistica.ps.gz">Methods of Statistical Data Analysis in High Energy Physics</a>, di T. Del Prete (in Inglese)</span></li>
+<li><span style="line-height: 1.4;"><span style="line-height: 1.4;"><a href="http://www.astro.unipd.it/ciroi/espfis2/dispense2014.pdf">Dispense di ottica</a> di S. Ciroi</span></span></li>
+<li><span style="line-height: 1.4;"><span style="line-height: 1.4;"><span style="display: inline !important; float: none; background-color: #ffffff; color: #000000; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; line-height: 1.4; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">Python Scripting for Computational Science, Hans Petter Langtangen</span></span></span></li>
+<li><span style="line-height: 1.4;"><span style="line-height: 1.4;"><span style="display: inline !important; float: none; background-color: #ffffff; color: #000000; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; line-height: 1.4; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">Programming Python, Mark Lutz</span></span></span></li>
+<li><a href="https://tobi.oetiker.ch/lshort/lshort.pdf">The not so short introduction to LaTeX2e</a><span style="line-height: 1.4;"><span style="line-height: 1.4;"><span style="display: inline !important; float: none; background-color: #ffffff; color: #000000; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; line-height: 1.4; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;">, Tobias Oetiker</span></span></span></li>
+</ul></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni per non frequentanti</div>
+<span class="contenuto_programma"><p>Da concordare con il docente.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Non-attending students info</div>
+<span class="contenuto_programma"><p>To be negotiated with the teacher.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p>Prova pratica con relazione scritta individuale e prova orale.</p>
+<p>La consegna del 75% delle relazioni settimanali durante l'anno &egrave; di norma un prerequisito per l'ammissione alla prova finale.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Assessment methods</div>
+<span class="contenuto_programma"><p>Practice with written report and oral examination.</p>
+<p>75% of the weekly reports are a prerequite to be admitted to the final exam.</p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 27/07/2021 18:16</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-fcc1cd77.js"></script>
+<script src="../_assets/jquery-ui.min-083c88ac.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-bc864bd9.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-cbd4a7f1.js"></script> 
+<script src="../_assets/tinymce.min-2396adf9.js"></script>
+<script src="../_assets/jquery.tinymce.min-cf2ee483.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-8144b60d.js"></script>
+<script src="../_assets/unipi-635b458d.js"></script>
+<script src="../_assets/dm-4aacbbca.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

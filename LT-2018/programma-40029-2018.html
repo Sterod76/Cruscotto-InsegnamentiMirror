@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-9d88d2d3.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5e6adf09.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-3e1acd97.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-0be77ad4.css" rel="stylesheet">
+		<link href="../_assets/style_v1-8d07d3cb.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-795b32e7.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7ea9ead7.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-ce428c17.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-23a80404.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/index.php">Home</a></li><li><a href="https://esami.unipi.it/programmi_insegnamenti.php?aa=2018&cid=135&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">ASTROFISICA GENERALE</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">PIER GIORGIO PRADA MORONI</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2018/19</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">288BB</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">6</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Secondo semestre</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>ASTROFISICA GENERALE</TD><TD class='value-programma'>FIS/05</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>48</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>PIER GIORGIO PRADA MORONI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=2646' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/pdfProgCorsoStu.php?language=it&c=40029" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p>L'obiettivo del corso &egrave; fornire agli studenti del Corso di Laurea Triennale in Fisica le conoscenze di base dell'astronomia e dell'astrofisica moderne. Il corso fornisce inoltre agli studenti l'opportunit&agrave; di approfondire le conoscenze di base in fisica acquisite durante il Corso di Laurea Triennale e di applicarle in contesti astronomici.&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p>The course is intended as an introduction to modern astronomy and astrophysics. The students will acquire a general knowledge of various topics, at a level allowing them understanding of the general meaning of a scientific paper.&nbsp;</p>
+<p>This class is also an opportunity for students to practice and deepen their knowledge of the basic principles of physics and to apply them in an astronomical context.&nbsp;&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><p>Il livello delle conoscenze acquisite e l'abilit&agrave; nell'esporle con propriet&agrave; di linguaggio sar&agrave; valutato mediante un esame orale al termine del corso.&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
+<span class="contenuto_programma"><p>During the oral exam the student will be assessed on his/her demonstrated ability to discuss the main course contents using the appropriate terminology.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Capacit&agrave;</div>
+<span class="contenuto_programma"><p>Al termine del corso lo studente avr&agrave; gli strumenti che gli permetteranno di comprendere la letteratura specialistica ed eventualmente di approfondire autonomamente le proprie conoscenze in alcuni dei principali settori dell'astrofisica moderna.&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Skills</div>
+<span class="contenuto_programma"><p>The students will acquire a general knowledge of the various topics of modern astronomy and astrophysics at a level allowing them understanding of the general meaning of a scientific paper and possibly to independently deepen their knowledge.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle capacit&agrave;</div>
+<span class="contenuto_programma"><p>Durante l'esame orale lo studente dovr&agrave; dimostrare di padroneggiare gli strumenti concettuali descritti durante il corso eventualmente risolvendo semplici problemi.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of skills</div>
+<span class="contenuto_programma"><p>During the final oral exam the commitee will verify the ability of&nbsp;the students to master the main concepts described in this class. They should be able to illustrate their understanding through the solution of simple problems.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Behaviors</div>
+<span class="contenuto_programma"><p>Students will acquire skills, knowledge and methods at a level allowing them understanding of the general meaning of a scientific paper.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of behaviors</div>
+<span class="contenuto_programma"><p>Students should be able to connect the many aspects of fundamental physics to&nbsp;modern&nbsp;astrophysics, which, in turn, should make clear the general significance of the themes that are studied.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><p>Le conoscenze di base in fisica acquisite durante il Corso di Laurea Triennale.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites</div>
+<span class="contenuto_programma"><p>Knowledge of the basic principles of physics and mathematics acquired during the previous years.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Teaching methods</div>
+<span class="contenuto_programma"><p>Delivery: face to face.</p>
+<p>Learning activities:</p>
+<ul>
+<li>attending lectures</li>
+<li>participation in seminar</li>
+<li>preparation of oral report</li>
+<li>participation in discussions</li>
+<li>individual study</li>
+<li>group work</li>
+<li>Bibliography search</li>
+</ul></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p><strong>Introduzione</strong></p>
+<ol start="0">
+<ol start="0">
+<ul>
+<li>
+<p>Scale di massa (massa solare, masse tipiche: stelle, ammassi stellari, galassie), di lunghezza (definizione parsec, lunghezze tipiche: distanze tra stelle, dimensioni delle galassie, distanze tra galassie, universo visibile); di tempo (et&agrave; dell'Universo, del Sole, delle stelle massicce)</p>
+</li>
+<li>
+<p>Definizione di magnitudine: apparente, assoluta, in una banda fotometrica, bolometrica. Modulo di distanza.</p>
+</li>
+</ul>
+</ol>
+</ol>
+<p><strong>Interazione radiazione-materia</strong> <br /><strong>Teoria del trasporto radiativo</strong> (Rybicki &amp; Lightman):</p>
+<ul>
+<li>Definizione di: intensit&agrave; specifica, flusso, pressione e densit&agrave; di energia di un campo di radiazione. Calcolo di queste quantit&agrave; nel caso di un campo di radiazione isotropo. Costanza dell'intensit&agrave; specifica lungo un raggio nel vuoto. Sorgente sferica con brillanza superficiale costante: calcolo del flusso.</li>
+<li>Definizione di: coefficiente di emissione, emissivit&agrave;, coefficiente di assorbimento, opacit&agrave; radiativa.</li>
+<li>Equazione del trasporto radiativo. Soluzione nel caso di: sola emissione, solo assorbimento.</li>
+<li>Definizione di profondit&agrave; ottica. Mezzi otticamente sottili e otticamente spessi. Funzione sorgente e formulazione dell'equazione del trasporto in termini di profondit&agrave; ottica e funzione sorgente.</li>
+<li>Soluzione generale dell'equazione del trasporto. Propagazione della radiazione attraverso un mezzo con propriet&agrave; costanti: soluzione generale dell'equazione del trasporto, discussione del caso di un mezzo otticamente sottile e di uno otticamente spesso.</li>
+<li>Radiazione termica. Radiazione di corpo nero: legge di Stefan-Boltzmann, legge di Planck, legge di Rayleigh-Jeans, legge di Wien, legge dello spostamento di Wien.</li>
+<li>Definizioni di: temperatura di brillanza, temperatura di colore, temperatura effettiva. Equazione del trasporto in termini della temperatura di brillanza nel limite di Rayleigh- Jeans.</li>
+<li>Legge di Kirchhoff.</li>
+<li>Relazione tra cammino libero medio dei fotoni e coefficiente di assorbimento.</li>
+</ul>
+<p><strong>Equilibrio termodinamico:</strong><strong><br /></strong></p>
+<ul>
+<li>Condizioni di validit&agrave; dell'equilibrio termodinamico.</li>
+<li>Equilibrio termodinamico locale (LTE).</li>
+</ul>
+<p><strong>Trasporto radiativo nelle atmosfere stellari:</strong><strong><br /></strong></p>
+<ul>
+<li>
+<p>Atmosfera a piani paralleli.</p>
+</li>
+<li>
+<p>Campo di radiazione quasi-isotropo, valutazione del grado di anisotropia.</p>
+</li>
+<li>
+<p>Atmosfera grigia. Momenti dell'equazione del trasporto. Equilibrio radiativo. Approssimazione di Eddington e soluzione del problema del trasporto radiativo: determinazione del campo di radiazione, della funzione sorgente e del profilo di temperatura al variare della profondit&agrave; ottica.</p>
+</li>
+<li>
+<p>Legge del ''limb darkening'' e sua interpretazione.</p>
+</li>
+<li>
+<p>Formazione delle righe spettrali.</p>
+</li>
+<li>
+<p>Fotosfera e cromosfera.</p>
+</li>
+<li>
+<p>Definizione di: area equivalente e larghezza equivalente. Larghezza naturale di riga.</p>
+</li>
+<li>
+<p>Fattori di allargamento di riga: effetto Doppler (calcolo della FWHM dovuta ad agitazione termica), allargamento per collisione, effetto Stark microscopico e macroscopico, Effetto Zeeman, effetti cinematici.</p>
+</li>
+</ul>
+<p><strong>Trasporto radiativo negli interni stellari:</strong></p>
+<ul>
+<li>
+<p>Media di Rosseland del coefficiente di assorbimento e dell'opacit&agrave; radiativa.</p>
+</li>
+<li>
+<p>Equazione del trasporto nel limite diffusivo.</p>
+</li>
+<li>Diffusione dei fotoni in una stella: cammino libero medio, &ldquo;random walk&rdquo; e tempo scala impiegato dai fotoni a raggiungere la superficie.</li>
+</ul>
+<p><strong>Struttuta ed evoluzione delle stelle</strong></p>
+<p>&bull; Equazioni di struttura stellare (Clayton / Kippenhahn &amp; Weigert):</p>
+<ul>
+<li>Equazione dell'equilibrio idrostatico. Tempo scala di caduta libera. Tempo scala di esplosione, tempo scala idrostatico. Stime di questi tempi scala per il Sole, per una gigante rossa e per una nana bianca. Stima della pressione centrale nel Sole.</li>
+<li>
+<p>Teorema del viriale nelle stelle: caso generale, per un gas perfetto, per un gas perfetto monoatomico.</p>
+</li>
+<li>
+<p>Relazione tra energia totale, energia potenziale gravitazionale e energia interna. Capacit&agrave; termica negativa delle stelle. Tempo scala di Kelvin-Helmholtz e sua stima per il Sole.</p>
+</li>
+<li>
+<p>Equazione di continuit&agrave;.</p>
+</li>
+<li>
+<p>Tempo scala nucleare e sua stima nel Sole. Equazione di conservazione dell'energia nelle</p>
+<p>stelle.</p>
+</li>
+<li>
+<p>Spiegazione qualitativa del &ldquo;termostato&rdquo; stellare: capacit&agrave; termica negativa insieme ad una sorgente di energia che dipende sensibilmente dalla temperatura.</p>
+</li>
+<li>
+<p>Trasporto di energia negli interni stellari. Equazione del trasporto diffusivo della radiazione: derivazione di Eddington. Stima del gradiente di temperatura medio nel Sole e del grado di anisotropia del campo di radiazione.</p>
+</li>
+<li>
+<p>Trasporto conduttivo di energia: equazione del calore, opacit&agrave; conduttiva, cenni agli ambienti stellari in cui diventa il processo di trasporto energetico dominante.</p>
+</li>
+<li>
+<p>Moti convettivi e criterio di stabilit&agrave; di Schwarschild: versione generale. Criterio di Schwarzschild nel caso di gas perfetto chimicamente omogeneo. Definizione di gradiente di temperatura: adiabatico, ambientale e radiativo.</p>
+</li>
+<li>Trasporto convettivo di energia: cenni alla teoria della &ldquo;mixing length&rdquo; e al tempo scala di rimescolamento. Considerazioni sulla validit&agrave; dell'assunzione dell'equilibrio idrostatico in presenza di moti convettivi.</li>
+</ul>
+<p><strong>Cenni di termodinamica</strong> (Kippenhahn &amp; Weigert):</p>
+<ul>
+<li>
+<p>Gas perfetto, definizione di peso molecolare medio, peso molecolare elettronico medio e loro valutazione nel caso di ionizzazione completa.</p>
+</li>
+<li>
+<p>Gas parzialmente ionizzato: derivazione dell'equazione di Saha nel caso generale, nel caso di un gas di puro idrogeno, discussione sui limiti di validit&agrave;.</p>
+</li>
+<li>Cenni alla ionizzazione per pressione.</li>
+</ul>
+<p><strong>Opacit&agrave; radiativa negli interni stellari (Clayton):</strong></p>
+<ul>
+<li>
+<p>processi &ldquo;bound-bound&rdquo;, &ldquo;bound-free&rdquo;, &ldquo;free-free&rdquo;, &ldquo;scattering&rdquo; elettronico Thomson.</p>
+</li>
+<li>
+<p>Cenni al calcolo dei coefficienti di opacit&agrave; e discussione sulla dipendenza dalla temperatura.</p>
+</li>
+<li>
+<p>Coefficienti di Einstein. Coefficienti di assorbimento e di emissione in termini dei coefficienti di Einstein. Funzione sorgente e equazione del trasporto radiativo in termini dei coefficienti di Einstein. Calcolo del fattore correttivo al coefficiente di assorbimento dovuto all'emissione stimolata (Rybicki &amp; Lightman).</p>
+</li>
+<li>
+<p>Legge di Kramers e suoi limiti.</p>
+</li>
+<li>
+<p>Cenni allo ione idrogeno negativo.</p>
+</li>
+<li>Discussione sulla relazione tra regioni parzialmente ionizzate e regioni convettive.</li>
+</ul>
+<p><strong>Introduzione alla produzione di energia nucleare nelle stelle (Clayton):</strong></p>
+<ul>
+<li>Difetto di massa, curva dell'energia di legame per nucleone in funzione del numero di nucleoni.</li>
+</ul>
+<ul>
+<li>
+<p>Valutazione della barriera Coulombiana alle energie tipiche nelle stelle e discussione sull'impossibilit&agrave; dal punto di vista della fisica classica del suo superamento.</p>
+</li>
+<li>
+<p>Effetto tunnel e probabilit&agrave; di penetrazione di Gamow. Sezione d'urto e fattore astrofisico. Calcolo del tasso di reazione, dell'energia di Gamow e della larghezza della finestra di Gamow.</p>
+</li>
+<li>
+<p>Discussione sugli effetti astrofisici della forte dipendenza del tasso di reazioni dalla temperatura e della carica. Necessit&agrave; di fasi di combustione nucleari distinte.</p>
+</li>
+<li>
+<p>Cenni qualitativi allo &ldquo;screening&rdquo; elettronico.</p>
+</li>
+</ul>
+<p><strong>Combustione dell'idrogeno:</strong></p>
+<ul>
+<li>Catena protone-protone</li>
+<li>Biciclo CN-NO</li>
+</ul>
+<p><strong>Combustione dell'elio:</strong></p>
+<ul>
+<li>3&alpha;</li>
+<li>12C(&alpha;,&gamma;)</li>
+</ul>
+<p>Sezione d'urto dei neutrini. Cenni qualitativi ai processi di produzione di termoneutrini.</p>
+<p><strong>Cenni alle fasi di combustioni avanzate:</strong></p>
+<ul>
+<li>Dalla combustione del carbonio alla combustione del silicio.</li>
+<li>Formazione di un nucleo di ferro.</li>
+<li>Produzione degli elementi pi&ugrave; pesanti del ferro attraverso catture neutroniche.</li>
+</ul>
+<p><strong>Neutrini solari:</strong></p>
+<ul>
+<li>Predizioni teoriche del flusso totale e dello spettro energetico. ◦ Esperimenti principali.</li>
+<li>Problema dei neutrini solari e sua soluzione.</li>
+</ul>
+<p><strong>Cenni di eliosismologia:</strong></p>
+<ul>
+<li>Osservabili, profilo di velocit&agrave; del suono.</li>
+<li>Confronto con i risultati del modello solare standard.</li>
+</ul>
+<p><strong>Cenni alla costruzione dei modelli stellari:</strong></p>
+<ul>
+<li>Condizioni al contorno.</li>
+<li>Relazioni di scala tra alcune grandezze stellari.</li>
+</ul>
+<p><strong>Descrizione qualitativa dell'evoluzione stellare:</strong></p>
+<ul>
+<li>
+<p>Tracce evolutive di stelle di massa piccola e intermedia</p>
+</li>
+<li>
+<p>Fase di pre-sequenza principale, ZAMS, sequenza principale, ramo delle giganti rosse, flash dell'elio, ramo orizzontale e &ldquo;clump&rdquo; dell'elio, curva di raffreddamento di nana bianca.</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>Criteri di classificazione spettrale delle stelle:<br /> ◦ La classificazione di Harvard e di Morgan-Keenan.</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>Sistemi fotometrici:</p>
+<ul>
+<li>
+<p>Sistema fotometrico UBVRI.</p>
+</li>
+<li>
+<p>Indice di colore come indicatore di temperatura effettiva.</p>
+</li>
+<li>
+<p>Esempi di (B-V) ottenuti dagli spettri di una stella calda e di una fredda.</p>
+</li>
+<li>
+<p>Diagramma colore-magnitudine e diagramma di Hertzsprung-Russell teorico.</p>
+</li>
+<li>
+<p>Immagini di ammassi aperti e globulari galattici. Esempi di diagrammi colore- magnitudine di ammassi stellari galattici aperti e globulari, del campo nelle vicinanze del Sole delle stelle parallassate dal satellite Hipparcos, di un campo stellare della Sloan Digital Sky Survey (campo di cui non si conoscono le distanze), della galassia nana Fornax. Spiegazione delle differenze. Esempi di tracce ed isocrone teoriche.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Sistemi binari:</strong></p>
+<ul>
+<li>Binarie spettroscopiche, ad eclisse, astrometriche.</li>
+<li>Cenni ai metodi di stima della massa.</li>
+<li>Relazione massa-luminosit&agrave; empirica per stelle di sequenza principale.</li>
+</ul>
+<p><strong>Nane bianche:</strong></p>
+<ul>
+<li>
+<p>Cenni storici sulla scoperta delle nane bianche.</p>
+</li>
+<li>
+<p>Gas completamente degenere di elettroni (Kippenhahn &amp; Weigert): equazione di stato esatta, limiti asintotici non relativistico e relativistico. Cenni alle propriet&agrave; di un gas di elettroni parzialmente degenere. Esempi di vari ambienti stellari in cui bisogna tener conto della degenerazione elettronica.</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>Politropiche (Clayton):</p>
+<ul>
+<li>
+<p>Equazione di Lane-Emden.</p>
+</li>
+<li>
+<p>Raggio, massa e relazione massa-raggio per sfere autogravitanti di gas politropiche. Politropiche con indice n= 3/2 e relazione massa-raggio per le nane bianche nel limite non relativistico.</p>
+</li>
+<li>
+<p>Politropiche con indice n=3 e massa limite di Chandrasekhar.</p>
+</li>
+<li>
+<p>Massa limite di Chandrasekhar: dimostrazione di Landau (Shapiro &amp; Teukolsky).</p>
+</li>
+<li>
+<p>Relazione massa-raggio esatta (a T=0) delle nane bianche e cenni alle correzioni dovute a: a) interazioni Coulombiane nel limite di masse piccole; b) processi beta inversi e reazioni picnonucleari per masse prossime al limite di Chandrasekhar (Shapiro &amp; Teukolsky).</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Evoluzione di raffreddamento delle nane bianche (Shapiro &amp; Teukolsky):</p>
+<ul>
+<li>
+<p>Trattazione elementare del raffreddamento.</p>
+</li>
+<li>
+<p>Cenni all'effetto delle interazioni Coulombiane sull'equazione di stato, cristallizzazione, rilascio di calore latente e rallentamento dell'evoluzione di raffreddamento delle nane bianche.</p>
+</li>
+<li>
+<p>Regime di Debye ed accelerazione dell'evoluzione di raffreddamento delle nane bianche.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Luminosit&agrave; di Eddington.</p>
+</li>
+</ul>
+<p><strong>''Neutron drip'' e stelle di neutroni (Shapiro &amp; Teukolsky):</strong></p>
+<ul>
+<li>
+<p>Calcolo della densit&agrave; di soglia per il ''neutron drip'' nel caso di un gas di protoni, elettroni e neutroni.</p>
+</li>
+<li>
+<p>Cenni qualitativi al caso in cui siano presenti anche nuclei atomici.</p>
+</li>
+<li>
+<p>Massa limite.</p>
+</li>
+<li>
+<p>Cenni storici sulle stelle di neutroni e sulla scoperta delle pulsar.</p>
+</li>
+<li>
+<p>Stima della densit&agrave; media di un oggetto compatto rotante con periodo nell'intervallo compreso tra qualche millisecondo e qualche secondo.</p>
+</li>
+<li>
+<p>Caratteristiche tipiche di una stella di neutroni.</p>
+</li>
+<li>
+<p>Pulsar: modello del momento di dipolo magnetico; stima dell'energia rotazionale e del</p>
+<p>campo magnetico.</p>
+</li>
+<li>Discussione su alcuni modelli alternativi. Calcolo della variazione dell'energia potenziale gravitazionale di un corpo che cade sulla superficie di una stella di neutroni dall'infinito.</li>
+</ul>
+<p><strong>Cenni all'evoluzione delle stelle in sistemi binari:</strong></p>
+<ul>
+<li>Paradosso di Algol.</li>
+<li>Lobi di Roche e trasferimenti di massa.</li>
+<li>Definizione di binarie: staccate, semi-staccate, a contatto e con inviluppo in comune.</li>
+</ul>
+<p><strong>Supernovae:</strong></p>
+<ul>
+<li>Cenni storici.</li>
+<li>Classificazione.</li>
+<li>Modelli fisici.</li>
+<li>Cenni all'uso delle SN Ia come indicatori di distanza.</li>
+<li>Neutrini della SN1987A: stima del limite superiore della massa dei neutrini elettronici.</li>
+</ul>
+<p><strong>Sorgenti X in sistemi binari (Shapiro &amp; Teukolsky):</strong></p>
+<ul>
+<li>Modello dell'accrescimento di massa su una stella di neutroni, calcolo della luminosit&agrave; di accrescimento, del tasso di accrescimento in massa, della temperatura effettiva, del limite di Eddington nel caso di scattering Thomson.</li>
+</ul>
+<p><strong>La nostra galassia: la Via Lattea</strong></p>
+<p>&bull; <strong>Forma e dimensioni della Via Lattea:</strong></p>
+<ul>
+<li>
+<p>Cenni storici, modello di Kapteyn.</p>
+</li>
+<li>
+<p>Introduzioni ai conteggi stellari, stima del numero di stelle pi&ugrave; brillanti di una data magnitudine apparente, stima della luminosit&agrave; totale proveniente da queste stelle.</p>
+</li>
+<li>
+<p>Cenni al paradosso di Olbers.</p>
+</li>
+<li>
+<p>Malmquist bias.</p>
+</li>
+<li>
+<p>Modello di Shapley. Stima delle distanze con le variabili RR Lyrae e Cefeidi.</p>
+</li>
+<li>
+<p>Mezzo interstellare: estinzione ed arrossamento.</p>
+</li>
+</ul>
+<p>&bull; <strong>Popolazioni stellari:</strong></p>
+<p>◦ Caratteristiche della Pop. I e Pop. II.</p>
+<p>◦ Cenni alla Pop. III</p>
+<p>&bull; Via Lattea:&nbsp;Disco, Alone,&nbsp;Bulge.</p>
+<p><strong>Caratterizzazione del mezzo interstellare.</strong></p>
+<ul>
+<li>
+<p>Identificazione del gas nel mezzo interstellare tramite l'analisi delle righe nello spettro delle stelle:</p>
+<ul>
+<li>
+<p>Calcolo del coefficiente di assorbimento, della profondit&agrave; ottica, della densit&agrave; di colonna, dell'intensit&agrave; specifica, della larghezza equivalente.</p>
+</li>
+<li>
+<p>Caso di righe deboli.</p>
+</li>
+<li>
+<p>Curva di crescita.</p>
+</li>
+<li>
+<p>Tasso di eccitazione e di diseccitazione collisionale. Densit&agrave; critica.</p>
+</li>
+<li>
+<p>Equazione del bilancio dettagliato con processi radiativi e collisionali e calcolo del popolamento dei livelli.</p>
+</li>
+<li>
+<p>Caso di un gas con densit&agrave; inferiore alla densit&agrave; critica.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Nubi interstellari di idrogeno neutro e riga a 21 cm:</p>
+<ul>
+<li>
+<p>Calcolo del coefficiente di emissione in termini dei coefficienti di Einstein.</p>
+</li>
+<li>
+<p>Calcolo dell'intensit&agrave; della riga di emissione e del coefficiente di assorbimento (corretto</p>
+<p>per l'emissione stimolata) in termini dei coefficienti di Einstein.</p>
+</li>
+<li>
+<p>Calcolo della profondit&agrave; ottica del mezzo e dell'intensit&agrave; della riga di assorbimento.</p>
+</li>
+<li>
+<p>Cenni ai metodi utilizzati per ricostruire la distribuzione spaziale del gas di idrogeno neutro nel piano galattico e la velocit&agrave; angolare orbitale tramite la riga a 21 cm. Bracci di spirale.</p>
+</li>
+<li>
+<p>Tecniche per individuare la presenza di un mezzo interstellare caldo tra le nubi fredde di HI.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Nubi molecolari:&nbsp;Idrogeno molecolare, Emissione CO, Cenni ai maser.</p>
+</li>
+<li>
+<p>Regioni HII (Harwit):</p>
+<ul>
+<li>
+<p>Tasso di ionizzazione e di ricombinazione.</p>
+</li>
+<li>
+<p>Raggio di Stromgren.</p>
+</li>
+<li>
+<p>Cenni ai processi di riscaldamento e di raffreddamento del gas.</p>
+</li>
+<li>
+<p>Stima della velocit&agrave; di espansione della regione HII dovuta alla differenza di pressione con la regione esterna non ionizzata.</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>Gas coronale.</p>
+</li>
+<li>
+<p>Emissione di bremsstrahlung termica: emissivit&agrave;, emissivit&agrave; totale, coefficiente di emissione.&nbsp;</p>
+</li>
+</ul>
+<p><strong>Astronomia extragalattica</strong></p>
+<ul>
+<li>
+<p>Introduzione all'astronomia extragalattica.</p>
+</li>
+<li>
+<p>Classificazione morfologica delle galassie.</p>
+</li>
+<li>
+<p>Distribuzione spaziale delle stelle nelle galassie:</p>
+<p>◦ Legge di de Vaucouleurs per le galassie ellittiche.</p>
+<p>◦ Legge di Freeman per le galassie a spirale.</p>
+</li>
+<li>
+<p>Caratteristiche fisiche e cinematiche delle galassie:</p>
+<p>◦ Relazione di Faber-Jackson per le galassie ellittiche.</p>
+<p>◦ Curve di rotazione e relazione di Tully-Fisher per le galassie a spirale.</p>
+</li>
+<li>
+<p>Cenni alla materia oscura.</p>
+</li>
+<li>
+<p>Legge di Hubble.</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>Cenni agli ammassi di galassie e alla distribuzione su grande scala.</p>
+</li>
+</ul></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p><strong>Introduction:&nbsp;</strong></p>
+<p>Mass, length and time scales. Magnitude scale, color index, distance modulus.&nbsp;</p>
+<p><strong>Interaction of radiation with matter:</strong></p>
+<p>Theory of radiative transfer. Thermodynamic equilibrium. Radiative transfer through stellar atmospheres. Radiative energy transport in the stellar interior. Radiative opacity. Analysis of spectral lines.&nbsp;</p>
+<p><strong>Stellar structure and evolution</strong></p>
+<p>Equations of stellar structure. Nuclear reactions in stars. Degeneracy pressure of a Fermi gas.&nbsp;Stellar models. pre-main sequence, main sequence, red giants. &nbsp;Structure and evolution of white dwarfs. Chandrasekhar mass limit. Helioseismology. Solar neutrino experiments. The neutron drip and neutron stars. Pulsars. Supernovae.</p>
+<p><strong>The Milky Way and its interstellar medium</strong>&nbsp;&nbsp;</p>
+<p>The shape and the size of Milky Way. Star count analysis. Interstellar extinction and reddening. Stellar populations. Phases of the interstellar medium: HI clouds, warm intercloud medium, molecular clouds, HII regions, Hot coronal gas.&nbsp;</p>
+<p><strong>Extragalactic astronomy</strong></p>
+<p>Morphological classification of galaxies. Clusters of galaxies. Large-scale distribution of galaxies. Expansion of the Universe.&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p>Il libro di testo adottato &egrave;:<br /> &bull; Arnab Rai Choudhuri &ldquo;Astrophysics for Physicists&rdquo;, Cambridge University Press</p>
+<p>Come dettagliato nel programma, alcuni argomenti sono stati approfonditi seguendo, oltre al libro adottato, i testi seguenti:</p>
+<ul>
+<li>
+<p>D. D. Clayton &ldquo;Principles of Stellar Evolution and Nucleosynthesis&rdquo;, University of Chicago Press</p>
+</li>
+<li>
+<p>R. Kippenhahn &amp; A. Weigert &ldquo;Stellar Structure and Evolution&rdquo;, Springer</p>
+</li>
+<li>
+<p>S. L. Shapiro &amp; S. A. Teukolsky &ldquo;Black Holes, White Dwarfs, and Neutron Stars&rdquo;, Wiley</p>
+</li>
+<li>
+<p>G. B. Rybicki &amp; A. P. Lightman &ldquo;Radiative Processes in Astrophysics&rdquo;, Wiley</p>
+</li>
+<li>
+<p>M. Harwit &ldquo;Astrophysical Concepts&rdquo;, Springer</p>
+</li>
+</ul></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Bibliography</div>
+<span class="contenuto_programma"><p>Text:</p>
+<p>&bull; Arnab Rai Choudhuri &ldquo;Astrophysics for Physicists&rdquo;, Cambridge University Press</p>
+<p>Supplementary reading:</p>
+<ul>
+<li>D. D. Clayton &ldquo;Principles of Stellar Evolution and Nucleosynthesis&rdquo;, University of Chicago Press</li>
+<li></li>
+<li>
+<p>R. Kippenhahn &amp; A. Weigert &ldquo;Stellar Structure and Evolution&rdquo;, Springer</p>
+</li>
+<li>
+<p>S. L. Shapiro &amp; S. A. Teukolsky &ldquo;Black Holes, White Dwarfs, and Neutron Stars&rdquo;, Wiley</p>
+</li>
+<li>
+<p>G. B. Rybicki &amp; A. P. Lightman &ldquo;Radiative Processes in Astrophysics&rdquo;, Wiley</p>
+</li>
+<li>
+<p>M. Harwit &ldquo;Astrophysical Concepts&rdquo;, Springer</p>
+</li>
+</ul></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p>L'esame consiste in una prova orale, ossia in un colloquio tra il candidato e il docente. Durante il colloquio al candidato verranno fatte domande su vari argomenti trattati nel corso.&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Assessment methods</div>
+<span class="contenuto_programma"><p>During the oral exam the student must be able to demonstrate his/her knowledge of the course material and be able to discuss the it with a sufficient propriety of expression. It will be strictly required to be able to establish a connection with the general physical culture, acquired in other courses.</p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 15/10/2018 15:02</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-fcc1cd77.js"></script>
+<script src="../_assets/jquery-ui.min-083c88ac.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-bc864bd9.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-cbd4a7f1.js"></script> 
+<script src="../_assets/tinymce.min-2396adf9.js"></script>
+<script src="../_assets/jquery.tinymce.min-cf2ee483.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-8144b60d.js"></script>
+<script src="../_assets/unipi-635b458d.js"></script>
+<script src="../_assets/dm-4aacbbca.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

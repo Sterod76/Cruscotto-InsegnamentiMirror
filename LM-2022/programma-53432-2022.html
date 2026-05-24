@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-dc764708.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5d307d3a.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-b777fb69.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-adef06ea.css" rel="stylesheet">
+		<link href="../_assets/style_v1-429eb70e.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-32df6655.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7c4d2527.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-57b8ccba.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-8e6319ba.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/esami2/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/esami2/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/esami2/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/esami2/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/esami2/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/esami2/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/esami2/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/esami2/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esami2/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/esami2/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/esami2/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/esami2/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/esami2/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/esami2/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/esami2/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/esami2/index.php">Home</a></li><li><a href="https://esami.unipi.it/esami2/programmi_insegnamenti.php?aa=2022&cid=1&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">FUNDAMENTALS OF LIGHT  MATTER INTERACTION / FONDAMENTI DI INTERAZIONE RADIAZIONE MATERIA</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">ALESSANDRO TREDICUCCI</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2022/23</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">304BB</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">9</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Primo semestre</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>FONDAMENTI DI INTERAZIONE RADIAZIONE MATERIA</TD><TD class='value-programma'>FIS/03</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>54</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>DONATELLA CIAMPINI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=152' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>ALESSANDRO TREDICUCCI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=81158' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/esami2/pdfProgCorsoStu.php?language=it&c=53432" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p>Il corso&nbsp;mira a fornire le conoscenze necessarie per la trattazione dal punto di vista quantistico del&nbsp;campo&nbsp;elettromagnetico&nbsp;e della sua interazione con i sistemi materiali. Le lezioni&nbsp;offrono le basi e i metodici teorici, ma discutono anche i principali effetti e le pi&ugrave; rilevanti&nbsp;implementazioni sperimentali.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p>The course aims at providing&nbsp;the necessary knowledge for the quantum treatment of the electromagnetic field and of its interaction with material systems. The lessons cover&nbsp;the theoretical bases and methods, but also discuss the main effects and the most relevant experimental implementations.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><p>Lo/la studente/essa sar&agrave; valutato/a sulla sua capacit&agrave; di discutere i contenuti del corso utilizzando la terminologia appropriata. Gli/le verr&agrave; chiesto di dimostrare di essere in grado di affrontare un nuovo problema di ricerca circoscritto mettendo in pratica, con consapevolezza critica, i concetti e le idee apprese durante il corso.</p>
+<p>Metodi:</p>
+<p>Prova orale finale</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
+<span class="contenuto_programma"><p>The student will be assessed on his/her demonstrated ability to discuss the main course contents using the appropriate terminology. He/she will be asked to demonstrate the ability to approach a circumscribed new research problem putting into practice, with critical awareness, the concepts and ideas learned during the course.</p>
+<p>Methods:</p>
+<ul>
+<li>Final oral exam</li>
+</ul></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Capacit&agrave;</div>
+<span class="contenuto_programma"><p>Alla fine del corso lo/a studente/ssa sar&agrave; in grado di comprendere i concetti principali concernenti&nbsp;gli stati quantistici e classici del campo elettromagnetico, come questi interagiscono con le transizioni materiali, e i fenomeneni fisici e le applicazioni che ne scaturiscono. Sar&agrave; in grado di esaminare criticamente le nuove idee e gli approcci che appaiono nella letteratura scientifica, e avr&agrave; il background di fisica necessario per affrontare l'implementazione pratica e la descrizione matematica di esperimenti moderni di&nbsp;ottica quantistica nei settori pi&ugrave; diversi.&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Skills</div>
+<span class="contenuto_programma"><p>At the end of the course the student will be able to understand the main concepts concerning the quantum and classical states of the electromagnetic field, how they interact with material transitions, and the physical phenomena and applications that arise from them. He/she will be able to critically examine the new ideas and approaches that appear in the scientific literature, and will have the physics background necessary to address the practical implementation and mathematical description of modern quantum optics experiments in the most diverse fields.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle capacit&agrave;</div>
+<span class="contenuto_programma"><p>Il corso presenta un approccio interattivo in cui gli studenti sono coinvolti in discussioni con l'insegnante, anche riguardo ai nuovi risultati che appaiono nella letteratura scientifica. Esercizi e domande di base sono parte integrante delle lezioni per verificare il grado di comprensione.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of skills</div>
+<span class="contenuto_programma"><p>The course features an interactive approach in which students are involved in discussions with the teacher, also concerning new results appearing in the scientific literature. Basic exercises / questions are an integral part of the lessons to verify the degree of comprehension.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Comportamenti</div>
+<span class="contenuto_programma"><p>Lo studente apprender&agrave; ad affrontare la descrizione di sistemi fisici in interazione con campi elettromagnetici in ogni tipo di condizione e ad applicare/implementare concetti e schemi generali in&nbsp;esperimenti specifici. Sar&agrave; in seguito&nbsp;in grado di condurre in modo indipendente un progetto di ricerca nel campo.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Behaviors</div>
+<span class="contenuto_programma"><p>The student will learn how to tackle&nbsp;the description of physical systems in interaction with electromagnetic fields in any type of condition and to apply / implement concepts and general schemes in specific experiments. He will then be able to independently conduct a research project in the field.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica dei comportamenti</div>
+<span class="contenuto_programma"><p>Le impressioni sulla partecipazione alle lezioni, le discussioni sui seminari, la scelta degli argomenti dell'esame sono gli elementi utilizzati per verificare il livello di progresso raggiunto.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of behaviors</div>
+<span class="contenuto_programma"><p>Impressions on the the attendance to lessons, discussions on the seminars, choice of the exam topics will be used to verify the level of progress reached.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><p>E' necessaria la&nbsp;conoscenza della meccanica quantistica di base, anche nel formalismo della seconda quantizzazione, e dell'elettromagnetismo classico.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites</div>
+<span class="contenuto_programma"><p>Knowledge of basic quantum mechanics, also in the second quantization formalism, as well as of classical electromagnetism&nbsp;is necessary.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni metodologiche</div>
+<span class="contenuto_programma"><p>Modalit&agrave;: lezioni frontali</p>
+<p>Attivit&agrave; didattiche:</p>
+<ul>
+<li>frequentazione delle&nbsp;lezioni</li>
+<li>partecipazione ai seminari</li>
+<li>partecipazione alle discussioni</li>
+<li>studio individuale</li>
+<li>ricerca bibliografica</li>
+</ul>
+<p>Frequenza: consigliata</p>
+<p>Metodi di insegnamento:</p>
+<ul>
+<li>lezioni</li>
+<li>seminari</li>
+<li>apprendimento basato su task e problemi specifici / apprendimento basato&nbsp;sulla partecipazione diretta</li>
+</ul></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Teaching methods</div>
+<span class="contenuto_programma"><p>Delivery: face to face</p>
+<p>Learning activities:</p>
+<ul>
+<li>attending lectures</li>
+<li>participation in seminar</li>
+<li>participation in discussions</li>
+<li>individual study</li>
+<li>Bibliography search</li>
+</ul>
+<p>Attendance: Advised</p>
+<p>Teaching methods:</p>
+<ul>
+<li>Lectures</li>
+<li>Seminar</li>
+<li>Task-based learning/problem-based learning/inquiry-based learning</li>
+</ul></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p>Legge di Planck, interazione del campo elettromagnetico con un sistema a due livelli, coefficienti di Einstein. Teoria delle fluttuazioni e coerenza della radiazione. Quantizzazione del campo elettromagnetico e stati quantistici/classici: luce coerente, termica, squeezed. Campi di&nbsp;singolo modo, multimodo e continui. Teoria quantistica dell'emissione, attenuazione e amplificazione; modello quantistico del laser. Fluorescenza e scattering della luce. Ottica quantistica non-lineare. Interazione con sistemi atomici coerenti ed effetti collettivi. Cenni di opto-meccanica. &nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p>Planck's law, interaction of the electromagnetic field with a two-level system, Einstein's coefficients. Theory of fluctuations and coherence of radiation. Quantization of the electromagnetic field and quantum / classical states: coherent, thermal, squeezed light. Single mode, multimode and continuous fields. Quantum theory of emission, attenuation and amplification; quantum model of the laser. Fluorescence and light scattering. Non-linear quantum optics. Interaction with coherent atomic systems and collective effects. Elements of opto-mechanics.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p>Rodney Loudon, "The Quantum Theory of Light" - Oxford Science&nbsp;Publications 2000</p>
+<p>Marlan O. Scully &amp; M. Suhail Zubairy, "Quantum Optics" -&nbsp;Cambridge University Press 1997</p>
+<p>Leonard Mandel &amp; Emil Wolf, "Optical coherence and quantum optics" -&nbsp;Cambridge University Press 1995</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Bibliography</div>
+<span class="contenuto_programma"><p>Rodney Loudon, "The Quantum Theory of Light" - Oxford Science&nbsp;Publications 2000</p>
+<p>Marlan O. Scully &amp; M. Suhail Zubairy, "Quantum Optics" -&nbsp;Cambridge University Press 1997</p>
+<p>Leonard Mandel &amp; Emil Wolf, "Optical coherence and quantum optics" -&nbsp;Cambridge University Press 1995</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni per non frequentanti</div>
+<span class="contenuto_programma"><p>Gli argomenti delle lezioni e la relativa bibliografia sono disponibili settimanalmente sul registro. Ulteriori supporti (slide, articoli, etc.) sono scaricabili dalla piattaforma e-learning.&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Non-attending students info</div>
+<span class="contenuto_programma"><p>The topics of the lessons and the relative bibliography are available weekly on the register. Additional supporting material (slides, articles, etc.) can be downloaded from the e-learning platform.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p>Esame orale che di solito tratta almeno due argomenti distinti. All'allievo verr&agrave; chiesto di iniziare a discutere sull'argomento, e durante la&nbsp;discussione si chieder&agrave; di spiegare l'origine delle sue affermazioni e come le conoscenze enunciate possono essere applicate a una nuova situazione non affrontata durante le lezioni. Una parte dell'esame pu&ograve; essere svolta a seminario su un argomento concordato col docente.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Assessment methods</div>
+<span class="contenuto_programma"><p>Oral exam that usually covers at least two distinct subjects. The student will be invited to start discussing the topic, and during the discussion will be asked to explain the origin of his/her statements and how the knowledge acquired can be applied to a new situation not encountered during the lessons. A part of the exam can be held in seminar form, usually presenting a scientfic article previously agreed with the teacher.</p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 08/08/2022 17:08</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/esami2/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-4e345eba.js"></script>
+<script src="../_assets/jquery-ui.min-e93c00aa.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-19dbc6e0.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-c8ee7689.js"></script> 
+<script src="../_assets/tinymce.min-e9308fd1.js"></script>
+<script src="../_assets/jquery.tinymce.min-65f0b191.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-3beded5a.js"></script>
+<script src="../_assets/unipi-3293f5f6.js"></script>
+<script src="../_assets/dm-10a06b2c.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

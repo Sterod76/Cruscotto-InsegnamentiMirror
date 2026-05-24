@@ -1,0 +1,257 @@
+body {
+	font-size: 12px;
+}
+
+#logo {
+	background: #053657; /* Old browsers */
+	background: -moz-linear-gradient(top,  #053657 0%, #05375a 12%, #02365b 13%, #053e69 41%, #023f6b 52%, #04436f 62%, #024474 69%, #034778 87%, #04477b 88%, #03497c 99%, #004d79 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#053657), color-stop(12%,#05375a), color-stop(13%,#02365b), color-stop(41%,#053e69), color-stop(52%,#023f6b), color-stop(62%,#04436f), color-stop(69%,#024474), color-stop(87%,#034778), color-stop(88%,#04477b), color-stop(99%,#03497c), color-stop(100%,#004d79)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #053657 0%,#05375a 12%,#02365b 13%,#053e69 41%,#023f6b 52%,#04436f 62%,#024474 69%,#034778 87%,#04477b 88%,#03497c 99%,#004d79 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #053657 0%,#05375a 12%,#02365b 13%,#053e69 41%,#023f6b 52%,#04436f 62%,#024474 69%,#034778 87%,#04477b 88%,#03497c 99%,#004d79 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #053657 0%,#05375a 12%,#02365b 13%,#053e69 41%,#023f6b 52%,#04436f 62%,#024474 69%,#034778 87%,#04477b 88%,#03497c 99%,#004d79 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #053657 0%,#05375a 12%,#02365b 13%,#053e69 41%,#023f6b 52%,#04436f 62%,#024474 69%,#034778 87%,#04477b 88%,#03497c 99%,#004d79 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#053657', endColorstr='#004d79',GradientType=0 ); /* IE6-9 */
+}
+
+.top-panel {
+	background: #053657; /* Old browsers */
+	background: -moz-linear-gradient(top,  #053657 0%, #05375a 12%, #02365b 13%, #053e69 41%, #023f6b 52%, #04436f 62%, #024474 69%, #034778 87%, #04477b 88%, #03497c 99%, #004d79 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#053657), color-stop(12%,#05375a), color-stop(13%,#02365b), color-stop(41%,#053e69), color-stop(52%,#023f6b), color-stop(62%,#04436f), color-stop(69%,#024474), color-stop(87%,#034778), color-stop(88%,#04477b), color-stop(99%,#03497c), color-stop(100%,#004d79)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #053657 0%,#05375a 12%,#02365b 13%,#053e69 41%,#023f6b 52%,#04436f 62%,#024474 69%,#034778 87%,#04477b 88%,#03497c 99%,#004d79 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #053657 0%,#05375a 12%,#02365b 13%,#053e69 41%,#023f6b 52%,#04436f 62%,#024474 69%,#034778 87%,#04477b 88%,#03497c 99%,#004d79 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #053657 0%,#05375a 12%,#02365b 13%,#053e69 41%,#023f6b 52%,#04436f 62%,#024474 69%,#034778 87%,#04477b 88%,#03497c 99%,#004d79 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #053657 0%,#05375a 12%,#02365b 13%,#053e69 41%,#023f6b 52%,#04436f 62%,#024474 69%,#034778 87%,#04477b 88%,#03497c 99%,#004d79 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#053657', endColorstr='#004d79',GradientType=0 ); /* IE6-9 */
+/*	height: 100px;  */ /* ampliamento header */
+}
+#logo a {
+	background: none;
+	text-align: center;
+/*	line-height: 100px; */ /* ampliamento header */
+}
+
+.unipi-header {
+	text-align: left;
+	color: white;
+	font-family: "Times New Roman";
+	font-size: 30px;
+	font-variant: small-caps;
+}
+.unipi-subheader {
+	color: #DDDDDD;
+	font-family: "Times New Roman";
+	font-size: 15px;
+	font-variant: none;
+}
+
+.login-box a {
+	color: #BEE8ED;
+}
+
+
+#content {
+	background: white none repeat scroll 0% 0%;
+}
+.box-content {
+	background: white none repeat scroll 0% 0%;
+}
+
+.box-content .form-group {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+
+/* stili per righe che contengono le informazioni sugli insegnamenti (master) */
+.table-corsi tbody  > tr.corso  > td{
+	background-color: #FBFBF0;
+	padding: 3px;
+}
+.table-moduli > tbody  > tr > td {
+	background-color: #FBFBF0;
+	padding: 3px;
+}
+.table-moduli  tr:first-child  td {
+	border-top: none;
+}
+
+/* stili per righe che contengono le informazioni sugli appelli (detail) */
+.table-appelli > thead > tr > th{
+	font-size: 0.8em;
+	padding: 3px;
+}
+.table-appelli > tbody > tr > td{
+	font-size: 0.9em;
+	padding: 3px;
+}
+
+/* overwrite devoops style */
+@media (max-width: 767px) {
+  #main {
+    margin-top: 50px;
+  }
+}
+
+.welcome {
+	height: 36px;
+	line-height: 18px;
+	color: white !important;
+}
+
+.bottoneAzione {
+	margin: 0px;
+}
+
+/* tabella condivisioni e mutuazioni */
+.mut_con {
+	font-size: 0.8em;
+}
+
+.mut_con  > table > tbody > tr > td {
+	padding-right: 5px;
+}
+.mut_con  > table > tbody > tr > th {
+	padding-right: 5px;
+}
+
+.mut_con  > table.esami_mutuazioni > tbody > tr > td {
+	background-color: #FBFBF0;
+}
+.mut_con  > table.esami_mutuazioni > thead > tr > th {
+	background-color: #FBFBF0;
+}
+
+.corsi_mutuazioni  tbody td {
+	vertical-align: top !important;
+}
+.corsi_mutuazioni  {
+	width: 100%;
+}
+.valutazioni_mutuazioni  {
+	background-color: white;
+}
+
+.fixed_top_pad {
+	padding-top: 4px;
+	padding-bottom: 0px;
+}
+.alert-slim {
+	margin-bottom: 0px;
+
+}
+
+#unipiFooter {
+	width:100%;
+	color: white;
+}
+.linkFooter {
+	color: white;
+}
+.linkFooter:hover {
+	color: white;
+	text-decoration: none;
+	background-color: #2B465C;
+}
+.shortmain {
+	min-height:600px !important;  
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered  {
+	text-overflow: clip;
+}
+
+.evidenza {
+	background-color: red;
+}
+
+
+/* personalizzazione addevent */
+
+.iconlink {
+	color: #428BCA !important;
+}
+
+#legenda {
+	padding-left: 15px;
+	padding-right: 15px;
+	font-style: italic;
+}
+#legenda div {
+	border: 1px solid #E2E2E2;
+}
+
+#breadcrumb {
+	margin-bottom: 0px;
+}
+#dati_studente {
+	background-color: #3C6381;
+	color: white;
+	margin-bottom: 10px;
+	padding-left: 15px;
+}
+.box-inside {
+	margin-left: 15px;
+}
+
+/* stili per evidenziazione in base allo stato */
+.scaduto {
+	background-color: #DDDDDD;
+}
+.inattivo {
+    background-color:#F1DCDC; /*  rosato */
+}
+
+/* stili per sezione ECTS */
+h2.ects {
+	color: #036;
+	font-weight: bold;
+}
+h2.ects-title {
+	font-size: 18px;
+	padding-bottom: 15px;
+}
+h2.ects-level-1 {
+	font-size: 16px;
+	padding-bottom: 10px;
+}
+h3.ects {
+	color: #036;
+	font-size: 15px;
+	font-style: italic;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.ects .yearlabel {
+	font-weight: bold;
+	padding-top: 5px;
+}
+table.ects {
+	margin-bottom: 20px;
+}
+table.ects TD,TH{
+	padding-right: 5px;
+}
+.ects .group-header {
+	font-style: italic;
+}
+table.ects TD.tracklabel {
+	padding-top: 5px;
+	font-weight: bold;
+}
+td.ects{
+	vertical-align:text-top;
+}
+.bottomLine {
+    border: gray;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+}
+
+.testoAnalisiValutazione  {
+	border-width: thin;
+	border-color: lightgray;
+	border-style: solid;
+}
+.testoAnalisiValutazione td {
+	padding: 10px;
+}

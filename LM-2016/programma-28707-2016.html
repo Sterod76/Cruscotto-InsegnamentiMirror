@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-dc764708.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5d307d3a.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-b777fb69.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-adef06ea.css" rel="stylesheet">
+		<link href="../_assets/style_v1-429eb70e.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-32df6655.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7c4d2527.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-57b8ccba.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-8e6319ba.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/esami2/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/esami2/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/esami2/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/esami2/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/esami2/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/esami2/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/esami2/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/esami2/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esami2/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/esami2/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/esami2/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/esami2/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/esami2/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/esami2/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/esami2/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/esami2/index.php">Home</a></li><li><a href="https://esami.unipi.it/esami2/programmi_insegnamenti.php?aa=2016&cid=1&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">GENERAL RELATIVITY / RELATIVITA' GENERALE</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">ETTORE VICARI</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2016/17</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">228BB</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">9</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Primo semestre</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>RELATIVITA' GENERALE</TD><TD class='value-programma'>FIS/02</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>54</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>ETTORE VICARI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=4302' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/esami2/pdfProgCorsoStu.php?language=it&c=28707" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p>Uno degli obiettivi del corso e` rendere familiare la descrizione geometrica dello spazio e del tempo in presenza di gravi fornita dalla teoria della relativita` generale. L'altro obiettivo principale e` conoscere e apprezzare le sue applicazioni, quali i buchi neri, radiazione gravitazionale, e la cosmologia del big bang.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p>One of th purposes of the course is to introduce the geometric description of the space-time in the presence of matter, focussing in particular on the physical aspects. The other main purpose is to present and appreciate its most fascinating applications, such as black holes, gravitational waves and the big-bang cosmology.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><p>esame orale su tutti gli argomenti del corso.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
+<span class="contenuto_programma"><p>Methods:</p>
+<ul>
+<li>Final oral exam</li>
+</ul></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Capacit&agrave;</div>
+<span class="contenuto_programma"><p>Comprensione dei concetto fondamentali della teoria della relativita' generale, e sue applicazioni.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Skills</div>
+<span class="contenuto_programma"><p>Understanding of the main concepts of the general relativity, and its applications.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle capacit&agrave;</div>
+<span class="contenuto_programma"><p>Esame orale su tutti gli argomenti del corso, e verifica dell'approccio ad alcuni problemi posti durante l'esame.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of skills</div>
+<span class="contenuto_programma"><p>Oral exam on the issues of the course, and check of the ability of approaching some problems.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><p>Le competenze iniziali richieste sono essenzialmente l'elettrodinamica classica e la relativita` ristretta.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites</div>
+<span class="contenuto_programma"><p>The required background includes the relativity and the classical electrodynamics.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni metodologiche</div>
+<span class="contenuto_programma"><p>Lezioni in aule. Frequenza obbligatoria.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Teaching methods</div>
+<span class="contenuto_programma"><p>Delivery: face to face</p>
+<p>Learning activities:</p>
+<ul>
+<li>attending lectures</li>
+</ul>
+<p>Attendance: Mandatory</p>
+<p>Teaching methods:</p>
+<ul>
+<li>Lectures</li>
+</ul></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p>Principio di Relativita`. Trasformazioni di Lorentz. Composizione delle velocita`. Tempo &nbsp;proprio. Quadrivettori.</p>
+<p>Principio di minima azione per una particella libera e quadrimpulso. Particella carica in un campo elettromagnetico. Azione&nbsp;del campo elettromagnetico e equazioni del moto.</p>
+<p>Tensore energia-impulso. Fluidi perfetti.</p>
+<p>Principio di Equivalenza. Formalismo tensoriale in Relativita` Generale. Tempo proprio, di&nbsp;stanze e metrica spaziale. Metrica&nbsp;spaziale e sincronizzazione degli orologi.</p>
+<p>Trasporto parallelo. Derivata covariante e cenni di calcolo tensoriale.</p>
+<p>Equazione del moto di un corpo in un campo gravitazionale. Equazioni del moto nel limite non relativistico. Campo costante.</p>
+<p>Tensore energia-impulso definito dalla variazione rispetto alla metrica. Il tensore energia-impulso in uno spazio curvo. Tensore energia-impulso di un campo elettromagnetico.</p>
+<p>Tensore di Riemann. Proprieta` del tensore di Riemann.</p>
+<p>Equazione di Einstein. Equazione di Einstein derivata da un principio variazionale. Pseudo tensore energia-impulso e quadrimpulso totale di un sistema finito.</p>
+<p>Rilevanza fenomenologica della relativita` generale.</p>
+<p>Metrica in un sistema con simmetria centrale. Metrica di Schwarzschild. Proprieta` fisiche&nbsp;della metrica di Schwarzschild.&nbsp;Moto di un corpo nello spazio-tempo descritto dalla metrica di Schwarzschild. Traiettorie&nbsp;di un corpo nello spazio-tempo di&nbsp;Schwarzschild. Diffusione della luce, precessione del perielio.</p>
+<p>Buchi neri e Moto di un corpo in prossimita` del raggio gravitazionale. Metrica di Kruskal-Szeheres. Buchi neri descritti&nbsp;dalla metrica di Kerr. Cenni sulla radiazione di Hawking.</p>
+<p>Approssimazione di campo debole ed equazione di Einstein linearizzata</p>
+<p>Radiazione gravitazionale. Onde gravitazionali. Potenza emessa da una sorgente gravitazionale. Radiazione di quadrupolo&nbsp;nell'approssimazione non relativistica.</p>
+<p>Cosmologia. Modelli di universo isotropi e omogenei. Espansione dell'universo, redshift e costante di Hubble. Costante cosmologica.</p>
+<p>Cosmologia del Big Bang e evoluzione dell'universo. Parametri cosmologici. Meteria oscura&nbsp;e energia oscura. Orizzonte e eta'&nbsp;dell'universo. Problemi sulla naturalezza delle condizioni iniziali e la causalita`. Modelli basati sul meccanismo dell'inflazione.</p>
+<p>Discussione di alcuni esperimenti fondamentali, che verificano e supportano la teoria della relativita' generale.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p>The course focuses on the General Relativity and its applications. It is an introduction to the geometric description of the space-time in the presence of matter, as provided by the General Relativity. The most interesting applications are presented, such as black holes, gravitational waves and the big-bang cosmology. Morover, a part of the course is dedicated to the experimental checks and their future developments, which are important to understand the physical content of the theory. Moreover some&nbsp;lectures are devoted to the discussion of some of the fundamental experiments supporting the theory of general relativity.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p>Libri suggeriti per consultazione:</p>
+<p>Landau II, Teoria di Campi</p>
+<p>Schutz, Introduction to general relativity</p>
+<p>Ma anche altri libri di Relativita' Generale possono andare bene.</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Bibliography</div>
+<span class="contenuto_programma"><p>Suggested books:</p>
+<p>Landau II, Teoria di Campi</p>
+<p>Schutz, Introduction to general relativity</p>
+<p>However, any book of general relativity may be good as well.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p>esame orale sugli argomenti del corso</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Assessment methods</div>
+<span class="contenuto_programma"><p>Oral exam on the issues of the course.</p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 14/05/2017 15:15</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/esami2/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-4e345eba.js"></script>
+<script src="../_assets/jquery-ui.min-e93c00aa.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-19dbc6e0.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-c8ee7689.js"></script> 
+<script src="../_assets/tinymce.min-e9308fd1.js"></script>
+<script src="../_assets/jquery.tinymce.min-65f0b191.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-3beded5a.js"></script>
+<script src="../_assets/unipi-3293f5f6.js"></script>
+<script src="../_assets/dm-10a06b2c.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

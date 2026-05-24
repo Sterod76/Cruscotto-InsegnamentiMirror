@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-9d88d2d3.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5e6adf09.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-3e1acd97.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-0be77ad4.css" rel="stylesheet">
+		<link href="../_assets/style_v1-8d07d3cb.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-795b32e7.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7ea9ead7.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-ce428c17.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-23a80404.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/index.php">Home</a></li><li><a href="https://esami.unipi.it/programmi_insegnamenti.php?aa=2018&cid=135&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">COMPLEMENTI DI ANALISI MATEMATICA</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">MARINA GHISI</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2018/19</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">637AA</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">6</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Primo semestre</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>COMPLEMENTI DI ANALISI MATEMATICA</TD><TD class='value-programma'>MAT/05</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>48</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>MARINA GHISI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=4921' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/pdfProgCorsoStu.php?language=it&c=39117" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p>Al termine del corso lo studente sar&agrave; in grado di padroneggiare e utilizzare gli strumenti dell'analisi in pi&ugrave; variabili in particolare: calcolo differenziale, integrali multipli, integrali su linee e superfici.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p>The students will develop a working knowledge of the main tools of differential and integral calculus in several variables. The students who successfully complete the course for example will be able to find extremals with and without constraints, to compute 2 and 3 dimensional integrals and to use in the appropriate way Gauss-Green and Stokes theorems.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><ul>
+<li>La verifica delle conoscenze sar&agrave; oggetto della valutazione dell'elaborato scritto previsto all'inizio di ogni sessione d'esame.</li>
+<li>E' prevista una prova orale.</li>
+</ul></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
+<span class="contenuto_programma"><p>In the multiple choice test (30 minutes, 16 questions) the student must demonstrate his/her knowledge of the basic course contents and prerequisites. In the written exam (3 hours, 4 problems), the student must demonstrate his/her ability to approach and solve standard problems requiring the tools presented in the course. Solutions are presented in the form of a short essay. Correctness and clarity of the essay will be assessed. During the oral exam the student's ability to explain correctly the main topics presented during the course at the board will be assessed.</p>
+<p>Methods:</p>
+<ul>
+<li>Final oral exam</li>
+<li>Final written exam</li>
+</ul></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Capacit&agrave;</div>
+<span class="contenuto_programma"><p>Lo studente sar&agrave; in grado di svolgere esercizi riguardanti: studio di funzioni in pi&ugrave; variabili, acalcolo di integrali multipli, calcolo di flussi su superfici, calcolo di integrali curvilinei.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Skills</div>
+<span class="contenuto_programma"><p>The students who successfully complete the course for example will be able to find extremals with and without constraints, to compute 2 and 3 dimensional integrals and to use in the appropriate way Gauss-Green and Stokes theorems.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle capacit&agrave;</div>
+<span class="contenuto_programma"><p>Svolgimento di esercizi durante la prova scritta.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of skills</div>
+<span class="contenuto_programma"><p>Final written and oral examination</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Comportamenti</div>
+<span class="contenuto_programma"><p>Lo studente sar&agrave; in grado di scegliere gli strumenti pi&ugrave; opportuni per risolvere i vari problemi dell'Analisi.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Behaviors</div>
+<span class="contenuto_programma"><p>The students who successfully complete the course will be able to choose the most appropriate tools in order to solve the different problems of the Analysis.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica dei comportamenti</div>
+<span class="contenuto_programma"><p>Svolgimento di esercizi durante la prova scritta</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of behaviors</div>
+<span class="contenuto_programma"><p>Final written and oral examination</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><p>Analisi Matematica in una&nbsp; variabile: calcolo differenziale, studio di funzioni, calcolo di integrali, studio di integrali impropri.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites</div>
+<span class="contenuto_programma"><p>Main tools of differential and integral calculus in one variable.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Teaching methods</div>
+<span class="contenuto_programma"><p>Delivery: face to face</p>
+<p>Learning activities:</p>
+<ul>
+<li>attending lectures</li>
+<li>individual study</li>
+</ul>
+<p>Attendance: Advised</p>
+<p>Teaching methods:</p>
+<ul>
+<li>Lectures</li>
+</ul></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p>Funzioni di pi&ugrave; variabili: limiti e continuit&agrave;, cambi di <br />&nbsp;&nbsp;&nbsp; variabili.&nbsp; Derivate parziali e direzionali, funzioni differenziabili, Teorema di Schwarz per le derivate successive.&nbsp; Formula di Taylor, massimi e minimi locali ed assoluti,&nbsp; matrice Hessiana,<br />&nbsp;&nbsp;&nbsp; moltiplicatori di Lagrange. Funzioni vettoriali. Derivazione&nbsp; sotto segno di integrale.&nbsp; Integrali di <br />&nbsp;&nbsp;&nbsp; pi&ugrave; variabili: vari metodi di integrazione. Cambi di &nbsp; coordinate negli integrali. Solidi di rotazione. Teorema di Guldino. Integrali impropri di p&ugrave;&nbsp; variabili. Curve: semplicit&agrave;,&nbsp; chiusura, retta tangente, lunghezza di una curva, integrali&nbsp; curvilinei. Forme differenziali: integrali di forme, forme <br />&nbsp;&nbsp;&nbsp; differenziali esatte (o campi conservativi). Superfici: piano tangente e vettore <br />&nbsp;&nbsp;&nbsp; normale, area di una superficie, area di una superficie di rotazione, integrali superficiali. <br />&nbsp;&nbsp; Gauss-Green e Stokes in due e tre variabili.<br />&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p>DIFFERENTIAL CALCULUS IN SEVERAL VARIABLES. Limits of functions. Continuity. Partial derivatives and directional derivatives. Differentiable functions and differential. Tangent hyperplane. Gradient. Sufficient conditions for the differentiability. Jacobian matrix. Differentiation of a composition of functions. Higher order derivatives. Taylor's formula. Extremals with and without constraints. INTEGRAL CALCULUS IN SEVERAL VARIABLES. Reduction formula. Change of variable formula. Area and volume computation. Generalized integrals. VECTOR FIELDS. Parametric curves. Lenght of a curve. Curvilinear integral. Vector fields and linear differential forms. Integration on closed paths. Conservative fields and exact forms. Surface integral of functions. Gauss-Green and Stokes theorems.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p>&nbsp;Analisi Matematica II, Schede ed Esercizi, autori Ghisi - Gobbino, editrice Esculapio</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Bibliography</div>
+<span class="contenuto_programma"><p>Recommended reading includes the following works M. Ghisi, M. Gobbino;&nbsp; Analisi Matematica II, Schede ed Esercizi; Ed. Esculapio. Further bibliography will be indicated.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p>Test (30 minuti a risposta multipla)&nbsp; + scritto (3 ore)&nbsp; + prova orale.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Assessment methods</div>
+<span class="contenuto_programma"><ul>
+<li>Final oral exam</li>
+<li>Final written exam</li>
+</ul></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 18/07/2018 15:26</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-fcc1cd77.js"></script>
+<script src="../_assets/jquery-ui.min-083c88ac.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-bc864bd9.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-cbd4a7f1.js"></script> 
+<script src="../_assets/tinymce.min-2396adf9.js"></script>
+<script src="../_assets/jquery.tinymce.min-cf2ee483.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-8144b60d.js"></script>
+<script src="../_assets/unipi-635b458d.js"></script>
+<script src="../_assets/dm-4aacbbca.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

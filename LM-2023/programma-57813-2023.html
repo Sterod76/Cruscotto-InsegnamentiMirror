@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-dc764708.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5d307d3a.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-b777fb69.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-adef06ea.css" rel="stylesheet">
+		<link href="../_assets/style_v1-429eb70e.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-32df6655.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7c4d2527.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-57b8ccba.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-8e6319ba.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/esami2/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/esami2/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/esami2/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/esami2/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/esami2/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/esami2/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/esami2/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/esami2/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esami2/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/esami2/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/esami2/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/esami2/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/esami2/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/esami2/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/esami2/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/esami2/index.php">Home</a></li><li><a href="https://esami.unipi.it/esami2/programmi_insegnamenti.php?aa=2023&cid=1&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">QUANTUM LIQUIDS</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">MARIA LUISA CHIOFALO</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2023/24</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">382BB</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">9</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Primo semestre</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Inglese</span></div>
+<div class="col-md-6"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>QUANTUM LIQUIDS</TD><TD class='value-programma'>FIS/03</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>54</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>MARIA LUISA CHIOFALO <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=6715' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/esami2/pdfProgCorsoStu.php?language=it&c=57813" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p>Quantum Liquids &egrave; un corso per il Dottorato in Fisica, mutuato per la LM in Fisica (versione da 9 CFU e da 6 CFU), e per la LT in Materials and Nanotechnologies (6 CFU). Si tiene a cavallo tra il primo e il secondo semestre, a partire da Novembre del primo semestre.</p>
+<p><strong>Obiettivi di apprendimento.</strong> Al termine dell&rsquo;insegnamento, la/lo studente avr&agrave; sviluppato le conoscenze concettuali, procedurali e fattuali nella fisica dei liquidi quantistici all&rsquo;equilibrio (modulo da 6 CFU) e dei sistemi quantistici aperti driven-dissipative (modulo da 3 CFU), e loro ingegnerizzazione come simulatori quantistici in piattaforme attuali di tecnologie quantistiche. In particolare:</p>
+<p>(a) Metodi teorici avanzati per predire e caratterizzare la fisica di liquidi quantistici all&rsquo;equilibrio, loro relazione con metodi di simulazione quantistica, e classificazione per funzionalit&agrave; e tipologie di problemi. Tra i metodi: &nbsp;risposta lineare, idrodinamica quantistica, funzionale di densit&agrave; e di corrente, funzioni di Green e metodi non perturbativi, bosonizzazione.</p>
+<p>(b) Metodi teorici e numerici per sistemi quantistici fuori dall&rsquo;equilibrio e driven-dissipative: sistemi Markoviani e non Markoviani, dissipation engineering, simulazione quantistica con metodi stocastici e tensor networks, misura e feedback, e applicazioni a tecnologie quantistiche, chimica e biologia quantistiche.&nbsp;&nbsp;&nbsp;</p>
+<p>(c) Principi di funzionamento delle principali piattaforme di tecnologie quantistiche: atomi, atomi dipolari e di Rydberg, ioni ultrafreddi, atomi in cavit&agrave; QED; circuiti a superconduttore; fluidi di luce in cavit&agrave; ottiche; sistemi &nbsp;a bassa dimensionalit&agrave;. Loro uso come simulatori quantistici per materia condensata, fisica fondamentale, metrologia quantistica, gravit&agrave; analoga, e cosmologia.</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p>Quantum Liquids is a PhD course in Physics, borrowed for the LM in Physics (9 CFU), and for the LT in Materials and Nanotechnologies (6 CFU). It is held between the first and second semesters, starting from November of the first semester.</p>
+<p>At the end of the course, the student/student will have developed conceptual, procedural and factual knowledge in the physics of quantum liquids at equilibrium (6 CFU module) and of open driven-dissipative quantum systems (3 CFU module) and their engineering as quantum simulators in current quantum technology platforms. In particular:</p>
+<p>(a) Advanced theoretical methods to predict and characterize the physics of quantum liquids at equilibrium, their relationship to quantum simulation methods, and their classification by functionality and problem types. Among the methods: linear response, quantum hydrodynamics, functional density and current, Green functions and non-perturbative methods, bosonization.</p>
+<p>(b) Theoretical and simulational methods for out-of-equilibrium and driven-dissipative quantum systems: Markovian and non-Markovian systems, dissipative engineering, simulation through stochastic methods and tensor networks, measurement and feedback, and applications to quantum technologies, quantum chemistry and biology.&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>(c) Principles of operation of the main platforms of quantum technologies: atoms, dipolar and Rydberg atoms, ultracold ions, atoms in QED cavities; superconducting circuits; light fluids in optical cavities; low dimensional systems. Their use as quantum simulators for condensed matter, fundamental physics, quantum metrology, analogous gravity, and cosmology.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><p>La verifica &egrave; realizzata discutendo in una prova orale una dissertazione su un problema di fisica dei liquidi quantistici tra quelli non specificamente discussi nel corso e che faccia uso delle conoscenze e dei metodi teorici sviluppati durante il corso.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
+<span class="contenuto_programma"><p>The assessment is performed by oral discussion of an essay on problem in the physics of quantum liquids, selected among those that have not specifically treated within the course and that uses understanding and methods developed in the course. &nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Capacit&agrave;</div>
+<span class="contenuto_programma"><p>Al termine dell&rsquo;insegnamento lo/a studente avr&agrave; appreso a</p>
+<ul>
+<li>
+<p>Riconoscere l'emergere delle propriet&agrave; macroscopiche nella complessit&agrave; dei modelli microscopici che descrivono i liquidi quantistici all&rsquo;equilibrio e driven-dissipative.&nbsp;</p>
+</li>
+<li>
+<p>Formalizzare i concetti e imparare ad affrontarli con i metodi sviluppati.</p>
+</li>
+<li>
+<p>Collegare la conoscenza concettuale e la formalizzazione con la fenomenologia e le applicazioni.</p>
+</li>
+<li>
+<p>Organizzare la conoscenza disciplinare in una mappa concettuale che include campi come termodinamica, meccanica statistica e transizioni di fase, teorie di campo.</p>
+</li>
+<li>
+<p>Valutare criticamente articoli di ricerca specializzati.</p>
+</li>
+<li>
+<p>Progettare descrizioni teoriche per il comportamento dei liquidi quantici in diverse piattaforme sperimentali.</p>
+</li>
+<li>
+<p>Comunicare in modo efficace ed efficiente.</p>
+</li>
+<li>
+<p>Lavorare con autonomia, consapevolezza e capacit&agrave; di autovalutazione.</p>
+</li>
+<li>
+<p>Sviluppare capacit&agrave; di lavoro di squadra.</p>
+</li>
+</ul></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Skills</div>
+<span class="contenuto_programma"><p>At the end of the course, the student will have learned to&nbsp;</p>
+<ul>
+<li>Recognize the emergence of macroscopic properties in the complexity of the microscopic models describing quantum liquids at equilibrium and driven-dissipative.&nbsp;</li>
+<li>Formalize concepts and learn to tackle them with the methods developed.</li>
+<li>Connect conceptual knowledge and formalization with phenomenology and applications.</li>
+<li>Organize disciplinary knowledge into a conceptual map that includes contexts such as thermodynamics, statistical mechanics and phase transitions, quantum field theories.</li>
+<li>Critically evaluate specialized research articles.</li>
+<li>Design theoretical descriptions for the behavior of quantum liquids in different experimental platforms.</li>
+<li>Communicate effectively and efficiently.</li>
+<li>Work with autonomy, awareness and self-assessment skills.</li>
+<li>Develop teamwork skills.</li>
+</ul>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle capacit&agrave;</div>
+<span class="contenuto_programma"><p>La verifica &egrave; realizzata discutendo in una prova orale una dissertazione individuale e - in modo facoltativo - un lavoro di gruppo.</p>
+<p>La dissertazione individuale &egrave; su un problema di fisica dei liquidi quantistici tra quelli non specificamente discussi nel corso e che faccia uso delle conoscenze e dei metodi teorici sviluppati durante il corso. Si richiede alla/o studente di individuare il problema oggetto della dissertazione:</p>
+<ul>
+<li>in autonomia, con la supervisione della docente, in ogni caso sostenendo l&rsquo;interesse e la curiosit&agrave; dello/a studente</li>
+<li>avendo cura che il problema includa la discussione della fenomenologia esistente, una analisi critica dello stato dell&rsquo;arte, una trattazione metodologica teorica e/o simulativa, una applicazione in una o pi&ugrave; piattaforme sperimentali, una discussione sui possibili sviluppi e prospettive</li>
+</ul>
+<p>La verifica individuale &egrave; concepita in modo da valutare lo stato delle conoscenze dello/a studente, e di sviluppo di competenze nelle seguenti aree:</p>
+<p>(a) aver compreso idee e concetti e saperli comunicare utilizzando conoscenze di fisica di base;</p>
+<p>(b) saper formalizzare i concetti e saperli trattare attraverso l'uso di uno o pi&ugrave; tra i metodi sviluppati nel corso e relative procedure;</p>
+<p>(c) saper connettere la comprensione concettuale e la formalizzazione del problema con la fenomenologia e i fatti sperimentali disponibili, e avere un'idea delle applicazioni;</p>
+<p>(d) autonomia, consapevolezza della mappa concettuale e di quanto appreso, efficacia ed efficienza nella comunicazione scientifica.</p>
+<p>Il lavoro di gruppo &egrave; su un problema pratico relativo all&rsquo;applicazione di idee e metodi appresi nel corso in una particolare piattaforma sperimentale per le tecnologie quantistiche &ndash; concordata con gli e le studenti. Il problema viene discusso in gruppo in una apposita sessione di esame utilizzando tecniche del team-based learning (questa sessione avr&agrave; luogo alla fine del corso). Si richiede di discutere&nbsp; la metodologia pi&ugrave; funzionale di trattamento, sviluppare la comprensione del problema, e comunicare i risultati,&nbsp; conducendo le diverse attivit&agrave; attraverso una suddivisione di compiti,&nbsp; condivisione dei risultati, e gestione autonoma del gruppo.&nbsp; &nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of skills</div>
+<span class="contenuto_programma"><p>The assessment is performed by oral discussion of an essay on problem in the physics of quantum liquids, selected among those that have not specifically treated within the course and that uses understanding and methods developed in the course.&nbsp; The student is required to identify the essay subject:</p>
+<ul>
+<li>in substantial autonomy, though with the supervision of the lecturer, who will support student&rsquo;s interests and curiosity</li>
+<li>taking care that the selected problem inlcudes a discussion of the existing phenomenology, a critical analysis of the state of the art, a methodological (theory and/or simulation) treatment, the application to one or more experimental platforms, a discussion of implications and perspectives</li>
+</ul>
+<p>The individual testing is conceived to assess the development of student&rsquo;s knowledge and competences in the following areas:</p>
+<p>(a) understand ideas and concepts and be able to communicate them also after using basic physics tools (besides advanced);</p>
+<p>(b) be able to express concepts in formal manner and manage them via the methods developed during the course, along with the corresponding procedures;</p>
+<p>(c) be able to connect the conceptual understanding of the problem and its formal expression with the phenomenology and experimental fact that are available, and envision possible applications;</p>
+<p>(d) autonomy, awareness of the course conceptual map and of the learning outcomes, effectiveness and efficiency in scientific communication.</p>
+<p>The group work is conceived to be on practical problem related to the application of ideas and methods learned during the course to either one among the different experimental platforms for quantum technologies. The problem will be selected by the students with the supervision of the lecturer. The problem will be discussed within the participating group in an on-purpose examination session operated by means of team-based learning techniques (this session will take place at the end of the course). It is required to discuss the methodology that is best suited to the problem, develop the comprehension of the problem, communicate the results, conduct the different activities by distributing the different assignments among the group members, sharing the results, and managing the group in autonomy.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Comportamenti</div>
+<span class="contenuto_programma"><p>Ci si attende che la/lo studente sviluppi:</p>
+<p>(a)&nbsp; Interesse per le idee a fondamento della scienza e tecnologie quantistiche</p>
+<p>(b) Curiosit&agrave; e spirito critico</p>
+<p>(c) Spirito di iniziativa e partecipazione attiva</p>
+<p>(d) Correttezza al momento della valutazione</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Behaviors</div>
+<span class="contenuto_programma"><p>It is expected that the student will develop:</p>
+<ul>
+<li>Interest for the ideas at the foundations of quantum science and technologies</li>
+<li>Curiosity and critical thinking</li>
+<li>Proactive participation</li>
+<li>Fairness at the assessment time</li>
+</ul></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica dei comportamenti</div>
+<span class="contenuto_programma"><p>La verifica del comportamenti viene operata in aula nel corso e in sede di prova d&rsquo;esame mediante osservazione, e mediante possibili attivit&agrave; di valutazione formativa in itinere sul portale elearning.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of behaviors</div>
+<span class="contenuto_programma"><p>The behaviors&rsquo; evaluation is performed during classroom activities and at the assessment time via observation, and by means of possible activities of formative evaluation on the elearning portal.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><p><strong>Prerequisito</strong> &egrave; la conoscenza di base di dinamica, termodinamica ed elementi di &nbsp;meccanica statistica, elettromagnetismo, struttura della materia e meccanica quantistica acquisiti nel corso di studi triennale. <strong>Utili sebbene non indispensabili</strong> sono conoscenze di fisica dei solidi.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites</div>
+<span class="contenuto_programma"><p><strong>Prerequisite</strong> is the basic knowledge of classical dynamics, thermodynamics and elements of statistical mechanics, electromagnetism, structure of matter, quantum physics.</p>
+<p><strong>Very useful and preferable, though not compulsory,&nbsp;</strong> is the knowledge of solid-state physics</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni metodologiche</div>
+<span class="contenuto_programma"><p>Le attivit&agrave; d&rsquo;aula e online sono disegnate attorno agli obiettivi di apprendimento. In particolare:</p>
+<ol>
+<li><strong> Lezione frontale.</strong> Si intende, per ogni argomento:</li>
+</ol>
+<p>(a) discutere qualitativamente mediante la fisica di base le idee emergenti da fatti sperimentali ed esempi di vita quotidiana, approfondendo all'occorrenza metodi sperimentali e possibili applicazioni, anche utilizzando slides e spezzoni di seminari di esperti/e qualificati disponibii online ;</p>
+<p>(b)&nbsp;formalizzare&nbsp;i&nbsp;concetti&nbsp;(conoscenza&nbsp;concettuale);&nbsp;</p>
+<p>(c) ovunque possibile discutere il problema complesso attraverso semplici modelli che usano la fisica di base;<br /> (d) sviluppare e classificare la conoscenza di metodi teorici e di simulazione per le predizioni quantitative (conoscenza procedurale e fattuale), avendo cura di sviluppare alla lavagna tutti i passaggi per ogni tipologia di calcolo;</p>
+<p>(e) al termine di ogni macro-argomento, costruire in modo interattivo una mappa concettuale che lo rappresenta, evidenziando concetti e relazioni tra questi;</p>
+<p>(f) l&rsquo;ultima parte del corso &egrave; dedicata a studi di casi in differenti piattaforme per le tecnologie quantistiche, allo scopo di acquisire pratica d'applicazione della conoscenza procedurale e fattuale</p>
+<ol>
+<li><strong> Portale elearning.</strong> Contiene una organizzazione ragionata delle note estese di quanto fatto a lezione, slides, mappe concettuali, weblink utili a lezioni e colloqui offerti da altre istituzioni scientifiche qualificate (among which also ACP and KITP), oltre alle comunicazioni relative al corso e &ndash; se utile agli/lle studenti &ndash; l&rsquo;uso del forum per discutere di argomenti del corso e del lavoro finale di gruppo.</li>
+<li><strong> Seminari e colloqui possono essere offerti in forma facoltativa</strong>, svolti da esperte ed esperti in visita presso il Dipartimento. Una serie di seminari offerta istituzionalmente, del valore di 3 CFU, &egrave; all'interno del corso Current Trends in Quantum Matter</li>
+<li><strong> Il lavoro di gruppo (facoltativo)</strong> a fine corso viene realizzato con la supervisione della docente</li>
+<li><strong> L&rsquo;essay per la prova d&rsquo;esame</strong> viene preparato dalla/o studente con la supervisione della docente</li>
+<li><strong> Il corso pu&ograve; essere in lingua inglese</strong>, in accordo con gli e le studenti</li>
+</ol></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Teaching methods</div>
+<span class="contenuto_programma"><p>Classroom and online activities are tailored on the expected learning outcomes. In particular:</p>
+<ol>
+<li><strong> Classroom lecture.</strong> For each topic, the aim is to:</li>
+</ol>
+<ul>
+<li>Qualitatively discuss by very basic physics concepts the ideas emerging from experimental facts and everyday-life phenomena, deepening &ndash; whenever useful &ndash; experimental methods and possible applications, even using slides and videoclips of online-available seminars by very specialized experts of that topic</li>
+<li>Formal setting of concepts (conceptual knowledge);</li>
+<li>Anywhere possible, discuss the more complex problem via simple models that make use of basic physics;</li>
+<li>For each type of procedure, after developing the knowledge of theoretical and simulational methods for quantitative predictions by explicitly carrying out at the black/white/digital board all the needed steps of calculations, frame the abstract procedure (procedural knowledge);</li>
+<li>At the end of each macro-subject, interactively build up a representative conceptual map, highlighting concepts and links among them;</li>
+<li>The last course part is devoted to the study of cases from different platforms for quantum technologies, with the aim of practicing the folding down of conceptual and procedural knowledge towards factual knowledge.</li>
+</ul>
+<ol>
+<li><strong> Elearning portal. </strong>It contains a reasoned and organized collection of detailed lecture notes, slides, conceptual maps, weblinks to selected lectures and colloquia offered by other qualified institutions (among which also ACP and KITP), besides communications related to the course and &ndash; for students&rsquo; use &ndash; the forum to discuss course topics and the final (optional) group work.</li>
+<li><strong> Seminars and colloquia can be offered as optional resources, </strong>provided by experts scientists visiting the Physics Department.</li>
+<li><strong> The (optional) group work</strong> at the end of the course is performed under the supervision of the course lecturer.</li>
+<li><strong> The final exam student&rsquo;s essay</strong> can be prepared under the supervision of the lecturer.</li>
+<li><strong> The course can be delivered in English, </strong>in accord with all the students. For the course borrowed by Materials and Technology, this is a compulsory requirement (in the event students are not akin, the course will be split in two courses).</li>
+</ol></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p><strong>The course is composed of two modules: 6 CFU on equilibrium systems (Maril&ugrave; Chiofalo) and 3 CFU on open quantum systems (Jorge Yago Malo), amounting to 54 hours. PhD students can make their own selection of topics, amounting to the planned 40 hours.</strong></p>
+<p><strong>0. Introduction to the course: conceptual&nbsp;map&nbsp;of&nbsp;the&nbsp;essential&nbsp;ideas qualitatively discussed via examples anticipated from the course itself</strong></p>
+<p><strong>A. Theoretical Methods&nbsp;for&nbsp;strongly&nbsp;correlated&nbsp;quantum fluids at equilibrium </strong></p>
+<p><strong>[LM-Physics course: 38 h. PhD course: 20 h]</strong></p>
+<p><em>In this part A, the theoretical concepts and methods are developed for equilibrium systems, starting from the measurement of correlation functions which are first phenomenologically introduced in A1. The relationships among the different methods are discussed, highlighting goods and bads. The methods will be first developed in A2 for systems with maximal symmetry and then, after bridging in A3 with a crash dictionary on broken symmetries and quantum phase transitions, completed in A4 by introducing their peculiarities in correspondence of phase transitions driven by tuning interactions strength, disorder, temperature, and dimensionality.</em> <em>During the development of the formal tools, care will be taken to establish and discuss links between the learned theoretical methods and simulational/numerical methods on one side and experimental methods on the other, with examples from different spectroscopies (matter, spin, and optical probes) and from transport measurements.</em></p>
+<p><strong>A1. Measurements and correlation functions [4 h]</strong></p>
+<p>Generalities and essential concepts. Measurements and Correlation functions, response functions, quantum hydrodynamics via a simple model.</p>
+<p><strong>A2.</strong> <strong>Systems with maximal symmetry [LM course: 24h. PhD course: 16 h]</strong></p>
+<p><em>Only for PhD course: choose either A2.1 or A2.2</em></p>
+<p><strong>A2.1 Formal development of the Theory of Linear Response</strong>: Definitions and properties- Fluctuation Dissipation Theorem - Sum rules - Applications: calculation of response functions within the Random-Phase Approximation (fermions and bosons) - Concept of local field factor and self.-consistent theories beyond mean-field. Dictionary between response functions and Green&rsquo;s functions methods [8 h]</p>
+<p><strong>A2.2 Correlation functions and Green's functions (zero and finite temperature):</strong> Definitions and properties - Boundary conditions - Equations of motion as a technique to derive consistent approximations - Non-equilibrium Green's functions - A dictionary with response functions - Generating functionals - Wick's theorem - Finite temperature and the contour-integral method - Perturbative techniques and Feynman diagrams - Examples including phonon and fermion systems to low-order &ndash; Methods based on&nbsp; self-consistent integral equations. Dictionary between response functions and Green&rsquo;s functions methods [8 h]</p>
+<p><strong>A2.3 Landau Fermi and Bose liquids</strong> [2 h]</p>
+<p><strong>A2.4 Quantum Hydrodynamics:</strong> Microscopic derivation of the equations starting from conservation laws - Transport coefficients as special limits of response functions and Kubo relations- Static susceptibilities as thermodynamic derivatives of conserved quantities. Relationship with Linear Response. Relationship with experiments: Landau-Placzek ratio and examples. [6 h]</p>
+<p><strong>A2.5 A crash dictionary of (Time-Dependent) Density Functional Theory (only upon request from students)</strong>: Definitions - Theorem of Hohenberg and Kohn - Kohn and Sham scheme - Local Density Approximation - Exchange and correlation potentials and relationship with linear response theory &ndash; Hints on current functionals and TDDFT, relationship with Linear Response and microscopic formulation of Navier-Stokes equations. [2 h]</p>
+<p><strong>A3. Systems with broken symmetries [10 h]</strong></p>
+<p><strong>A3.0&nbsp;A crash dictionary on broken symmetries and (quantum) phase transitions</strong></p>
+<p>Concept&nbsp;of&nbsp;order&nbsp;parameter- Landau and Landau-Ginzburg theory for uniform (Ising model) and non-uniform order parameter &ndash; Complex order parameter and neutral/charged superfluid &ndash; Introduction to the concepts of scaling, critical exponents and universality- Dynamical effects: Anderson-Higgs mechanism and Goldstone modes - Analogy between superconductivity and electroweak theory- Conditions of validity for mean-field theories and thermal and quantum (as e.g. due to correlations and reduced dimensionality) fluctuations. [2h]</p>
+<p><strong>A3.1 Superfluidity/superconductivity and Bose-Einstein Condensation of neutral and charged Fermi and Bose systems</strong></p>
+<p>Application of the theory of linear response to the microscopic calculation of the superfluid density/moment of inertia and the relationship between superfluid and condensate fraction &ndash; Peculiarities in hydrodynamic treatment and microscopic two-fluid equations &ndash; Peculiarities in the Green's functions treatment: Ward identities and conserving vs. gapless approximations. [6h]</p>
+<p><em>Of the following A4.2 and A4.3, only one will be treated &ndash; choosing in accord with the class.</em></p>
+<p><strong>A3.2 Effects of reduced dimensionality: the&nbsp;very special 1D case</strong></p>
+<p>Specialty of 1D systems: always strongly correlated and collectivization of excitations. Luttinger Liquids: structure and thermodynamic properties. Typical phase diagrams in 1D systems with Charge/density and Spin-Density Waves. Essentials on bosonization techniques. [2h]</p>
+<p><strong>A3.3 Effects of disorder and quantum transport in 1D</strong></p>
+<p>Transport properties of quantum fluids - Diagrammatic analysis and phenomenology - Quenched Green's functions - Scattering against disordered impurities &ndash; [Drude conductivity - Diffusion corrections] - Quantum corrections - Effect of dimensionality and quantum transport in 2D and 1D - AALK argument and Anderson localization -Universal conductance &ndash; Concept of many-body localization. [2h]</p>
+<p><strong>B. Theoretical and numerical methods for out-of-equilibrium and driven-dissipative quantum systems [6h]</strong></p>
+<p><em>After introducing the tools in B1, newly sprouting paradigmatic phenomena of many-body quantum matter physics are discussed in B2-B4, that can be accessed within an open quantum system treatment, conceptually different than those occurring in equilibrium systems, and that are especially relevant for the engineering of quantum technologies. &nbsp;</em></p>
+<p><strong>B1. Tools for open quantum systems</strong><strong>: </strong>Driven-dissipative quantum systems. Reservoir engineering. Describing dissipation in quantum systems: Gorini-Kossakowski-Sudarshan-Lindblad master equation. Stochastic unraveling description of open quantum systems. Quantum state diffusion. Beyond the Born-Markov approximation and non-Markovian systems. Description via Tensor Networks. Matrix Product States and Operators: concepts and algorithms. Beyond 1D.</p>
+<p><strong>B2. Periodically-driven systems: Floquet engineering</strong></p>
+<p><strong>B3. Measurement, control, and feedback in Open Quantum Systems</strong></p>
+<p><strong>B4. Dynamical phase transitions &nbsp;&nbsp;</strong></p>
+<p>&nbsp;</p>
+<p><strong>C. Applications with quantum technologies [14 h]</strong></p>
+<p><em>The theoretical tools developed in A and B are now used to discuss in C0 their implementation to engineer quantum simulators in different quantum-technology platforms: quantum gases (including dipolar and Rydberg atoms), trapped ions, superconducting circuits, matter in optical cavities, fluids of light. In C1-C5 then, selected applications are discussed of phenomena that are simulated by coding their describing (microscopic or paradigmatic) theoretical Hamiltonian into these experimental quantum simulators, in what we can consider a new type of cooperation between theory and experiment in the scientific thinking process. The selection will be decided with the students within a participatory process. </em></p>
+<p><strong>C0. </strong><strong>The basic toolboxes</strong>: 2-or-3 level systems, interactions, gauge fields, and dimensionality, qubits and addressing methods, in the following quantum technologies platforms: quantum gases and trapped ions, superconducting circuits, matter and optical cavities, fluids of light [6 h].</p>
+<p><strong>C1. Condensed matter physics: </strong>BCS-BEC crossover, and its applications also beyond condensed-matter physics. Commensurate-incommensurate phase transitions. Eigenstate thermalisation hypothesis (ETH) and Anderson/Many body localization. [2 h]</p>
+<p><strong>C2. Fundamental physics:</strong> Tests on the electric dipole moment. Lattice gauge field theories. Ultracompact stars and quark matter. Tests of the foundations of quantum mechanics: collapse models, Dios&igrave;-Penrose theory, time in quantum mechanics [2 h]</p>
+<p><strong>C3. Cosmology and astrophysics. </strong>Gravity and general relativity tests by atom interferometry and atomic clocks: measurement of big G, variation of fundamental constants, equivalence principle tests. Detection of gravitational waves and quest for ultra-light dark matter. Quantum simulators for gravity and cosmology problems by analogue gravity: analogue horizons and Hawking radiation, information-loss paradox, viscosity-to-entropy ration at black holes horizons [2h].</p>
+<p><strong>C4. Quantum simulators for biology and chemistry: </strong>Quantum-like paradigm and complex networks for biology applications - Transport and quantum effects in biology [2h]</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p><strong>The course is composed of two modules: 6 CFU on equilibrium systems (Maril&ugrave; Chiofalo) and 3 CFU on open quantum systems (Jorge Yago Malo), amounting to 54 hours. PhD students can make their own selection of topics, amounting to the planned 40 hours.</strong></p>
+<p><strong>0. Introduction to the course: conceptual&nbsp;map&nbsp;of&nbsp;the&nbsp;essential&nbsp;ideas qualitatively discussed via examples anticipated from the course itself</strong></p>
+<p><strong>A. Theoretical Methods&nbsp;for&nbsp;strongly&nbsp;correlated&nbsp;quantum fluids at equilibrium </strong></p>
+<p><strong>[LM-Physics course: 38 h. PhD course: 20 h]</strong></p>
+<p><em>In this part A, the theoretical concepts and methods are developed for equilibrium systems, starting from the measurement of correlation functions which are first phenomenologically introduced in A1. The relationships among the different methods are discussed, highlighting goods and bads. The methods will be first developed in A2 for systems with maximal symmetry and then, after bridging in A3 with a crash dictionary on broken symmetries and quantum phase transitions, completed in A4 by introducing their peculiarities in correspondence of phase transitions driven by tuning interactions strength, disorder, temperature, and dimensionality.</em> <em>During the development of the formal tools, care will be taken to establish and discuss links between the learned theoretical methods and simulational/numerical methods on one side and experimental methods on the other, with examples from different spectroscopies (matter, spin, and optical probes) and from transport measurements.</em></p>
+<p><strong>A1. Measurements and correlation functions [4 h]</strong></p>
+<p>Generalities and essential concepts. Measurements and Correlation functions, response functions, quantum hydrodynamics via a simple model.</p>
+<p><strong>A2.</strong> <strong>Systems with maximal symmetry [LM course: 24h. PhD course: 16 h]</strong></p>
+<p><em>Only for PhD course: choose either A2.1 or A2.2</em></p>
+<p><strong>A2.1 Formal development of the Theory of Linear Response</strong>: Definitions and properties- Fluctuation Dissipation Theorem - Sum rules - Applications: calculation of response functions within the Random-Phase Approximation (fermions and bosons) - Concept of local field factor and self.-consistent theories beyond mean-field. Dictionary between response functions and Green&rsquo;s functions methods [8 h]</p>
+<p><strong>A2.2 Correlation functions and Green's functions (zero and finite temperature):</strong> Definitions and properties - Boundary conditions - Equations of motion as a technique to derive consistent approximations - Non-equilibrium Green's functions - A dictionary with response functions - Generating functionals - Wick's theorem - Finite temperature and the contour-integral method - Perturbative techniques and Feynman diagrams - Examples including phonon and fermion systems to low-order &ndash; Methods based on&nbsp; self-consistent integral equations. Dictionary between response functions and Green&rsquo;s functions methods [8 h]</p>
+<p><strong>A2.3 Landau Fermi and Bose liquids</strong> [2 h]</p>
+<p><strong>A2.4 Quantum Hydrodynamics:</strong> Microscopic derivation of the equations starting from conservation laws - Transport coefficients as special limits of response functions and Kubo relations- Static susceptibilities as thermodynamic derivatives of conserved quantities. Relationship with Linear Response. Relationship with experiments: Landau-Placzek ratio and examples. [6 h]</p>
+<p><strong>A2.5 A crash dictionary of (Time-Dependent) Density Functional Theory (only upon request from students)</strong>: Definitions - Theorem of Hohenberg and Kohn - Kohn and Sham scheme - Local Density Approximation - Exchange and correlation potentials and relationship with linear response theory &ndash; Hints on current functionals and TDDFT, relationship with Linear Response and microscopic formulation of Navier-Stokes equations. [2 h]</p>
+<p><strong>A3. Systems with broken symmetries [10 h]</strong></p>
+<p><strong>A3.0&nbsp;A crash dictionary on broken symmetries and (quantum) phase transitions</strong></p>
+<p>Concept&nbsp;of&nbsp;order&nbsp;parameter- Landau and Landau-Ginzburg theory for uniform (Ising model) and non-uniform order parameter &ndash; Complex order parameter and neutral/charged superfluid &ndash; Introduction to the concepts of scaling, critical exponents and universality- Dynamical effects: Anderson-Higgs mechanism and Goldstone modes - Analogy between superconductivity and electroweak theory- Conditions of validity for mean-field theories and thermal and quantum (as e.g. due to correlations and reduced dimensionality) fluctuations. [2h]</p>
+<p><strong>A3.1 Superfluidity/superconductivity and Bose-Einstein Condensation of neutral and charged Fermi and Bose systems</strong></p>
+<p>Application of the theory of linear response to the microscopic calculation of the superfluid density/moment of inertia and the relationship between superfluid and condensate fraction &ndash; Peculiarities in hydrodynamic treatment and microscopic two-fluid equations &ndash; Peculiarities in the Green's functions treatment: Ward identities and conserving vs. gapless approximations. [6h]</p>
+<p><em>Of the following A4.2 and A4.3, only one will be treated &ndash; choosing in accord with the class.</em></p>
+<p><strong>A3.2 Effects of reduced dimensionality: the&nbsp;very special 1D case</strong></p>
+<p>Specialty of 1D systems: always strongly correlated and collectivization of excitations. Luttinger Liquids: structure and thermodynamic properties. Typical phase diagrams in 1D systems with Charge/density and Spin-Density Waves. Essentials on bosonization techniques. [2h]</p>
+<p><strong>A3.3 Effects of disorder and quantum transport in 1D</strong></p>
+<p>Transport properties of quantum fluids - Diagrammatic analysis and phenomenology - Quenched Green's functions - Scattering against disordered impurities &ndash; [Drude conductivity - Diffusion corrections] - Quantum corrections - Effect of dimensionality and quantum transport in 2D and 1D - AALK argument and Anderson localization -Universal conductance &ndash; Concept of many-body localization. [2h]</p>
+<p><strong>B. Theoretical and numerical methods for out-of-equilibrium and driven-dissipative quantum systems [6h]</strong></p>
+<p><em>After introducing the tools in B1, newly sprouting paradigmatic phenomena of many-body quantum matter physics are discussed in B2-B4, that can be accessed within an open quantum system treatment, conceptually different than those occurring in equilibrium systems, and that are especially relevant for the engineering of quantum technologies. &nbsp;</em></p>
+<p><strong>B1. Tools for open quantum systems</strong><strong>: </strong>Driven-dissipative quantum systems. Reservoir engineering. Describing dissipation in quantum systems: Gorini-Kossakowski-Sudarshan-Lindblad master equation. Stochastic unraveling description of open quantum systems. Quantum state diffusion. Beyond the Born-Markov approximation and non-Markovian systems. Description via Tensor Networks. Matrix Product States and Operators: concepts and algorithms. Beyond 1D.</p>
+<p><strong>B2. Periodically-driven systems: Floquet engineering</strong></p>
+<p><strong>B3. Measurement, control, and feedback in Open Quantum Systems</strong></p>
+<p><strong>B4. Dynamical phase transitions &nbsp;&nbsp;</strong></p>
+<p>&nbsp;</p>
+<p><strong>C. Applications with quantum technologies [14 h]</strong></p>
+<p><em>The theoretical tools developed in A and B are now used to discuss in C0 their implementation to engineer quantum simulators in different quantum-technology platforms: quantum gases (including dipolar and Rydberg atoms), trapped ions, superconducting circuits, matter in optical cavities, fluids of light. In C1-C5 then, selected applications are discussed of phenomena that are simulated by coding their describing (microscopic or paradigmatic) theoretical Hamiltonian into these experimental quantum simulators, in what we can consider a new type of cooperation between theory and experiment in the scientific thinking process. The selection will be decided with the students within a participatory process. </em></p>
+<p><strong>C0. </strong><strong>The basic toolboxes</strong>: 2-or-3 level systems, interactions, gauge fields, and dimensionality, qubits and addressing methods, in the following quantum technologies platforms: quantum gases and trapped ions, superconducting circuits, matter and optical cavities, fluids of light [6 h].</p>
+<p><strong>C1. Condensed matter physics: </strong>BCS-BEC crossover, and its applications also beyond condensed-matter physics. Commensurate-incommensurate phase transitions. Eigenstate thermalisation hypothesis (ETH) and Anderson/Many body localization. [2 h]</p>
+<p><strong>C2. Fundamental physics:</strong> Tests on the electric dipole moment. Lattice gauge field theories. Ultracompact stars and quark matter. Tests of the foundations of quantum mechanics: collapse models, Dios&igrave;-Penrose theory, time in quantum mechanics [2 h]</p>
+<p><strong>C3. Cosmology and astrophysics. </strong>Gravity and general relativity tests by atom interferometry and atomic clocks: measurement of big G, variation of fundamental constants, equivalence principle tests. Detection of gravitational waves and quest for ultra-light dark matter. Quantum simulators for gravity and cosmology problems by analogue gravity: analogue horizons and Hawking radiation, information-loss paradox, viscosity-to-entropy ration at black holes horizons [2h].</p>
+<p><strong>C4. Quantum simulators for biology and chemistry: </strong>Quantum-like paradigm and complex networks for biology applications - Transport and quantum effects in biology [2h].</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p><strong><em>Note:</em></strong></p>
+<ol>
+<li><strong><em>Sul portale elearning del corso, per ogni argomento sono: </em></strong></li>
+</ol>
+<ul>
+<li><strong><em>le note dettagliate delle considerazioni e dei calcoli svolti a lezione</em></strong></li>
+<li><strong><em>altro materiale (link, note, onenotes di lavagna virtuale) con una guida ragionata all'uso della bibliografia consigliata (si veda di seguito)</em></strong></li>
+<li><strong><em>&egrave; in preparazione un testo in pdf che contiene tutte le note del corso</em></strong></li>
+</ul>
+<ol>
+<li><strong><em>Saranno messe a disposizione le lezioni registrate</em></strong></li>
+<li><strong><em>Tutti i manuali di studio e gli articoli sono comunque disponibili presso la Biblioteca di Fisica e/o online. </em></strong></li>
+</ol>
+<p><strong>Generali:<br /> </strong>&ndash; P.C. Martin, Measurements and Correlation Functions, Gordon and Breach (1968) <strong>[Con riferimento al Programma: Parte B]</strong></p>
+<p>- G. Giuliani and G. Vignale, Quantum Theory of the Electron Liquid, Cambridge University Press (2010) <strong>[Con riferimento al Programma: Parte C1]</strong></p>
+<p>- Piers Coleman, Introduction to Many-Body Physics, Cambridge University Press (2015) <strong>[Con riferimento al Programma: Parte C2 e C3]</strong></p>
+<p>- L.P. Kadanoff and G. Baym, Quantum Statistical Mechanics, Benjamin (1962) <strong>[Con riferimento al Programma: Parte C1- Nonequilibrium methods]</strong></p>
+<p>&ndash; Baym, Microscopic Description of Superfluidity, Math. Methods in Solid-State&amp;Superfluid Theory, Clark&amp;Derrick Eds., Oliver&amp;Boyd (1969) <strong>[Con riferimento al Programma: Parte C4]</strong></p>
+<p>&ndash; P.C. Hohenberg and P.C. Martin, Microscopic Theory of Superfluid Helium, Annals of Physics 34, 291-359 (1965) <strong>[Con riferimento al Programma: Parte C4]</strong></p>
+<p>&ndash; Giamarchi, Quantum Physics in One Dimension, Oxford Science Pub. (2006) <strong>[Con riferimento al Programma: Parte C5]</strong></p>
+<p>- G. Iadonisi, G. Cantele, and M.L. Chiofalo, Introduction to Solid State Physics and Crystalline Nanostructures, Springer (2014) <strong>[Con riferimento al Programma: Background in solid-state physics]</strong></p>
+<p>- M. L. Chiofalo, L. Salvi, G. Tino, La Fisica della Materia, in Lezioni di Fisica, Corriere della Sera (2018) <strong>[Overview semi-divulgativa sulle quantum technologies]</strong></p>
+<p><br /> <strong>5.2&nbsp;Parti&nbsp;specifiche&nbsp;del&nbsp;corso</strong> <strong>(materiale facoltativo, in aggiunta alle note di lezione disponibili sul portale)<br /> </strong><br /> &ndash; G. Vignale, C. A Ullrich, S. Conti, Time-Dependent Density Functional Theory and beyond the Adiabatic Local Density Approximation, Phys. Rev. Lett. 79, 4878 (1997)</p>
+<p>-- A. Daley, Quantum trajectories and open many-body quantum systems, Adv. Phys. 63, 77 (2014)</p>
+<p><br /> <strong>Altre letture, per studenti particolarmente interessati/e:</strong></p>
+<p>&ndash; P. Nozi&egrave;res and D. Pines, Theory of Quantum Liquids I &ndash; II, Westview Press (1999); Pines, The Many-Body Problem, Wiley (1997)</p>
+<p>&ndash; D. Forster, Hydrodynamic Fluctuations, Broken Symmetry, And Correlation Functions, Adv. Books Classics (1995)</p>
+<p>&ndash; W.M. Foulkes, L. Mitas, R.J. Needs, and G. Rajagopal, Quantum Monte Carlo Simulations of Solids, Revue of Modern Physics 73, 33 (2001)</p>
+<p>&ndash; U. Schollwok and S.R. White, Methods for Time Dependence in DMRG, in Effective Models for Low-Dimensional Strongly Correlated Systems, G.G. Batrouni and D. Poilblanc Eds., p. 155 AIP, Melville, New York (2006)</p>
+<p>&ndash;&nbsp;L.&nbsp;A.&nbsp;Bloomfield,&nbsp;How&nbsp;Things&nbsp;Work,&nbsp;Wiley&nbsp;(2013)</p>
+<p>&nbsp;</p>
+<p>Please check with the UNIPI library on the availability of the suggested textbooks and articles.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Bibliography</div>
+<span class="contenuto_programma"><p><strong><em>Notes:</em></strong></p>
+<ol>
+<li><strong><em>The elearning portal contains, for each topic: </em></strong></li>
+</ol>
+<ul>
+<li><strong><em>Detailed notes of discussions and step-by-step calculations carried out during classroom activity</em></strong></li>
+<li><strong><em>Course materials (weblinks, notes, possible onenotes of the virtual whiteboard) accompanied by a reasoned guide to the use the suggested references (see below)</em></strong></li>
+</ul>
+<ol>
+<li><strong><em>The course videolectures will be made available</em></strong></li>
+<li><strong><em>All textbooks and articles are anyway available at the Physics and online UniPi libraries. </em></strong></li>
+</ol>
+<p><strong>5.1&nbsp;General:<br /> </strong>&ndash; P.C. Martin, Measurements and Correlation Functions, Gordon and Breach (1968) <strong>[Referring to Programme: Part B]</strong></p>
+<p>- G. Giuliani and G. Vignale, Quantum Theory of the Electron Liquid, Cambridge University Press (2010) <strong>[</strong><strong>Referring to Programme:</strong><strong> Part C1]</strong></p>
+<p>- Piers Coleman, Introduction to Many-Body Physics, Cambridge University Press (2015) <strong>[</strong><strong>Referring to Programme:</strong><strong> Parts C2 and C3]</strong></p>
+<p>- L.P. Kadanoff and G. Baym, Quantum Statistical Mechanics, Benjamin (1962) <strong>[</strong><strong>Referring to Programme:</strong><strong> Part C1- Nonequilibrium methods]</strong></p>
+<p>&ndash; Baym, Microscopic Description of Superfluidity, Math. Methods in Solid-State&amp;Superfluid Theory, Clark&amp;Derrick Eds., Oliver&amp;Boyd (1969) <strong>[</strong><strong>Referring to Programme:</strong><strong> Part </strong><strong>C4]</strong></p>
+<p>&ndash; P.C. Hohenberg and P.C. Martin, Microscopic Theory of Superfluid Helium, Annals of Physics 34, 291-359 (1965) <strong>[</strong><strong>Referring to Programme:</strong><strong> Part </strong><strong>C4]</strong></p>
+<p>&ndash; Giamarchi, Quantum Physics in One Dimension, Oxford Science Pub. (2006) <strong>[</strong><strong>Referring to Programme:</strong><strong> Part </strong><strong>C5]</strong></p>
+<p>- G. Iadonisi, G. Cantele, and M.L. Chiofalo, Introduction to Solid State Physics and Crystalline Nanostructures, Springer (2014) <strong>[</strong><strong>Referring to Programme:</strong> <strong>Background in solid-state physics]</strong></p>
+<p>- M. L. Chiofalo, L. Salvi, G. Tino, La Fisica della Materia, in Lezioni di Fisica, Corriere della Sera (2018) <strong>[Semi-popularized overview on quantum technologies]</strong></p>
+<p><br /> <strong>5.2&nbsp;Specific course parts</strong> <strong>(optional material, in addition to the lecture notes on the portal)<br /> </strong><br /> &ndash; G. Vignale, C. A Ullrich, S. Conti, Time-Dependent Density Functional Theory and beyond the Adiabatic Local Density Approximation, Phys. Rev. Lett. 79, 4878 (1997)</p>
+<p>-- A. Daley, Quantum trajectories and open many-body quantum systems, Adv. Phys. 63, 77 (2014)</p>
+<p><br /> <strong>More readings, for especially interested students:</strong></p>
+<p>&ndash; P. Nozi&egrave;res and D. Pines, Theory of Quantum Liquids I &ndash; II, Westview Press (1999); Pines, The Many-Body Problem, Wiley (1997)</p>
+<p>&ndash; D. Forster, Hydrodynamic Fluctuations, Broken Symmetry, And Correlation Functions, Adv. Books Classics (1995)</p>
+<p>&ndash; W.M. Foulkes, L. Mitas, R.J. Needs, and G. Rajagopal, Quantum Monte Carlo Simulations of Solids, Revue of Modern Physics 73, 33 (2001)</p>
+<p>&ndash; U. Schollwok and S.R. White, Methods for Time Dependence in DMRG, in Effective Models for Low-Dimensional Strongly Correlated Systems, G.G. Batrouni and D. Poilblanc Eds., p. 155 AIP, Melville, New York (2006)</p>
+<p>&ndash;&nbsp;L.&nbsp;A.&nbsp;Bloomfield,&nbsp;How&nbsp;Things&nbsp;Work,&nbsp;Wiley&nbsp;(2013)</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Please check with the UNIPI library on the availability of the suggested textbooks and articles.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni per non frequentanti</div>
+<span class="contenuto_programma"><p>Si consiglia di utilizzare al massimo delle potenzialit&agrave; il materiale e le opportunit&agrave; di verifica sul portale elearning di Fisica</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Non-attending students info</div>
+<span class="contenuto_programma"><p>Follow the material organized on the elarning page of the course</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p>La valutazione finale &egrave; il risultato della valutazione sull&rsquo;essay e (in modo facoltativo) sul lavoro di gruppo. Per chi decide di partecipare al lavoro di gruppo, il 75% della valutazione &egrave; sull&rsquo;essay, e il 25% sul lavoro di gruppo. Per chi non desidera partecipare al lavoro di gruppo, il 100% della valutazione &egrave; sull&rsquo;essay.</p>
+<p>Per entrambe le prove, la valutazione &egrave; formulata per competenze. Con riferimento alle aree (a)-(d) illustrata nella sezione <strong>Modalit&agrave;&nbsp;di&nbsp;verifica&nbsp;delle&nbsp;capacit&agrave;:</strong></p>
+<p>&ndash; fino a <strong>18 punti</strong> per l'Area <strong>(a)</strong></p>
+<p>&ndash; fino a&nbsp;&nbsp; <strong>6 punti</strong> per l'Area <strong>(b)</strong></p>
+<p>&ndash; fino a&nbsp;&nbsp; <strong>9 punti</strong> per l'Area <strong>(c)</strong></p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Assessment methods</div>
+<span class="contenuto_programma"><p>The final assessment results from evaluating the essay and (optionally) the group work. For those who choose to participate to the group work, 75% of the evaluation is performed on the essay, and %25 on the group work. Who chooses to not participate to the group work, 100% of the evaluation is on the essay.</p>
+<p>For both types of tests, the assessment is operated by evaluating competences. Referring to areas (a)-(d) in section <strong>Assessment of competences:</strong></p>
+<p>&ndash; up to <strong>18 points</strong> for Area <strong>(a)</strong></p>
+<p>&ndash; up to&nbsp;&nbsp; <strong>6 punti</strong> for Area <strong>(b)</strong></p>
+<p>&ndash; up to&nbsp;&nbsp; <strong>4 punti</strong> for Area <strong>(c)</strong></p>
+<p>&ndash; up to&nbsp;&nbsp; <strong>5 punti</strong> for Area <strong>(d)</strong></p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Note</div>
+<span class="contenuto_programma"><p><strong>Course summary description and scientific agenda</strong>.</p>
+<p>The course is designed to open a window on contemporary frontier science that is developing along with advances in physics and quantum technologies, that are in turn based on the knowledge and design of highly related quantum particle liquids. In a new form of cooperation between theory and experiment, through quantum technologies it is possible to engineer quantum simulators. These are a sort of on-purpose quantum computers, in fact &nbsp;&nbsp;highly controllable experimental systems, in which one can code problems relevant to the physics of condensed matter, interactions and fundamental physics, cosmology and astrophysics, the fundamentals of quantum mechanics, and biology and life sciences. These applications are the subject of the third and final part (C) of the course, after having introduced and discussed the main platforms of quantum technologies available today: quantum gases (including dipolar and Rydberg atoms), trapped ions, Superconducting circuits, matter in optical cavities, fluids of light.</p>
+<p>While this landscape is so wide and diverse to be breathtaking, this course is aimed at developing suited navigation tools. This is the aim of the first two parts (A and B) of the course, that is dedicated to build the basic language, with the necessary tools and methods. The first part, A, concerns the conventional and evergreen physics of quantum liquids at equilibrium in conditions of maximum symmetry and in those, more interesting, in which one or more symmetries are broken. The second part, B, is dedicated to open quantum liquids under out-of- equilibrium, driven-dissipative conditions, where contemporary, freshly sprouting paradigms are discussed such as the engineering of external driving, dissipation or noise to achieve specific characteristics of the system, and the so-called dynamical quantum phase transitions.&nbsp;</p>
+<p><strong>Course traits.</strong> <strong>Distinguished traits of this course are the high level of cross-disciplinary contents, the didactic-methodological approach, and the international context.</strong></p>
+<p><strong><em>Cross-disciplinary approach</em>.</strong> This course is specialized in interdisciplinary thinking, as apparent from the syllabus below.</p>
+<p><strong><em>Didactic methodology and approach</em>.</strong> Connecting is the keyword here. For each topic, connections are established between theory and experiment, between experiment and applications. Within the theory, connections are established among different methods to address one same topic. For each topic, a progressively increasing level of formal difficulty is introduced, that starts with the discussion in terms of a simplest model (requiring at most bachelor competences), complications being added one at a time, to finally connect to the more general and formal framework. This &nbsp;approach favors the identification of the basic concepts before diving in the formal mathematical complications, the connections among the concepts to choose the suited general procedures for problem solving and, finally, the specific implementation of the procedures to the particular problem at hand. &nbsp;&nbsp;</p>
+<p><strong><em>International course context</em></strong>. This course is also part of the European-funded DIGIQ (Digitally Enhanced Quantum Technology Master) project <a href="http://www.digiq.eu">www.digiq.eu</a>: innovative resources and didactic material are being designed that are specific to this course, which include digital learning paths enjoyable by students also in autonomy, shared didactic material with similar courses in the other 23 European partners, practice of quantum-technology concepts in (remotely accessible) real labs. In addition, students have the opportunity of participating to the network of DIGIQ students and to the corresponding funded in person and/or remote activities, which include traineeships, collaborative master thesis projects, and events (please see the website for the list of the EU partner universities). &nbsp;&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Notes</div>
+<span class="contenuto_programma"><p><strong>Course summary description and scientific agenda</strong>.</p>
+<p>The course is designed to open a window on contemporary frontier science that is developing along with advances in physics and quantum technologies, that are in turn based on the knowledge and design of highly related quantum particle liquids. In a new form of cooperation between theory and experiment, through quantum technologies it is possible to engineer quantum simulators. These are a sort of on-purpose quantum computers, in fact &nbsp;&nbsp;highly controllable experimental systems, in which one can code problems relevant to the physics of condensed matter, interactions and fundamental physics, cosmology and astrophysics, the fundamentals of quantum mechanics, and biology and life sciences. These applications are the subject of the third and final part (C) of the course, after having introduced and discussed the main platforms of quantum technologies available today: quantum gases (including dipolar and Rydberg atoms), trapped ions, Superconducting circuits, matter in optical cavities, fluids of light.</p>
+<p>While this landscape is so wide and diverse to be breathtaking, this course is aimed at developing suited navigation tools. This is the aim of the first two parts (A and B) of the course, that is dedicated to build the basic language, with the necessary tools and methods. The first part, A, concerns the conventional and evergreen physics of quantum liquids at equilibrium in conditions of maximum symmetry and in those, more interesting, in which one or more symmetries are broken. The second part, B, is dedicated to open quantum liquids under out-of- equilibrium, driven-dissipative conditions, where contemporary, freshly sprouting paradigms are discussed such as the engineering of external driving, dissipation or noise to achieve specific characteristics of the system, and the so-called dynamical quantum phase transitions.&nbsp;</p>
+<p><strong>Course traits.</strong> <strong>Distinguished traits of this course are the high level of cross-disciplinary contents, the didactic-methodological approach, and the international context.</strong></p>
+<p><strong><em>Cross-disciplinary approach</em>.</strong> This course is specialized in interdisciplinary thinking, as apparent from the syllabus below.</p>
+<p><strong><em>Didactic methodology and approach</em>.</strong> Connecting is the keyword here. For each topic, connections are established between theory and experiment, between experiment and applications. Within the theory, connections are established among different methods to address one same topic. For each topic, a progressively increasing level of formal difficulty is introduced, that starts with the discussion in terms of a simplest model (requiring at most bachelor competences), complications being added one at a time, to finally connect to the more general and formal framework. This &nbsp;approach favors the identification of the basic concepts before diving in the formal mathematical complications, the connections among the concepts to choose the suited general procedures for problem solving and, finally, the specific implementation of the procedures to the particular problem at hand. &nbsp;&nbsp;</p>
+<p><strong><em>International course context</em></strong>. This course is also part of the European-funded DIGIQ (Digitally Enhanced Quantum Technology Master) project <a href="http://www.digiq.eu">www.digiq.eu</a>: innovative resources and didactic material are being designed that are specific to this course, which include digital learning paths enjoyable by students also in autonomy, shared didactic material with similar courses in the other 23 European partners, practice of quantum-technology concepts in (remotely accessible) real labs. In addition, students have the opportunity of participating to the network of DIGIQ students and to the corresponding funded in person and/or remote activities, which include traineeships, collaborative master thesis projects, and events (please see the website for the list of the EU partner universities).&nbsp;</p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 03/10/2023 15:50</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/esami2/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-4e345eba.js"></script>
+<script src="../_assets/jquery-ui.min-e93c00aa.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-19dbc6e0.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-c8ee7689.js"></script> 
+<script src="../_assets/tinymce.min-e9308fd1.js"></script>
+<script src="../_assets/jquery.tinymce.min-65f0b191.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-3beded5a.js"></script>
+<script src="../_assets/unipi-3293f5f6.js"></script>
+<script src="../_assets/dm-10a06b2c.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

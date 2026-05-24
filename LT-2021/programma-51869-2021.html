@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-9d88d2d3.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5e6adf09.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-3e1acd97.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-0be77ad4.css" rel="stylesheet">
+		<link href="../_assets/style_v1-8d07d3cb.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-795b32e7.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7ea9ead7.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-ce428c17.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-23a80404.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/index.php">Home</a></li><li><a href="https://esami.unipi.it/programmi_insegnamenti.php?aa=2021&cid=135&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">PRINCIPI TERMICI I PER L'INGEGNERIA NUCLEARE</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">SANDRO PACI</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2021/22</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">815II</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">6</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Primo semestre</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"><img src="../_assets/SDG-icon-IT-RGB-07-c49654d9.jpg" style="width:100px"><img src="../_assets/SDG-icon-IT-RGB-13-e6c75de2.jpg" style="width:100px"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>PRINCIPI TERMICI I PER L'INGEGNERIA NUCLEARE</TD><TD class='value-programma'>ING-IND/19</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>48</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>NICOLA FORGIONE <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=8875' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>FRANCESCO GALLENI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=132844' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>SANDRO PACI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=5683' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/pdfProgCorsoStu.php?language=it&c=51869" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p>Elementi di Termodinamica applicata, trasmissione del calore e meccanica dei fluidi applicati agli impianti nucleari di potenza</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p>Elements of Applied Thermodynamics, heat transfer, and fluid mechanics applied to nuclear power plants</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><p>esame orale</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
+<span class="contenuto_programma"><p>oral examination</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Capacit&agrave;</div>
+<span class="contenuto_programma"><p>la verifica sar&agrave; centrata sul raggiungimente delle conoscenze minime necessarie per accedere alla laurea magistrale in Ingegneria Nucleare&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Skills</div>
+<span class="contenuto_programma"><p>the final verification will be on the&nbsp;required basic knowledge necessary for starting the following Master Degree in Nuclear Engineering&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle capacit&agrave;</div>
+<span class="contenuto_programma"><p>L'esame consiste in una prova orale, ossia in un colloquio tra il candidato e il docente anche in forma di domanda/risposta, sui vari argomenti trattati nel corso.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of skills</div>
+<span class="contenuto_programma"><p>final examination</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Comportamenti</div>
+<span class="contenuto_programma"><p>Il corso introduce gli aspetti di termodinamica e trasmissione del calore applicati a problemi di interesse alla tecnologia degli impianti nucleari.</p>
+<p>In aggiunta a questa parte, verranno trattati gli elementi di meccanica dei fluidi utili per la soluzione di problemi di moto di un fluido all&rsquo;interno di un circuito idraulico.</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Behaviors</div>
+<span class="contenuto_programma"><p>In this module, the main aspects related to thermal-hydraulics and heat transfer phenomena applied to the nuclear power plants technology.</p>
+<p>Furthermore, elements of fluid mechanics for the solution of problems related to the fluid flow inside a hydraulic circuit will be discussed.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica dei comportamenti</div>
+<span class="contenuto_programma"><p>esame orale</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of behaviors</div>
+<span class="contenuto_programma"><p>oral examination</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><p>Dai corsi di Matematica:<br />Derivate totali e parziali, semplici equazioni differenziali.<br />Dai corsi di Fisica:<br />Concetti di forza, lavoro e potenza, statica dei corpi rigidi, conservazione dell&rsquo;energia meccanica;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites</div>
+<span class="contenuto_programma"><p>from Mathematics courses:&nbsp;simple differential equations</p>
+<p>from Physics courses: force, work and power concepts, mechanic energy conservation</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni metodologiche</div>
+<span class="contenuto_programma"><p>Il corso ha una impostazione di tipo prevalentemente propedeutica ai successivi studi in ingegneria nucleare; le relative esercitazioni, sia pure sotto forma di brevi richiami, sono strettamente integrate nella teoria in modo che gli argomenti trovino immediata applicazione.<br />Per quanto materialmente possibile, si cercher&agrave; di integrare l&rsquo;attivit&agrave; in aula con lezioni fuori sede e seminari di esperti esterni.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Teaching methods</div>
+<span class="contenuto_programma"><p>The course is substantially a propedeutic one for the following II level course in Nuclear Energy. Lessons will be the classical frontal ones, with numerical applications of the different theories.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p>Introduzione<br />Gli impianti nucleari ad acqua leggera ed i loro principali componenti. La conversione di energia da fissione e fusione in energia elettrica. Cenni alle altre tipologie di reattori nucleari.</p>
+<p>Parte I &ndash; Termodinamica applicata<br />Prima legge della termodinamica, propriet&agrave; termodinamiche delle sostanze pure, diagrammi di stato (in particolare dell&rsquo;acqua), modello di gas ideale e di gas reale. Analisi basata sul volume di controllo di un sistema termodinamico mediante l&rsquo;uso delle equazioni di bilancio dell&rsquo;energia e della massa: applicazione a differenti componenti di un impianto nucleare. <br />Equazione di Eulero e cenni a pompe centrifughe e turbine a gas e vapore.<br />La seconda legge della termodinamica. <br />Cicli termodinamici: sistemi con turbine a gas, sistemi con turbine a vapore, cicli ideali vs. cicli reali, semplice applicazione per la valutazione del rendimento termodinamico di un tipico impianto nucleare refrigerato ad acqua.</p>
+<p>Parte II &ndash; Concetti di trasmissione del calore ed applicazioni<br />Richiami sui modi di scambio termico: conduzione, irraggiamento e convezione, concetto di resistenza termica. <br />Generazione del calore da fissione nucleare: reazione di fissione e differenti contributi alla generazione del calore, densit&agrave; di potenza, potenza termica volumetrica, potenza termica lineare. Analisi della trasmissione del calore in una barretta di combustibile di un reattore nucleare di tipo PWR: configurazione della barretta di combustibile e dell&rsquo;elemento di combustibile, propriet&agrave; termiche del combustibile nucleare, distribuzione radiale ed assiale della temperatura nella barretta di combustibile e nel refrigerante. <br />Scambiatori di calore: definizione dei termini relativi agli scambiatori di calore, equazioni di bilancio ed equazione di scambio termico, analisi degli scambiatori a tubi e mantello. <br />Esempi di condensatori e generatori di vapore impiegati negli impianti nucleari.<br />Parte III &ndash; Meccanica dei fluidi <br />Fondamenti di flusso monofase. Flusso di fluido viscoso ed incomprimibile: flusso in tubazioni, turbolenza e numero di Reynolds, perdite di carico, equazione di Bernoulli generalizzata, fattore di attrito, diagramma di Moody, semplici applicazioni a problemi di interesse per gli impianti nucleari.</p>
+<p>Il docente user&agrave; il software MATLAB come ausilio per lo svolgimento dei problemi risolti in classe.</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p>Introduction</p>
+<p>Part I - Applied Thermo-dynamics</p>
+<p>Part II - Basics on Heat Transfer</p>
+<p>Part III - Fluid Mechanics</p>
+<p>MATLAB software for the class works</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p>materiale didattico reso disponibile dai docenti durante il corso&nbsp;sul sito di e.learning del Dipartimento di Fisica (prof. Paci)</p>
+<p>primi 3 capitoli del manuale: Sandro Paci, "Introduzione ai sistemi nucleari", Pisa University Press.</p>
+<p>Material didattico del Prof. Forgione</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Bibliography</div>
+<span class="contenuto_programma"><p>didactic materials will be made available during the course on the e.learning site of the Physics Department (prof. Paci)</p>
+<p>first 3 chapters of the manual: Sandro Paci, "Introduzione ai sistemi nucleari", Pisa University Press.</p>
+<p>Didactic material of Prof. Forgione</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni per non frequentanti</div>
+<span class="contenuto_programma"><p>contattare i docenti via e-mail</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Non-attending students info</div>
+<span class="contenuto_programma"><p>please contact the professors by e-mail</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p>L'esame consiste in una prova orale, ossia in un colloquio tra il candidato e il docente anche in forma di domanda/risposta, sui vari argomenti trattati nel corso.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Assessment methods</div>
+<span class="contenuto_programma"><p><span lang="en">The exam consists of an interview. During the test, the student is invited to discuss one or more topics that he has independently developed as an in-depth study of the topics covered during the course.</span> &nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Altri riferimenti web</div>
+<span class="contenuto_programma"><p><a href="http://younuclear.ing.unipi.it/">YouNuclear web site</a></p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Additional web pages</div>
+<span class="contenuto_programma"><p><a href="http://younuclear.ing.unipi.it/">YouNuclear web site</a></p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 16/07/2021 12:47</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-fcc1cd77.js"></script>
+<script src="../_assets/jquery-ui.min-083c88ac.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-bc864bd9.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-cbd4a7f1.js"></script> 
+<script src="../_assets/tinymce.min-2396adf9.js"></script>
+<script src="../_assets/jquery.tinymce.min-cf2ee483.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-8144b60d.js"></script>
+<script src="../_assets/unipi-635b458d.js"></script>
+<script src="../_assets/dm-4aacbbca.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

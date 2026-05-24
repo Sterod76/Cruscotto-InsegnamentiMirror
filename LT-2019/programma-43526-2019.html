@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-9d88d2d3.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5e6adf09.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-3e1acd97.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-0be77ad4.css" rel="stylesheet">
+		<link href="../_assets/style_v1-8d07d3cb.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-795b32e7.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7ea9ead7.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-ce428c17.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-23a80404.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/index.php">Home</a></li><li><a href="https://esami.unipi.it/programmi_insegnamenti.php?aa=2019&cid=135&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">LABORATORIO 3 AVANZATO</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">DONATO NICOLO'</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2019/20</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">347BB</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">6</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Annuale</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>LABORATORIO 3 AVANZATO</TD><TD class='value-programma'>FIS/01</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>90</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>ALBERTO GENNAI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=80943' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>DONATO NICOLO' <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=4303' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>MATTEO RAMA <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=117617' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>CHIARA MARIA ANGELA RODA <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=4068' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/pdfProgCorsoStu.php?language=it&c=43526" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p>Durante il corso lo studente potr&agrave;:</p>
+<ul>
+<li>Acquisire le conoscenze di base sulle basi fisiche dei dispositivi elettronici a semiconduttore e le capacit&agrave; pratiche di base per progettare, montare ed analizzare semplici circuiti elettronici analogici e digitali.</li>
+<li>Acquisire il senso critico e la capacit&agrave; di fare il debug di un apparato sperimentale.</li>
+<li>Approfondire le difficolt&agrave; sperimentali legati alla misura in circuiti elettronici e in esperienze di fisica fondamentale.&nbsp;</li>
+<li>Imparare a scrivere una relazione scientifica sintetica e comprensibile.</li>
+</ul></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p>The student who successfully complete the course will acquire the following abilities:</p>
+<ul>
+<li>perform electrical measurement in electric and electronics circuits</li>
+<li>design and construct simple analog and digital electronics circuits</li>
+<li>perform and analyze simple physics experiments in optics and quantum mechanics</li>
+<li>analyze critically the experimental issues related to physics experiments</li>
+</ul>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><p>Per la verifica delle conoscenze acquisite verr&agrave; utilizzato:</p>
+<ul>
+<li>Le relazioni sulle attivit&agrave; di laboratorio svolte in gruppo durante l'anno</li>
+<li>Un elaborato scritto relativo alla prova pratica individuale svolta alla fine dell'anno</li>
+<li>Un colloquio sugli argomenti del corso.&nbsp;</li>
+</ul></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
+<span class="contenuto_programma"><p>The student&nbsp;knowledge will be assessed on the following criteria:</p>
+<ul>
+<li>Lab reports of the group activities submitted throughout the year</li>
+<li>Report on an individual laboratory&nbsp;experience performed at the end of year</li>
+<li>An oral exam on the course topics</li>
+</ul>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Capacit&agrave;</div>
+<span class="contenuto_programma"><p>Al termine&nbsp;del corso lo studente avr&agrave;:</p>
+<ul>
+<li>le capacit&agrave; pratiche di base per progettare, montare ed analizzare semplici circuiti elettronici analogici e digitali.</li>
+<li>il senso critico e la capacit&agrave; per eseguire misure in circuiti elettronici e in esperienze di fisica fondamentale e di fare il debug di un apparato sperimentale.</li>
+<li>la capacit&agrave;&nbsp;di scrivere una relazione scientifica sintetica e comprensibile.</li>
+</ul></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Skills</div>
+<span class="contenuto_programma"><p>During&nbsp;the course the student will acquire:</p>
+<ul>
+<li>the practical skills to design, assemble and analyze simple analog and digital electronic circuits</li>
+<li>the critical sense and capability of performing measurements in electronic circuits and fundamental physics experiments, and of debugging an experimental apparatus</li>
+<li>the ability to write a terse and comprehensible scientific report</li>
+</ul></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle capacit&agrave;</div>
+<span class="contenuto_programma"><p>Per la verifica delle capacit&agrave;&nbsp;acquisite verr&agrave; utilizzato:</p>
+<ul>
+<li>Le attivit&agrave; pratiche di laboratorio svolte in gruppo durante l'anno</li>
+<li>Una&nbsp;prova pratica individuale svolta alla fine dell'anno</li>
+<li>Un colloquio sugli argomenti del corso.&nbsp;</li>
+</ul></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of skills</div>
+<span class="contenuto_programma"><p>The student skills will be assessed on the following criteria:</p>
+<ul>
+<li>Group laboratory activities throughout the year</li>
+<li>Individual laboratory experioence performed at the end of year</li>
+<li>An oral exam on the course topics</li>
+</ul></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Comportamenti</div>
+<span class="contenuto_programma"><p>Durante il corso:</p>
+<ul>
+<li>Saranno acquisite accuratezza e precisione nello svolgere attivit&agrave; di raccolta e analisi di dati sperimentali</li>
+<li>Lo studente&nbsp;imparer&agrave; a lavorare in gruppo, anche cambiando la composizione a met&agrave; anno</li>
+<li>Lo studente imparer&agrave; a gestire efficacemente il tempo per la raccolta dei dati sperimentali.</li>
+</ul></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Behaviors</div>
+<span class="contenuto_programma"><p>During the course:</p>
+<ul>
+<li>Students will acquire accuracy and precision when collecting and analysing experimental data</li>
+<li>Students will learn to work in a team, also changing the composition during the course</li>
+<li>Students will learn to manage effectively the time needed to collect experimental data</li>
+</ul></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica dei comportamenti</div>
+<span class="contenuto_programma"><p>I comportamenti saranno verificati con le segeunti modalit&agrave;:</p>
+<ul>
+<li>Durante le sessioni di laboratorio saranno valutati il grado di accuratezza e precisione&nbsp;dei dati raccolti.&nbsp;</li>
+<li>Durante le esperienze viene verificata l'effettiva distribuzione del lavoro tra i componenti del gruppo</li>
+<li>La tempistica dell'attivita' di laboratorio &egrave; definita rigidamente, forzando lo studente ad ottimizzare la gestione tempo.</li>
+</ul></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of behaviors</div>
+<span class="contenuto_programma"><p>Behaviors will be assessed using the following criteria:</p>
+<ul>
+<li>During the lab sessions the level of accuracy and precision in the collection of experimental data will be evaluated.</li>
+<li>During the sessions the actual work sharing among the group components is verified.</li>
+<li>Timing for the lab activities is rigidly defined, forcing students to optimized their time management.&nbsp;</li>
+</ul></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><p>Conoscenze di base di meccanica ed elettromagnetismo. Circuiti elettrici. Uso della strumentazione elettronica di base (multimetro ed oscilloscopio). Competenze di calcolo differenziale e algebra lineare.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites</div>
+<span class="contenuto_programma"><p>Basic knowledge of mechanics and electromagnetism. Electrical circuit. Usage of basic electronics instrumentation (multimeter and oscilloscope). Calculus and linear algebra competency.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni metodologiche</div>
+<span class="contenuto_programma"><p>Il corso si svolge con le seguenti metodologie:</p>
+<ul>
+<li>lezioni frontali in aula con con occasionale ausilio di slides</li>
+<li>esercitazioni in laboratori dedicati equipaggiati con strumentazione elettronica e PC.&nbsp;Le esercitazioni si svolgono in gruppi di 2-3 studenti.</li>
+<li>durante le esercitazioni sono presenti codocenti e personale tecnico per supportare le attivita' degli studenti.&nbsp;</li>
+<li>elearning: il corso e' supportato da un sito web ed da un gruppo di discussione. Il materiale presentato a lezione e' scaricabile dal sito del corso. Il sito serve anche alla formazione dei gruppi e per il calendario delle attivita'.</li>
+<li>ogni settimana ogni gruppo deve consegnare una relazione che viene corretta e resttituita di norma la settimana successiva e va a formare la valutazione del corso</li>
+<li>l'interazione con il docente fuori dalle ore di lezione avviene attraverso email oppure ricevimenti su appuntamento.</li>
+</ul></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Teaching methods</div>
+<span class="contenuto_programma"><p>Delivery: face to face</p>
+<p>Learning activities:</p>
+<ul>
+<li>attending lectures</li>
+<li>preparation of oral/written report</li>
+<li>participation in discussions</li>
+<li>individual study</li>
+<li>group work</li>
+<li>Laboratory work</li>
+<li>Practical</li>
+</ul>
+<p>Attendance: Mandatory</p>
+<p>Teaching methods:</p>
+<ul>
+<li>Lectures</li>
+<li>laboratory</li>
+</ul>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p><strong>Argomenti svolti in aula</strong></p>
+<p><strong>Introduzione metodologica.</strong> Significato della misura in fisica. Metodo di preparazione delle relazioni. Software di analisi e visualizzazione dei dati sperimentali.</p>
+<p><strong>Circuiti lineari: </strong>richiami di teoria dei circuiti. Leggi di Ohm, Kirchoff. Modello di Thevenin.Risposta di un circuito a segnali sinusoidali o impulsivi. Uso&nbsp; delle trasformate di Fourier e Laplace. Induttanze e capacit&agrave;. Componenti ideali e reali. Resistenza serie e parallela. Resistenza di ingresso e uscita. Metodo di soluzione dei circuiti e software di simulazione.&nbsp;</p>
+<p><strong>Dispositivi a semiconduttore: </strong>il diodo. Cenni alla teoria dei semiconduttori. Drogaggio. Giunzioni p-n. Corrente nei semiconduttori. Diodo a giunzione. Struttura e caratteristiche di un diodo. Corrente, svuotamento, capacit&agrave;. Diodi Zener. Il diodo come elemento circuitale. Circuiti limitatori e rettificatori. Filtri capacitivi. Rivelatori di picco. Duplicatore di tensione.</p>
+<p><strong>Dispositivi per amplificazione:</strong>&nbsp;transistor. Transistor a giunzione bipolare (BJT). Caratteristiche del transistor. Zona attiva, di saturazione edi interdizione. Implementazione di circuiti logici. Logica TTL.&nbsp; Modello a parametri h del transistor. Amplificatori a transistor con configurazione di collettore o emettitore comune. Transistors a giunzione ad effetto di campo (JFET) e sue caratteristiche. Transistor MOSFET di tipo p e di tipo n. Circuiti CMOS. Amplificatori differenziali.</p>
+<p><strong>Circuiti con reazione</strong> (feedback). Circuiti con feedback positivo o negativo. Feedback di tensione e di corrente. Uso del feedback negativo per migliorare le prestazioni degli amplificatori. Feedback positivo.</p>
+<p><strong>Amplificatori operazionali</strong> (OpAmp). Il feedback negli OpAmp. Principio della massa virtuale. Circuiti che effettuano operazioni matematiche: sommatore, derivatore, integratore. Impedenza di ingresso e uscita nei circuiti con OpAmp. Teorema di Miller. Filtri attivi. Usi non lineari degli OpAmp. Rivelatori di picco. Sistemi di Sample-And-Hold. Oscillatori. Trigger di Schmitt.</p>
+<p><strong>Cenni al rumore nei circuiti elettronici.</strong>&nbsp;</p>
+<p><strong>Circuiti digitali.&nbsp;</strong>Base binaria, ottale,&nbsp; esadecimale, decimale e conversione tra le varie basi. Rappresentazioni dei numeri binari: modulo e segno, complemento a uno e a due, codice Gray e BCD. Porte logiche a 1 e 2 ingressi. Caratteristiche fisiche dei circuiti logici: livelli logici di tensione,&nbsp; fan-out, ritardi. Implementazione di NAND con elementi discreti in logica TTL. Definizione di reti logiche combinatorie e sequenziali, tabella delle verit&agrave;.&nbsp;</p>
+<p><strong>Logica combinatoria.&nbsp;</strong>Forme standard di funzioni logiche: somma di prodotti e prodotti di somme. Algebra di Boole e leggi di De Morgan. NOR e NAND come porte logiche universali. Mappe di Karnaugh ed esempi di applicazioni: comparatore di numeri binari e sommatore. Implementazione di circuiti per controllo del display a sette segmenti, half adder e full adder.&nbsp;</p>
+<p><strong>Logica sequenziale.&nbsp;</strong>Elementi logici sequenziali di base. Flip-flop (FF). FF Set-reset sincrono e asincrono con porte NOR e NAND. Latch di tipo D e JK. Circuito di master-slave. Ingressi sincroni e asincroni. Applicazioni dei FF: contatori asincroni e sincroni, registri a scorrimento, moltiplicatore e divisore, generatore di numeri pseudocasuali, registro ad anello, contatore decadico. Temporizzazione con FF.&nbsp;</p>
+<p><strong>Progettazione di circuiti in logica sequenziale.&nbsp;</strong>Macchina a stati finiti. (FSM). Applicazione della FSM: controllo/calcolo della parit&agrave;, registro a scorrimento come FSM, macchina distributrice.</p>
+<p><strong>Circuiti integrati logici complessi.&nbsp;</strong>Multiplexer, demultiplexer,&nbsp; ROM, PAL, PLA, FPGA. Metodologie per l'implementazione di un circuito combinatorio: parti standard, look-up tables, template based logic.</p>
+<p><strong>MicroControllori. </strong>Struttura e funzionamento, porte tri-state, bus, architettura Harvward e Von Neumann, memorie, ALU, esecuzioni di una istruzione, porte in-out. Concetto e gestione di interrupt. Il sistema di sviluppo di Arduino con microcontrollore ATMEGA 328&nbsp;</p>
+<p><strong>Circuiti per la conversione</strong> digitale/analogica e analogica/digitale (DAC e ADC): a contatore, ad approssimazioni successive, a singola e doppia rampa.</p>
+<p><strong>Esercitazioni</strong></p>
+<p>Il corso include circa 15 esercitazioni di laboratorio di elettronica:</p>
+<ul>
+<li>E01 - Uso della strumentazione: misure di tensione, corrente, tempo, frequenza</li>
+<li>E02 - Circuito RC passabasso e passabanda</li>
+<li>E03 - Caratteristiche del transistor. Circuito NOT</li>
+<li>Software per simulazioni circuitali: LTSPICE</li>
+<li>E04 - Amplificatori con BJT - Common emitter</li>
+<li>E05 - Amplificatori con JFET - Source follower</li>
+<li>E06 - OpAmp usi lineari: amplificatore, integratore, derivatore</li>
+<li>E07 - Opamp usi non lineari: amplificatore di carica con TOT</li>
+<li>E08 - OpAmp in oscillatore a ponte di Wien</li>
+<li>E10 - Caratteristiche porte logiche</li>
+<li>E11 - Circuiti logici e multivibratori</li>
+<li>E12 - Flip-flop e contatori</li>
+<li>E13 - FSM e semaforo</li>
+<li>E14 - Lockin</li>
+<li>E15 - Boltzmann</li>
+</ul>
+<p>ed alcune esperienze di fisica fondamentale tra le seguenti:</p>
+<ol>
+<li>Misura del rapporto e/m</li>
+<li>Esperienza di Franck-hertz</li>
+<li>Misura dell&rsquo;effetto fotoelettrico</li>
+<li>Righe di Balmer - costante di Rydberg</li>
+<li>Misure di lunghezza d'onda, interferometro di Michelson</li>
+</ol></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p>Measurement errors and data analysis in physics experiments. Analog electronics with passive components, transistors, operational circuits. Feedback circuits, stability and oscillation. Noise in analog circuits. Digital electronics basic elements. Combinational and sequential digital circuits. Finite state machines. Realization, data taking, and analysis of some basic modern physics experiments: optics, e/m measurement, photoelectric effect.</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p>Testi consigliati</p>
+<p>Elettronica:&nbsp;</p>
+<ul>
+<li>J. Millman, "Sistemi e circuiti microelettronici", Bollati-Boringhieri</li>
+<li>P.Horowitz, W.Hill: &ldquo;The art of electronics&rdquo;, II ed.&nbsp;(Cambridge University Press)</li>
+<li>V. Flaminio et al., "Introduzione all'elettronica: parte I e parte II ", Edizioni ETS (<a href="https://drive.google.com/open?id=0B3zCAynrojavTW8xVjJoaXZ4MXM&amp;authuser=0">pdf Vol1</a>,&nbsp;<a href="https://drive.google.com/open?id=0B3zCAynrojavN0F5VUx1NV9wMHM&amp;authuser=0">pdf Vol2</a>)</li>
+<li>R. Katz, G. Borriello, "Contemporary Logic Design", 2nd edition, Pearson Prentice Hall&nbsp;</li>
+</ul>
+<p>Statistica e probabilit&agrave;:</p>
+<ul>
+<li><a href="https://sites.google.com/site/lab3fisicaforti/corso/goog_1962900870">Bevington, "</a><a href="http://books.google.it/books/about/Data_reduction_and_error_analysis_for_th.html?id=0poQAQAAIAAJ&amp;redir_esc=y">Data Reduction and Error Analysis for the Physical Sciences"</a>, McGraw-Hill,&nbsp;<a href="http://highered.mcgraw-hill.com/sites/0072472278/">highered.mcgraw-hill.com/sites/0072472278/</a></li>
+<li><a href="https://sites.google.com/site/lab3fisicaforti/corso/goog_1962900868">Frodesen-Kjeggestad, "</a><a href="http://books.google.it/books/about/Probability_and_statistics_in_particle_p.html?id=KcPvAAAAMAAJ&amp;redir_esc=y">Probability and statistics in particle physics"</a>, out of print</li>
+<li><a href="https://sites.google.com/site/lab3fisicaforti/corso/goog_1962900872">Papoulis, "</a><a href="http://books.google.it/books?id=g6eUoWOlcQMC&amp;dq=papoulis&amp;hl=it&amp;sa=X&amp;ei=7NN8UpH6Dsba4QTJrIF4&amp;ved=0CDUQ6AEwAA">Probability, Random Variables, and Stochastic Processes"</a>, McGraw-Hill</li>
+<li><a href="https://sites.google.com/site/lab3fisicaforti/corso/goog_1962900874">Lyons, "</a><a href="http://books.google.it/books?id=LeoHwnHhJGUC&amp;dq=Lyons+data&amp;hl=it&amp;sa=X&amp;ei=O9R8Uo2lJ8mp4ATcl4DABw&amp;ved=0CDMQ6AEwAA#v=onepage&amp;q&amp;f=false">A Practical Guide to Data Analysis for Physical Science Students"</a>, Cambridge university press</li>
+<li>Bohm-Zech. "Introduction to Statistics and Data Analysis for Physicists",&nbsp;&nbsp;<a href="http://www-library.desy.de/preparch/books/vstatmp_engl.pdf%E2%80%8E">www-library.desy.de/preparch/books/vstatmp_engl.pdf&lrm;</a></li>
+</ul></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Bibliography</div>
+<span class="contenuto_programma"><p>Textbooks:&nbsp;</p>
+<p>Elettronics:&nbsp;</p>
+<ul>
+<li>J. Millman, "Sistemi e circuiti microelettronici", Bollati-Boringhieri</li>
+<li>P.Horowitz, W.Hill: &ldquo;The art of electronics&rdquo;, II ed.&nbsp;(Cambridge University Press)</li>
+<li>V. Flaminio et al., "Introduzione all'elettronica: parte I e parte II ", Edizioni ETS (<a href="https://drive.google.com/open?id=0B3zCAynrojavTW8xVjJoaXZ4MXM&amp;authuser=0">pdf Vol1</a>,&nbsp;<a href="https://drive.google.com/open?id=0B3zCAynrojavN0F5VUx1NV9wMHM&amp;authuser=0">pdf Vol2</a>)</li>
+<li>R. Katz, G. Borriello, "Contemporary Logic Design", 2nd edition, Pearson Prentice Hall&nbsp;</li>
+</ul>
+<p>Statistics and probability:</p>
+<ul>
+<li><a href="https://sites.google.com/site/lab3fisicaforti/corso/goog_1962900870">Bevington, "</a><a href="http://books.google.it/books/about/Data_reduction_and_error_analysis_for_th.html?id=0poQAQAAIAAJ&amp;redir_esc=y">Data Reduction and Error Analysis for the Physical Sciences"</a>, McGraw-Hill,&nbsp;<a href="http://highered.mcgraw-hill.com/sites/0072472278/">highered.mcgraw-hill.com/sites/0072472278/</a></li>
+<li><a href="https://sites.google.com/site/lab3fisicaforti/corso/goog_1962900868">Frodesen-Kjeggestad, "</a><a href="http://books.google.it/books/about/Probability_and_statistics_in_particle_p.html?id=KcPvAAAAMAAJ&amp;redir_esc=y">Probability and statistics in particle physics"</a>, out of print</li>
+<li><a href="https://sites.google.com/site/lab3fisicaforti/corso/goog_1962900872">Papoulis, "</a><a href="http://books.google.it/books?id=g6eUoWOlcQMC&amp;dq=papoulis&amp;hl=it&amp;sa=X&amp;ei=7NN8UpH6Dsba4QTJrIF4&amp;ved=0CDUQ6AEwAA">Probability, Random Variables, and Stochastic Processes"</a>, McGraw-Hill</li>
+<li><a href="https://sites.google.com/site/lab3fisicaforti/corso/goog_1962900874">Lyons, "</a><a href="http://books.google.it/books?id=LeoHwnHhJGUC&amp;dq=Lyons+data&amp;hl=it&amp;sa=X&amp;ei=O9R8Uo2lJ8mp4ATcl4DABw&amp;ved=0CDMQ6AEwAA#v=onepage&amp;q&amp;f=false">A Practical Guide to Data Analysis for Physical Science Students"</a>, Cambridge university press</li>
+<li>Bohm-Zech. "Introduction to Statistics and Data Analysis for Physicists",&nbsp;&nbsp;<a href="http://www-library.desy.de/preparch/books/vstatmp_engl.pdf%E2%80%8E">www-library.desy.de/preparch/books/vstatmp_engl.pdf&lrm;</a></li>
+</ul></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni per non frequentanti</div>
+<span class="contenuto_programma"><p>La frequenza al corso e' obbligatoria</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Non-attending students info</div>
+<span class="contenuto_programma"><p>Attendance is mandatory</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p>L'esame finale consiste in una prova pratica di laboratorio ed un colloquio.</p>
+<p>La valutazione finale prender&agrave; in considerazione:</p>
+<ul>
+<li>Le relazioni sulle attivit&agrave; di laboratorio svolte in gruppo durante l'anno</li>
+<li>L'elaborato scritto relativo alla prova pratica individuale</li>
+<li>Il risultato del&nbsp;colloquio sugli argomenti del corso.&nbsp;</li>
+</ul></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Assessment methods</div>
+<span class="contenuto_programma"><p>The final exam consists in a laboratory test and an oral examination.</p>
+<p>The final assessment will include:</p>
+<ul>
+<li>The lab reports of the group activities submitted throughout the year</li>
+<li>The report on&nbsp;the individual laboratory test</li>
+<li>The result of the oral exam on the course topics</li>
+</ul>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Altri riferimenti web</div>
+<span class="contenuto_programma"><p><a href="https://sites.google.com/site/lab3fisicaforti">https://sites.google.com/site/lab3fisicaforti</a></p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Additional web pages</div>
+<span class="contenuto_programma"><p><a href="https://sites.google.com/site/lab3fisicaforti">https://sites.google.com/site/lab3fisicaforti</a></p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Note</div>
+<span class="contenuto_programma"><p>Poich&egrave; il numero di postazioni &egrave; limitato, l'iscrizione al corso deve avvenire con largo anticipo, tipicamente tra met&agrave; luglio e met&agrave; settembre, attraverso una pagina dedicata sul sito del dipartimento di fisica, in modo da poter organizzare la frequenza.&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Notes</div>
+<span class="contenuto_programma"><p>Since the number of positions is limited, students must enroll in the course well in advance, typically between mid-July to mid-September, using a dedicate page on the physics department web site, to allow a better organization of the course.&nbsp;</p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 24/09/2019 15:25</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-fcc1cd77.js"></script>
+<script src="../_assets/jquery-ui.min-083c88ac.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-bc864bd9.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-cbd4a7f1.js"></script> 
+<script src="../_assets/tinymce.min-2396adf9.js"></script>
+<script src="../_assets/jquery.tinymce.min-cf2ee483.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-8144b60d.js"></script>
+<script src="../_assets/unipi-635b458d.js"></script>
+<script src="../_assets/dm-4aacbbca.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

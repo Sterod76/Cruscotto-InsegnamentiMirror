@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-dc764708.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5d307d3a.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-b777fb69.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-adef06ea.css" rel="stylesheet">
+		<link href="../_assets/style_v1-429eb70e.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-32df6655.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7c4d2527.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-57b8ccba.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-8e6319ba.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/esami2/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/esami2/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/esami2/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/esami2/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/esami2/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/esami2/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/esami2/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/esami2/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esami2/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/esami2/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/esami2/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/esami2/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/esami2/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/esami2/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/esami2/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/esami2/index.php">Home</a></li><li><a href="https://esami.unipi.it/esami2/programmi_insegnamenti.php?aa=2016&cid=1&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">FISICA DEI SISTEMI A MOLTICORPI</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">MARIA LUISA CHIOFALO</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2016/17</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">276BB</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">9</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Secondo semestre</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>FISICA DEI SISTEMI A MOLTICORPI</TD><TD class='value-programma'>FIS/03</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>54</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>MARIA LUISA CHIOFALO <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=6715' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/esami2/pdfProgCorsoStu.php?language=it&c=28781" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p><strong>1.</strong> Sviluppare <strong>conoscenza concettuale, procedurale e fattuale</strong> nella fisica di sistemi con molte particelle (quantistiche) interagenti, dove agendo su temperatura, dimensionalit&agrave;, e forza di interazione &egrave; possibile stabilire condizioni di forti correlazioni in propriet&agrave; di carica/densit&agrave; e spin.</p>
+<p>Per questo, si prevede di:</p>
+<p><strong>&nbsp;&nbsp; (a)</strong> discutere qualitativamente mediante la fisica di base le idee emergenti da fatti sperimentali ed esempi di vita quotidiana, approfondendo all'occorrenza metodi sperimentali e possibili applicazioni;</p>
+<p><strong>&nbsp;&nbsp; (b)</strong> formalizzare i concetti (<strong>conoscenza concettuale</strong>); e</p>
+<p><strong>&nbsp;&nbsp; (c)</strong> sviluppare e classificare la conoscenza di metodi teorici e di simulazione per le predizioni quantitative (<strong>conoscenza procedurale e fattuale</strong>), incluso Teoria della Risposta Lineare e funzioni di correlazione, Fluido- e Idrodinamica quantistiche, Teoria del Funzionale di Densit&agrave; (Dipendente dal Tempo), metodi Quantum Monte Carlo, Density Matrix Renormalization Group.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p><strong>1.</strong> Develop conceptual, procedural, and factual knowledge in the physics of many interacting quantum particles, where after acting via temperature, dimensionality, interaction strength, extreme quantum behavior and correlation effects can be realized in charge/density and spin properties.</p>
+<p>The course is aimed to:</p>
+<p><strong>&nbsp;&nbsp; (a)</strong> qualitatively discuss via basic physics of emergent ideas from experimental and everyday-life facts, while - whenever possible - deepening on the use of experimental methods;</p>
+<p><strong>&nbsp;&nbsp; (b)</strong> formalize the concepts (<strong>conceptual knowledge)</strong> and</p>
+<p><strong>&nbsp;&nbsp; (c)</strong> develop and classify the knowledge of theoretical methods (with an eye also to simulational methods) needed to perform quantitative predictions (<strong>procedural and factual knowledge</strong>), including Theory of linear response and correlation functions, Quantum fluido- and hydro-dynamics, (Time-Dependent) Density Functional Theory, Green's functions and perturbative expansions, Bosonization techniques for 1D&nbsp; systems.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><p>La verifica &egrave; formulata mediante <strong>prova orale</strong>. In particolare, la prova parte dall'esame di un problema di fisica dei molti corpi non discusso nel corso, che&nbsp;si richiede allo/a studente di individuare in autonomia o con l'accompagnamento del/la docente. Nel corso della prova, sar&agrave; possibile&nbsp; approfondire aspetti dei casi di studio discussi. La verifica viene effettuata secondo le seguenti Aree di competenza:</p>
+<p><strong>(a)</strong> aver compreso idee e concetti e saperli comunicare utilizzando conoscenze di fisica di base;</p>
+<p><strong>(b)</strong> saper formalizzare i concetti e saperli trattare attraverso l'uso di uno o pi&ugrave; tra i metodi sviluppati nel corso e relative procedure;</p>
+<p><strong>(c)</strong> saper connettere la comprensione concettuale e la formalizzazione del problema con la fenomenologia e i fatti sperimentali disponibili, e avere un'idea delle applicazioni;</p>
+<p><strong>(d)</strong> autonomia, consapevolezza della mappa concettuale e di quanto appreso, efficacia ed efficienza nella comunicazione scientifica.&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Nel corso della prova orale, utilizzando i seguenti criteri di valutazione della conoscenza procedurale e fattuale. </strong>In particolare, le capacit&agrave; sono valutate in misura del 60% per la conoscenza concettuale del valore del punteggio massimo per ogni Area (a)-(c). I punteggi massimi per ogni Area sono cos&igrave; composti:</p>
+<p>&ndash; fino a <strong>18 punti</strong> per l'Area <strong>(a)</strong></p>
+<p>&ndash; fino a&nbsp;&nbsp; <strong>6 punti</strong> per l'Area <strong>(b)</strong></p>
+<p>&ndash; fino a&nbsp;&nbsp; <strong>4 punti</strong> per l'Area <strong>(c)</strong></p>
+<p>&ndash; fino a&nbsp;&nbsp; <strong>5 punti</strong> per le competenze trasversali <strong>(d)</strong></p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
+<span class="contenuto_programma"><p>Assessment is performed via <strong>oral exam</strong>. The exam stems from a problem in many-body physics not discussed during the course, that the student may choose (in autonomy or accompanied by the teacher). Assessment is performed according to the following competences Areas:</p>
+<p><strong>(a)</strong> understanding ideas and concepts, and competence in communicating them after using basic-physics knowledge;</p>
+<p><strong>(b)</strong> competence in formalizing the concepts and treating them via one or more among the methods developed during the course with related procedures;</p>
+<p><strong>(c)</strong> competence in relating the conceptual comprehension and the problem formalization with the phenomenological and experimental available facts, and having hints about possible applications;</p>
+<p><strong>(d)</strong> autonomy, awareness of conceptual maps, learning process and contents, effectiveness in scientific communication.&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>The following composition is used</strong></p>
+<p>&ndash; up <strong>18 points</strong> for Area <strong>(a)</strong></p>
+<p>&ndash; up <strong>6 </strong><strong>points</strong> for Area <strong>(b)</strong></p>
+<p>&ndash; up <strong>4 </strong><strong>points</strong> for Area <strong>(c)</strong></p>
+<p>&ndash; up <strong>5 </strong><strong>points</strong> for cross and life-skills <strong>(d)</strong></p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Capacit&agrave;</div>
+<span class="contenuto_programma"><p><strong>2. </strong>Organizzare e mettere in relazione questa conoscenza disciplinare in una stessa mappa concettuale con termodinamica, meccanica statistica e transizioni di fase, meccanica quantistica, teorie di campo, e struttura della materia nelle sue diverse realizzazioni, facendo emergere come le propriet&agrave; macroscopiche siano governate da leggi di conservazione e rotture di simmetria accompagnate da elasticit&agrave;, modi dinamici a bassa frequenza e difetti.</p>
+<p><strong>3.</strong> Saper individuare la procedura pi&ugrave; funzionale alla soluzione di un dato problema</p>
+<p><strong>4.</strong> Saper applicare le tecniche di calcolo relative alle diverse procedure di soluzione</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Skills</div>
+<span class="contenuto_programma"><p><strong>1. </strong>Organizing the present disciplinary knowledge in the same conceptual mapalong with thermodinamics, statistical mechanics, phase transitions, qantum mechanics, quantum field theories, condensed matter in its diverse realizations, making clear the emergence of how macroscopic properties are governed by conservation laws and spontaneous symmetry breakings accompanied by the appearence of elasticity, low-frequency dynamical modes, and defects.</p>
+<p><strong>2.</strong> Selecting the most convenient procedure for the solution of a given problem</p>
+<p><strong>3.</strong> Application of calculus techniques related to different solution procedures</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle capacit&agrave;</div>
+<span class="contenuto_programma"><p>La verifica &egrave; formulata mediante <strong>prova orale</strong>. In particolare, la prova parte dall'esame di un problema di fisica dei molti corpi non discusso nel corso, che&nbsp;si richiede allo/a studente di individuare in autonomia o con l'accompagnamento del/la docente. Nel corso della prova, sar&agrave; possibile&nbsp; approfondire aspetti dei casi di studio discussi. La verifica viene effettuata secondo le seguenti Aree di competenza:</p>
+<p><strong>(a)</strong> aver compreso idee e concetti e saperli comunicare utilizzando conoscenze di fisica di base;</p>
+<p><strong>(b)</strong> saper formalizzare i concetti e saperli trattare attraverso l'uso di uno o pi&ugrave; tra i metodi sviluppati nel corso e relative procedure;</p>
+<p><strong>(c)</strong> saper connettere la comprensione concettuale e la formalizzazione del problema con la fenomenologia e i fatti sperimentali disponibili, e avere un'idea delle applicazioni;</p>
+<p><strong>(d)</strong> autonomia, consapevolezza della mappa concettuale e di quanto appreso, efficacia ed efficienza nella comunicazione scientifica.&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Nel corso della prova orale, utilizzando i seguenti criteri di valutazione della conoscenza procedurale e fattuale. </strong>In particolare, le capacit&agrave; sono valutate in misura del 30% per la conoscenza procedurale e del 10% per quella fattuale, del valore del punteggio massimo per ogni Area (a)-(d). I punteggi massimi per ogni Area sono cos&igrave; composti:</p>
+<p>&ndash; fino a <strong>18 punti</strong> per l'Area <strong>(a)</strong></p>
+<p>&ndash; fino a&nbsp;&nbsp; <strong>6 punti</strong> per l'Area <strong>(b)</strong></p>
+<p>&ndash; fino a&nbsp;&nbsp; <strong>4 punti</strong> per l'Area <strong>(c)</strong></p>
+<p>&ndash; fino a&nbsp;&nbsp; <strong>5 punti</strong> per le competenze trasversali <strong>(d)</strong></p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of skills</div>
+<span class="contenuto_programma"><p>Assessment is performed via <strong>oral exam</strong>. The exam stems from a problem in many-body physics not discussed during the course, that the student may choose (in autonomy or accompanied by the teacher). Assessment is performed according to the following competences Areas:</p>
+<p><strong>(a)</strong> understanding ideas and concepts, and competence in communicating them after using basic-physics knowledge;</p>
+<p><strong>(b)</strong> competence in formalizing the concepts and treating them via one or more among the methods developed during the course with related procedures;</p>
+<p><strong>(c)</strong> competence in relating the conceptual comprehension and the problem formalization with the phenomenological and experimental available facts, and having hints about possible applications;</p>
+<p><strong>(d)</strong> autonomy, awareness of conceptual maps, learning process and contents, effectiveness in scientific communication.&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>The following composition is used</strong></p>
+<p>&ndash; up <strong>18 points</strong> for Area <strong>(a)</strong></p>
+<p>&ndash; up <strong>6 </strong><strong>points</strong> for Area <strong>(b)</strong></p>
+<p>&ndash; up <strong>4 </strong><strong>points</strong> for Area <strong>(c)</strong></p>
+<p>&ndash; up <strong>5 </strong><strong>points</strong> for cross and life-skills <strong>(d)</strong></p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Comportamenti</div>
+<span class="contenuto_programma"><ul>
+<li>Curiosit&agrave; e spirito critico</li>
+<li>Interesse</li>
+<li>Iniziativa e partecipazione attiva</li>
+<li>Correttezza al momento della valutazione</li>
+</ul>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Behaviors</div>
+<span class="contenuto_programma"><ul>
+<li>Curiosity</li>
+<li>Committment</li>
+<li>Active involvement</li>
+<li>Creative approach</li>
+<li>Group working</li>
+<li>Faireness during evaulation</li>
+</ul></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica dei comportamenti</div>
+<span class="contenuto_programma"><p>La verifica del comportamenti viene operata in aula mediante osservazione, utilizzando i dati d'uso del materiale collocato sul portale elearning, e di nuovo mediante osservazione in aula nel corso dell'esame.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of behaviors</div>
+<span class="contenuto_programma"><p>During the lecturing time, via interactions with students.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><p><strong>Prerequisito</strong> di accesso al corso &egrave; la conoscenza di base di dinamica, termodinamica ed elementi di&nbsp; meccanica statistica, elettromagnetismo, struttura della materia e meccanica quantistica acquisiti nel corso di studi triennale.</p>
+<p><strong>Utili e molto preferibili sebbene non indispensabili</strong> sono conoscenze di fisica dei solidi</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites</div>
+<span class="contenuto_programma"><p><strong>Prerequisite</strong> is the basic knowledge of classical dynamics, theremodynamics and elements of statistical mechanics, electromagnetism, structure of matter, quantum physics.</p>
+<p><strong>Very useful and preferable, though not compulsory,&nbsp;</strong> is the knowledge of solid-state physics</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni metodologiche</div>
+<span class="contenuto_programma"><p>Siintende utilizzare due esempi complementari rispetto alle caratteristiche di carica/densit&agrave; e di spin, tratti da campi di ricerca di frontiera (fluidi elettronici in sistemi a bassa dimensionalit&agrave; e gas atomici ultrafreddi quantistici) per acquisire le seguenti competenze, ovvero imparare a saper:</p>
+<p><strong>(a)</strong> discutere qualitativamente le idee emergenti a partire da concetti di fisica di base gi&agrave; acquisiti nel corso di studio triennale e dalla fenomenologia - preferibilmente disponibile dalla vita di tutti i giorni - e fatti sperimentali;</p>
+<p><strong>(b)</strong> formalizzare i concetti utili;</p>
+<p><strong>(c)</strong> sviluppare i principali strumenti e metodi teorici e di simulazione per le previsioni quantitative;</p>
+<p><strong>(d)</strong> discutere la connessione tra funzioni di correlazione e misure (teorema di fluttuazione e dissipazione) e, all'occorrenza, i principi alla base dei principali metodi sperimentali; (d) mettere in luce le possibile applicazioni;</p>
+<p><strong>(e)</strong> al termine di ogni argomento, costruire in modo interattivo una mappa concettuale che lo rappresenta, evidenziando concetti e relazioni tra questi.</p>
+<p><strong>(f)</strong> al termine di ogni argomento, si sviluppa lo studio di un caso per acquisire pratica d'applicazione della conoscenza procedurale e fattuale</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Teaching methods</div>
+<span class="contenuto_programma"><p>Two case studies are illustrated, complementary with respect to charge/density and spin charecteristics, and extracted from frontier research fields. In particular, quantum fluids in reduced, dimensionality and ultracold quantum gases. Case studies are used to acquire the following competences:</p>
+<p><strong>(a)</strong> qualitatively discuss via basic physics of emergent ideas from experimental and everyday-life facts, while - whenever possible - deepening on the use of experimental methods;</p>
+<p><strong>(b)</strong> formalize the concepts (<strong>conceptual knowledge);</strong></p>
+<p><strong>(c)</strong> develop and classify the knowledge of theoretical methods (with an eye also to simulational methods) needed to perform quantitative predictions (<strong>procedural and factual knowledge</strong>);</p>
+<p><strong>(c)</strong> relate the conceptual comprehension and the problem formalization with the phenomenological and experimental available facts, and having hints about possible applications;</p>
+<p><strong>(d)</strong> autonomy, awareness of conceptual maps, learning process and contents, effectiveness in scientific communication.&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p><strong>A. Introduzione al corso e mappa concettuale delle idee...</strong></p>
+<p>...discusse qualitativamente attraverso un esempio: l'acqua.</p>
+<p><strong>B. Struttura e scattering</strong></p>
+<p>Generalit&agrave; e concetti essenziali. Misure e Funzioni di correlazione, Funzioni di risposta e Idrodinamica (quantistica) attraverso un semplice modello.</p>
+<p>[Durante il corso saranno all'occorrenza discussi i seguenti temi: Principi e Metodi sperimentali per determinare la struttura della materia. Fenomenologia sulle caratteristiche essenziali di simmetria e di struttura dei gas e dei liquidi, dei solidi cristallini, dei cristalli liquidi, di quasi-cristalli, di sistemi superfluidi e di sistemi con ordine magnetico. Simmetrie discrete e continue e relazioni con termodinamica e meccanica statistica.&nbsp; Effetti della dimensionalit&agrave;.]&nbsp;</p>
+<p><strong>C.&nbsp; Metodi Teorici per sistemi fortemente correlati </strong></p>
+<p><strong>C.1 Sistemi a simmetria massima. Sviluppo di metodi teorici a partire dalla misura e dalle funzioni di correlazione trattate fenomenologicamente in B, e relazione tra questi</strong>:</p>
+<ul>
+<li>Teoria della Risposta lineare</li>
+<li>Teoria del Funzionale di Densit&agrave; statico (DFT) e dipendente dal tempo (TDDFT)</li>
+<li>Funzioni di correlazione e funzioni di Green (un dizionario con le funzioni di risposta) e sviluppi perturbativi. Applicazioni a sistemi debolmente interagenti</li>
+<li>Dimensionlit&agrave; e sistemi fortemente correlati: modelli e teorie per sistemi unidimensionali.&nbsp; Tecniche di bosonizzazione</li>
+</ul>
+<p><strong>C.2 Sistemi a simmetria rotta. </strong></p>
+<ul>
+<li>Concetti di scaling, esponenti critici e universalit&agrave;. Introduzione ai concetti di scaling, esponenti critici e universalit&agrave; attraverso la soluzione di problemi esemplari in approssimazione di campo medio: modello di Ising (se il tempo a disposizione lo consente, anche alla transizione liquido-gas, transizione liquido isotropico-nematico, transizione liquido-solido)</li>
+<li>Condizioni di validit&agrave; della teoria di campo medio e fluttuazioni. Calcolo di esponenti critici in campo medio</li>
+<li>Relazioni di scala in sistemi fortemente correlati</li>
+<li>Effetti della dimensionalit&agrave;</li>
+</ul>
+<p><strong>Applicazione dei metodi attraverso lo studio di due casi con rottura di simmetria: </strong></p>
+<p><strong>&nbsp;D.1</strong> Rottura di simmetria continua. Applicazione della Teoria della Risposta Lineare e delle Correlazioni Dinamiche, DFT e sua estensione a fenomeni dipendenti dal tempo (TD-DFT), Idrodinamica ed equazioni di Navier-Stokes microscopiche, e relazioni concettuali e metodologiche queste. Caso di studio: superfluidit&agrave; e condensazione di Bose-Einstein in gas atomici quantistici. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p><strong>&nbsp;D.2</strong> Rottura di simmetria discreta. Applicazione delle tecniche di bosonizzazione. Caso di studio: sistema di spin unidimensionale.</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>E. Principi alla base dei Metodi Simulativi per sistemi fortemente correlati: in forma seminariale/laboratoriale, con la collaborazione di esperti/e del settore o in collegamento con altri corsi</strong></p>
+<p><strong>E.1</strong> Quantum Monte Carlo (QMC): Variational, Diffusion, Reptation, Path-Integral QMC.</p>
+<p><strong>E.2</strong> Implementazioni della DFT.</p>
+<p><strong>E.3</strong> Density Matrix Renormalization Group (DMRG).</p>
+<p><strong>E.4</strong> Approfondimenti seminariali/laboratoriali facoltativi, da concordare con i/le partecipanti.</p>
+<p><strong>[F. </strong><strong>Difetti: un &ldquo;dizionario&rdquo; (se il tempo a disposizione lo consente]<br /></strong></p>
+<p>Caratterizzazione secondo le propriet&agrave; di simmetria della struttura. Generalit&agrave; sui difetti topologici, esempi ed applicazioni: vortici e dislocazioni, transizione di Kosterlitz-Thouless. Generalit&agrave; su domini e solitoni, esempi e applicazioni. &nbsp;&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p><strong> A. Introduction and conceptual map of the essential ideas...</strong></p>
+<p>...qualitatively discussed via examples anticipated from the course itself</p>
+<p>&nbsp;</p>
+<p><strong> B. Structure and scattering</strong></p>
+<p>Generalities and essential concepts. Measurements and Correlation functions, Response functions, Quantum Hydrodynamics via a simple model.</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>C. Theoretical Methods for strongly correlated many-body systems</strong></p>
+<p><strong>C.1 Systems with maximal symmetry. Development of theoretical methods, starting from the measurement of correlation functions which have been phenomenologically introduced in B. Discussion of the relationships among the different methods, enlightening goods and bads. </strong></p>
+<ul>
+<li>Formal development of the Theory of Linear Response: Definitions and properties- Fluctuation Dissipation Thorem - Sum rules - Applications: calculation of response function within the Random-Phase Approximation (fermions and bosons) - Concept od local field factor and self.-consistent theories beyond mean-field</li>
+<li>Quantum Hydrodynamics: Microscopic derivation of the equations starting from conservation laws - Transport coefficients as special limits of response functions and Kubo relations- Static susceptibilities as theoremodynamic derivatives of conserved quantities. Relationship with Linear Response. Relationship with experiments: landau-Placzek ratio and examples. &nbsp; &nbsp;</li>
+<li>(Time-Dependent) Density Functional Theory: Definitions - Theorem of Hohenberg and Kohn - Kohn and Sham scheme - Local Density Approximation - Exchange and correlation potentials and relationship with lineas response theory - Current functional and TDDFT, Funzionale di corrente e TDDFT, relationship with Linear Response and microscopic formulation of Navier-Stokes equations as related to quantum hydrodynamics.</li>
+<li>Correlation functions and Green's functions (zero and finite temperature): Definitions and properties - Boundary conditions - Equations of motion as a technique to derive consistent approximations - Non-equilibrium Green's functions - A dictionary with response functions - Generating functionals - Wick's theorem - Finite temperature and the contour-integral method - Perturbative techniques and Feynman diagrams - Examples including phonon and fermion systems to low-order - Landau Theory of Fermi Liquids</li>
+<li><strong>Introduction to Path Integrals [If time allows it]</strong></li>
+<li>Relationship between the theoretical methods learned and experimental methods, with examples from different spectroscopies (matter, spin, and optical probes) and transport measurements</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>C.2 Systems with broken symmetry<br /></strong></p>
+<ul>
+<li>Concept of order parameter</li>
+<li>Landau and Landau-Ginzburg theory for uniform (Ising model) and non-uniform order parameter &ndash; Complex order parameter and neutral/charged superfluid - Critical exponents</li>
+<li>Dynamical effects: Anderson-Higgs mechanism and Goldstone modes - Analogy between superconductivity and electroweak theory</li>
+<li>Introduction to the concepts of scaling, critical and universality &ndash; Physical meaning of the Renormalization Gropuo Theory-Map of order parameters by broken symmetry -</li>
+<li>Conditions of validity for mean-field theories and thermal and quantum (as e.g. due to correlations and reduced dimensionality) fluctuations</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>C.3 Effects of reduced dimensionality: the 1D case&nbsp; </strong></p>
+<ul>
+<li>Specialty of 1D systems: always strongly correlated and collectivization of excitations</li>
+<li>Bosonization techniques</li>
+<li>Luttinger Liquids: structure and theremodynamic properties</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong> D. Applications of the methods via two case studies: </strong></p>
+<p><strong>D.1</strong> <strong>Case stuudy: <em>superfluidity and Bose-Einstein Condensation of neutral and charged Fermi and Bose systems.</em></strong><em>&nbsp; </em>Applying: Theory of linear response to the microscopic calculation of the superfluid density/moment of inertia&nbsp; and the relationship between superfluid and condensate fraction - DFT and TD extension - Hydrodynamics and microscopic two-fluid equations - Green's functions treatment (peculiarities: Ward identities and conseving vs. gapless approximations). &nbsp;</p>
+<p><strong>D.2</strong> <strong>Case study: <em>Typical phase diagrams in 1D systems with Charge/density and Spin-Density Waves</em>. </strong>1D systems and bosonization techniques.</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong><u>In addition, the following parts can be discussed after specific agreement and planning:</u></strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong> E. Principles for Simulational methods for strongly correlated systems </strong></p>
+<p><strong>[Via ad hoc seminars within collaborations with other courses and teachers</strong><strong>]</strong></p>
+<p><strong>E.1</strong> Quantum Monte Carlo (QMC): Variational, Diffusion, Reptation, Path-Integral QMC.</p>
+<p><strong>E.2</strong> Implementations of DFT.</p>
+<p><strong>E.3</strong> Density Matrix Renormalization Group (DMRG).</p>
+<p><strong>E.4</strong> Theoretical laboratories.</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong> F. Defects: a dictionary [if time allows it] </strong></p>
+<p>Carachterization according to broken-symmetry properties. Generalities on topological defects, examples and applications: vortices and dislocations, Kosterlitz-Thouless transition. Generalities on domains, walls, and solitons, examples and applications.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p><strong>Testi e articoli sono disponibili o in Biblioteca di Fisica e/o online, o in copia. Altro materiale didattico &egrave; sul portale elearning del corso, dove sono anche suggerimenti per l'uso ragionato dei diversi testi, per ogni argomento. <br /></strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>5.1 Generali:</strong></p>
+<p>&nbsp;</p>
+<p><strong>&ndash; P.M. Chaikin and T.C. Lubensky, Principles of Condensed Matter Physics, Cambridge University Press (1995)</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p>&ndash; L.P. Kadanoff and G. Baym, Quantum Statistical Mechanics, Benjamin (1962)</p>
+<p>- G.D. Mahan, Many-Particle Physics, Springer (2000)</p>
+<p>- C. Kittel, Quantum Theory of Solids, Wiley (1987)</p>
+<p>&ndash; P. Nozi&egrave;res and D. Pines, Theory of Quantum Liquids I &ndash; II, Westview Press (1999)</p>
+<p>&ndash; D. Forster,&nbsp; Hydrodynamic Fluctuations, Broken Symmetry, And Correlation Functions, Adv. Books Classics (1995)</p>
+<p>- T. Giamarchi, Quantum Physics in One Dimension, Clarendon Press<strong><br /></strong></p>
+<p>&ndash; G. Iadonisi, G. Cantele, and M.L. Chiofalo, Introduction to Solid State Physics and Crystalline Nanostructures, Springer (2014)<strong> <br /></strong></p>
+<p>&ndash; G. Grosso and G. Pastori Parravicini, Solid State Physics, Academic Press (2000)</p>
+<p>&nbsp;</p>
+<p><strong>5.2 Utili per specifiche parti del programma:</strong></p>
+<p>&nbsp;</p>
+<p>&ndash; P.C. Martin, Measurements and Correlation Functions, Gordon and Breach (1968)</p>
+<p>&nbsp;</p>
+<p>&ndash; P.C. Hohenberg and P.C. Martin, Microscopic Theory of Superfluid Helium, Annals of Physics 34, 291-359 (1965)<strong> <br /></strong></p>
+<p>&ndash; G. Vignale, C. A Ullrich, S. Conti, Time-Dependent Density Functional Theory and beyond the Adiabatic Local Density Approximation, Phys. Rev. Lett. 79, 4878 (1997)</p>
+<p><strong>&nbsp;</strong></p>
+<p>&ndash; W.M. Foulkes, L. Mitas, R.J. Needs, and G. Rajagopal, Quantum Monte Carlo Simulations of Solids, Revue of Modern Physics 73, 33 (2001)</p>
+<p><strong>&nbsp;</strong></p>
+<p>&ndash; U. Schollwok and S.R. White, Methods for Time Dependence in DMRG, in Effective Models for Low-Dimensional Strongly Correlated Systems, G.G. Batrouni and D. Poilblanc Eds.,&nbsp; p. 155 AIP, Melville, New York (2006)</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>5.3 Altre letture consigliate</strong></p>
+<p>&nbsp;</p>
+<p>&ndash; L. A. Bloomfield, How Things Work, Wiley (2013)</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Bibliography</div>
+<span class="contenuto_programma"><p><strong>Textbooks and articles are available at the Physics Library and/or online. Additional material is on the elearning website of the course, where a guided tour of the different textbooks and papers is provided.&nbsp;&nbsp;</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>5.1 General:</strong></p>
+<p>&nbsp;</p>
+<p><strong>&ndash; Piers Coleman, <em>Introduction to Many-Body Physics, </em>Cambridge University Press (2015)</strong></p>
+<p>&nbsp;</p>
+<p><strong>&ndash; L.P. Kadanoff and G. Baym, <strong><em>Quantum Statistical Mechanics, </em></strong><strong>Benjamin (1962)</strong></strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>&ndash; P.M. Chaikin and T.C. Lubensky, <em>Principles of Condensed Matter Physics</em>, Cambridge University Press (1995)</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>&ndash; G. Iadonisi, G. Cantele, and M.L. Chiofalo, <em>Introduction to Solid State Physics and Crystalline Nanostructures</em>, Springer (2014)</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>&ndash; G. Grosso and G. Pastori Parravicini, <em>Solid State Physics</em>, Academic Press (2000)</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p>&nbsp;</p>
+<p><strong>5.2 For specific parts of the course:<br /></strong></p>
+<p>&nbsp;</p>
+<p><strong>&ndash; P.C. Martin, <em>Measurements and Correlation Functions</em>, Gordon and Breach (1968)</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>&ndash; G. Vignale, C. A Ullrich, S. Conti, <em>Time-Dependent Density Functional Theory and beyond the Adiabatic Local Density Approximation</em>, Phys. Rev. Lett. 79, 4878 (1997)</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>&ndash; Baym, <em>Microscopic Description of </em>Superfluidity, Math. Methods in <em>Solid-State&amp;Superfluid Theory</em>, Clark&amp;Derrick Eds., Oliver&amp;Boyd (1969)&nbsp;</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>&ndash; P.C. Hohenberg and P.C. Martin, <em>Microscopic Theory of Superfluid Helium</em>, Annals of Physics 34, 291-359 (1965)</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>&ndash; Giamarchi, <em>Quantum Physics in One Dimension</em>, Oxford Science Pub. (2006)&nbsp;</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>&ndash; W.M. Foulkes, L. Mitas, R.J. Needs, and G. Rajagopal, Quantum Monte Carlo Simulations of Solids, Revue of Modern Physics 73, 33 (2001)</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>&ndash; U. Schollwok and S.R. White, <em>Methods for Time Dependence in DMRG</em>, in <em>Effective Models for Low-Dimensional Strongly Correlated Systems</em>, G.G. Batrouni and D. Poilblanc Eds.,&nbsp; p. 155 AIP, Melville, New York (2006)</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Additional suggested reading:</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>&ndash; P. Nozi&egrave;res and D. Pines, <em>Theory of Quantum Liquids I &ndash; II</em>, Westview Press (1999); </strong><strong>Pines, <em>The Many-Body Problem</em>, Wiley (1997)</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>&ndash; D. Forster,&nbsp; <em>Hydrodynamic Fluctuations, Broken Symmetry, And Correlation Functions,</em> Adv. Books Classics (1995)</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>&ndash; L. A. Bloomfield, <em>How Things Work</em>, Wiley (2013)</strong></p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni per non frequentanti</div>
+<span class="contenuto_programma"><p>Si consiglia di utilizzare al massimo delle potenzialit&agrave; il materiale e le opportunit&agrave; di verifica sul portale elearning di Fisica</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Non-attending students info</div>
+<span class="contenuto_programma"><p>Follow the material organized on the elarning page of the course</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p>La valutazione &egrave; formulata mediante <strong>prova orale</strong>. In particolare, si richiede allo/a studente di individuare, in autonomia o con l'accompagnamento del/la docente, un problema di fisica dei molti corpi non discusso nel corso ovvero approfondire aspetti dei casi di studio discussi e dimostrare:</p>
+<p><strong>(a)</strong> di aver compreso idee e concetti e saperli comunicare utilizzando conoscenze di fisica di base;</p>
+<p><strong>(b)</strong> di saper formalizzare i concetti e saperli trattare attraverso l'uso di uno o pi&ugrave; tra i metodi sviluppati nel corso e relative procedure;</p>
+<p><strong>(c)</strong> di saper connettere la comprensione concettuale e la formalizzazione del problema con la fenomenologia e i fatti sperimentali disponibili, e avere un'idea delle applicazioni;</p>
+<p><strong>(d)</strong> autonomia, consapevolezza della mappa concettuale e di quanto appreso, efficacia ed efficienza nella comunicazione scientifica.&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Assessment methods</div>
+<span class="contenuto_programma"><p>Assessment is performed via <strong>oral exam</strong>. The exam stems from a problem in many-body physics not discussed during the course, that the student may choose (in autonomy or accompanied by the teacher). Assessment is performed according to the following competences Areas:</p>
+<p><strong>(a)</strong> understanding ideas and concepts, and competence in communicating them after using basic-physics knowledge;</p>
+<p><strong>(b)</strong> competence in formalizing the concepts and treating them via one or more among the methods developed during the course with related procedures;</p>
+<p><strong>(c)</strong> competence in relating the conceptual comprehension and the problem formalization with the phenomenological and experimental available facts, and having hints about possible applications;</p>
+<p><strong>(d)</strong> autonomy, awareness of conceptual maps, learning process and contents, effectiveness in scientific communication.&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Pagina web del corso</div>
+<span class="contenuto_programma"><p><a href='https://elearning.df.unipi.it'>https://elearning.df.unipi.it</a></p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Class web page</div>
+<span class="contenuto_programma"><p><a href='https://elearning.df.unipi.it'>https://elearning.df.unipi.it</a></p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Altri riferimenti web</div>
+<span class="contenuto_programma"><p>https://www.dm.unipi.it/elearning</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Note</div>
+<span class="contenuto_programma"><p class="PreformattedText">L'intenzione &egrave; destinare il corso sia a studenti che vogliano specializzarsi nella fisica della materia condensata che a coloro che vogliano semplicemente complementare le proprie conoscenze. La scelta del corso &egrave; dunque privilegiare l'ampiezza di visione concettuale e metodologica piuttosto che il dettaglio delle tecniche, che possono poi essere sempre approfondite all'occorrenza.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Notes</div>
+<span class="contenuto_programma"><p>The course is aimed to students who wishes to specialize their career in condensed matter physics and theoretical physics, AND to students who simply wish to complement their knowledge with respect to other specific fields. A specific choice of the course is to privilege a wider conceptual and methodological vision more than technical details, which can be deepened at any given and useful time.</p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 22/05/2017 01:39</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/esami2/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-4e345eba.js"></script>
+<script src="../_assets/jquery-ui.min-e93c00aa.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-19dbc6e0.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-c8ee7689.js"></script> 
+<script src="../_assets/tinymce.min-e9308fd1.js"></script>
+<script src="../_assets/jquery.tinymce.min-65f0b191.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-3beded5a.js"></script>
+<script src="../_assets/unipi-3293f5f6.js"></script>
+<script src="../_assets/dm-10a06b2c.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

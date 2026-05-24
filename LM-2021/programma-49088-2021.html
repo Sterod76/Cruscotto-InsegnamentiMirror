@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-dc764708.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5d307d3a.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-b777fb69.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-adef06ea.css" rel="stylesheet">
+		<link href="../_assets/style_v1-429eb70e.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-32df6655.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7c4d2527.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-57b8ccba.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-8e6319ba.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/esami2/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/esami2/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/esami2/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/esami2/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/esami2/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/esami2/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/esami2/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/esami2/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esami2/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/esami2/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/esami2/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/esami2/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/esami2/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/esami2/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/esami2/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/esami2/index.php">Home</a></li><li><a href="https://esami.unipi.it/esami2/programmi_insegnamenti.php?aa=2021&cid=1&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">COMPUTING METHODS FOR EXPERIMENTAL PHYSICS AND DATA ANALYSIS</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">ANDREA RIZZI</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2021/22</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">360BB</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">9</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Primo semestre</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>COMPUTING METHODS FOR EXPERIMENTAL PHYSICS AND DATA ANALYSIS</TD><TD class='value-programma'>FIS/01</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>54</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>LUCA BALDINI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=87263' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>GIANLUCA LAMANNA <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=3700' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>ALBERTO MANFREDA <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=135422' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>ALESSANDRA RETICO <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=86860' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>ANDREA RIZZI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=78088' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/esami2/pdfProgCorsoStu.php?language=it&c=49088" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p>Alla fine del corso lo studente avra' acquisito dimestichezza con&nbsp;i seguenti strumenti per il calcolo scientifico e l'analisi dati:</p>
+<ul>
+<li>&nbsp; &nbsp; comandi avanzati shell unix per automazione di operazioni</li>
+<li>&nbsp; &nbsp; linguaggio python e principali moduli di sistema</li>
+<li>&nbsp; &nbsp; librerie python per calcolo scientifico</li>
+<li>&nbsp; &nbsp; strumenti per la gestione e documentazione del software</li>
+<li>&nbsp; &nbsp; strumenti per machine learning e per sviluppo di reti neurali</li>
+<li>&nbsp; &nbsp; strumenti specifici per applicazioni in fisica delle particelle e/o fisica medica&nbsp; (*)</li>
+</ul>
+<p>(*) non disponibile per la versione da 6 CFU del corso</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p>By the end of the course the student will know the following tools for scientific computing and data analysis</p>
+<ul>
+<li>&nbsp; &nbsp; advanced shell commands for automation of operations</li>
+<li>&nbsp; &nbsp; python language and main system modules</li>
+<li>&nbsp; &nbsp;&nbsp;python scientific libraries</li>
+<li>&nbsp; &nbsp; tools for authoring, versioning and documentation of the software</li>
+<li>&nbsp; &nbsp; tools for&nbsp; machine learning and artificial neural network development</li>
+<li>&nbsp; &nbsp; specific tools for particles physics or medical physics (*)</li>
+</ul>
+<p>(*)&nbsp;not available in the 6 credits version of the course</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><p>Sara' effettuata una verifica delle conoscenze acquisite attraverso domande specifiche in sede di esame orale partendo da un progetto di calcolo scientifico realizzato e presentato dagli studenti</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
+<span class="contenuto_programma"><p>Specific knowledge will be verified in the oral exams with questions starting from the project realized and presented by the students.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Capacit&agrave;</div>
+<span class="contenuto_programma"><p>Al termine del corso lo studente sapra':</p>
+<ul>
+<li>&nbsp; Automatizzare le operazioni di&nbsp;calcolo nelle analisi dati</li>
+<li>&nbsp; Scrivere programmi per calcolo scientifico in linguaggio python</li>
+<li>&nbsp; Sviluppare software in ambienti altamente collaborativi</li>
+<li>&nbsp; Progettare reti neurali per&nbsp; analisi dati</li>
+<li>&nbsp; Sviluppare progetti di analisi di dati di fisica delle particelle o di fisica medica (*)</li>
+</ul>
+<p>(*) non disponibile per la versione da 6 CFU del corso</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Skills</div>
+<span class="contenuto_programma"><p>At the end of the course the student will have the following skills:</p>
+<ul>
+<li>&nbsp;Automate computing operations in data analysis</li>
+<li>&nbsp;Write python programs for scientific applications</li>
+<li>&nbsp;Develop software in collaborative environments</li>
+<li>&nbsp;Design neural networks for scientific data analysis</li>
+<li>&nbsp;Develop analysis projects in the context of particle physics or medical physics (*)</li>
+</ul>
+<p>&nbsp;</p>
+<p>(*)&nbsp;not available in the 6 credits version of the course</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle capacit&agrave;</div>
+<span class="contenuto_programma"><p>Le capacita' saranno verificate richiedendo allo studente lo sviluppo di un progetto di software per analisi dati e/o l'analisi di un set di dati attraverso le tecniche apprese nel corso.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of skills</div>
+<span class="contenuto_programma"><p>The skills will be verified requiring the students to develop a software project for data analysis and/or to perform the analysis of some specific datasets with the techinques learned&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Comportamenti</div>
+<span class="contenuto_programma"><p>Il corso ha una parte interamente dedicata alle best practice nello sviluppo di codice specialmente in un'ottica di collaborazioni scientifiche. Il corso insegnera' come documentare e condividere gli strumenti di calcolo scientifico sviluppati.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Behaviors</div>
+<span class="contenuto_programma"><p>The lectures include a part dedicated to best practice in code development with focus on scientific collaboration. A topic in the course is about&nbsp;documenting and sharing the scientific tools developed.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica dei comportamenti</div>
+<span class="contenuto_programma"><p>La verifica delle capacita' acquisite sara' fatta sia richiedendo l'utilizzo degli strumenti di collaborazione per la presentazione degli elaborati, sia verificando l'attenziene nella parte di documentazione dei progetti presentati.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of behaviors</div>
+<span class="contenuto_programma"><p>Students will be required to collaborate in the development of some of the tools and the level of documentation in the presented project will be checked as an estimator of the collaborative attitude.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><p>E' necessaria la conoscenza minima di funzionamento di un computer.</p>
+<p>Sarebbe inoltre consigliabile possedere conoscenze, anche rudimentali, di programmazione in alti linguaggi (es. C)</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites</div>
+<span class="contenuto_programma"><p>Basic knowledge of computers.</p>
+<p>Minimal knowledge of some programming language (e.g. C) would be an added benefit.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni metodologiche</div>
+<span class="contenuto_programma"><p>Il corso sara' composto da lezioni frontali teoriche e da lezioni frontali in cui si affronta un problema mostrando come esercizio lo sviluppo di un particolare algoritmo, la realizzazione di un programma o l'analisi di un set di dati con una particolare tecnica. Inoltre saranno fatte esercitazioni in cui gli studenti dovranno sviluppare sul proprio computer alcuni gli esercizi proposti.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Teaching methods</div>
+<span class="contenuto_programma"><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p><span style="font-weight: 400;">Automazione delle operazioni (shell),&nbsp;</span><span style="font-weight: 400;">Version control, introduzione al python, algoritmi e complessita, contenitori python, algoritmi standard, iteratori, funzioni lambda, classi e oggetti, overload, scipy/numpy e gestione array, matplotlib, tecniche classiche di ML, issue tracking e ambienti collaborativi,&nbsp; unit test, gestione delle memoria e profiling. Performance CPU/GPU, I/O verso varie periferiche e latenza, evoluzione dell'hardware per calcolo scientifico, programmazione su GPU, vettorizzazione, reti neurali, CNN, RNN, keras e tensorflow, metodi di training. Introduzione al C++, STL, C++11 and C++14,&nbsp; ROOT toolkit, PyROOT,&nbsp;</span><span style="font-weight: 400;">Medical data processing and feature extraction,</span><span style="font-weight: 400;">&nbsp;handling standard-format medical data (DICOM), data anonymization, visualization,&nbsp;</span><span style="font-weight: 400;">Deriving features form images, Image segmentation,</span><span style="font-weight: 400;">Data quality control pipelines, outlier removal, dimensionality reduction,&nbsp;</span><span style="font-weight: 400;">Data analysis and classification,</span><span style="font-weight: 400;">&nbsp;figures of merit, cross-validation, permutation test,&nbsp;</span><span style="font-weight: 400;">Machine-learning and deep-learning tools for segmentation and classification (specific platforms for medical data),</span><span style="font-weight: 400;">Data augmentation, transfer learning, retrieving localization information</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p><span style="font-weight: 400;">Autotion of shell operations,&nbsp;</span><span style="font-weight: 400;">Version control,&nbsp;introduction to&nbsp;python, algorithms and complexity,&nbsp; python containers,&nbsp; standard algorithms, iterators,&nbsp; lambda functions, classes and objects, overload, scipy/numpy and data array, matplotlib, classical ML, issue tracking and collaborative environments,&nbsp; unit test, memory handling and profiling. Performance CPU/GPU, I/O and latency,&nbsp;evolution of&nbsp;scientific computing hardware, GPU coding, vectorization, neural networks, CNN, RNN, keras and tensorflow,&nbsp; training methods.&nbsp;Introduction to&nbsp;C++, STL, C++11 and C++14,&nbsp; ROOT toolkit, PyROOT,&nbsp;</span><span style="font-weight: 400;">Medical data processing and feature extraction,</span><span style="font-weight: 400;">&nbsp;handling standard-format medical data (DICOM), data anonymization, visualization,&nbsp;</span><span style="font-weight: 400;">Deriving features form images, Image segmentation,</span><span style="font-weight: 400;">Data quality control pipelines, outlier removal, dimensionality reduction,&nbsp;</span><span style="font-weight: 400;">Data analysis and classification,</span><span style="font-weight: 400;">&nbsp;figures of merit, cross-validation, permutation test,&nbsp;</span><span style="font-weight: 400;">Machine-learning and deep-learning tools for segmentation and classification (specific platforms for medical data),</span><span style="font-weight: 400;">Data augmentation, transfer learning, retrieving localization information</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p><span style="font-weight: 400;"><a href="https://www.deeplearningbook.org/">https://www.deeplearningbook.org/</a></span></p>
+<p><a href="https://www.learncpp.com/cpp-tutorial/introduction-to-cplusplus/"><span style="font-weight: 400;">https://www.learncpp.com/cpp-tutorial/introduction-to-cplusplus/</span></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Bibliography</div>
+<span class="contenuto_programma"><p><span style="font-weight: 400;"><a href="https://www.deeplearningbook.org/">https://www.deeplearningbook.org/</a></span></p>
+<p><a href="https://www.learncpp.com/cpp-tutorial/introduction-to-cplusplus/"><span style="font-weight: 400;">https://www.learncpp.com/cpp-tutorial/introduction-to-cplusplus/</span></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni per non frequentanti</div>
+<span class="contenuto_programma"><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Non-attending students info</div>
+<span class="contenuto_programma"><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p>Presentazione di un elaborato su un progetto concordato con i docenti ed esame orale di discussione dell'elaborato e verifica della conoscenza teorica degli strumenti utilizzati nel progetto, nonche' delle scelte operate nella realizzazione del progetto</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Assessment methods</div>
+<span class="contenuto_programma"><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Altri riferimenti web</div>
+<span class="contenuto_programma"><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Additional web pages</div>
+<span class="contenuto_programma"><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Note</div>
+<span class="contenuto_programma"><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Notes</div>
+<span class="contenuto_programma"><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 27/07/2021 17:56</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/esami2/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-4e345eba.js"></script>
+<script src="../_assets/jquery-ui.min-e93c00aa.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-19dbc6e0.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-c8ee7689.js"></script> 
+<script src="../_assets/tinymce.min-e9308fd1.js"></script>
+<script src="../_assets/jquery.tinymce.min-65f0b191.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-3beded5a.js"></script>
+<script src="../_assets/unipi-3293f5f6.js"></script>
+<script src="../_assets/dm-10a06b2c.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

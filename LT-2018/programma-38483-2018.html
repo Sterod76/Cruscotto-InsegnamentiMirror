@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-9d88d2d3.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5e6adf09.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-3e1acd97.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-0be77ad4.css" rel="stylesheet">
+		<link href="../_assets/style_v1-8d07d3cb.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-795b32e7.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7ea9ead7.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-ce428c17.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-23a80404.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/index.php">Home</a></li><li><a href="https://esami.unipi.it/programmi_insegnamenti.php?aa=2018&cid=135&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">MECCANICA CLASSICA</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">MASSIMO D'ELIA</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2018/19</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">035BB</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">12</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Annuale</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>MECCANICA CLASSICA</TD><TD class='value-programma'>FIS/02</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>96</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>CLAUDIO BONATI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=112871' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>MASSIMO D'ELIA <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=87877' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>PAOLO ROSSI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=4080' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/pdfProgCorsoStu.php?language=it&c=38483" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p>Ci si aspetta che gli studenti acquisiscano conoscenze riguardo a:</p>
+<p>formulazioni lagrangiana e hamiltoniana della meccanica classica, relazione fra simmetrie e quantita` conservate, trattazione di problemi di piccole oscillazioni per sistemi a pochi o molti gradi di liberta`.</p>
+<p>teoria della relativita` speciale con applicazioni a problemi di cinematica relativistica quali diffusione, decadimento ed produzione di particelle.</p>
+<p>meccanica statistica elementare.</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p>Students are expected to acquire: some knowledge about the lagrangean and hamiltonian formulations of classical mechanics, with applications to the problem of equilibrium and normal modes; some knowledge of special relativity; some knowledge of elementary statistical mechanics.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><p>- gli studenti devono dimostrare un buona conoscenza dei contenuti del corso e la capacita` di risolvere problemi di meccanica analitica, relativita` ristretta e meccanica statistica elementare</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
+<span class="contenuto_programma"><p>- The student must demonstrate good knowledge of the main course contents and the ability to solve problems regarding classical mechanics, special relativity and elementary statistical mechanics.</p>
+<p>Methods:</p>
+<ul>
+<li>Final written exam, oral exam</li>
+</ul>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Capacit&agrave;</div>
+<span class="contenuto_programma"><p>- Lo studente avra` acquisito le capacita` sufficienti per proseguire nei suoi studi ed affrontare nuovi concetti riguardanti la meccanica quantistica, la meccanica statistica avanzata e la formulazione covariante dell'elettrodinamica&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Skills</div>
+<span class="contenuto_programma"><p>- The student will be able to proceed with further developments and understand advanced concepts like quantum mechanics, advanced statistical mechanics, covariant formulation of electrodynamics.</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle capacit&agrave;</div>
+<span class="contenuto_programma"><p>- Verranno svolte sessioni dedicate alla discussione di esempi e problemi significativi</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of skills</div>
+<span class="contenuto_programma"><p>- Sessions will be dedicated to the discussion of special examples and problems&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Comportamenti</div>
+<span class="contenuto_programma"><p>- Gli studenti avranno acquisito la capacita` di trattare diversi problemi ed aspetti della meccanica classica nell'ambito di uno stesso linguaggio e quadro teorico</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Behaviors</div>
+<span class="contenuto_programma"><p>- Students will acquire the capacity to put various problems of classical mechanics into a common theoretical framework and language</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica dei comportamenti</div>
+<span class="contenuto_programma"><p>- stessi criteri che per la verifica delle capacita`</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of behaviors</div>
+<span class="contenuto_programma"><p>- Same criteria as for the assessment of skills</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><p>Corsi del primo anno di Fisica I, geometria ed analisi</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites</div>
+<span class="contenuto_programma"><p>Basic first year courses in mechanics, analysis and linear algebra</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Corequisiti</div>
+<span class="contenuto_programma"><p>Analisi II e Fisica II</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Co-requisites</div>
+<span class="contenuto_programma"><p>Courses in electromagnetism and advanced analysis</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti per studi successivi</div>
+<span class="contenuto_programma"><p>Meccanica quantistica, fisica statistica, elettrodinamica</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites for further study</div>
+<span class="contenuto_programma"><p>Quantum mechanics, statistical physics, electrodynamics</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni metodologiche</div>
+<span class="contenuto_programma"><p>Lezioni frontali ed esercitazioni in classe con risoluzione di problemi. Dispense del docente e raccolta delle prove di esame precedenti con soluzioni disponibili sul sito di elearning</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Teaching methods</div>
+<span class="contenuto_programma"><p>Delivery: face to face</p>
+<p>Attendance: Advised</p>
+<p>Learning activities:</p>
+<ul>
+<li>attending lectures</li>
+<li>individual study</li>
+</ul>
+<p>&nbsp;</p>
+<p>Teaching methods:</p>
+<ul>
+<li>Lectures</li>
+<li>Task-based learning/problem-based learning/inquiry-based learning</li>
+</ul>
+<p>&nbsp;Lecture notes and solved problems available on the elearning webpage</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p id="yui_3_17_2_1_1538082987015_109"><span id="yui_3_17_2_1_1538082987015_108">1)&nbsp;MECCANICA ANALITICA (primo semestre)</span></p>
+<p>-Richiami sulla meccanica dei sistemi: leggi di conservazione, decomposizione di energia cinetica e momento angolare rispetto al centro di massa.</p>
+<p>-Sistemi vincolati e coordinate generalizzate.</p>
+<p>-Dalle equazioni di Newton a alle equazioni di Eulero-Lagrange mediante il metodo dei lavori virtuali.</p>
+<p>-Covarianza delle equazioni di Eulero-Lagrange sotto cambio delle coordinate generalizzate. Invarianza delle equazioni per aggiunta di una derivata totale rispetto al tempo. Funzione Hamiltoniana.</p>
+<p>-Simmetrie e leggi di conservazione: il teorema di Noether. Invarianza sotto traslazioni e rotazioni.</p>
+<p>-Il gruppo delle rotazioni. Dalle rotazioni infinitesime a quelle finite in 2 dimensioni. Rotazioni infinitesime in 3 dimensioni.</p>
+<p>-Cinematica del corpo rigido: rotazioni infinitesime ed angoli di Eulero.</p>
+<p>-Definizione di tensore. Il tensore di inerzia, riduzione agli assi principali. Equazioni del moto per il corpo rigido libero.</p>
+<p>-Il problema delle piccole oscillazioni intorno all'equilibrio: riduzione ai modi normali di oscillazione.</p>
+<p>-Piccole oscillazioni per un sistema di molti oscillatori accoppiati. Limite al continuo ed equazione della corda elastica.</p>
+<p>Breve introduzione al calcolo delle variazioni. Le equazioni di Lagrange dal principio variazionale di minima azione di Hamilton. Discussione sul significato del principio ed analogia col principio di Fermat.</p>
+<p>-Ancora sulla corda elastica: densit&agrave; lagrangiana per un sistema continuo, derivazione delle equazioni di Eulero-Lagrange per un sistema continuo dal principio variazionale.</p>
+<p>-Riformulazione della meccanica in termini di coordinate ed impulsi coniugati: dalla formulazione lagrangiana a quella hamiltoniana.</p>
+<p>-Lo spazio delle fasi, propriet&agrave; del campo hamiltoniano.</p>
+<p>-Evoluzione temporale, parentesi di Poisson e loro propriet&agrave;.</p>
+<p>-Il teorema di Liouville.</p>
+<p>-Trasformazioni canoniche: funzioni generatrici, invarianza delle parentesi di Poisson. Cenni al gruppo simplettico.</p>
+<p>-Trasformazioni canoniche infinitesime: simmetrie ed invarianti associati.</p>
+<p>-Particella carica in campo elettromagnetico: formulazione lagrangiana ed hamiltoniana.</p>
+<p>2) INTRODUZIONE ALLA RELATIVIT&Agrave; RISTRETTA (circa 6 settimane)</p>
+<p>-L'esperimento di Michelson-Morley. Incompatibilit&agrave; tra le trasformazioni di Galileo e l'elettromagnetismo.</p>
+<p>-Le trasformazioni di Lorentz.</p>
+<p>-Trasformazioni di velocit&agrave;.</p>
+<p>-Il gruppo di simmetria delle trasformazioni di Lorentz: quadrivettori e quantit&agrave; invarianti.</p>
+<p>-Quadrivelocit&agrave; e quadriaccelerazione.</p>
+<p>-Energia ed impulso in relativit&agrave; ristretta.</p>
+<p>-La lagrangiana di una particella libera relativistica: leggi di conservazione ed il quadrivettore energia-impulso.</p>
+<p>-Cinematica dei sistemi di particelle relativistiche: sistema del centro di massa, massa invariante, leggi di conservazione.</p>
+<p>-Problemi vari di diffusione e decadimento relativistici.</p>
+<p>3) INTRODUZIONE ALLA MECCANICA STATISTICA (circa 6 settimane)</p>
+<p>-Richiami di termodinamica.</p>
+<p>-L'equilibrio termico mediante il metodo di Gibbs: distribuzione termica nello spazio delle fasi.</p>
+<p>-Ensemble microcanonico e canonico.</p>
+<p>-La funzione di partizione del gas perfetto. Pressione ed equazione di stato.</p>
+<p>-Ensemble grancanonico e potenziale chimico. Potenziali termodinamici.</p>
+<p>-Calori specifici: predizioni per il gas perfetto monoatomico e biatomico, confronto con i dati sperimentali. La necessit&agrave; di avere livelli energetici discreti.</p>
+<p>-Termodinamica dell'oscillatore armonico con livelli discreti. Il cristallo di Einstein.</p>
+<p>-Termodinamica di un sistema di oscillatori accoppiati: il modello di Debye per il calore specifico nei solidi. Cenni al problema del corpo nero.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p>Lagrangean and Hamiltonian formulations of Classical Mechanics. Equilibrium and Normal Modes Special Relativity, Lorentz Transformations Relativistic Kinematics, Relativistic Energy and Momentum Basic Concepts of Statistical Mechanics, Canonical Ensemble.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p>Dispense del docente e raccolta di problemi di esame svolti disponibile sul sito elearning.</p>
+<p>Alcuni testi consigliati:</p>
+<p>H. Goldstein, Classical Mechanics/Meccanica Classica.</p>
+<p><span id="yui_3_17_2_1_1538082987015_104">L.D. Landau and E.M. Lifshitz: Volume 1 (mechanics) and 2 (special relativity)</span></p>
+<p>Jakcson, Classical Electrodynamics (chapter on special relativity)</p>
+<p>Kittel, Elementary Statistical Physics.</p>
+<p><span id="yui_3_17_2_1_1538082987015_101">P. Rossi, Meccanica Classica, Pisa University Press, 2011&nbsp;</span>(ottima raccolta di problemi)</p>
+<p>C.M.Becchi, M. D'Elia, Introduction to the basic concepts of modern physics (special relativity, statistical mechanics), Springer-Verlag 2016</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Bibliography</div>
+<span class="contenuto_programma"><p>Recommended reading includes the following works:</p>
+<p>H. Goldstein, Classical Mechanics/Meccanica Classica.</p>
+<p><span id="yui_3_17_2_1_1538082987015_104">L.D. Landau and E.M. Lifshitz: Volume 1 (mechanics) and 2 (special relativity)</span></p>
+<p>Jakcson, Classical Electrodynamics (chapter on special relativity)</p>
+<p>Kittel, Elementary Statistical Physics.</p>
+<p><span id="yui_3_17_2_1_1538082987015_101">P. Rossi, Meccanica Classica, Pisa University Press</span></p>
+<p>C.M.Becchi, M. D'Elia, Introduction to the basic concepts of modern physics (special relativity, statistical mechanics)</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni per non frequentanti</div>
+<span class="contenuto_programma"><p>nessuna indicazione particolare</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Non-attending students info</div>
+<span class="contenuto_programma"><p>no relevant info</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p>La prova scritta consiste nella soluzione di 4 problemi (meccanica lagrangiana, hamiltoniana, relativita` ristretta, meccanica statistica), per ogni problema sono previsti 8 punti, il punteggio minimo per superare lo scritto e` 16. La prova orale consiste nella discussione di problemi simili.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Assessment methods</div>
+<span class="contenuto_programma"><p>The final exam consists in the solution of 4 problems (lagrangian mechanics, hamiltonian mechanics, special relativity, statistical mechanics), 8 points per problem, minimum score to pass the written exam is 16. The oral exam consists in the discussion of similar problems.&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Stage e tirocini</div>
+<span class="contenuto_programma"><p>non previsto</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Work placement</div>
+<span class="contenuto_programma"><p>no work placement</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Pagina web del corso</div>
+<span class="contenuto_programma"><p><a href='https://elearning.df.unipi.it/mod/page/view.php?id=1736'>https://elearning.df.unipi.it/mod/page/view.php?id=1736</a></p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Class web page</div>
+<span class="contenuto_programma"><p><a href='https://elearning.df.unipi.it/mod/page/view.php?id=1736'>https://elearning.df.unipi.it/mod/page/view.php?id=1736</a></p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Note</div>
+<span class="contenuto_programma"><p>nessuna</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Notes</div>
+<span class="contenuto_programma"><p>no further information</p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 28/09/2018 00:04</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-fcc1cd77.js"></script>
+<script src="../_assets/jquery-ui.min-083c88ac.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-bc864bd9.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-cbd4a7f1.js"></script> 
+<script src="../_assets/tinymce.min-2396adf9.js"></script>
+<script src="../_assets/jquery.tinymce.min-cf2ee483.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-8144b60d.js"></script>
+<script src="../_assets/unipi-635b458d.js"></script>
+<script src="../_assets/dm-4aacbbca.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

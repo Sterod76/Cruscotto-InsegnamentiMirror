@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-9d88d2d3.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5e6adf09.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-3e1acd97.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-0be77ad4.css" rel="stylesheet">
+		<link href="../_assets/style_v1-8d07d3cb.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-795b32e7.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7ea9ead7.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-ce428c17.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-23a80404.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/index.php">Home</a></li><li><a href="https://esami.unipi.it/programmi_insegnamenti.php?aa=2023&cid=135&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">ARMI NUCLEARI, DISARMO E PROLIFERAZIONE NUCLEARE</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">FRANCESCO FORTI</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2023/24</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">428BB</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">6</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Secondo semestre</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"><img src="../_assets/SDG-icon-IT-RGB-16-f0690af1.jpg" style="width:100px"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>ARMI NUCLEARI, DISARMO E PROLIFERAZIONE NUCLEARE</TD><TD class='value-programma'>FIS/04</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>48</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>FRANCESCO FORTI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=5452' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/pdfProgCorsoStu.php?language=it&c=60415" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p>L'insegnamento si propone di fornire agli studenti competenze sulla struttura e funzionamento delle armi nucleari, sullo stato attuale della loro diffusione, sui trattati che riguardano le armi nucleari e sui rischi che oggi corre l&rsquo;umanit&agrave; come conseguenza della presenza di armi nucleari.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p>The course will provide competence on the structure and working principle of nuclear weapons, on the current state of their deployment, on the treaties that regard nuclear weapons and on the risks that humanity is taking as a consequence of the presence of nuclear weapons.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><p>La verifica delle conoscenze acquisite avviene attraverso la discussione durante le lezioni e un colloquio di esame.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
+<span class="contenuto_programma"><p>Acquired knowledge is verified through discussion during classes and an oral exam.</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Capacit&agrave;</div>
+<span class="contenuto_programma"><p>Lo studente sapr&agrave; discutere criticamente i possibili effetti&nbsp;di&nbsp;conflitti&nbsp;nucleari inquadrandoli nel contesto degli attuali trattati. Sapr&agrave; reperire materiale da fonti online e bibliografiche e valutarne il grado di attendibilit&agrave;.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Skills</div>
+<span class="contenuto_programma"><p>The student will be able to discuss critically the possible effects of nuclear conflicts putting them in the contxt of the current treaties. (S)he will learn to find materials from onlne a bibliographical sources and evaluate the reliability level.&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle capacit&agrave;</div>
+<span class="contenuto_programma"><p>La verifica delle capacit&agrave; avviene attraverso le discussioni durante le lezioni e una relazione che ciascuno studente deve elaborare su un argomento concordato in vista dell'esame finale.&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of skills</div>
+<span class="contenuto_programma"><p>Acquired skills are verified through the discussion during classes and a report that each student will prepare on an agreed topic for the final exam.&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Comportamenti</div>
+<span class="contenuto_programma"><p>Lo studente potr&agrave; acquisire e/o sviluppare sensibilit&agrave; alle problematiche&nbsp;relative ai conflitti e alla loro risoluzione. Sara' acquisita consapevolezza dell'importanza delle istituzioni internazionali, dei trattati e del dialogo per la riduzione dei rischi nucleari.&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica dei comportamenti</div>
+<span class="contenuto_programma"><p>The student will be able to acquire and/or develop sensitivity to issues relating to conflicts and their resolution. The student will acquire awareness of the importance of international institutions, treaties and dialogue for the reduction of nuclear risks.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><p>Non ci sono prerequisiti specifici. Il corso pu&ograve; essere scelto anche da studenti di Scienze per la pace o di Ingegneria. Il livello tecnico del corso verr&agrave; differenziato in dipendenza della formazione e conoscenze degli studenti.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites</div>
+<span class="contenuto_programma"><p>No specific prerequisites are required. The course can be taken also by Peace Studies and Engineering students. The technical level of the course will be differentiated depending on the students&rsquo; background and knowledge.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni metodologiche</div>
+<span class="contenuto_programma"><p>Il corso &egrave; organizzato con lezioni frontali e momenti di discussione e approfondimento individuale o in gruppo.&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Teaching methods</div>
+<span class="contenuto_programma"><p>The course is organized with classroom lessons&nbsp;with&nbsp;opportunities for indiividual or group discussion and&nbsp;supplementary research.&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p>Le ore assegnate a ciascuna unit&agrave; sono indicative&nbsp;</p>
+<p>Unit&agrave; 1 (6 ore). Principi di funzionamento delle armi nucleari. I vari tipi di armi nucleari (bombe a fissione, bombe termonucleari). Effetti delle armi nucleari. Hiroshima e Nagasaki. Danni derivanti dai test nucleari in superficie o nell'aria (isole Marshall, poligono di Semipalatinsk in Kazakhstan).</p>
+<p>Unit&agrave; 2 (6 ore). Distribuzione delle armi nucleari a livello globale. I primi trattati che regolano (o proibiscono) il possesso e la sperimentazione di armi nucleari. Il TNP (Trattato di Non Proliferazione) e i trattati che proibiscono i test nucleari. Si discutera' anche, brevemente, l'excursus storico che ha condotto ai primi trattati sulle armi nucleari, compreso il ruolo particolare della crisi di Cuba.</p>
+<p>Unit&agrave; 3 (6 ore). Missili balistici e altri sistemi di lancio delle armi nucleari . Cenno sui sistemi di difesa antimissilistica. Il trattato ABM. Evoluzione delle strategie nucleari dei paesi che possiedono armi nucleari.</p>
+<p>Unit&agrave; 4 (4 ore). Diversi tipi di reattori nucleari e relazione tra uso civile e uso militare dell'energia nucleare. Metodi di arricchimento dell'uranio e di separazione del plutonio. Cenni sulla sicurezza degli impianti nucleari, sui rischi e sugli incidenti relativi (Mayak, Three Miles Island, Chernobyl, Fukushima).</p>
+<p>Unit&agrave; 5 (4 ore). Sicurezza nucleare e istituzioni che effettuano il controllo sulle attivita' nucleari dei vari paesi (in particolare la IAEA di Vienna). Struttura degli accordi tra i singoli paesi membri della IAEA (e del TNP) e la IAEA stessa. Il ruolo particolare del protocollo addizionale.</p>
+<p>Unit&agrave; 6 (4 ore). Le piu' importanti controversie sulla questione nucleare (tra cui la questione nucleare Iraniana). I paesi che possiedono armi nucleari e che non aderiscono al trattato di non proliferazione: (Israele, India, Pakistan, Nord Corea). Rischi attuali di proliferazione nucleare, Zone libere da armi nucleari.</p>
+<p>Unit&agrave; 7 (6 ore). I trattati recenti tra USA e URSS (Russia) per il controllo degli armamenti nucleari. Il problema del disarmo nucleare generale, il ruolo dell'ONU. Questioni di diritto internazionale concernenti il disarmo nucleare. Il problema particolare del nuclear sharing. Analisi dei rischi attuali connessi alle armi nucleari. Prospettive di eliminazione delle armi nucleari.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p>Module 1 (6 hours). Principles of operation of nuclear weapons. Carious types of nuclear weapons (fission bombs, thermonuclear bombs). Effects of nuclear weapons. Hiroshima and Nagasaki. Damage resulting from nuclear tests on the surface or in the air (Marshall Islands, Semipalatinsk test site in Kazakhstan).</p>
+<p>Module 2 (6 hours). Global distribution of nuclear weapons. The first treaties regulating (or prohibiting) the possession and testing of nuclear weapons. The NPT (Non-Proliferation Treaty) and treaties that prohibit nuclear tests. The historical excursus that led to the first treaties on nuclear weapons will also be briefly discussed, including the peculiar role of the Cuba crisis.</p>
+<p>Module 3 (6 hours). Ballistic missiles and other nuclear weapon delivery systems. Outline of anti-missile defense systems. The ABM Treaty. Evolution of nuclear strategies of countries possessing nuclear weapons.</p>
+<p>Module 4 (4 hours). Different types of nuclear reactors and the relationship between civilian and military use of nuclear energy. Methods of uranium enrichment and plutonium separation. Notes on the safety of nuclear plants, on the risks and related accidents (Mayak, Three Miles Island, Chernobyl, Fukushima).</p>
+<p>Module 5 (4 hours). Nuclear safety and institutions that control the nuclear activities of various countries (in particular the IAEA in Vienna). Structure of the agreements between individual member countries of the IAEA (and of the NPT) and the IAEA itself. The particular role of the additional protocol.</p>
+<p>Module 6 (4 hours). The most important controversies on the nuclear issue (including the Iranian nuclear issue). Countries that possess nuclear weapons and that are not parties of the non-proliferation treaty: (Israel, India, Pakistan, North Korea). Current risks of nuclear proliferation, Nuclear Weapon Free Zones.</p>
+<p>Module 7 (6 hours). The recent treaties between the USA and the USSR/Russia for the control of nuclear weapons. The problem of general nuclear disarmament, the role of the UN. International law issues concerning nuclear disarmament. The particular problem of nuclear sharing. Analysis of current risks associated with nuclear weapons. Prospects for the elimination of nuclear weapons.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p>Si indicano alcuni testi di riferimento e siti web con informazioni rilevanti. Verranno fornite delle dispense con numerosi link per approfondimenti.</p>
+<p>The effects of nuclear weapons, Samuel Glasstone and Philip J. Dolan editors, 3rd edition, US Department of Defense, Energy Research and Development Administration, 1977</p>
+<p>Nuclear Weapons: A Very Short Introduction, Joseph Siracusa, Oxford UP, 2008</p>
+<p>Weapons of Mass Destruction, An Encyclopedia of Worlwide Policy, Technology, and History, Eric A. Croddy and James J. Wirtz editors, ABC-CLIO, Santa Barbara (California) 2005</p>
+<p><a href="https://world-nuclear.org/information-library.aspx">https://world-nuclear.org/information-library.aspx</a></p>
+<p><a href="http://www.nuclearfiles.org/">http://www.nuclearfiles.org/</a></p>
+<p><a href="https://www.armscontrol.org/">https://www.armscontrol.org/</a></p>
+<p><a href="https://www.ctbto.org/">https://www.ctbto.org/</a></p>
+<p><a href="https://www.iaea.org/">https://www.iaea.org/</a></p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Bibliography</div>
+<span class="contenuto_programma"><p>Some reference texts and web sites with relevant information are indicated. Class notes with numerous links for further research will be provided.</p>
+<p>The effects of nuclear weapons, Samuel Glasstone and Philip J. Dolan editors, 3rd edition, US Department of Defense, Energy Research and Development Administration, 1977</p>
+<p>Nuclear Weapons: A Very Short Introduction, Joseph Siracusa, Oxford UP, 2008</p>
+<p>Weapons of Mass Destruction, An Encyclopedia of Worlwide Policy, Technology, and History, Eric A. Croddy and James J. Wirtz editors, ABC-CLIO, Santa Barbara (California) 2005</p>
+<p><a href="https://world-nuclear.org/information-library.aspx">https://world-nuclear.org/information-library.aspx</a></p>
+<p><a href="http://www.nuclearfiles.org/">http://www.nuclearfiles.org/</a></p>
+<p><a href="https://www.armscontrol.org/">https://www.armscontrol.org/</a></p>
+<p><a href="https://www.ctbto.org/">https://www.ctbto.org/</a></p>
+<p><a href="https://www.iaea.org/">https://www.iaea.org/</a></p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p>L'esame finale consiste nella preparazione di una relazione su un argomento concordato e una discussione orale sugli argomenti del corso.&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Assessment methods</div>
+<span class="contenuto_programma"><p>The final exam&nbsp;consists in&nbsp;the&nbsp;preparation of a report on an agreed topic an&nbsp;a discussion on the course topics.&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Pagina web del corso</div>
+<span class="contenuto_programma"><p><a href='https://elearning.df.unipi.it/course/view.php?id=603'>https://elearning.df.unipi.it/course/view.php?id=603</a></p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Class web page</div>
+<span class="contenuto_programma"><p><a href='https://elearning.df.unipi.it/course/view.php?id=603'>https://elearning.df.unipi.it/course/view.php?id=603</a></p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 27/12/2023 17:47</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-fcc1cd77.js"></script>
+<script src="../_assets/jquery-ui.min-083c88ac.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-bc864bd9.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-cbd4a7f1.js"></script> 
+<script src="../_assets/tinymce.min-2396adf9.js"></script>
+<script src="../_assets/jquery.tinymce.min-cf2ee483.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-8144b60d.js"></script>
+<script src="../_assets/unipi-635b458d.js"></script>
+<script src="../_assets/dm-4aacbbca.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

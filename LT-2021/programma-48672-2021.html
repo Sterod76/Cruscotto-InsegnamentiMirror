@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-9d88d2d3.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5e6adf09.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-3e1acd97.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-0be77ad4.css" rel="stylesheet">
+		<link href="../_assets/style_v1-8d07d3cb.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-795b32e7.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7ea9ead7.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-ce428c17.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-23a80404.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/index.php">Home</a></li><li><a href="https://esami.unipi.it/programmi_insegnamenti.php?aa=2021&cid=135&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">FISICA 2</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">DONATELLA CIAMPINI</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2021/22</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">029BB</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">15</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Annuale</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>FISICA 2</TD><TD class='value-programma'>FIS/01</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>120</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>DONATELLA CIAMPINI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=152' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>ANDREA MACCHI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=81153' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>GIOVANNI MORUZZI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=5501' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>DAVIDE ROSSINI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=121211' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/pdfProgCorsoStu.php?language=it&c=48672" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p>Dopo aver completato il corso con successo, lo/la studente avr&agrave; acquisito le conoscenze di base dell'elettromagnetismo classico. Lui/lei saranno capaci di risolvere i problemi di fisica pi&ugrave; rilevanti ed in particolare di trovare i potenziali elettromagnetici e i campi elettromagnetici note le sorgenti e l'azione dei campi sulle sorgenti stesse. Questo include l'elettromagnetismo all'interno dei materiali. Lui/lei verr&agrave; introdotto allo studio della relativit&agrave; speciale applicata all'elettrodinamica e al fenomeno della radiazione elettromagnetica.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p><span class="contenuto_programma">After completing the course successfully a student will possess a basic knowledge of classical electromagnetism. He/she will be able to solve physics problems of interest and in particular to find the e.m. potentials and the e.m. fields given their sources and the action of the fields on the sources themselves. This includes electromagnetism inside material bodies. He/she will be introduced to the theory of special relativity applied to electrodynamics and to the electromagnetic radiation phenomena.</span></p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><p>Allo/alla studente viene richiesto di conoscere e di comprendere i principi di base dell'elettro-magnetismo; deve provare la sua abilit&agrave; di raccogliere le idee e risolvere dei problemi in un esame scritto della durata di tre ore e in un esame orale.</p>
+<p>Metodi:</p>
+<ul>
+<li>Esame finale orale</li>
+<li>Esame finale scritto</li>
+<li>Prove scritte in itinere</li>
+</ul>
+<p>Ulteriori informazioni:<br />Esame finale scritto (o 3 prove scritte in itinere durante il corso) 50% Esame finale orale 50%</p>
+<p>Nota: a causa delle restrizioni legate a Covid-19, fino a data da stabilirsi, provvisoriamente l'esame consiste solamente in una prova orale a distanza, della durata di un'ora.&nbsp;La modalit&agrave; d'esame verr&agrave; eventualmente modificata a partire da maggio 2012.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
+<span class="contenuto_programma"><p><span class="contenuto_programma">The student is required to know and understand the basic principles of electro-magnetism and must prove her/his ability of organizing thought and solving problems in a 3 hours written exam and in an (sometimes 1 hour long) oral exam.</span></p>
+<p>Methods:</p>
+<ul>
+<li>Final oral exam</li>
+<li>Final written exam</li>
+<li>Periodic written tests</li>
+</ul>
+<p>&nbsp;</p>
+<p>Further information:<br />Final written exam (or 3 written exams during the course) 50% Final oral exam 50%</p>
+<p>Note: due to Covid-19 restrictions, temporarily the exams consists in an on-line, only oral exam (one hour duration).&nbsp;The assessment method will be eventualy changed starting from May 2022.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni metodologiche</div>
+<span class="contenuto_programma"><p>Metodo: lezioni frontali</p>
+<p>Attivit&agrave; didattiche:</p>
+<ul>
+<li>partecipazione alle lezioni</li>
+<li>preparazione di report scritti/orali</li>
+<li>partecipazione alle discussioni</li>
+<li>studio individuale</li>
+<li>ricerca bibliografica</li>
+</ul>
+<p>Nota: a causa delle restrizioni legate a Covid-19, fino a data da stabilirsi, le lezioni dell'a.a. 21/22 avverranno sia in presenza che in forma telematica.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Teaching methods</div>
+<span class="contenuto_programma"><p>Delivery: face to face</p>
+<p>Learning activities:</p>
+<ul>
+<li>attending lectures</li>
+<li>preparation of oral/written report</li>
+<li>participation in discussions</li>
+<li>individual study</li>
+<li>Bibliography search</li>
+</ul>
+<p>Attendance: Advised</p>
+<p>Teaching methods:</p>
+<ul>
+<li>Lectures</li>
+<li>Seminar</li>
+<li>Task-based learning/problem-based learning/inquiry-based learning</li>
+</ul>
+<p>&nbsp;Note: due to Covid-19 restrictions, temporarily the lectures of a.a. 21/22 will be both on-presence and on-distance.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p><span class="contenuto_programma">Operatori differenziali e integrali. Elettrostatica nel vuoto e nei mezzi materiali. Equazioni di Maxwell dell'elettrostatica. Correnti elettriche e magnetostatica nel vuoto e nei mezzi e relative equazioni di Maxwell. Forza di Lorentz. Campi elettrici e magnetici variabili nel tempo e relative equazioni di Maxwell. Teoria delle onde. Potenziali ritardati e onde elettromagnetiche. Campo prossimo e campi radianti. Radiazione di dipolo elettrico e magnetico. Teorema di Poynting. Elettromagnetismo e relativit&agrave; speciale: 4-corrente, 4-potenziale e il tensore del campo elettromagnetico. Elettromagnetismo nei materiali: funzione dielettrica, riflessione e rifrazione. Ottica: interferenza e diffrazione. Cenni di ottica non-lineare.<br /></span></p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p><span class="contenuto_programma">Differential and integral operators. Electrostatics in vacuum and in media. Maxwell equations of electrostatics. Electric currents and magnetostatics in vacuum and in media and related Maxwell equations. Lorentz force. Time variable electric and magnetic fields and related Maxwell equation. Theory of waves. Retarded potentials, and electromagnetic waves. Near fields and radiation fields. Electric and magnetic dipole radiation. Poynting theorem. Electromagnetism and special relativity: 4-current, 4-potential and the electromagnetic field tensor. Electromagnetism in media: dielectric function, reflection and refraction. Optics: interference and diffraction. Basics of non-linear optics.<br /></span></p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p><span class="contenuto_programma">The Feynman Lectures on Physics Vol.2 e Note interne liberamente distribuite; seconda scelta Mencuccini Silvestrini: Fisica 2 Amaldi Bizzarri Pizzella: Fisica Generale (elettromagnetismo, ottica relativita').</span></p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Bibliography</div>
+<span class="contenuto_programma"><p><span class="contenuto_programma">The Feynman Lectures on Physics Vol.2 and Internal notes freely distributed; second choice Mencuccini Silvestrini: Fisica 2 Amaldi Bizzarri Pizzella: Fisica Generale (elettromagnetismo, ottica relativita').</span></p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni per non frequentanti</div>
+<span class="contenuto_programma"><p>I non frequentanti sono invitati a consultare il programma dettagliato svolto a lezione ed esercitazione, riportato sul registro unimap delle lezioni, e a contattate il docente per ogni chiarimento necessario.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p>Esame finale scritto (o 3 prove scritte in itinere durante il corso) basato sulla risoluzione di esercizi e quesiti sugli argomenti del corso, il cui superamento permette di accedere all'esame finale orale, che consiste in un colloquio tra il candidato e il docente anche in forma di domanda/risposta, sui vari argomenti trattati nel corso.</p>
+<p>Nota: a causa delle restrizioni legate a Covid-19, fino a data da stabilirsi, provvisoriamente l'esame consiste solamente in una prova orale a distanza, della durata di un'ora. La modalit&agrave; d'esame verr&agrave; eventualmente modificata a partire da maggio 2012.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Assessment methods</div>
+<span class="contenuto_programma"><p>Note: due to Covid-19 restrictions, temporarily the exams consists in an on-line, only oral exam (one hour duration). The assessment method will be eventualy changed starting from May 2022.</p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 13/09/2021 06:15</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-fcc1cd77.js"></script>
+<script src="../_assets/jquery-ui.min-083c88ac.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-bc864bd9.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-cbd4a7f1.js"></script> 
+<script src="../_assets/tinymce.min-2396adf9.js"></script>
+<script src="../_assets/jquery.tinymce.min-cf2ee483.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-8144b60d.js"></script>
+<script src="../_assets/unipi-635b458d.js"></script>
+<script src="../_assets/dm-4aacbbca.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-9d88d2d3.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5e6adf09.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-3e1acd97.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-0be77ad4.css" rel="stylesheet">
+		<link href="../_assets/style_v1-8d07d3cb.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-795b32e7.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7ea9ead7.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-ce428c17.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-23a80404.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/index.php">Home</a></li><li><a href="https://esami.unipi.it/programmi_insegnamenti.php?aa=2021&cid=135&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">CHIMICA FISICA E LABORATORIO</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">GIOVANNI GRANUCCI</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2021/22</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">224CC</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">6</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Secondo semestre</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>CHIMICA FISICA E LABORATORIO</TD><TD class='value-programma'>CHIM/02</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>48</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>GIOVANNI GRANUCCI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=5540' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/pdfProgCorsoStu.php?language=it&c=51855" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p>Al termine delle attivit&agrave; didattiche, lo&nbsp;studente dovrebbe essere in grado di dimostrare una conoscenza approfondita dei principali argomenti della termodinamica chimica e della spettroscopia molecolare. In particolare, sar&agrave; in grado di discutere i processi di equilibrio&nbsp;in chimica acquisendo una visione unitaria&nbsp;di equilibri chimici e di fase, nonch&eacute; della direzione delle trasformazioni&nbsp;spontanee in termini di potenziali chimici delle sostanze coinvolte. Inoltre acquisir&agrave; conoscenze di base riguardo alla spettroscopia molecolare UV-Vis e IR, con particolare riferimento alla struttura degli stati molecolari (elettronici e vibrazionali) coinvolti nei processi considerati. Per quanto riguarda il laboratorio, lo studente dovrebbe essere a conoscenza&nbsp;delle pi&ugrave; comuni tecniche sperimentali utilizzate per la determinazione delle variazioni delle funzioni termodinamiche di stato&nbsp;correlate con&nbsp;processi specifici (combustione, vaporizzazione, ecc.) e&nbsp;con la registrazione di spettri UV visibili, IR e di fluorescenza.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p>Upon completion the student should be able to demonstrate solid knowledge of the main topics of chemical thermodynamics and molecular spectroscopy. In particular, he or she will be able to discuss equilibria in chemistry acquiring a unified view of both chemical and phase equilibria and the direction of spontaneous changes in terms of chemical potentials of substances. He or she will also acquire basic knowledge about UV-Vis and IR molecular spectroscopy, and particularly about the structure of the molecular states (electronic and vibrational) involved in such processes. As concerns practical lab, the student should become also familiar with the most common experimental techniques employed for the determination of thermodynamic function changes related to specific processes (combustion, vaporization, ecc) and with the recording of UV-visible, IR and fluorescence spectra.</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><p>La verifica delle conoscenze acquisite avverr&agrave; tramite l'esame finale, dove lo studente dovr&agrave; dimostrare di essere in grado di discutere dei dgli argomenti trattati nel corso usando appropriata terminologia e di saperli applicare alla soluzione di semplici prolemi.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
+<span class="contenuto_programma"><p>The student will be assessed on his/her demonstrated ability to discuss and apply the main course contents using the appropriate terminology.</p>
+<p>Methods:</p>
+<ul>
+<li>Final oral exam</li>
+</ul>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Capacit&agrave;</div>
+<span class="contenuto_programma"><p>Al termine del corso lo studente dovrebbe essere in grado di:</p>
+<ul>
+<li>affrontare&nbsp;lo studio di un sistema termodinamico inquadrandolo in termini di reversibilit&agrave;/spontaneit&agrave; dei processi che hanno luogo.</li>
+<li>dedurre le principali caratteristiche spettroscopiche (UV-vis, IR, Fluorescenza) di molecole di data struttura.</li>
+</ul></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Skills</div>
+<span class="contenuto_programma"><p>At the end of the course the student should be able:</p>
+<ul>
+<li>To address the study of a thermodynamic system by framing it in terms of reversibility/ spontaneity of the processes that take place.</li>
+<li>To deduce the main spectroscopic features&nbsp;(UV-vis, IR, Fluorescence) of molecules of given structure.</li>
+</ul></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle capacit&agrave;</div>
+<span class="contenuto_programma"><p>Le capacit&agrave; acquisite verranno monitorate dal docente nel corso delle esercitazioni di laboratorio durante le quali saranno proposti specifici problemi che richiedono, preliminarmente all'attivit&agrave; sperimentale, un inquadramento&nbsp;da un punto di vista concettuale.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of skills</div>
+<span class="contenuto_programma"><p>The acquired skills will be monitored by the teacher during the lab sessions where specific problems will be proposed that require a conceptual framing, prior to the experimental activity.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Comportamenti</div>
+<span class="contenuto_programma"><p>Al termine del corso, e in particolare delle esercitazioni di laboratorio, lo studente dovrebbe essere in grado di:</p>
+<ul>
+<li>condurre attivit&agrave; sperimentale in un laboratorio chimico in condizioni di sicurezza e di buona pratica.</li>
+<li>acquisire opportuna accuratezza e precisione nella raccolta e trattamento di dati sperimentali.</li>
+</ul></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Behaviors</div>
+<span class="contenuto_programma"><p>At the end of the course, and in particular of the lab sessions, the student should be able:</p>
+<ul>
+<li>To conduct experimental activity in a chemical laboratory under safe and good practice.</li>
+<li>To acquire suitable&nbsp;accuracy and precision in the collection and processing of experimental data.</li>
+</ul></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica dei comportamenti</div>
+<span class="contenuto_programma"><p>L'acquisizione di un idoneo comportamento in laboratorio &egrave; costantemente verificato dal docente che &egrave; presente a tutte le attivit&agrave; didattiche e interagisce con tutti gli studenti presenti in laboratorio anche attraverso il personale tecnico che presta assistenza.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of behaviors</div>
+<span class="contenuto_programma"><p>The acquisition of a suitable laboratory behavior is constantly verified by the teacher who is present at all teaching activities and interacts with all the students present in the lab also through the technical assistance personnel.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><p>Le conoscenze di base, necessarie per seguire con profitto il corso sono:</p>
+<ul>
+<li>Fondamenti di meccanica e termodinamica.</li>
+<li>Fondamenti di meccanica quantistica.</li>
+<li>Fondamenti di chimica generale: teoria atomica e molecolare, nomenclatura chimica, stechiometria.</li>
+</ul></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites</div>
+<span class="contenuto_programma"><p>The basic knowledge needed to follow the course is:<br />Fundaments of mechanics and thermodynamics. Fundament of quantum mechanics.<br />Fundaments of general chemistry: atomic and molecular theory, chemical nomenclature, stoichiometry.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni metodologiche</div>
+<span class="contenuto_programma"><p>Il corso si articola in lezioni frontali&nbsp;ed &nbsp;esercitazioni di laboratorio.</p>
+<p>Durante le esercitazioni di laboratorio gli studenti sono organizzati in gruppi di lavoro.</p>
+<p>In laboratorio &egrave; sempre presente personale tecnico di supporto.</p>
+<p>Gli studenti sono incoraggiati a contattare il docente via e-mail o di persona&nbsp;per ricevere chiarimenti/approfondimenti sugli argomenti trattati.</p>
+<p>La frequenza alle lezioni &egrave; caldamente consigliata. E' obbligatoria la partecipazaione ad almeno due terzi delle esercitazioni di laboratorio.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Teaching methods</div>
+<span class="contenuto_programma"><p>The course is divided into lessons face to face and laboratory exercises.</p>
+<p>During laboratory sessions, students are organized into workgroups.</p>
+<p>Technical support staff is always present at the lab.</p>
+<p>Students are encouraged to contact the teacher by e-mail or in person to receive clarifications / insights on the topics discussed.</p>
+<p>Lessons attendance is strongly recommended. It is compulsory to attend at least two-thirds of the lab exercises.</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p>Il corso fornisce nozioni sui temi principali della termodinamica chimica e della spettroscopia molecolare. Per quanto riguarda la termodinamica, dopo una breve discussione sulle propriet&agrave; dei gas, si introducono la prima, la seconda e la terza legge e si sviluppa la loro applicazione in&nbsp;chimica. Vengono considerate le&nbsp;trasformazioni fisiche di sostanze pure, le propriet&agrave; di miscele semplici e l'equilibrio chimico. Per quanto riguarda la spettroscopia molecolare, viene anzitutto caratterizzata la struttura degli stati molecolari elettronici, vibrazionali e rotazionali. Vengono quindi considerate le principali regole di selezione per le spettroscopie UV-Vis e IR, e la correlazione fra struttura molecolare e caratteristiche degli spettri.&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p>The course provides notions on the main topics in chemical thermodynamics and molecular spectroscopy. As concerns thermodynamics, after a short discussion on the properties of gases, first, second and third laws are introduced and their application in chemistry are developed. Much emphasis is put in physical transformations of pure substances, properties of simple mixtures and chemical equilibrium. As for molecular spectroscopy, first the molecular states are characterized in terms of electronic, vibrational and rotational states. Then, the main selection rules for the UV-Vis and IR spectroscopy are introduced, and the correlation between spectral features and molecular structure is discussed.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p>Non &egrave; indicato nessun libro di testo obbligatorio, ma&nbsp;ne sono indicati diversi a scelta dello studente. I pi&ugrave; significativi sono <strong>Chimica Fisica</strong>&nbsp;di P. Atkins e J. de Paula, <strong>Physical Chemistry. A molecular approach</strong>&nbsp;di D.A. McQuarrie e, per approfondimenti sulla parte di termodinamica, <strong>I principi dell'equilibrio chimico</strong> di K. Denbigh.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Bibliography</div>
+<span class="contenuto_programma"><p>No mandatory textbook is indicated, but several textbook are indicated at student's choice. The most significant are <strong>Physical Chemistry</strong> by P. Atkins and J. de Paula, <strong>Physical Chemistry. A molecular approach</strong>&nbsp;by D.A. McQuarrie and, for further insight on the thermodynamics part, <strong>The principles of&nbsp;chemical equilibrium</strong> by&nbsp;K. Denbigh.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni per non frequentanti</div>
+<span class="contenuto_programma"><p>Fermo restando l'obbligo di partecipare ad almeno due terzi delle esercitazioni di laboratorio, lo studente non frequentante &egrave; invitato ad effettuare uno o pi&ugrave;&nbsp;colloqui con i docenti, in preparazione delle sessioni di laboratorio. Non sono previste variazioni nel programma n&eacute; nelle modalit&agrave; di esame.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Non-attending students info</div>
+<span class="contenuto_programma"><p>Notwithstanding the obligation to attend at least two-thirds of the lab exercises, the non-frequenting student is invited to attend one or more receptions with the lecturers in preparation for the laboratory sessions. There are no changes in the program or exam.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><ul>
+<li>L'esame &egrave; costituito da una prova orale.</li>
+<li>Lo studente sar&agrave; valutato sulla base della capacit&agrave; dimostrata di discutere e applicare i contenuti principali del corso utilizzando la terminologia appropriata.</li>
+<li>Durante la prova orale potr&agrave; essere richiesto allo studente di risolvere, o quanto meno impostare, semplici problemi relativi agli argomenti oggetto del corso.</li>
+<li>il colloquio non avr&agrave; esito positivo se il candidato mostrer&agrave; ripetutamente l'incapacit&agrave; di mettere in relazione parti del programma e nozioni che deve usare in modo congiunto per rispondere in modo corretto ad una domanda.</li>
+</ul>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Assessment methods</div>
+<span class="contenuto_programma"><ul>
+<li>The exam consists of an oral exam.</li>
+<li>The student will be assessed on the basis of demonstrated ability to discuss and apply the main&nbsp;contents of the course using the appropriate terminology.</li>
+<li>During the oral examination, students may be asked to solve, or at least set up, simple problems related to the topics covered.</li>
+<li>The exam&nbsp;will not be successful if the candidate repeatedly shows not to be able&nbsp;to relate parts of the program and notions he must use in a joint way to properly answer a question.</li>
+</ul></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 16/07/2021 15:51</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-fcc1cd77.js"></script>
+<script src="../_assets/jquery-ui.min-083c88ac.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-bc864bd9.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-cbd4a7f1.js"></script> 
+<script src="../_assets/tinymce.min-2396adf9.js"></script>
+<script src="../_assets/jquery.tinymce.min-cf2ee483.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-8144b60d.js"></script>
+<script src="../_assets/unipi-635b458d.js"></script>
+<script src="../_assets/dm-4aacbbca.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

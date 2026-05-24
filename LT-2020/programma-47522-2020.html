@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-9d88d2d3.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5e6adf09.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-3e1acd97.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-0be77ad4.css" rel="stylesheet">
+		<link href="../_assets/style_v1-8d07d3cb.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-795b32e7.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7ea9ead7.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-ce428c17.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-23a80404.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/index.php">Home</a></li><li><a href="https://esami.unipi.it/programmi_insegnamenti.php?aa=2020&cid=135&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">FLUIDODINAMICA</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">FULVIO CORNOLTI</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2020/21</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">289BB</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">6</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Secondo semestre</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>FLUIDODINAMICA</TD><TD class='value-programma'>FIS/03</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>48</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>FRANCESCO CALIFANO <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=4321' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>FULVIO CORNOLTI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=5898' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>WALTER DEL POZZO <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=119829' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/pdfProgCorsoStu.php?language=it&c=47522" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p>Descrizione della cinematica dei mezzi continui, fondamenti delle equazioni costitutive della dianamica dei mezzi contimui, trasporto in mezzi continui semplici e non.&nbsp; Equazioni di Navier-Stokes. Applicazioni illustrative in diversi campi della fluidodinamica: problema della portanza, onde sonore, onde di gravit&agrave;, instabilit&agrave; del suono, onde semplici, onde d'urto</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p>Kinematics of continuous media, principles of constitutive&nbsp; equations of the dynamics of continuous media . Transport in simple and composite&nbsp; continuous media. Navier-Stokes equations. Applications to different&nbsp; fields of fluid dynamics: lift and drag, sound waves, gravity waves, non linear waves, simple waves, shocks, instabilities.&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><p>Esame orale su appuntamento: consiste in un colloquio tra candidato e commissione sugli argomenti trattati durante le lezioni.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
+<span class="contenuto_programma"><p>Oral exam.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Capacit&agrave;</div>
+<span class="contenuto_programma"><p>Acquisizione delle strumentazioni matematiche tipiche della fluidodinamica e applicazioni a semplici problemi</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Skills</div>
+<span class="contenuto_programma"><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Acquisition of the mathematical&nbsp; tools typical of basic fluid dynamics and applocations to simple problems.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle capacit&agrave;</div>
+<span class="contenuto_programma"><p>Esame orale</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of skills</div>
+<span class="contenuto_programma"><p>Oral exam</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><p>Analisi in pi&ugrave; dimensioni, operatori differenziali, calcolo tensoriale, analisi complessa.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites</div>
+<span class="contenuto_programma"><p>Complex analysis,multidimensional analysis, differential operators, tensorial calculus.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p style="margin-bottom: 0in;"><span style="font-size: large;">Il concetto di elemento fluido, limiti imposti dalla granulosit&agrave; della materia: diffusione. Descrizione termodinamica delle forze di contatto: limiti di validit&agrave; della ipotesi di LTE.</span></p>
+<p style="margin-bottom: 0in;"><span style="font-size: large;">Cinematica dei mezzi continui come mappa a un parametro dello spazio in s&eacute;. Jacobiana e variazione di volume. Descrizione lagrangiana ed euleriano delle variabili fluide. La velocit&agrave; in rappresentazione euleriana, tensore delle deformazioni infinitesime. Derivate di integrali di volume su domini mobili; superfici materiali e di controllo. Leggi di trasporto per grandezze estensive. Derivata materiale delle grandezze fisiche. Trasporto di massa per sistemi semplici, sistemi composti e sistemi con sorgente di materia; la diffusione di massa macroscopica; alcuni esempi. </span></p>
+<p style="margin-bottom: 0in;"><span style="font-size: large;">Trasporto della quantit&agrave; di moto per sistemi semplici, e complessi. Tensore del trasporto fluido e della diffusione macroscopica, parallelismo col tensore delle forze di superficie in teoria cinetica. Interpretazione microscopica della pressione e della viscosit&agrave;. Trasporto della energia cinetica. Trasporto della energia interna, contributo dei termini dissipativi. Trasporto dell&rsquo; entropia nei fluidi, con diffusione di materia, calore e dissipazione: termini conservativi e termini irreversibili. </span></p>
+<p style="margin-bottom: 0in;"><span style="font-size: large;">Equazione di Eulero per fluidi ideali in potenziali esterni.</span></p>
+<p style="margin-bottom: 0in;"><span style="font-size: large;">Equilibrio dei fluidi stazionari. Stratificazione delle grandezze termodinamiche .</span></p>
+<p style="margin-bottom: 0in;"><span style="font-size: large;">Fluidi in movimento: caso barotropico e isoentropico. La vorticit&agrave; e il suo trasporto ideale. Funzione di Bernoulli e varie versioni del Teorema di Bernoulli. Alcuni esempi.</span></p>
+<p style="margin-bottom: 0in;"><span style="font-size: large;">Alcuni teoremi sulla derivata di integrali di superficie e di linea su domini mobili. Teoremi di Thomson e di Kelvin sulla circuitazione della velocit&agrave;. Trasporto della vorticit&agrave; in fluidi ideali, nel caso 2D, comprimibile e non. Cenno ai teoremi di Helmoltz sui tubi di vorticit&agrave;.</span></p>
+<p style="margin-bottom: 0in;"><span style="font-size: large;">Fluidodinamica ideale incomprimibile 2D: potenziali della velocit&agrave; e rappresentazione complessa. Teoremi di Blasius e Kutta-Joukowsky sulla portanza. Portanza sui profili alari in fluidi ideali: ipotesi di Joukowsky. Trasformazioni conformi e calcolo della portanza.</span></p>
+<p style="margin-bottom: 0in;"><span style="font-size: large;">Moto e stabilit&agrave; di vortici lineari ideali.</span></p>
+<p style="margin-bottom: 0in;"><span style="font-size: large;">Fluidi viscosi: il tensore di Cauchy. Equazione di Navier-Stokes per fluidi incomprimibili. Alcuni esempi. Lo strato limite in alcuni casi semplici. Raccordo asintotico. Lo scollamento dello strato limite nella teoria di Prandtl. Applicazione al calcolo della portanza di ala simmetrica. </span></p>
+<p style="margin-bottom: 0in;"><span style="font-size: large;">Onde nei fluidi. Il suono in mezzi omogenei. Decadimento dissipativo delle onde sonore. Effetti non lineari: duplicazione di frequenza, interazioni a pi&ugrave; onde, relazioni di Manley-Rowe per interazioni a tre onde. Rottura d&rsquo;onda per onde ideali non lineari.</span></p>
+<p style="margin-bottom: 0in;"><span style="font-size: large;">Onde semplici, solitoni dissipativi e dispersivi.</span></p>
+<p style="margin-bottom: 0in;"><span style="font-size: large;">Onde d&rsquo;urto, adiabatica di Hugoniot. Onde di combustione e di detonazione. </span></p>
+<p style="margin-bottom: 0in;"><span style="font-size: large;">Onde in mezzi disomogenei: cutoff e risonanza. .</span></p>
+<p style="margin-bottom: 0in;"><span style="font-size: large;">Onde di superficie: instabilit&agrave; di Kelvin-Helmoltz e Rayleigh-Taylor</span></p>
+<p style="margin-bottom: 0in;"><span style="font-size: large;">Approssimazione idrostatica; onde in acque poco profonde. Applicazioni.</span></p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p>The concept of fluid element, limits due to granularity of matter: diffusion. Thermodynamic description of surface forces. LTE hipothesis and its limits.</p>
+<p>Kinematics of continous media as one parameter maps of the space in itself. The Jacobian and volume variations. Lagrangean and Eulerian represetation of fluid variables. Velocity in eulerian representation, tensor of infinitesimal deformations. Time derivatives of integrals on moving domains. volumes, surfaces and lines. Material derivative. Transport of intensive quantities. Mass and momentum&nbsp; transport&nbsp; for simple,&nbsp; composit with external sources. Macroscopic mass and momentum diffusion. link tu microscopic transport. Microscopic interpretation of mass and momentum transport. Examples.</p>
+<p>Transport of kinetic and internal energy. Entropy transport in irreversible processes: matter, momentum and heat fluxes.</p>
+<p>&nbsp;Euler equation for ideal fluids in external potential.Equilibrium in static fluids: stratification of thermodynamic quantities.</p>
+<p>Fluid&nbsp; dynamics in isoentropic approximation.Vorticity and its transport in ideal fluids. Beroulli function, and Bernoulli theorem in different configurations.</p>
+<p>Time derivative of surfale and line intehrals on moving domaains. Thomson and Kelvin theorem on&nbsp; velocity circuletion. Helmoltz theorems about vorticity.</p>
+<p style="margin-bottom: 0in;">2D ideal incompressible fluid dynamics The complex potential, Blasius and Kutta- Joukowsky theorems on lift and drag. Conformal mapping and calculus of lift and drag on symmetrical wings.</p>
+<p style="margin-bottom: 0in;">Motions and stabi&ograve;lity of linear vortices.</p>
+<p style="margin-bottom: 0in;">Viscous fluid, Couchy tensor, Navier- Stokes equations for incompressible fluids. Boundary layer separation in Prantl theory. Application to symmetric wings.Waves in fluids: sound in homogeneous media, dissipative decay; nonlinear effects: frequency doublng, many waves interaction, Manley-Rowe relations for three wave dacay. Wave breaking. Simple waves, dissipative and dispersive solitons.</p>
+<p style="margin-bottom: 0in;">Shock wave, Hugoniot adiabat, burning shocks and detonation shocks. Waves in inhomogeneous media: cutoff and resonance.</p>
+<p style="margin-bottom: 0in;">Serface waves, Kelvin-Helmoltz and Rayleigh-Taylor instabilities.</p>
+<p>Waves in shallow water. Applications.</p>
+<p style="margin-bottom: 0in;"><span style="font-size: large;">&nbsp;</span></p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p>Appunti del docente,</p>
+<p>Dinamica dei mezzi continui di Landau e Lifchitz</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Bibliography</div>
+<span class="contenuto_programma"><p>Notes of the lactures by the teacher (on demand).</p>
+<p>Mechanics of continuous media , Landau and Lifchitz</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p>Orale su appuntamento</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Assessment methods</div>
+<span class="contenuto_programma"><p>oral exam</p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 02/08/2020 10:42</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-fcc1cd77.js"></script>
+<script src="../_assets/jquery-ui.min-083c88ac.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-bc864bd9.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-cbd4a7f1.js"></script> 
+<script src="../_assets/tinymce.min-2396adf9.js"></script>
+<script src="../_assets/jquery.tinymce.min-cf2ee483.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-8144b60d.js"></script>
+<script src="../_assets/unipi-635b458d.js"></script>
+<script src="../_assets/dm-4aacbbca.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

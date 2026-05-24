@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-dc764708.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5d307d3a.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-b777fb69.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-adef06ea.css" rel="stylesheet">
+		<link href="../_assets/style_v1-429eb70e.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-32df6655.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7c4d2527.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-57b8ccba.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-8e6319ba.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/esami2/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/esami2/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/esami2/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/esami2/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/esami2/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/esami2/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/esami2/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/esami2/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esami2/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/esami2/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/esami2/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/esami2/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/esami2/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/esami2/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/esami2/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/esami2/index.php">Home</a></li><li><a href="">Programmi</a></li>
+<li><a href="https://esami.unipi.it/esami2/programmi_insegnamenti.php">Elenco per cds</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Programmi - Elenco per cds</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+			
+
+				<div class="alert alert-info">A partire dal 2024/25 i programmi d'esame sono pubblicati sulla piattaforma <a href='https://unipi.coursecatalogue.cineca.it/'>Course Catalogue</a></div>
+				<div>
+					Seleziona un dipartimento					<form action="programmi_insegnamenti.php" method="GET" name="fDip" id="fDip">
+						<select name="did" id="dipselect" class="populate placeholder">
+							<option value="0"></option>
+<option value="24"></option>
+<option value="9">DIPARTIMENTO DI BIOLOGIA</option>
+<option value="12">DIPARTIMENTO DI CHIMICA E CHIMICA INDUSTRIALE</option>
+<option value="18">DIPARTIMENTO DI CIVILTA' E FORME DEL SAPERE</option>
+<option value="17">DIPARTIMENTO DI ECONOMIA E MANAGEMENT</option>
+<option value="11">DIPARTIMENTO DI FARMACIA</option>
+<option value="3">DIPARTIMENTO DI FILOLOGIA, LETTERATURA E LINGUISTICA</option>
+<option value="4" selected >DIPARTIMENTO DI FISICA</option>
+<option value="5">DIPARTIMENTO DI GIURISPRUDENZA</option>
+<option value="13">DIPARTIMENTO DI INFORMATICA</option>
+<option value="2">DIPARTIMENTO DI INGEGNERIA CIVILE E INDUSTRIALE</option>
+<option value="1">DIPARTIMENTO DI INGEGNERIA DELL'ENERGIA, DEI SISTEMI, DEL TERRITORIO E DELLE COSTRUZIONI</option>
+<option value="19">DIPARTIMENTO DI INGEGNERIA DELL'INFORMAZIONE</option>
+<option value="20">DIPARTIMENTO DI MATEMATICA</option>
+<option value="16">DIPARTIMENTO DI MEDICINA CLINICA E SPERIMENTALE </option>
+<option value="8">DIPARTIMENTO DI PATOLOGIA CHIRURGICA, MEDICA, MOLECOLARE E DELL'AREA CRITICA</option>
+<option value="15">DIPARTIMENTO DI RICERCA TRASLAZIONALE E DELLE NUOVE TECNOLOGIE IN MEDICINA E CHIRURGIA</option>
+<option value="7">DIPARTIMENTO DI SCIENZE AGRARIE, ALIMENTARI E AGRO-AMBIENTALI</option>
+<option value="14">DIPARTIMENTO DI SCIENZE DELLA TERRA</option>
+<option value="10">DIPARTIMENTO DI SCIENZE POLITICHE</option>
+<option value="6">DIPARTIMENTO DI SCIENZE VETERINARIE</option>
+<option value="22">GENERICO</option>
+						</select>
+					</form>
+				</div>
+				<BR>
+				<div>
+					Seleziona un corso di studi					<form action="programmi_insegnamenti.php" method="GET" name="fCds" id="fCds" >
+											<input type="hidden" name="aa" value="2021">
+										
+						<input type="hidden" name="did" value="4">
+						<select name="cid" id="cdsSelect" class="populate placeholder">
+												</select>
+					</form>
+				<BR>
+				<div>
+					Seleziona un anno accademico					<form action="programmi_insegnamenti.php" method="GET" name="fAA" id="fAA" >
+					<input type="hidden" name="did" value="4">
+					<input type="hidden" name="cid" value="1">
+						<select name="aa" id="aaselect" class="populate placeholder">
+							<option value="2023">2023/24</option>
+<option value="2022">2022/23</option>
+<option value="2021" selected >2021/22</option>
+<option value="2020">2020/21</option>
+<option value="2019">2019/20</option>
+<option value="2018">2018/19</option>
+<option value="2017">2017/18</option>
+<option value="2016">2016/17</option>
+						</select>
+					</form>
+				</div>
+				<BR><BR>
+				<div class="row" id="rowTableInsegnamenti" >
+					<div class="panel panel-default col-xs-12">
+						<div class="panel-body">
+							<table class="table table-bordered table-hover table-heading table-datatable" id="datatable-programmi">
+								<thead>
+									<tr>
+										<th>Codice</th>
+										<th>Insegnamento</th>
+										<th>Docente/i</th>
+										<th>CFU</th>
+										<th>Periodo</th>
+										<th>Mutuato da</th>
+								<!--	<th></th>	-->
+									</tr>
+								</thead>
+								<tbody>
+								<TR><TD >395BB</TD><TD ><div class='inline-block'><A href='programma-49116-2021.html'>REOLOGIA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >ANDREOZZI LAURA</TD><TD >6</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >394BB</TD><TD ><div class='inline-block'><A href='programma-49115-2021.html'>QUANTUM LIQUIDS S</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CHIOFALO MARIA LUISA</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >388BB</TD><TD ><div class='inline-block'><A href='programma-52758-2021.html'>IMAGING PER LA FISICA BIO-MEDICA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >FANTACCI MARIA EVELINA</TD><TD >9</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >392BB</TD><TD ><div class='inline-block'><A href='programma-49113-2021.html'>BIOROBOTICA E SISTEMI COMPLESSI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >LUCANTONIO ALESSANDRO, MAZZONI ALBERTO</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >217BB</TD><TD ><div class='inline-block'><A href='programma-49054-2021.html'>ACCELERATOR PHYSICS / MACCHINE ACCELERATRICI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CERVELLI FRANCO, PAOLONI EUGENIO</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >107BB</TD><TD ><div class='inline-block'><A href='programma-49026-2021.html'>ACCELERATOR PHYSICS S / MACCHINE ACCELERATRICI S</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CERVELLI FRANCO</TD><TD >6</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >214BB</TD><TD ><div class='inline-block'><A href='programma-49056-2021.html'>ADVANCED QUANTUM FIELD THEORY / FISICA TEORICA 2</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >VICARI ETTORE</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >192BB</TD><TD ><div class='inline-block'><A href='programma-49051-2021.html'>ASTROPARTICLE PHYSICS / ASTROPARTICELLE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >BALDINI ALESSANDRO, CELLA GIANCARLO</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >063BB</TD><TD ><div class='inline-block'><A href='programma-49050-2021.html'>ASTROPARTICLE PHYSICS S / ASTROPARTICELLE S</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >BALDINI ALESSANDRO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >226BB</TD><TD ><div class='inline-block'><A href='programma-49052-2021.html'>ASTROPHYSICAL PROCESSES / PROCESSI ASTROFISICI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >DEL POZZO WALTER, SHORE STEVEN NEIL</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >301BB</TD><TD ><div class='inline-block'><A href='programma-49070-2021.html'>ASTROFISICA OSSERVATIVA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >SHORE STEVEN NEIL</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >368BB</TD><TD ><div class='inline-block'><A href='programma-49092-2021.html'>ASTROFISICA GENERALE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >PRADA MORONI PIER GIORGIO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >221BB</TD><TD ><div class='inline-block'><A href='programma-49044-2021.html'>ATOM OPTICS / OTTICA ATOMICA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >ARIMONDO ENNIO, CIAMPINI DONATELLA</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >403BB</TD><TD ><div class='inline-block'><A href='programma-52827-2021.html'>BIO-SYSTEMS LAB / LABORATORIO DI BIOSISTEMI</A></div></TD><TD >BISOGNI MARIA GIUSEPPINA, PISIGNANO DARIO</TD><TD >15</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >386BB</TD><TD ><div class='inline-block'><A href='programma-49110-2021.html'>CELL BIOPHYSICS / BIOFISICA CELLULARE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >BIZZARRI RANIERI</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >244CC</TD><TD ><div class='inline-block'><A href='programma-49040-2021.html'>CHIMICA FISICA MOLECOLARE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >AMOVILLI CLAUDIO</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >091BB</TD><TD ><div class='inline-block'><A href='programma-49031-2021.html'>COMPACT STAR PHYSICS S / FISICA DELLE STELLE COMPATTE S</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >BOMBACI IGNAZIO, LOGOTETA DOMENICO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >230BB</TD><TD ><div class='inline-block'><A href='programma-49057-2021.html'>COMPLEX SYSTEMS / SISTEMI COMPLESSI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >MANNELLA RICCARDO</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >279BB</TD><TD ><div class='inline-block'><A href='programma-49073-2021.html'>COMPLEX SYSTEMS - NEURAL DYNAMICS / SISTEMI COMPLESSI - DINAMICHE NEURALI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CATALDO ENRICO</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >326BB</TD><TD ><div class='inline-block'><A href='programma-49077-2021.html'>COMPUTATIONAL PHYSICS LABORATORY / METODI NUMERICI PER LA FISICA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CALIFANO FRANCESCO, D'ELIA MASSIMO, MANNELLA RICCARDO, ROSSINI DAVIDE, TOZZINI VALENTINA</TD><TD >9</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >374BB</TD><TD ><div class='inline-block'><A href='programma-49096-2021.html'>COMPUTATIONAL PHYSICS LABORATORY S / METODI NUMERICI PER LA FISICA S</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >D'ELIA MASSIMO</TD><TD >6</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >360BB</TD><TD ><div class='inline-block'><A href='programma-49088-2021.html'>COMPUTING METHODS FOR EXPERIMENTAL PHYSICS AND DATA ANALYSIS</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >BALDINI LUCA, LAMANNA GIANLUCA, MANFREDA ALBERTO, RETICO ALESSANDRA, RIZZI ANDREA</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >365BB</TD><TD ><div class='inline-block'><A href='programma-49091-2021.html'>COMPUTING METHODS FOR EXPERIMENTAL PHYSICS AND DATA ANALYSIS S</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >RIZZI ANDREA</TD><TD >6</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >370BB</TD><TD ><div class='inline-block'><A href='programma-49094-2021.html'>CONDENSED MATTER PHYSICS</A></div></TD><TD >POLINI MARCO, TADDEI FABIO</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >274BB</TD><TD ><div class='inline-block'><A href='programma-49063-2021.html'>COSMOLOGY OF THE EARLY UNIVERSE / COSMOLOGIA DEL PRIMO UNIVERSO</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >GRASSO DARIO, MAROZZI GIOVANNI</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >275BB</TD><TD ><div class='inline-block'><A href='programma-49104-2021.html'>COSMOLOGY OF THE EARLY UNIVERSE S / COSMOLOGIA DEL PRIMO UNIVERSO S</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >GRASSO DARIO</TD><TD >6</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >324BB</TD><TD ><div class='inline-block'><A href='programma-49074-2021.html'>FISICA DEL MEZZO DIFFUSO COSMICO</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >SHORE STEVEN NEIL</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >308BB</TD><TD ><div class='inline-block'><A href='programma-49068-2021.html'>SIMMETRIE DISCRETE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >BETTARINI STEFANO, GIORGI MARCELLO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >309BB</TD><TD ><div class='inline-block'><A href='programma-49071-2021.html'>DISORDERED SYSTEMS OUT OF EQUILIBRIUM / SISTEMI DISORDINATI FUORI EQUILIBRIO</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CAPACCIOLI SIMONE, LEPORINI DINO</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >198BB</TD><TD ><div class='inline-block'><A href='programma-49047-2021.html'>DOSIMETRY / DOSIMETRIA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >BISOGNI MARIA GIUSEPPINA</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >356BB</TD><TD ><div class='inline-block'><A href='programma-49086-2021.html'>ELETTRODINAMICA DEI MEZZI CONTINUI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >MACCHI ANDREA</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >080BB</TD><TD ><div class='inline-block'><A href='programma-49025-2021.html'>ELETTRONICA E SENSORI</A></div></TD><TD >PASSUELLO DIEGO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >478EE</TD><TD ><div class='inline-block'><A href='programma-49076-2021.html'>ELEMENTS OF PHYSIOLOGY, PHYSIOPATHOLOGY AND DIAGNOSTICS / ELEMENTI DI FISIOLOGIA, FISIOPATOLOGIA E DIAGNOSTICA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >EMDIN MICHELE, FLORI ALESSANDRA, VERGARO GIUSEPPE</TD><TD >6</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >170BB</TD><TD ><div class='inline-block'><A href='programma-49029-2021.html'>EXOPLANETARY SYSTEMS /  SISTEMI PLANETARI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >PAOLICCHI PAOLO, ROCCATAGLIATA VERONICA</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >306BB</TD><TD ><div class='inline-block'><A href='programma-49066-2021.html'>EXPERIMENTAL METHODS FOR ASTROPARTICLE PHYSICS / METODOLOGIE SPERIMENTALI PER LA FISICA DELLE ASTROPARTICELLE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >POGGIANI ROSA</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >307BB</TD><TD ><div class='inline-block'><A href='programma-49105-2021.html'>EXPERIMENTAL METHODS FOR ASTROPARTICLE PHYSICS S / METODOLOGIE SPERIMENTALI PER LA FISICA DELLE ASTROPARTICELLE S</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >POGGIANI ROSA</TD><TD >6</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >369BB</TD><TD ><div class='inline-block'><A href='programma-49093-2021.html'>EXTRAGALACTIC ASTROPHYSICS AND COSMOLOGY / ASTROFISICA EXTRAGALATTICA E COSMOLOGIA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CIGNONI MICHELE</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >323BB</TD><TD ><div class='inline-block'><A href='programma-49079-2021.html'>ESPERIMENTI FONDAMENTALI NELLA FISICA DELLE PARTICELLE ELEMENTARI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >COSTANTINI FLAVIO</TD><TD >3</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >305BB</TD><TD ><div class='inline-block'><A href='programma-49072-2021.html'>FUNDAMENTAL INTERACTIONS / INTERAZIONI FONDAMENTALI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >FORTI FRANCESCO, SIGNORELLI GIOVANNI</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >304BB</TD><TD ><div class='inline-block'><A href='programma-49067-2021.html'>FUNDAMENTALS OF LIGHT  MATTER INTERACTION / FONDAMENTI DI INTERAZIONE RADIAZIONE MATERIA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CIAMPINI DONATELLA, TREDICUCCI ALESSANDRO</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >228BB</TD><TD ><div class='inline-block'><A href='programma-49048-2021.html'>GENERAL RELATIVITY / RELATIVITA' GENERALE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >BOLOGNESI STEFANO</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >251BB</TD><TD ><div class='inline-block'><A href='programma-49059-2021.html'>GRAVITATION THEORY / TEORIE DELLA GRAVITAZIONE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >ZANUSSO OMAR</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >140BB</TD><TD ><div class='inline-block'><A href='programma-49103-2021.html'>GRAVITATION THEORY S / TEORIE DELLA GRAVITAZIONE S</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >ZANUSSO OMAR</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >201BB</TD><TD ><div class='inline-block'><A href='programma-49055-2021.html'>HADRON COLLIDER PHYSICS / FISICA AI COLLISIONATORI ADRONICI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CAVASINNI VINCENZO, FRANCAVILLA PAOLO, LEONE SANDRA</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >371BB</TD><TD ><div class='inline-block'><A href='programma-49101-2021.html'>HADRON COLLIDER PHYSICS S / FISICA AI COLLISIONATORI ADRONICI S</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CAVASINNI VINCENZO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >380BB</TD><TD ><div class='inline-block'><A href='programma-49102-2021.html'>INSTRUMENTATION FOR FUNDAMENTAL INTERACTIONS PHYSICS</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >FORTI FRANCESCO, PALLA FABRIZIO, SCURI FABRIZIO, SIGNORELLI GIOVANNI, SPINELLA FRANCO</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >389BB</TD><TD ><div class='inline-block'><A href='programma-49112-2021.html'>INTRODUCTION TO MOLECULAR BIOPHYSICS / INTRODUZIONE ALLA BIOFISICA MOLECOLARE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >NIFOSI RICCARDO, TOZZINI VALENTINA</TD><TD >6</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >385BB</TD><TD ><div class='inline-block'><A href='programma-49109-2021.html'>INTRODUCTION TO NEUTRINO PHYSICS / INTRODUZIONE ALLA FISICA DEI NEUTRINI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CAVASINNI VINCENZO</TD><TD >3</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >355BB</TD><TD ><div class='inline-block'><A href='programma-49085-2021.html'>KINETIC THEORY OF PLASMAS / PLASMI TEORIA CINETICA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >PEGORARO FRANCESCO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >280BB</TD><TD ><div class='inline-block'><A href='programma-49062-2021.html'>LABORATORIO DI INTERAZIONI FONDAMENTALI B</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >DELL'ORSO ROBERTO, GALLI LUCA, PAOLONI EUGENIO, PINZINO JACOPO, PUNZI GIOVANNI, VENANZONI GRAZIANO</TD><TD >15</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >282BB</TD><TD ><div class='inline-block'><A href='programma-49075-2021.html'>LABORATORIO DI OTTICA QUANTISTICA B</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CAMPOSEO ANDREA, CELLA ZANACCHI FRANCESCA, PISIGNANO DARIO, Zanotto Simone</TD><TD >15</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >216BB</TD><TD ><div class='inline-block'><A href='programma-49039-2021.html'>LABORATORIO DI OTTICA QUANTISTICA A</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >PISIGNANO DARIO</TD><TD >9</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >375BB</TD><TD ><div class='inline-block'><A href='programma-49097-2021.html'>OCEANOGRAFIA FISICA SU GRANDE SCALA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >BIANUCCI MARCO</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >357BB</TD><TD ><div class='inline-block'><A href='programma-49090-2021.html'>ACCELERATORI LASER-PLASMA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >LABATE LUCA UMBERTO, TOMASSINI PAOLO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >384BB</TD><TD ><div class='inline-block'>MATERIAL OPTICAL SPECTROSCOPY / SPETTROSCOPIA OTTICA DEI MATERIALI</div></TD><TD >&nbsp;</TD><TD >6</TD><TD >Annuale</TD><TD ><div class='inline-block'><A href='programma-52328-2021.html'>SPECTROSCOPY OF NANOMATERIALS - 266BB</A><BR>MATERIALS AND NANOTECHNOLOGY (Magistrale)<span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD></TR>
+<TR><TD >381BB</TD><TD ><div class='inline-block'><A href='programma-49106-2021.html'>MEDICAL PHYSICS 1 /  FISICA MEDICA 1</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >FANTACCI MARIA EVELINA, ROSSO VALERIA</TD><TD >9</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >393BB</TD><TD ><div class='inline-block'><A href='programma-49114-2021.html'>MEDICAL PHYSICS 2 / FISICA MEDICA 2</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >BELCARI NICOLA, PANETTA DANIELE, ROSSO VALERIA</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >104BB</TD><TD ><div class='inline-block'><A href='programma-49030-2021.html'>MEDICAL PHYSICS LABORATORY / LABORATORIO DI FISICA MEDICA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >BELCARI NICOLA, BISOGNI MARIA GIUSEPPINA, MORROCCHI MATTEO, ROSSO VALERIA, SPORTELLI GIANCARLO</TD><TD >12</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >185BB</TD><TD ><div class='inline-block'><A href='programma-49032-2021.html'>METODI MONTECARLO NELLA FISICA SPERIMENTALE</A></div></TD><TD >GIUDICI SERGIO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >327BB</TD><TD ><div class='inline-block'><A href='programma-49081-2021.html'>MULTIMESSENGER PHYSICS LABORATORY</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >RAZZANO MASSIMILIANO</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >352BB</TD><TD ><div class='inline-block'><A href='programma-49082-2021.html'>FISICA DEI MATERIALI IN BASSA DIMENSIONALITÀ</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CARREGA MATTEO, VERONESI STEFANO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >322BB</TD><TD ><div class='inline-block'><A href='programma-49080-2021.html'>NONLINEAR DYNAMICS  / DINAMICA NON LINEARE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >DI GARBO ANGELO</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >358BB</TD><TD ><div class='inline-block'><A href='programma-49087-2021.html'>NONPERTURBATIVE APPROACHES  TO QUANTUM FIELD THEORIES / ASPETTI NON PERTURBATIVI  DELLE TEORIE DI CAMPO QUANTISTICHE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >VICARI ETTORE</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >124BB</TD><TD ><div class='inline-block'><A href='programma-49024-2021.html'>NUCLEAR MAGNETIC RESONANCE / RISONANZA MAGNETICA NUCLEARE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >ANDREOZZI LAURA, CENCINI MATTEO, TOSETTI MICHELA</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >206BB</TD><TD ><div class='inline-block'><A href='programma-49037-2021.html'>FISICA NUCLEARE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >BOMBACI IGNAZIO</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >227BB</TD><TD ><div class='inline-block'><A href='programma-49042-2021.html'>REAZIONI NUCLEARI DI INTERESSE ASTROFISICO</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >KIEVSKY ALEJANDRO, LOGOTETA DOMENICO, MARCUCCI LAURA ELISA</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >377BB</TD><TD ><div class='inline-block'><A href='programma-49099-2021.html'>REAZIONI NUCLEARI DI INTERESSE ASTROFISICO S</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >MARCUCCI LAURA ELISA</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >302BB</TD><TD ><div class='inline-block'><A href='programma-49069-2021.html'>PARTICLE PHYSICS / FISICA DELLE PARTICELLE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >GRASSI MARCO, SOZZI MARCO STANISLAO</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >373BB</TD><TD ><div class='inline-block'><A href='programma-49095-2021.html'>PARTICLE PHYSICS S / FISICA DELLE PARTICELLE S</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >SOZZI MARCO STANISLAO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >387BB</TD><TD ><div class='inline-block'><A href='programma-49111-2021.html'>PHYSICS OF BIOSYSTEMS / FISICA DEI BIOSISTEMI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CAPACCIOLI SIMONE, CELLA ZANACCHI FRANCESCA</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >257BB</TD><TD ><div class='inline-block'><A href='programma-49061-2021.html'>PHYSICS  OF GRAVITATIONAL WAVES /  FISICA DELLE ONDE GRAVITAZIONALI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >FIDECARO FRANCESCO, RAZZANO MASSIMILIANO</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >256BB</TD><TD ><div class='inline-block'><A href='programma-49060-2021.html'>PHYSICS  OF GRAVITATIONAL WAVES S / FISICA DELLE ONDE GRAVITAZIONALI S</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >FIDECARO FRANCESCO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >203BB</TD><TD ><div class='inline-block'><A href='programma-49049-2021.html'>PHYSICS OF PHOTONIC DEVICES / FISICA DEI DISPOSITIVI FOTONICI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >PINEIDER FRANCESCO, POLINI MARCO, TREDICUCCI ALESSANDRO</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >092BB</TD><TD ><div class='inline-block'><A href='programma-49028-2021.html'>FISICA DELLE SUPERFICI E INTERFACCE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >LABARDI MASSIMILIANO</TD><TD >3</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >353BB</TD><TD ><div class='inline-block'><A href='programma-49083-2021.html'>PLASMA PHYSICS / FISICA DEI PLASMI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CALIFANO FRANCESCO</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >197BB</TD><TD ><div class='inline-block'><A href='programma-49043-2021.html'>QUANTUM CHROMODYNAMICS / CROMODINAMICA QUANTISTICA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >MEGGIOLARO ENRICO</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >376BB</TD><TD ><div class='inline-block'><A href='programma-49098-2021.html'>QUANTUM COMPUTING AND TECHNOLOGIES</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CAPPUCCIO ROBERTO, MORSCH OLIVER</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >328BB</TD><TD ><div class='inline-block'><A href='programma-49078-2021.html'>QUANTUM FIELDS AND TOPOLOGY</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >GUADAGNINI ENORE</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >213BB</TD><TD ><div class='inline-block'><A href='programma-49036-2021.html'>QUANTUM FIELD THEORY / FISICA TEORICA 1</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >GUADAGNINI ENORE</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >382BB</TD><TD ><div class='inline-block'><A href='programma-49107-2021.html'>QUANTUM LIQUIDS</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CHIOFALO MARIA LUISA</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >354BB</TD><TD ><div class='inline-block'><A href='programma-49084-2021.html'>QUANTUM OPTICS AND PLASMA PHYSICS / OTTICA QUANTISTICA E PLASMI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >GIULIETTI DANILO</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >235BB</TD><TD ><div class='inline-block'><A href='programma-49041-2021.html'>TEORIA QUANTISTICA DEI SOLIDI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >GROSSO GIUSEPPE</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >378BB</TD><TD ><div class='inline-block'><A href='programma-49100-2021.html'>RECENT HIGHLIGHTS IN FUNDAMENTAL INTERACTIONS</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >TONELLI GUIDO EMILIO</TD><TD >3</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >189BB</TD><TD ><div class='inline-block'>ELABORAZIONE DEI SEGNALI PER LA FISICA</div></TD><TD >&nbsp;</TD><TD >6</TD><TD >Primo semestre</TD><TD ><div class='inline-block'><A href='programma-52750-2021.html'>SIGNAL PROCESSING FOR PHYSICS - 338BB</A><BR>GEOFISICA DI ESPLORAZIONE E APPLICATA (Magistrale)<span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD></TR>
+<TR><TD >190BB</TD><TD ><div class='inline-block'><A href='programma-49035-2021.html'>LASER A STATO SOLIDO</A></div></TD><TD >TONELLI MAURO</TD><TD >3</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >204BB</TD><TD ><div class='inline-block'><A href='programma-49053-2021.html'>SOLID STATE PHYSICS / FISICA DELLO STATO SOLIDO</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >POLINI MARCO, RODDARO STEFANO</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >043BB</TD><TD ><div class='inline-block'><A href='programma-49033-2021.html'>SPECTROSCOPY ALGORITHMS / ALGORITMI DI SPETTROSCOPIA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >MORUZZI GIOVANNI</TD><TD >3</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >383BB</TD><TD ><div class='inline-block'><A href='programma-49108-2021.html'>SPECTROSCOPY AND MICROSCOPY  OF NANOMATERIALS / SPETTROSCOPIA E MICROSCOPIA DEI NANOMATERIALI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >FUSO FRANCESCO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >193BB</TD><TD ><div class='inline-block'><A href='programma-49058-2021.html'>ANALISI STATISTICA DEI DATI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >FRANCAVILLA PAOLO, PUNZI GIOVANNI</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >207BB</TD><TD ><div class='inline-block'><A href='programma-49046-2021.html'>STATISTICAL PHYSICS  / FISICA STATISTICA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >ROSSINI DAVIDE</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >211BB</TD><TD ><div class='inline-block'><A href='programma-49038-2021.html'>STELLAR PHYSICS / FISICA STELLARE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >DEGL'INNOCENTI SCILLA</TD><TD >9</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >098BB</TD><TD ><div class='inline-block'><A href='programma-49027-2021.html'>STELLAR PHYSICS S</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >DEGL'INNOCENTI SCILLA</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+								</tbody>
+							</table>
+							<div style="padding-left:30px;">
+								<i class="fa fa-info-circle"></i> Programma presente							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/esami2/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-4e345eba.js"></script>
+<script src="../_assets/jquery-ui.min-e93c00aa.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-19dbc6e0.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-c8ee7689.js"></script> 
+<script src="../_assets/tinymce.min-e9308fd1.js"></script>
+<script src="../_assets/jquery.tinymce.min-65f0b191.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-3beded5a.js"></script>
+<script src="../_assets/unipi-3293f5f6.js"></script>
+<script src="../_assets/dm-10a06b2c.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+
+
+function AllTables(){
+	TableProgrammi('it', '#datatable-programmi');
+	RedrawTable('#datatable-programmi');
+}
+
+
+function dipSelectChanged() {
+	$(".sessioni").hide();
+	$("#rowTableInsegnamenti").hide();
+	$(".sessioni").filter( $(".dip_" + this.value)).show();
+}
+
+function MakeSelect2(){
+	if(dm()) {
+		$('#dipselect').on("change", function(e) {
+			$("#fDip").submit();
+		});
+		$('#cdsSelect').on("change", function(e) {
+			$("#fCds").submit();
+		});
+		$('#aaselect').on("change", function(e) {
+			$("#fAA").submit();
+		});
+
+	} else {
+		$('#dipselect').select2({dropdownAutoWidth : true})  
+		.on("change", function(e) {
+			$("#fDip").submit();
+		});
+		$('#cdsSelect').select2({dropdownAutoWidth : true})  
+		.on("change", function(e) {
+			$("#fCds").submit();
+		});
+		$('#aaselect').select2({dropdownAutoWidth : true})  
+		.on("change", function(e) {
+			$("#fAA").submit();
+		});
+	}
+}
+
+
+$(document).ready(function() {
+	LoadDataTablesScripts(AllTables);
+	LoadSelect2Script(MakeSelect2);
+});
+
+</script>	
+

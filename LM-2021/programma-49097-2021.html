@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-dc764708.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5d307d3a.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-b777fb69.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-adef06ea.css" rel="stylesheet">
+		<link href="../_assets/style_v1-429eb70e.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-32df6655.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7c4d2527.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-57b8ccba.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-8e6319ba.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/esami2/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/esami2/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/esami2/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/esami2/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/esami2/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/esami2/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/esami2/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/esami2/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esami2/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/esami2/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/esami2/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/esami2/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/esami2/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/esami2/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/esami2/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/esami2/index.php">Home</a></li><li><a href="https://esami.unipi.it/esami2/programmi_insegnamenti.php?aa=2021&cid=1&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">OCEANOGRAFIA FISICA SU GRANDE SCALA</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">MARCO BIANUCCI</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2021/22</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">375BB</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">9</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Secondo semestre</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"><img src="../_assets/SDG-icon-IT-RGB-13-e6c75de2.jpg" style="width:100px"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>OCEANOGRAFIA FISICA SU GRANDE SCALA</TD><TD class='value-programma'>FIS/03</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>54</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>MARCO BIANUCCI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=154040' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/esami2/pdfProgCorsoStu.php?language=it&c=49097" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_en alert alert-warning">Programma non disponibile nella lingua selezionata</div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma"></div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><ul>
+<li>avr&agrave; compreso il ruolo della rotazione terrestre nel caratterizzare le specificit&agrave; della fuidinamica geofisica</li>
+<li>avr&agrave; acquisito familiarit&agrave; col metodo utilizzato in geofisica di semplificazione delle equazioni fondamentali attraverso l'introduzione di vincoli da dati osservativi.</li>
+<li>avr&agrave; compreso la profonda differenza tra la complessa dinamica oceanica a piccola scala e la dinamica emergente a grande scala</li>
+<li>avr&agrave; acquisito le conoscenze di base di meccanica statistica utili a trattare alcune osservabili oceaniche come variabili d'interesse soggette a perturbazioni stocastiche.</li>
+</ul></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><p>Per l'accertamento delle conoscenze saranno svolte delle prove in itinere utilizzando test e/o incontri tra il docente e il gruppo di studenti che sviluppa il progetto</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Capacit&agrave;</div>
+<span class="contenuto_programma"><p>Al termine del corso:</p>
+<ul>
+<li>lo studente avr&agrave; acquisito le conoscenze di base che regolano la dinamica delle correnti oceaniche a grande scala.</li>
+<li>lo studente sar&agrave; in grado di leggere e interpretare la letteratura scientifica su tematiche di grande attualit&agrave; quali la sensibilit&agrave; degli oceani rispetto ai cambiamenti climatici globali di origine antropica e naturale, la dinamica de El Nino-La Nina e le ricadute a livello globale, le caratteristiche e le criticit&agrave; delle correnti termoaline.</li>
+</ul></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><p>Non sono necessari prerequisiti oltre quelli di base per un corso della laurea magistrale.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Corequisiti</div>
+<span class="contenuto_programma"><p>E' consigliato il corso sui sistemi complessi.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p><strong>Universit&agrave; di Pisa</strong></p>
+<p><strong>Corso di studi WFI-LM &ndash; FISICA, Secondo semestre.</strong></p>
+<p>Oceanografia Fisica su Grande Scala</p>
+<p>PROGRAMMA DETTAGLIATO</p>
+<ol>
+<li>Identificazione delle tematiche di cui si occupa l'oceanografia fisica a grande scala.</li>
+<li>Basi di fluidodinamica (introduzione alle Equazioni di Navier-Stokes):
+<ul>
+<li>Rappresentazione Lagrangiana e Euleriana.</li>
+</ul>
+</li>
+</ol>
+<ol>
+<ul>
+<li>Passaggio da una rappresentazione all'altra.</li>
+<li>Teorema del trasporto di Reynolds.</li>
+<li>Equazione di continuit&agrave;, equazione dell'impulso e equazione cardinale del momento angolare per fluidi viscosi generici.</li>
+<li>Tensore degli sforzi.</li>
+</ul>
+</ol>
+<ol start="3">
+<li>Bilancio dell'energia e termodinamica per un fluido non viscoso e viscoso.</li>
+<li>L'effetto della rotazione terrestre.
+<ul>
+<li>Coordinate polari sferiche.</li>
+</ul>
+</li>
+</ol>
+<ol>
+<ul>
+<li>Importanza relativa della forza di Coriolis e della forza centrifuga nel sistema di riferimento terrestre.</li>
+<li>Coordinate locali terrestri.</li>
+<li>Le equazioni di Navier Stokes, del calore, salinit&agrave; e di stato in coordinate locali.</li>
+</ul>
+</ol>
+<ol start="5">
+<li>Scaling: considerazioni sugli ordini di grandezza in gioco e peso relativo delle componenti delle equazioni di NS.
+<ul>
+<li>Valutazione degli ordini di grandezza relativi ai fenomeni su grande scala terrestre.</li>
+</ul>
+</li>
+</ol>
+<ol>
+<ul>
+<li>L'approssimazione idrostatica.</li>
+<li>L'effetto delle pressione sulla densit&agrave;: linearizzazione dell'equazione di stato.</li>
+</ul>
+</ol>
+<ol start="6">
+<li>Equazioni di NS semplificate per la dinamica a grande scala.
+<ul>
+<li>L'approssimazione di Boussinesq per l'equazione dell'impulso e l'equazione di continuit&agrave;.</li>
+</ul>
+</li>
+</ol>
+<ol>
+<ul>
+<li>Equazione del calore e approssimazione di Boussinesq.</li>
+</ul>
+</ol>
+<ol start="7">
+<li>La temperatura potenziale.</li>
+<li>Shallow water equations.
+<ul>
+<li>Ipotesi sottostanti.</li>
+<li>Condizioni a contorno, equazione di continuit&agrave; integrata sullo spessore dello strato.</li>
+</ul>
+</li>
+</ol>
+<ol>
+<ul>
+<li>Caso di strato con superficie libera e fondo fisso.</li>
+<li>Caso alternativo di strato che poggia su un altro strato pi&ugrave; denso a riposo: reduced gravity.</li>
+<li>Prime considerazioni sulle possibili onde trasportate dalle SWE.</li>
+</ul>
+</ol>
+<ol start="9">
+<li>Geostrophic Flow e il teorema di Taylor-Proudman.</li>
+<li>Approssimazione lineare delle SWE: onde di Kelvin e onde di Poincar&eacute;.</li>
+<li>The bottom Ekman layer and the surface Ekman layer: Ekmann transport and Ekman pumping.</li>
+<li>Onde di Kelvin equatoriali.</li>
+<li>Equazione formale della vorticit&agrave; potenziale
+<ul>
+<li>Caso generale, includendo la rotazione terrestre e la tridimensionalit&agrave; dello spazio.</li>
+<li>La vorticit&agrave; potenziale nel caso Shallow Water.</li>
+<li>La vorticit&agrave; potenziale di Ertel.</li>
+</ul>
+</li>
+<li>La Streamfunction:
+<ul>
+<li>La decomposizione di Helmotz e la relazione con il potenziale vettore per il campo velocit&agrave;.</li>
+</ul>
+</li>
+</ol>
+<ol>
+<ul>
+<li>Calcolo del flusso attraverso una superficie e relazione con le componenti del potenziale vettore e della decomposizione di Helmotz.</li>
+</ul>
+</ol>
+<ol start="15">
+<li>Teorema della circolazione di Kelvin.
+<ul>
+<li>Relazione tra il teorema di Kelvin e l'equazione della vorticit&agrave;.</li>
+</ul>
+</li>
+<li>Modello generale geostrofico della circolazione oceanica e trasporto di Sverdrup.
+<ul>
+<li>Necessit&agrave; della viscosit&agrave; per le corrette condizioni a contorno.</li>
+</ul>
+</li>
+</ol>
+<ol>
+<ul>
+<li>Intensificazione delle correnti a Ovest.</li>
+</ul>
+</ol>
+<ol start="17">
+<li>Le correnti termoaline. Modelli per la MOC (Meridional Overturnic Circulation).</li>
+<li>Quasi Geostrophic equations.
+<ul>
+<li>Shallow Water in f-plane.</li>
+<li>Le onde di Rossby barotropiche</li>
+<li>Le onde di Rossby barocliniche.</li>
+</ul>
+</li>
+<li>La Corrente del Golfo come parte della corrente geostrofica del bacino Atlantico.
+<ul>
+<li>L'ipotesi di Parsons-Veronis sulla separazione della Corrente del Golfo.</li>
+</ul>
+</li>
+<li>Introduzione alla Meccanica Statistica:
+<ul>
+<li>Concetti introduttivi</li>
+<li>Teorema del limite centrale.</li>
+</ul>
+</li>
+</ol>
+<ol>
+<ul>
+<li>Cenni sulla teoria della risposta lineare.</li>
+<li>Espansione di Kramers-Moyall,</li>
+<li>Espansione in cumulanti.</li>
+<li>Processo di Ornstein&ndash;Uhlenbeck.</li>
+<li>Metodo dei cumulanti operatori.</li>
+<li>Processi stocastici.</li>
+<li>Equazione di Liouville.</li>
+<li>Metodo proiettivo di Zwanzig.</li>
+</ul>
+</ol>
+<ul>
+<li>Applicazione al Recharge Oscillator.</li>
+<li>Introduzione al calcolo del Mean First Passage Time (MFPT).</li>
+</ul>
+<ol start="21">
+<li>Separazione delle equazioni di NS in parte a grande scala e parte a piccola scala, approssimazione stocastica della dinamica a piccola scala.</li>
+<li>Introduzione all'El Ni&ntilde;o Southern Oscillation (ENSO):
+<ul>
+<li>La dinamica oceanica equatoriale.</li>
+<li>Gli indici del Ni&ntilde;o.</li>
+<li>Caratteristiche non Gaussiane della statistica delle oscillazioni.</li>
+<li>Dalle Shallow Water Equations al Recharge Oscillator (RO) tramite l'approssimazione two boxes two layers.</li>
+</ul>
+</li>
+</ol>
+<ol>
+<ul>
+<li>Accenno al RO forzato da rumore moltiplicativo come modello per simulare lo oscillazioni dell'indice NINO3: effetti nel tempo di ricorrenza degli eventi estremi.&nbsp;</li>
+</ul>
+</ol>
+<ol start="23">
+<li>Introduzione alla North Atlantic Oscillation (NAO).</li>
+<li>Il modello Intergyre-Gyre per la NAO.</li>
+</ol></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 24/01/2022 15:31</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/esami2/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-4e345eba.js"></script>
+<script src="../_assets/jquery-ui.min-e93c00aa.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-19dbc6e0.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-c8ee7689.js"></script> 
+<script src="../_assets/tinymce.min-e9308fd1.js"></script>
+<script src="../_assets/jquery.tinymce.min-65f0b191.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-3beded5a.js"></script>
+<script src="../_assets/unipi-3293f5f6.js"></script>
+<script src="../_assets/dm-10a06b2c.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

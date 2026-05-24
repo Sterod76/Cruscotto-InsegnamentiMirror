@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-dc764708.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5d307d3a.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-b777fb69.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-adef06ea.css" rel="stylesheet">
+		<link href="../_assets/style_v1-429eb70e.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-32df6655.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7c4d2527.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-57b8ccba.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-8e6319ba.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/esami2/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/esami2/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/esami2/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/esami2/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/esami2/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/esami2/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/esami2/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/esami2/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esami2/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/esami2/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/esami2/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/esami2/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/esami2/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/esami2/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/esami2/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/esami2/index.php">Home</a></li><li><a href="https://esami.unipi.it/esami2/programmi_insegnamenti.php?aa=2023&cid=1&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">MULTIMESSENGER PHYSICS LABORATORY</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">MASSIMILIANO RAZZANO</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2023/24</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">327BB</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">9</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Secondo semestre</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Inglese</span></div>
+<div class="col-md-6"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>MULTIMESSENGER PHYSICS LABORATORY</TD><TD class='value-programma'>FIS/01</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>90</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>BARBARA PATRICELLI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=109884' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>MASSIMILIANO RAZZANO <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=75502' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/esami2/pdfProgCorsoStu.php?language=it&c=57798" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p><span class="TextRun SCXW193317221 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW193317221 BCX0">Dopo aver </span><span class="NormalTextRun SCXW193317221 BCX0">superato</span> <span class="NormalTextRun SCXW193317221 BCX0">l&rsquo;esame</span><span class="NormalTextRun SCXW193317221 BCX0"> lo </span><span class="NormalTextRun SCXW193317221 BCX0">studente</span> <span class="NormalTextRun SCXW193317221 BCX0">avr&agrave;</span> <span class="NormalTextRun SCXW193317221 BCX0">acquisito</span> <span class="NormalTextRun SCXW193317221 BCX0">una</span> <span class="NormalTextRun SCXW193317221 BCX0">solida</span> <span class="NormalTextRun SCXW193317221 BCX0">conoscenza</span> <span class="NormalTextRun SCXW193317221 BCX0">delle</span> <span class="NormalTextRun SCXW193317221 BCX0">metodologie</span> <span class="NormalTextRun SCXW193317221 BCX0">sperimentali</span><span class="NormalTextRun SCXW193317221 BCX0"> legate </span><span class="NormalTextRun SCXW193317221 BCX0">all&rsquo;osservazione</span><span class="NormalTextRun SCXW193317221 BCX0"> di </span><span class="NormalTextRun SCXW193317221 BCX0">radiazione</span> <span class="NormalTextRun SCXW193317221 BCX0">elettromagnetica</span><span class="NormalTextRun SCXW193317221 BCX0"> (</span><span class="NormalTextRun SCXW193317221 BCX0">onde</span><span class="NormalTextRun SCXW193317221 BCX0"> radio, luce </span><span class="NormalTextRun SCXW193317221 BCX0">visibile</span><span class="NormalTextRun SCXW193317221 BCX0">, </span><span class="NormalTextRun SCXW193317221 BCX0">raggi</span><span class="NormalTextRun SCXW193317221 BCX0"> X e </span><span class="NormalTextRun SCXW193317221 BCX0">raggi</span><span class="NormalTextRun SCXW193317221 BCX0"> gamma)</span><span class="NormalTextRun SCXW193317221 BCX0">, </span><span class="NormalTextRun SCXW193317221 BCX0">onde</span> <span class="NormalTextRun SCXW193317221 BCX0">gravitazionali</span><span class="NormalTextRun SCXW193317221 BCX0"> e </span><span class="NormalTextRun SCXW193317221 BCX0">raggi</span> <span class="NormalTextRun SCXW193317221 BCX0">cosmici</span><span class="NormalTextRun SCXW193317221 BCX0">, e </span><span class="NormalTextRun SCXW193317221 BCX0">delle</span> <span class="NormalTextRun SCXW193317221 BCX0">tecniche</span><span class="NormalTextRun SCXW193317221 BCX0"> e </span><span class="NormalTextRun SCXW193317221 BCX0">principali</span><span class="NormalTextRun SCXW193317221 BCX0"> software di </span><span class="NormalTextRun SCXW193317221 BCX0">analisi</span> <span class="NormalTextRun SCXW193317221 BCX0">dati</span> <span class="NormalTextRun SCXW193317221 BCX0">utilizzati</span> <span class="NormalTextRun SCXW193317221 BCX0">nell&rsquo;astrofisica</span><span class="NormalTextRun SCXW193317221 BCX0"> multimessaggera. Durante il </span><span class="NormalTextRun SCXW193317221 BCX0">corso</span> <span class="NormalTextRun SCXW193317221 BCX0">gli</span> <span class="NormalTextRun SCXW193317221 BCX0">studenti</span> <span class="NormalTextRun SCXW193317221 BCX0">impareranno</span><span class="NormalTextRun SCXW193317221 BCX0"> a</span> <span class="NormalTextRun SCXW193317221 BCX0">raccogliere</span> <span class="NormalTextRun SCXW193317221 BCX0">dati</span> <span class="NormalTextRun SCXW193317221 BCX0">tramite</span> <span class="NormalTextRun SCXW193317221 BCX0">osservazioni</span> <span class="NormalTextRun SCXW193317221 BCX0">dirett</span><span class="NormalTextRun SCXW193317221 BCX0">e</span><span class="NormalTextRun SCXW193317221 BCX0"> o </span><span class="NormalTextRun SCXW193317221 BCX0">ritrovandoli</span><span class="NormalTextRun SCXW193317221 BCX0"> da </span><span class="NormalTextRun SCXW193317221 BCX0">archivi</span><span class="NormalTextRun SCXW193317221 BCX0"> online, a</span> <span class="NormalTextRun SCXW193317221 BCX0">sviluppare</span> <span class="NormalTextRun SCXW193317221 BCX0">programmi</span><span class="NormalTextRun SCXW193317221 BCX0"> di </span><span class="NormalTextRun SCXW193317221 BCX0">analisi</span> <span class="NormalTextRun SCXW193317221 BCX0">articolati</span> <span class="NormalTextRun SCXW193317221 BCX0">utilizzando</span><span class="NormalTextRun SCXW193317221 BCX0"> il </span><span class="NormalTextRun SCXW193317221 BCX0">linguaggio</span><span class="NormalTextRun SCXW193317221 BCX0"> di </span><span class="NormalTextRun SCXW193317221 BCX0">programmazione</span><span class="NormalTextRun SCXW193317221 BCX0"> Python </span><span class="NormalTextRun SCXW193317221 BCX0">anche</span> <span class="NormalTextRun SCXW193317221 BCX0">sfruttando</span><span class="NormalTextRun SCXW193317221 BCX0"> la </span><span class="NormalTextRun SCXW193317221 BCX0">programmazione</span> <span class="NormalTextRun SCXW193317221 BCX0">orientata</span> <span class="NormalTextRun SCXW193317221 BCX0">agli</span> <span class="NormalTextRun SCXW193317221 BCX0">oggetti</span><span class="NormalTextRun SCXW193317221 BCX0">. Nella </span><span class="NormalTextRun SCXW193317221 BCX0">parte</span><span class="NormalTextRun SCXW193317221 BCX0"> finale </span><span class="NormalTextRun SCXW193317221 BCX0">saranno</span> <span class="NormalTextRun SCXW193317221 BCX0">anche</span> <span class="NormalTextRun SCXW193317221 BCX0">presentati</span> <span class="NormalTextRun SCXW193317221 BCX0">cenni</span><span class="NormalTextRun SCXW193317221 BCX0"> di </span><span class="NormalTextRun SCXW193317221 BCX0">tecniche</span><span class="NormalTextRun SCXW193317221 BCX0"> di </span><span class="NormalTextRun SCXW193317221 BCX0">analisi</span> <span class="NormalTextRun SCXW193317221 BCX0">avanzate</span> <span class="NormalTextRun SCXW193317221 BCX0">basate</span> <span class="NormalTextRun SCXW193317221 BCX0">su</span><span class="NormalTextRun SCXW193317221 BCX0"> machine e deep learning.</span></span><span class="EOP SCXW193317221 BCX0" data-ccp-props="{">&nbsp;</span></p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p><span class="NormalTextRun SCXW193456948 BCX0">The student who successfully completes the course will have </span><span class="NormalTextRun SCXW193456948 BCX0">acquired</span><span class="NormalTextRun SCXW193456948 BCX0"> a solid knowledge of the experimental methodologies related to the observation of electromagnetic radiation</span><span class="NormalTextRun SCXW193456948 BCX0"> (radio, visible light, </span><span class="NormalTextRun SCXW193456948 BCX0">X-rays</span><span class="NormalTextRun SCXW193456948 BCX0"> and gamma rays)</span><span class="NormalTextRun SCXW193456948 BCX0">, gravitational waves and cosmic rays, as well as the main techniques and analysis </span><span class="NormalTextRun SCXW193456948 BCX0">software</span><span class="NormalTextRun SCXW193456948 BCX0"> used in </span><span class="NormalTextRun SpellingErrorV2Themed SCXW193456948 BCX0">multimessenger</span><span class="NormalTextRun SCXW193456948 BCX0"> astrophysics. During the </span><span class="NormalTextRun SCXW193456948 BCX0">course</span><span class="NormalTextRun SCXW193456948 BCX0"> the students will learn to </span><span class="NormalTextRun SCXW193456948 BCX0">collect data with direct observations or by retrieving it from online archives, a</span><span class="NormalTextRun SCXW193456948 BCX0">n</span><span class="NormalTextRun SCXW193456948 BCX0">d to </span><span class="NormalTextRun SCXW193456948 BCX0">develop analysis programs using Python programming languages also using object-oriented programming. During the last </span><span class="NormalTextRun SCXW193456948 BCX0">part</span><span class="NormalTextRun SCXW193456948 BCX0"> an overview of the main machine learning approaches will be presented.</span></p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><p><span class="NormalTextRun SCXW212846846 BCX0">Lo </span><span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">studente</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">deve</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">mostrare</span><span class="NormalTextRun SCXW212846846 BCX0"> di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">saper</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">leggere</span><span class="NormalTextRun SCXW212846846 BCX0"> e </span><span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">manipolare</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">i</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">dati</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">raccolti</span><span class="NormalTextRun SCXW212846846 BCX0"> da </span><span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">telescopi</span><span class="NormalTextRun SCXW212846846 BCX0"> e </span><span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">strumenti</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">operanti</span><span class="NormalTextRun SCXW212846846 BCX0"> alle diverse </span><span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">lunghezze</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">d&rsquo;onda</span><span class="NormalTextRun SCXW212846846 BCX0"> (in </span><span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">particolare</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">onde</span><span class="NormalTextRun SCXW212846846 BCX0"> radio, </span><span class="NormalTextRun SCXW212846846 BCX0">luce </span><span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">visibile</span><span class="NormalTextRun SCXW212846846 BCX0">, </span><span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">raggi</span><span class="NormalTextRun SCXW212846846 BCX0"> X e </span><span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">raggi</span><span class="NormalTextRun SCXW212846846 BCX0"> gamma), e da </span><span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">rivelatori</span><span class="NormalTextRun SCXW212846846 BCX0"> di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">onde</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">gravitazionali</span><span class="NormalTextRun SCXW212846846 BCX0">. Durante il </span><span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">corso</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">saranno</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">proposti</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">progetti</span><span class="NormalTextRun SCXW212846846 BCX0"> di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">analisi</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">dati</span><span class="NormalTextRun SCXW212846846 BCX0"> in cui </span><span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">gli</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">studenti</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">dovranno</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">sviluppare</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">opportuni</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">programmi</span><span class="NormalTextRun SCXW212846846 BCX0"> e </span><span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">algoritmi</span><span class="NormalTextRun SCXW212846846 BCX0"> per </span><span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">estrarre</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">i</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">principali</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">parametri</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">delle</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">sorgenti</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">astrofisiche</span><span class="NormalTextRun SCXW212846846 BCX0"> da </span><span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">analizzare</span><span class="NormalTextRun SCXW212846846 BCX0">, e </span><span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">preparare</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">una</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">relazione</span><span class="NormalTextRun SCXW212846846 BCX0"> sui </span><span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">risultati</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW212846846 BCX0">ottenuti</span><span class="NormalTextRun SCXW212846846 BCX0">.</span></p>
+<p><span data-contrast="auto">Metodi</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Progetti di analisi dati e relative relazioni di laboratorio&nbsp;</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Esame finale orale</span><span data-ccp-props="{">&nbsp;</span></p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
+<span class="contenuto_programma"><p><span data-contrast="auto">The student will demonstrate the ability to read and manipulate the data taken with telescopes and instruments operating at various wavelengths (in particular in the radio, visible light X and gamma-ray band), with gravitational-wave detectors. During the course there will be a series of data analysis projects where students will develop custom programs and algorithms in order to extract the main parameters of the astrophysical source under analysis and prepare a report on the results.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">Methods:</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Data analysis projects and related laboratory reports</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Final written exam</span></p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Capacit&agrave;</div>
+<span class="contenuto_programma"><p><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">Capacit&agrave;</span><span class="NormalTextRun SCXW171148062 BCX0"> di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">acquisire</span><span class="NormalTextRun SCXW171148062 BCX0"> e </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">leggere</span> <span class="NormalTextRun SCXW171148062 BCX0">&nbsp;</span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">dati</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">osservativi</span><span class="NormalTextRun SCXW171148062 BCX0">, </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">tramite</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">osservazioni</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">oppur</span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">e</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">ritrovandoli</span><span class="NormalTextRun SCXW171148062 BCX0"> da </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">archivi</span><span class="NormalTextRun SCXW171148062 BCX0"> online. </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">Utilizzare</span><span class="NormalTextRun SCXW171148062 BCX0"> il </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">linguaggio</span><span class="NormalTextRun SCXW171148062 BCX0"> di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">programmazione</span><span class="NormalTextRun SCXW171148062 BCX0"> Python per </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">sviluppare</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">strumenti</span><span class="NormalTextRun SCXW171148062 BCX0"> di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">analisi</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">dati</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">relativi</span> <span class="NormalTextRun ContextualSpellingAndGrammarErrorV2Themed SCXW171148062 BCX0">a</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">osservazione</span><span class="NormalTextRun SCXW171148062 BCX0"> di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">radiazione</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">elettromagnetica</span><span class="NormalTextRun SCXW171148062 BCX0">, </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">gravitazionale</span><span class="NormalTextRun SCXW171148062 BCX0"> e di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">radiazione</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">cosmica</span><span class="NormalTextRun SCXW171148062 BCX0">. </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">Utilizzare</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">i</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">principali</span><span class="NormalTextRun SCXW171148062 BCX0">&nbsp;metodi di analisi</span>&nbsp;<span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">dati</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">usati</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">nel</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">dominio</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">di ond radio, luce visibile</span>&nbsp;<span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">raggi</span><span class="NormalTextRun SCXW171148062 BCX0"> X, </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">raggi</span><span class="NormalTextRun SCXW171148062 BCX0"> gamma, </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">onde</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">gravitazionali</span><span class="NormalTextRun SCXW171148062 BCX0">, </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">anche</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">utilizzando</span><span class="NormalTextRun SCXW171148062 BCX0">&nbsp;software di analisi specifici e&nbsp;</span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">principali</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">librerie</span><span class="NormalTextRun SCXW171148062 BCX0"> di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">analisi</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">dati</span><span class="NormalTextRun SCXW171148062 BCX0"> Python. </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">Costruire</span><span class="NormalTextRun SCXW171148062 BCX0"> un software di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">analisi</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">dati</span><span class="NormalTextRun SCXW171148062 BCX0"> per </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">combinare</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">dati</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">osservativi</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">provenienti</span><span class="NormalTextRun SCXW171148062 BCX0"> da </span><span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">strumenti</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">diversi</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">nel</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW171148062 BCX0">contesto</span><span class="NormalTextRun SCXW171148062 BCX0"> multimessaggero.</span></p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Skills</div>
+<span class="contenuto_programma"><p><span class="TextRun SCXW143030651 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW143030651 BCX0">Collect and </span><span class="NormalTextRun SCXW143030651 BCX0">r</span><span class="NormalTextRun SCXW143030651 BCX0">ead observational data, </span><span class="NormalTextRun SCXW143030651 BCX0">with observations </span><span class="NormalTextRun SCXW143030651 BCX0">or </span><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2Themed SCXW143030651 BCX0">from </span><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2Themed SCXW143030651 BCX0">&nbsp;online</span><span class="NormalTextRun SCXW143030651 BCX0"> archives. Using Python language to develop analysis tools for electromagnetic </span><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2Themed SCXW143030651 BCX0">an</span><span class="NormalTextRun SCXW143030651 BCX0"> gravitational radiation, as well as cosmic rays. Using main analysis methods to&nbsp;analize&nbsp;data in radio, visible light, X, gamma rays, gravitational waves, also using specific analysis software and main Python analysis libraries. Build </span><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2Themed SCXW143030651 BCX0">a</span><span class="NormalTextRun SCXW143030651 BCX0"> analysis software that </span><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2Themed SCXW143030651 BCX0">combine</span><span class="NormalTextRun SCXW143030651 BCX0"> observational data coming from different instruments in the </span><span class="NormalTextRun SpellingErrorV2Themed SCXW143030651 BCX0">multimessenger</span><span class="NormalTextRun SCXW143030651 BCX0"> context.</span></span><span class="EOP SCXW143030651 BCX0" data-ccp-props="{">&nbsp;</span></p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle capacit&agrave;</div>
+<span class="contenuto_programma"><p><span data-contrast="auto">L'abilit&agrave; nell'uso degli strumenti e metodi pi&ugrave; adeguati per studiare una sorgente cosmica viene verificata durante le esperienze &nbsp;di osservazione e analisi dati durante l&rsquo;anno e durante la prova orale finale. Dopo una parte introduttiva iniziale, durante le esperienze gli studenti saranno suddivisi in gruppi.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">&nbsp;</span></p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of skills</div>
+<span class="contenuto_programma"><p><span class="NormalTextRun SCXW179268254 BCX0">The skill in using the most </span><span class="NormalTextRun SpellingErrorV2Themed SCXW179268254 BCX0">adeguate</span><span class="NormalTextRun SCXW179268254 BCX0"> analysis tools and methods for a certain cosmic source will be assessed through </span><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2Themed SCXW179268254 BCX0">the</span><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2Themed SCXW179268254 BCX0"> observation</span><span class="NormalTextRun SCXW179268254 BCX0"> and</span><span class="NormalTextRun SCXW179268254 BCX0"> data analysis </span><span class="NormalTextRun SCXW179268254 BCX0">experiences</span><span class="NormalTextRun SCXW179268254 BCX0"> during the year and in the final oral exam. </span><span class="NormalTextRun SCXW179268254 BCX0">Following an introductory part, during the experiences the students will work in groups</span><span class="NormalTextRun SCXW179268254 BCX0">.</span></p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Comportamenti</div>
+<span class="contenuto_programma"><p><span class="NormalTextRun SCXW128991300 BCX0">Lo </span><span class="NormalTextRun SpellingErrorV2Themed SCXW128991300 BCX0">studente</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW128991300 BCX0">acquisisce</span><span class="NormalTextRun SCXW128991300 BCX0"> la </span><span class="NormalTextRun SpellingErrorV2Themed SCXW128991300 BCX0">terminologia</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW128991300 BCX0">corretta</span><span class="NormalTextRun SCXW128991300 BCX0">, </span><span class="NormalTextRun SpellingErrorV2Themed SCXW128991300 BCX0">sa</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW128991300 BCX0">utilizzare</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW128991300 BCX0">i</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW128991300 BCX0">metodi</span><span class="NormalTextRun SCXW128991300 BCX0"> e </span><span class="NormalTextRun SpellingErrorV2Themed SCXW128991300 BCX0">i</span><span class="NormalTextRun SCXW128991300 BCX0"> software di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW128991300 BCX0">analisi</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW128991300 BCX0">pi&ugrave;</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW128991300 BCX0">appropriati</span><span class="NormalTextRun SCXW128991300 BCX0"> e, </span><span class="NormalTextRun SpellingErrorV2Themed SCXW128991300 BCX0">ove</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW128991300 BCX0">necessario</span><span class="NormalTextRun SCXW128991300 BCX0">, </span><span class="NormalTextRun SpellingErrorV2Themed SCXW128991300 BCX0">sa</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW128991300 BCX0">sviluppare</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW128991300 BCX0">semplici</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW128991300 BCX0">programmi</span><span class="NormalTextRun SCXW128991300 BCX0"> di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW128991300 BCX0">analisi</span><span class="NormalTextRun SCXW128991300 BCX0"> in Python.</span></p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Behaviors</div>
+<span class="contenuto_programma"><p><span class="NormalTextRun SCXW106836272 BCX0">The student </span><span class="NormalTextRun SCXW106836272 BCX0">acquires</span><span class="NormalTextRun SCXW106836272 BCX0"> the correct terminology, uses </span><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2Themed SCXW106836272 BCX0">properly</span><span class="NormalTextRun SCXW106836272 BCX0"> methods and analysis tools and if needed, </span><span class="NormalTextRun AdvancedProofingIssueV2Themed SCXW106836272 BCX0">is able to</span><span class="NormalTextRun SCXW106836272 BCX0"> develop analysis programs with Python.</span></p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica dei comportamenti</div>
+<span class="contenuto_programma"><p><span class="NormalTextRun SpellingErrorV2Themed SCXW170750316 BCX0">L'uso</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW170750316 BCX0">della</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW170750316 BCX0">terminologia</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW170750316 BCX0">corretta</span><span class="NormalTextRun SCXW170750316 BCX0"> e il </span><span class="NormalTextRun SpellingErrorV2Themed SCXW170750316 BCX0">corretto</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW170750316 BCX0">ragionamento</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW170750316 BCX0">sono</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW170750316 BCX0">valutati</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW170750316 BCX0">nelle</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW170750316 BCX0">relazioni</span><span class="NormalTextRun SCXW170750316 BCX0"> di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW170750316 BCX0">laboratorio</span><span class="NormalTextRun SCXW170750316 BCX0"> e </span><span class="NormalTextRun SpellingErrorV2Themed SCXW170750316 BCX0">durante</span><span class="NormalTextRun SCXW170750316 BCX0"> la </span><span class="NormalTextRun SpellingErrorV2Themed SCXW170750316 BCX0">prova</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW170750316 BCX0">orale</span><span class="NormalTextRun SCXW170750316 BCX0">.</span></p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of behaviors</div>
+<span class="contenuto_programma"><p><span class="TextRun SCXW34576061 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW34576061 BCX0">Correct terminology and reasoning are assessed in the laboratory reports and during the oral exam.</span></span></p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><p><span class="TextRun SCXW238003231 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SpellingErrorV2Themed SCXW238003231 BCX0">Conoscenze</span><span class="NormalTextRun SCXW238003231 BCX0"> di base di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW238003231 BCX0">relativit&agrave;</span><span class="NormalTextRun SCXW238003231 BCX0"> ed </span><span class="NormalTextRun SpellingErrorV2Themed SCXW238003231 BCX0">elettromagnetismo</span><span class="NormalTextRun SCXW238003231 BCX0">, di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW238003231 BCX0">processi</span><span class="NormalTextRun SCXW238003231 BCX0"> di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW238003231 BCX0">interazione</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW238003231 BCX0">radiazione-materia</span><span class="NormalTextRun SCXW238003231 BCX0">. </span><span class="NormalTextRun SpellingErrorV2Themed SCXW238003231 BCX0">Conoscenza</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW238003231 BCX0">delle</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW238003231 BCX0">tecniche</span><span class="NormalTextRun SCXW238003231 BCX0"> di </span><span class="NormalTextRun SCXW238003231 BCX0">base di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW238003231 BCX0">analisi</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW238003231 BCX0">statistica</span><span class="NormalTextRun SCXW238003231 BCX0">. </span><span class="NormalTextRun SpellingErrorV2Themed SCXW238003231 BCX0">Conoscenza</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW238003231 BCX0">delle</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW238003231 BCX0">basi</span><span class="NormalTextRun SCXW238003231 BCX0"> del </span><span class="NormalTextRun SpellingErrorV2Themed SCXW238003231 BCX0">linguaggio</span><span class="NormalTextRun SCXW238003231 BCX0"> Python.</span></span></p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites</div>
+<span class="contenuto_programma"><p><span class="TextRun SCXW37879384 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW37879384 BCX0">Basic knowledge of relativity and electromagnetism. Basics of radiation-matter interaction processes. Knowledge of basic statistical analysis. Knowledge of the basics of Python language.</span></span></p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p><span data-contrast="auto">INTRODUZIONE</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Richiami su grandezze fondamentali in astrofisica. Coordinate astronomiche. &nbsp;Introduzione all&rsquo;astrofisica multifrequenza e multimessaggera, motivazione e principali risultati Cataloghi, formato dati e risorse online per astrofisica multifrequenza. &nbsp;. Programmazione a oggetti con Python e librerie per astronomia</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Introduzione all&rsquo;analisi dati con Python. Lettura e manipolazione dati astrofisici con i pacchetti Numpy, Scipy, Pandas e Astropy. </span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">-Il formato dati FITS</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">-Basi di programmazione a oggetti con Python. Software di controllo versione moderni per la gestione di progetti di analisi dati. &nbsp;</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">-Semplici progetti introduttivi sull'utilizzo di Python per la lettura e manipolazione di dati astrofisici.&nbsp;</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">&nbsp;</span></p>
+<p><span data-contrast="auto">RADIAZIONE ELETTROMAGNETICA DI BASSA ENERGIA - ONDE RADIO E LUCE VISIBILE</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Processi di emissione di radiazione nel dominio delle onde radio. Equazioni del trasporto radiativo, spettro di corpo nero. Emissioni non termiche. Principali sorgenti astrofisiche. Elementi di rivelazione delle onde radio con radiotelescopi. Caratteristiche dei radiotelescopi.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Tecniche osservative in luce visibile. Richiami di ottica geometrica e configurazioni ottiche dei telescopi. Principali caratteristiche dei telescopi: ottiche e montatura. Flussi, magnitudini e grandezze fotometriche. Sistemi di acquisizione CCD. Tecniche fotometriche. Cenni base di spettroscopia.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Radiostronomia: Progetto di osservazione e analisi dati </span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Progetto di osservazione e fotometria nel visibile</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">&nbsp;</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">RADIAZIONE ELETTROMAGNETICA DI ALTA ENERGIA</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Processi di emissione di radiazione X e gamma. Meccanismi di interazione radiazione materia ad alte energie e tecniche di rivelazione nell&rsquo;astrofisica X e gamma. Polarimetria X. Principali rivelatori di raggi X e gamma e principali sorgenti astrofisiche alle alte energie.</span><span data-ccp-props="{">&nbsp;</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Progetto di analisi dati su osservazione multifrequenza di raggi X e gamma da una sorgente transiente. Il caso dei Gamma Ray Burst</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">&nbsp;</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">ONDE GRAVITAZIONALI</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">Cenni di relativit&agrave; generale e introduzione alle onde gravitazionali. Principali sorgenti di onde gravitazionali e stato delle osservazioni. &nbsp;Rivelatori di onde gravitazionali, dalle &nbsp;barre risonanti agli interferometri. Il problema del rumore. Formato dati e analisi dei segnali gravitazionali. Tecniche di rivelazione: Matched filtering e excess power. Stima dei parametri.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Progetto di analisi dati di coalescenza di un sistema binario compatto.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">&nbsp;</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">ASTROFISICA MULTIMESSAGGERA MODERNA</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Principali sorgenti multimessaggere. Ruolo, motivazione e breve storia dell&rsquo;astrofisica multimessaggera.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">-Stato dell&rsquo;arte delle osservazioni multimessaggere. Luce e onde gravitazionali. Il ruolo dei GRB. Osservazioni e risultati dall&rsquo;evento GW170817.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">-Il ruolo dell&rsquo;astrofisica neutrinica. Processi di emissione e risultati osservativi.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">INTRODUZIONE AI METODI DI ANALISI MODERNI BASATE SU MACHINE LEARNING</span><span data-ccp-props="{">&nbsp;</span><span data-contrast="auto">&nbsp;</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">Introduzione alle tecniche di machine learning. Principali tipologie di algoritmi. Struttura di un algoritmo di machine learning. Esempi di applicazioni di metodi di machine learning in ambito multimessaggero.</span><span data-ccp-props="{">&nbsp;</span></p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p><span data-contrast="auto">INTRODUCTION</span></p>
+<p><span data-contrast="auto">- Basic quantities in astrophysics. Introduction to the multifrequency astrophysics. Catalogs, data format and online resource for multifrequency astrophysics. Introdution to the multimessenger astrophysics, motivation and main results. Object-oriented programming in Python and astronomy libraries.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">-Introduction to data analysis with Python. How to read and manipulate astrophysical data with Numpy, Scipy, Pandas, Astropy. </span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">-The FITS data format</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">-Basics of object oriented programming with Python</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Modern version control softwares to manage data analysis projects.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Simple introductory projects on Python for reading and manipulating astrophysical data.&nbsp;</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">&nbsp;</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">LOW-ENERGY ELECTROMAGNETIC RADIATION &ndash; RADIO WAVES AND VISIBLE LIGHT</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Emission processes in radio domain. Equation of radiative transfer. Black body spectrum, non thermal emission. Main astrophysical sources. Radio waves detection and radiotelescopes. Main characteristics of radiotelescopes</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Observational techniques in visible light: Basics of geometrical optics and optical configurations of telescopes. Main characteristics of telescopes: optics and mounts. Fluxes, magnitudes and phometric systems. CCD acquisition systems. Photometric techniques. Basics of spectroscopy.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Radioastronomy: Observations and ata analysis project.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Observations and photometry in visible light</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">&nbsp;</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">HIGH-ENERGY ELECTROMAGNETIC RADIATION</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- X and gamma ray emission processes. Interaction radiation-matter at high energies and X-ray and gamma-ray detection methods. X-ray polarimetry. Main X and gamma ray detectors and main high-energy astrophysical sources.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Data analysis project on multiwavelenght X-ray and gamma ray analysis of a transient source. The case of Gamma Ray Bursts.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">&nbsp;</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">GRAVITATIONAL WAVES</span><span data-ccp-props="{">&nbsp;</span><span data-contrast="auto">&nbsp;</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">Introduction to general relativity and to gravitational waves. Main gravitational wave sources and state of the art of the observations. Detectors, from resonant bars to interferometers. The problem of noise. &nbsp;Data format and analysis of gravitational waves &nbsp;Detection techniques: matched filtering and excess power. Parameter estimation.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Data analysis project on compact binary system coalescence.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p><span data-contrast="auto">MODERN MULTIMESSENGER ASTROPHYSICS</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Main multimessenger sources. The role and motivation of multimessenger astrophysics. Brief history of multimessenger astrophysics</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- State of the art of multimessenger observations. Light and gravitational waves. The role of GRBs. Observations and results on the GW170817 event</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- The role of neutrino astrophysics. Emission processes and observational results</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">INTRODUCTION TO MODERN ANALYSIS METHODS BASED ON MACHINE LEARNING</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">Introduction to machine learning techniques. Principal typologies of algorithms. Structure of a machine learning algorithm. Sample applications of machine learning on multimessenger Physics.</span><span data-ccp-props="{">&nbsp;</span></p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p><span data-contrast="auto">Libri di testo universitari di metodi sperimentali in astrofisica e fisica multimessaggera, astrofisica delle alte energie e di fisica delle onde gravitazionali (parti relative ai metodi sperimentali e all&rsquo;analisi dei dati).</span></p>
+<p><span data-contrast="auto">In particolare:</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Smith, "Observational Astrophysics", Cambridge University Press.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Chromey, "To measure the sky", Cambridge University Press.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Longair, M. &ldquo;High Energy Astrophysics&rdquo;, Cambridge Ed.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Maggiore, M. &ldquo;Gravitational Waves, Vol. 1&rdquo;, Oxford Ed.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Creighton, D.E. &amp; Anderson, W. G., &ldquo;Gravitational-Wave Physics and Astronomy&rdquo;, Wiley Ed.</span><span data-ccp-props="{">&nbsp;</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Manuali e risorse online sulla programmazione in Python e sull&rsquo;uso dei software di riduzione dati impiegati nel corso.</span></p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Bibliography</div>
+<span class="contenuto_programma"><p><span data-contrast="auto">University-level textbooks on experimental methods in astrophysics and multimessenger physics, of high-energy astrophysics and gravitational wave physics (chapters on data analysis).</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">In particular:</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Smith, "Observational Astrophysics", Cambridge University Press</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Chromey, "To measure the sky", Cambridge University Press.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Longair, M. &ldquo;High Energy Astrophysics&rdquo;, Cambridge Ed.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Maggiore, M. &ldquo;Gravitational Waves, Vol. 1&rdquo;, Oxford Ed.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Creighton, D.E. &amp; Anderson, W. G., &ldquo;Gravitational-Wave Physics and Astronomy&rdquo;, Wiley Ed.</span><span data-ccp-props="{">&nbsp;</span></p>
+<p><span data-contrast="auto">- Manuals and online resources on Python programming and on the software of data reduction used during the course.</span></p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p><span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">L'esame</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">consiste</span><span class="NormalTextRun SCXW106473266 BCX0"> in </span><span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">una</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">prova</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">orale</span><span class="NormalTextRun SCXW106473266 BCX0"> in cui </span><span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">vengono</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">descussi</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">i</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">progetti</span><span class="NormalTextRun SCXW106473266 BCX0"> di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">analisi</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">dati</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">realizzati</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">durante</span><span class="NormalTextRun SCXW106473266 BCX0"> il </span><span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">corso</span><span class="NormalTextRun SCXW106473266 BCX0">. Le </span><span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">relazioni</span><span class="NormalTextRun SCXW106473266 BCX0"> sui </span><span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">singoli</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">progetti</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">sono</span><span class="NormalTextRun SCXW106473266 BCX0"> il punto di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">partenza</span><span class="NormalTextRun SCXW106473266 BCX0"> per </span><span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">l&rsquo;approfondimento</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">delle</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">tematiche</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">sperimentali</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">trattate</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">nel</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">corso</span><span class="NormalTextRun SCXW106473266 BCX0">. In base alle </span><span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">restrizioni</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">previste</span><span class="NormalTextRun SCXW106473266 BCX0"> in </span><span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">conseguenza</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">della</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">situazione</span><span class="NormalTextRun SCXW106473266 BCX0"> di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">pandemia</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">agli</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">studenti</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">sar&agrave;</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">fornita</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">una</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">piattaforma</span><span class="NormalTextRun SCXW106473266 BCX0"> dove </span><span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">poter</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">sviluppare</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">i</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">progetti</span><span class="NormalTextRun SCXW106473266 BCX0"> di </span><span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">analisi</span> <span class="NormalTextRun SpellingErrorV2Themed SCXW106473266 BCX0">proposti</span><span class="NormalTextRun SCXW106473266 BCX0">.</span></p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Assessment methods</div>
+<span class="contenuto_programma"><p><span class="TextRun SCXW58697270 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW58697270 BCX0">Assessment is done through an oral exam, where the data analysis projects carried on during the course are discussed. The laboratory reports on the single projects are the starting point for a broader discussion on the topics of the course. </span><span class="NormalTextRun AdvancedProofingIssueV2Themed SCXW58697270 BCX0">As a consequence of</span><span class="NormalTextRun SCXW58697270 BCX0"> the restrictions related to the </span><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2Themed SCXW58697270 BCX0">pandemic</span><span class="NormalTextRun SCXW58697270 BCX0"> we will </span><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2Themed SCXW58697270 BCX0">provide to</span><span class="NormalTextRun SCXW58697270 BCX0"> the </span><span class="NormalTextRun ContextualSpellingAndGrammarErrorV2Themed SCXW58697270 BCX0">students</span><span class="NormalTextRun SCXW58697270 BCX0"> a platform for the online development of the projects.</span></span><span class="EOP SCXW58697270 BCX0" data-ccp-props="{">&nbsp;</span></p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Pagina web del corso</div>
+<span class="contenuto_programma"><p><a href='https://elearning.df.unipi.it/course/view.php?id=337'>https://elearning.df.unipi.it/course/view.php?id=337</a></p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Class web page</div>
+<span class="contenuto_programma"><p><a href='https://elearning.df.unipi.it/course/view.php?id=337'>https://elearning.df.unipi.it/course/view.php?id=337</a></p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 13/09/2023 17:29</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/esami2/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-4e345eba.js"></script>
+<script src="../_assets/jquery-ui.min-e93c00aa.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-19dbc6e0.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-c8ee7689.js"></script> 
+<script src="../_assets/tinymce.min-e9308fd1.js"></script>
+<script src="../_assets/jquery.tinymce.min-65f0b191.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-3beded5a.js"></script>
+<script src="../_assets/unipi-3293f5f6.js"></script>
+<script src="../_assets/dm-10a06b2c.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

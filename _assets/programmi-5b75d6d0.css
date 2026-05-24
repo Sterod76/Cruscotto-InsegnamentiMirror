@@ -1,0 +1,129 @@
+/* Stili per interfaccia programmi d'esame */
+
+.mce-toolbar-grp {
+	background-repeat: no-repeat !important;
+	background-position: 95% center !important;
+}
+
+div.prog_it>div>div>div.mce-toolbar-grp {
+    background-image: url("ita-97fed1f1.gif") !important;
+}
+div.prog_en>div>div>div.mce-toolbar-grp {
+    background-image: url("uk-c1b1c41b.gif") !important;
+}
+
+.groupeditems {
+	border: 1px solid #BBBBBB;
+	padding: 0px 5px 5px 5px;
+}
+td.caselle {
+	color: #666;
+}
+tr.inte-caselle  td{
+	font-style: italic;
+}
+
+.titolo-elemento-programma {
+	color: #036;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 10px 3px 3px 0px;
+}
+legend.titolo-gruppo-elementi-programma {
+	color: #036;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+div.titolatura-insegnamento-programma {
+	color: #036;
+	font-size: 18px;
+	font-weight: bold;
+	width: 100%;
+}
+
+div.titolare-insegnamento-programma {
+	color: #036;
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+div.ultima-modifica-programma {
+	float: right;
+	font-size: 12px;
+	font-style: italic;
+	color: #666;
+}
+div.table-intestazione-programma {
+	/* border: 1px #BBB inset; */
+	border-radius: 5px;
+	padding: 3px;
+	min-width: 600px;
+}
+div.sub-item-programma {
+	margin-left: 20px;
+}
+div.sub-title-insegnamento-programma {
+	font-size: 12px;
+}
+
+.label-programma {
+	font-style: italic !important;
+	padding-right: 5px;
+	font-weight: bold;
+	font-size: 13px;
+	color: #666;
+}
+.value-programma {
+	color: #036;
+	/*font-weight: bold;*/
+	padding-right: 5px;
+	font-size: 13px;
+	vertical-align: top;
+}
+div.dettaglio-programma {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+div.eti-prog-pubblicato {
+	font-size: 12px;
+	font-style: italic;
+	font-weight: bold;
+	color: #666;
+	padding-left: 3px;
+}
+table.nomargin {
+	margin: 0px;
+	padding: 0px;
+	border-spacing: 0px;
+}
+span.prog-flags {
+	min-width: 60px;
+	display: inline-block;
+}
+
+label.error {
+	padding-top: 5px;
+	width: 500px;
+	text-transform: none;
+}
+.titoli_programmi_en {
+	font-style: italic;
+}
+
+img.sdgicon {
+	width: 100px;
+	height: 100px;
+}
+table.sdgtable {
+	border: 0;
+	margin: auto;
+	width: 90% !important; 
+}
+table.sdgtable td {
+	padding-top: 10px;
+	text-align: center;
+}
+/* Fine stili per interfaccia programmi d'esame */

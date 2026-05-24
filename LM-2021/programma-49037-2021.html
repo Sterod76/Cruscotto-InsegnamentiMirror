@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-dc764708.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5d307d3a.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-b777fb69.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-adef06ea.css" rel="stylesheet">
+		<link href="../_assets/style_v1-429eb70e.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-32df6655.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7c4d2527.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-57b8ccba.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-8e6319ba.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/esami2/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/esami2/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/esami2/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/esami2/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/esami2/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/esami2/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/esami2/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/esami2/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esami2/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/esami2/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/esami2/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/esami2/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/esami2/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/esami2/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/esami2/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/esami2/index.php">Home</a></li><li><a href="https://esami.unipi.it/esami2/programmi_insegnamenti.php?aa=2021&cid=1&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">FISICA NUCLEARE</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">IGNAZIO BOMBACI</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2021/22</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">206BB</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">9</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Primo semestre</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>FISICA NUCLEARE</TD><TD class='value-programma'>FIS/04</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>54</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>IGNAZIO BOMBACI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=5776' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/esami2/pdfProgCorsoStu.php?language=it&c=49037" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_en alert alert-warning">Programma non disponibile nella lingua selezionata</div><div class="prog_it" >
+<div class="titolo-elemento-programma"></div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma"></div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p align="center"><strong><span style="color: #000000;"><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: large;">PROGRAMMA DEL CORSO (a.a. 2021</span></span></span></strong><strong><span style="color: #000000;"><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: large;">-22</span></span></span></strong><strong><span style="color: #000000;"><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: large;">) </span></span></span></strong></p>
+<p><strong><span style="color: #000000;"><span style="font-family: Century Schoolbook L, serif;">- </span></span></strong><strong><span style="color: #000000;"><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: large;"> Propriet</span></span></span></strong><strong><span style="color: #000000;"><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: large;">&agrave;</span></span></span></strong><strong><span style="color: #000000;"><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: large;"> generali dei nuclei atomici </span></span></span></strong><span style="font-family: Century Schoolbook L, serif;"><br /> </span><strong><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: medium;"><span style="font-weight: normal;">Il nucleo atomico e i suoi costituenti. Dimensioni del nucleo. Diffusione di elettroni sul nucleo e fattore di forma nucleare. Distribuzione di carica nei nuclei. Misura delle dimensioni nucleari per mezzo di transizioni atomiche. Nuclei speculari. Stabilit</span></span></span></strong><strong><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: medium;"><span style="font-weight: normal;">&agrave;</span></span></span></strong><strong><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: medium;"><span style="font-weight: normal;"> e decadimento dei nuclei: decadimento alfa, beta e gamma. La legge del decadimento radioattivo. Catene di decadimenti radioattivi: equazioni di Bateman, serie radioattive naturali. Metodo di datazione con il radiocarbonio. Masse ed energia di legame dei nuclei. Il modello a goccia liquida del nucleo e la formula semi-empirica di massa. Spin e parit</span></span></span></strong><strong><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: medium;"><span style="font-weight: normal;">&agrave;</span></span></span></strong> <strong><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: medium;"><span style="font-weight: normal;"> dei nuclei. Momenti elettrici e magnetici dei nuclei. Reazioni nucleari: canali di reazione, sezione d'urto totale e differenziale. Coefficiente di attenuazione del fascio, bersagli sottili. </span></span></span></strong></p>
+<p><strong><span style="color: #000000;"><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: large;">- Interazione nucleare </span></span></span></strong><strong><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: small;"><br /> </span></span></strong><strong><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: medium;"><span style="font-weight: normal;">Il deutone: propriet</span></span></span></strong><strong><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: medium;"><span style="font-weight: normal;">&agrave;</span></span></span></strong><strong><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: medium;"><span style="font-weight: normal;"> generali. Il deutone con forze centrali. Dipendenza dallo spin della interazione nucleare. Componente tensoriale dell'interazione nucleare e operatore tensoriale. Momento di dipolo magnetico del deutone e stima della percentuale di onda D nella funzione d'onda del deutone. Diffusione elastica di due nucleoni. Lo spin isotopico e il principio di Pauli generalizzato. Teoria di Yukawa dell'interazione nucleare: scambio di pioni.&nbsp; <br /></span></span></span></strong></p>
+<p><strong><span style="color: #000000;"><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: large;"><strong>- Modelli nucleari </strong></span></span></span></strong><strong><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: small;"><br /> </span></span></strong><strong><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: medium;"><span style="font-weight: normal;">Il modello a gas di Fermi. Il modello a shell del nucleo. </span></span></span></strong></p>
+<p><strong><span style="color: #000000;"><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: large;"><strong>- Fisica nucleare in astrofisica </strong></span></span></span></strong><strong><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: small;"><br /> </span></span></strong><strong><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: medium;"><span style="font-weight: normal;">Fusione nucleare. I processi di fusione nucleare nelle stelle. Catena p-p e ciclo CNO.&nbsp; Cenni alle fasi finali dell'evoluzione stellare. Equazione di stato di un gas ideale di fermioni relativistici. Miscela di due gas di fermioni. Materia nucleare simmetrica e &beta;-stabile. Cenni alla struttura delle stelle di neutroni. </span></span></span></strong></p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p><strong>Libri di testo consigliati</strong></p>
+<ul>
+<li>K.S. Krane, Introductory Nuclear Physics, (J. Wiley &amp; Sons).</li>
+<li>J.-L. Basdevant, J. Rich, M. Spiro, Fundamentals in Nuclear Physics, (Springer).</li>
+<li>V.K. Sitenko, A.G. Tartakowskij, Lezioni di teoria del nucleo, (Edizioni MIR).</li>
+</ul></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p><strong><span style="color: #000000;"><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: large;">Prova orale </span></span></span></strong><span style="color: #000000;"><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: large;">sui vari argomenti trattati nel corso.</span></span></span><strong><span style="color: #000000;"><span style="font-family: Century Schoolbook L, serif;"><span style="font-size: large;"><br /></span></span></span></strong></p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 26/09/2021 18:49</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/esami2/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-4e345eba.js"></script>
+<script src="../_assets/jquery-ui.min-e93c00aa.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-19dbc6e0.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-c8ee7689.js"></script> 
+<script src="../_assets/tinymce.min-e9308fd1.js"></script>
+<script src="../_assets/jquery.tinymce.min-65f0b191.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-3beded5a.js"></script>
+<script src="../_assets/unipi-3293f5f6.js"></script>
+<script src="../_assets/dm-10a06b2c.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

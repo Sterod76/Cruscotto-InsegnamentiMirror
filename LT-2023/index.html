@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-9d88d2d3.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5e6adf09.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-3e1acd97.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-0be77ad4.css" rel="stylesheet">
+		<link href="../_assets/style_v1-8d07d3cb.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-795b32e7.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7ea9ead7.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-ce428c17.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-23a80404.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/index.php">Home</a></li><li><a href="">Programmi</a></li>
+<li><a href="https://esami.unipi.it/programmi_insegnamenti.php">Elenco per cds</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Programmi - Elenco per cds</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+			
+
+				<div class="alert alert-info">A partire dal 2024/25 i programmi d'esame sono pubblicati sulla piattaforma <a href='https://unipi.coursecatalogue.cineca.it/'>Course Catalogue</a></div>
+				<div>
+					Seleziona un dipartimento					<form action="programmi_insegnamenti.php" method="GET" name="fDip" id="fDip">
+						<select name="did" id="dipselect" class="populate placeholder">
+							<option value="0"></option>
+<option value="24"></option>
+<option value="9">DIPARTIMENTO DI BIOLOGIA</option>
+<option value="12">DIPARTIMENTO DI CHIMICA E CHIMICA INDUSTRIALE</option>
+<option value="18">DIPARTIMENTO DI CIVILTA' E FORME DEL SAPERE</option>
+<option value="17">DIPARTIMENTO DI ECONOMIA E MANAGEMENT</option>
+<option value="11">DIPARTIMENTO DI FARMACIA</option>
+<option value="3">DIPARTIMENTO DI FILOLOGIA, LETTERATURA E LINGUISTICA</option>
+<option value="4" selected >DIPARTIMENTO DI FISICA</option>
+<option value="5">DIPARTIMENTO DI GIURISPRUDENZA</option>
+<option value="13">DIPARTIMENTO DI INFORMATICA</option>
+<option value="2">DIPARTIMENTO DI INGEGNERIA CIVILE E INDUSTRIALE</option>
+<option value="1">DIPARTIMENTO DI INGEGNERIA DELL'ENERGIA, DEI SISTEMI, DEL TERRITORIO E DELLE COSTRUZIONI</option>
+<option value="19">DIPARTIMENTO DI INGEGNERIA DELL'INFORMAZIONE</option>
+<option value="20">DIPARTIMENTO DI MATEMATICA</option>
+<option value="16">DIPARTIMENTO DI MEDICINA CLINICA E SPERIMENTALE </option>
+<option value="8">DIPARTIMENTO DI PATOLOGIA CHIRURGICA, MEDICA, MOLECOLARE E DELL'AREA CRITICA</option>
+<option value="15">DIPARTIMENTO DI RICERCA TRASLAZIONALE E DELLE NUOVE TECNOLOGIE IN MEDICINA E CHIRURGIA</option>
+<option value="7">DIPARTIMENTO DI SCIENZE AGRARIE, ALIMENTARI E AGRO-AMBIENTALI</option>
+<option value="14">DIPARTIMENTO DI SCIENZE DELLA TERRA</option>
+<option value="10">DIPARTIMENTO DI SCIENZE POLITICHE</option>
+<option value="6">DIPARTIMENTO DI SCIENZE VETERINARIE</option>
+<option value="22">GENERICO</option>
+						</select>
+					</form>
+				</div>
+				<BR>
+				<div>
+					Seleziona un corso di studi					<form action="programmi_insegnamenti.php" method="GET" name="fCds" id="fCds" >
+											<input type="hidden" name="aa" value="2023">
+										
+						<input type="hidden" name="did" value="4">
+						<select name="cid" id="cdsSelect" class="populate placeholder">
+												</select>
+					</form>
+				<BR>
+				<div>
+					Seleziona un anno accademico					<form action="programmi_insegnamenti.php" method="GET" name="fAA" id="fAA" >
+					<input type="hidden" name="did" value="4">
+					<input type="hidden" name="cid" value="135">
+						<select name="aa" id="aaselect" class="populate placeholder">
+							<option value="2023" selected >2023/24</option>
+<option value="2022">2022/23</option>
+<option value="2021">2021/22</option>
+<option value="2020">2020/21</option>
+<option value="2019">2019/20</option>
+<option value="2018">2018/19</option>
+<option value="2017">2017/18</option>
+<option value="2016">2016/17</option>
+						</select>
+					</form>
+				</div>
+				<BR><BR>
+				<div class="row" id="rowTableInsegnamenti" >
+					<div class="panel panel-default col-xs-12">
+						<div class="panel-body">
+							<table class="table table-bordered table-hover table-heading table-datatable" id="datatable-programmi">
+								<thead>
+									<tr>
+										<th>Codice</th>
+										<th>Insegnamento</th>
+										<th>Docente/i</th>
+										<th>CFU</th>
+										<th>Periodo</th>
+										<th>Mutuato da</th>
+								<!--	<th></th>	-->
+									</tr>
+								</thead>
+								<tbody>
+								<TR><TD >416BB</TD><TD ><div class='inline-block'><A href='programma-60414-2023.html'>LA FISICA DI TUTTI I GIORNI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CHIOFALO MARIA LUISA</TD><TD >6</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >366BB</TD><TD ><div class='inline-block'><A href='programma-61736-2023.html'>INFORMATICA CON LABORATORIO</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >GROSSI ROBERTO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >347BB</TD><TD ><div class='inline-block'><A href='programma-60408-2023.html'>LABORATORIO 3 AVANZATO</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >ANNOVI ALBERTO, NICOLO' DONATO, RAMA MATTEO, RODA CHIARA MARIA ANGELA</TD><TD >6</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >349BB</TD><TD ><div class='inline-block'><A href='programma-60409-2023.html'>MECCANICA QUANTISTICA AVANZATA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >VICHI ALESSANDRO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >288BB</TD><TD ><div class='inline-block'><A href='programma-60402-2023.html'>ASTROFISICA GENERALE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >PRADA MORONI PIER GIORGIO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >035BB</TD><TD ><div class='inline-block'><A href='programma-60389-2023.html'>MECCANICA CLASSICA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >D'ELIA MASSIMO, MAROZZI GIOVANNI, ROSSINI DAVIDE</TD><TD >12</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >342BB</TD><TD ><div class='inline-block'><A href='programma-60410-2023.html'>STORIA CONCETTUALE DELLA FISICA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >SHORE STEVEN NEIL</TD><TD >6</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >719AA</TD><TD ><div class='inline-block'><A href='programma-60412-2023.html'>GEOMETRIA DIFFERENZIALE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CONTI DIEGO</TD><TD >6</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >042BB</TD><TD ><div class='inline-block'><A href='programma-60384-2023.html'>TECNOLOGIE DIGITALI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >Bianco Federica, FABBRI FILIPPO, PESCE LUCA, RODDARO STEFANO, VICARELLI LEONARDO</TD><TD >12</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >285BB</TD><TD ><div class='inline-block'><A href='programma-60405-2023.html'>TECNOLOGIE DIGITALI S</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >PITANTI ALESSANDRO, RODDARO STEFANO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >187DD</TD><TD ><div class='inline-block'><A href='programma-60404-2023.html'>ELEMENTI DI GEOFISICA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >ALEARDI MATTIA</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >180BB</TD><TD ><div class='inline-block'><A href='programma-60385-2023.html'>ELEMENTI DI STORIA DELLA FISICA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >MASSAI MARCO MARIA</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >1717Z</TD><TD ><div class='inline-block'><A href='programma-61681-2023.html'>PROVA DI LINGUA INGLESE B2</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >MANNELLA RICCARDO</TD><TD >3</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >289BB</TD><TD ><div class='inline-block'><A href='programma-60399-2023.html'>FLUIDODINAMICA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CALIFANO FRANCESCO, DEL POZZO WALTER</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >056CC</TD><TD ><div class='inline-block'><A href='programma-60386-2023.html'>CHIMICA GENERALE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >POMELLI CHRISTIAN SILVIO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >286BB</TD><TD ><div class='inline-block'><A href='programma-60398-2023.html'>TEORIA DEI GRUPPI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >KONISHI KENICHI</TD><TD >6</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >181BB</TD><TD ><div class='inline-block'><A href='programma-60383-2023.html'>FISICA DELL'ATMOSFERA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >SHORE STEVEN NEIL</TD><TD >6</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >250BB</TD><TD ><div class='inline-block'><A href='programma-60396-2023.html'>INTRODUZIONE ALLA FISICA SUBNUCLEARE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >LAMANNA GIANLUCA</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >367BB</TD><TD ><div class='inline-block'><A href='programma-60411-2023.html'>LABORATORIO 1 CON ELEMENTI DI COMPUTAZIONE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >BALDINI LUCA, BOSCHI VALERIO, CASAROSA GIULIA, DRIUTTI ANNA, GIUDICI SERGIO, MARIAN DAMIANO, PAPA ANGELA, SGRO' CARMELO, TOMADIN ANDREA</TD><TD >15</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >033BB</TD><TD ><div class='inline-block'><A href='programma-60391-2023.html'>LABORATORIO 2</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >ALLEGRINI MARIA, ANDREOZZI LAURA, BIANCHINI LORENZO, CIPRIANI MARCO, FUSO FRANCESCO, LAMANNA GIANLUCA, PASSUELLO DIEGO, PATRICELLI BARBARA</TD><TD >12</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >718AA</TD><TD ><div class='inline-block'><A href='programma-57375-2023.html'>GEOMETRIA E ALGEBRA LINEARE (A)</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CALLEGARO FILIPPO GIANLUCA, DISANTO FILIPPO</TD><TD >12</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >718AA</TD><TD ><div class='inline-block'><A href='programma-57540-2023.html'>GEOMETRIA E ALGEBRA LINEARE (B)</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >GAIFFI GIOVANNI, LOMBARDO DAVIDE</TD><TD >12</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >637AA</TD><TD ><div class='inline-block'><A href='programma-60401-2023.html'>COMPLEMENTI DI ANALISI MATEMATICA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >GOBBINO MASSIMO</TD><TD >6</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >632AA</TD><TD ><div class='inline-block'><A href='programma-57374-2023.html'>ANALISI MATEMATICA (A)</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >NOVAGA MATTEO, TORTORELLI VINCENZO MARIA</TD><TD >15</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >632AA</TD><TD ><div class='inline-block'><A href='programma-57539-2023.html'>ANALISI MATEMATICA (B)</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >PAOLINI EMANUELE, TORTORELLI VINCENZO MARIA</TD><TD >15</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >037BB</TD><TD ><div class='inline-block'><A href='programma-60394-2023.html'>METODI MATEMATICI 1</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >BOLOGNESI STEFANO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >175BB</TD><TD ><div class='inline-block'><A href='programma-60392-2023.html'>METODI MATEMATICI 2</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >MEGGIOLARO ENRICO</TD><TD >6</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >428BB</TD><TD ><div class='inline-block'><A href='programma-60415-2023.html'>ARMI NUCLEARI, DISARMO E PROLIFERAZIONE NUCLEARE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >FORTI FRANCESCO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >424BB</TD><TD ><div class='inline-block'><A href='programma-61631-2023.html'>FONDAMENTI DI OTTICA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CIAMPINI DONATELLA</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >672AA</TD><TD ><div class='inline-block'><A href='programma-60400-2023.html'>EQUAZIONI ALLE DERIVATE PARZIALI</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >SPAGNOLO SERGIO</TD><TD >6</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >224CC</TD><TD ><div class='inline-block'><A href='programma-60395-2023.html'>CHIMICA FISICA E LABORATORIO</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >GRANUCCI GIOVANNI</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >029BB</TD><TD ><div class='inline-block'><A href='programma-57372-2023.html'>FISICA 2 (A)</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >BIANCHINI LORENZO, CIAMPINI DONATELLA, MACCHI ANDREA</TD><TD >15</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >029BB</TD><TD ><div class='inline-block'><A href='programma-57537-2023.html'>FISICA 2 (B)</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CHIOFALO MARIA LUISA, FIDECARO FRANCESCO, STRUMIA ALESSANDRO</TD><TD >15</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >248BB</TD><TD ><div class='inline-block'><A href='programma-60397-2023.html'>FISICA 3</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >BATIGNANI GIOVANNI, BONATI CLAUDIO</TD><TD >9</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >028BB</TD><TD ><div class='inline-block'><A href='programma-57371-2023.html'>FISICA 1 (A)</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CEI FABRIZIO, GUALTIERI LEONARDO, PANCI PAOLO, POLINI MARCO, RAZZANO MASSIMILIANO</TD><TD >15</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >028BB</TD><TD ><div class='inline-block'><A href='programma-57536-2023.html'>FISICA 1 (B)</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CIGNONI MICHELE, MANNELLA RICCARDO, MARCUCCI LAURA ELISA, TOMADIN ANDREA, VIRGILIO MICHELE</TD><TD >15</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >034BB</TD><TD ><div class='inline-block'><A href='programma-60393-2023.html'>LABORATORIO 3</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >CARELLI GIORGIO, DE LUCIA MARIO, MARSILI PAOLO, MINUTI MASSIMO, MORSANI FABIO, NICOLO' DONATO, RODA CHIARA MARIA ANGELA, SPORTELLI GIANCARLO, TONCELLI ALESSANDRA</TD><TD >12</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >026BB</TD><TD ><div class='inline-block'><A href='programma-60387-2023.html'>FISICA DEI MATERIALI PER LA FOTONICA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >FARCHIONI RICCARDO</TD><TD >3</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >415BB</TD><TD ><div class='inline-block'><A href='programma-60413-2023.html'>PHYSICS OF SOUND</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >SOZZI MARCO STANISLAO</TD><TD >6</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >319BB</TD><TD ><div class='inline-block'><A href='programma-60407-2023.html'>LABORATORIO DI FISICA PER L'INSEGNAMENTO</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >GIUDICI SERGIO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >814II</TD><TD ><div class='inline-block'><A href='programma-60403-2023.html'>PRINCIPI MECCANICI PER L'INGEGNERIA NUCLEARE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >LO FRANO ROSA</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >815II</TD><TD ><div class='inline-block'><A href='programma-60406-2023.html'>PRINCIPI TERMICI I PER L'INGEGNERIA NUCLEARE</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >GALLENI FRANCESCO, PACI SANDRO</TD><TD >6</TD><TD >Primo semestre</TD><TD >&nbsp;</TD></TR>
+<TR><TD >258BB</TD><TD ><div class='inline-block'><A href='programma-57538-2023.html'>MECCANICA QUANTISTICA (B)</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >ALBA VINCENZO, VICARI ETTORE</TD><TD >15</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >258BB</TD><TD ><div class='inline-block'><A href='programma-57373-2023.html'>MECCANICA QUANTISTICA (A)</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >BONATI CLAUDIO, GUALTIERI LEONARDO</TD><TD >15</TD><TD >Annuale</TD><TD >&nbsp;</TD></TR>
+<TR><TD >041BB</TD><TD ><div class='inline-block'><A href='programma-60388-2023.html'>STRUTTURA DELLA MATERIA</A><span style="float:right;"><i class="fa fa-info-circle" title="Programma presente"></i></span></div></TD><TD >TOZZINI VALENTINA, TREDICUCCI ALESSANDRO</TD><TD >6</TD><TD >Secondo semestre</TD><TD >&nbsp;</TD></TR>
+								</tbody>
+							</table>
+							<div style="padding-left:30px;">
+								<i class="fa fa-info-circle"></i> Programma presente							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-fcc1cd77.js"></script>
+<script src="../_assets/jquery-ui.min-083c88ac.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-bc864bd9.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-cbd4a7f1.js"></script> 
+<script src="../_assets/tinymce.min-2396adf9.js"></script>
+<script src="../_assets/jquery.tinymce.min-cf2ee483.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-8144b60d.js"></script>
+<script src="../_assets/unipi-635b458d.js"></script>
+<script src="../_assets/dm-4aacbbca.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+
+
+function AllTables(){
+	TableProgrammi('it', '#datatable-programmi');
+	RedrawTable('#datatable-programmi');
+}
+
+
+function dipSelectChanged() {
+	$(".sessioni").hide();
+	$("#rowTableInsegnamenti").hide();
+	$(".sessioni").filter( $(".dip_" + this.value)).show();
+}
+
+function MakeSelect2(){
+	if(dm()) {
+		$('#dipselect').on("change", function(e) {
+			$("#fDip").submit();
+		});
+		$('#cdsSelect').on("change", function(e) {
+			$("#fCds").submit();
+		});
+		$('#aaselect').on("change", function(e) {
+			$("#fAA").submit();
+		});
+
+	} else {
+		$('#dipselect').select2({dropdownAutoWidth : true})  
+		.on("change", function(e) {
+			$("#fDip").submit();
+		});
+		$('#cdsSelect').select2({dropdownAutoWidth : true})  
+		.on("change", function(e) {
+			$("#fCds").submit();
+		});
+		$('#aaselect').select2({dropdownAutoWidth : true})  
+		.on("change", function(e) {
+			$("#fAA").submit();
+		});
+	}
+}
+
+
+$(document).ready(function() {
+	LoadDataTablesScripts(AllTables);
+	LoadSelect2Script(MakeSelect2);
+});
+
+</script>	
+

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-dc764708.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5d307d3a.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-b777fb69.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-adef06ea.css" rel="stylesheet">
+		<link href="../_assets/style_v1-429eb70e.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-32df6655.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7c4d2527.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-57b8ccba.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-8e6319ba.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/esami2/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/esami2/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/esami2/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/esami2/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/esami2/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/esami2/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/esami2/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/esami2/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esami2/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/esami2/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/esami2/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/esami2/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/esami2/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/esami2/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/esami2/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/esami2/index.php">Home</a></li><li><a href="https://esami.unipi.it/esami2/programmi_insegnamenti.php?aa=2019&cid=1&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">NONPERTURBATIVE APPROACHES  TO QUANTUM FIELD THEORIES / ASPETTI NON PERTURBATIVI  DELLE TEORIE DI CAMPO QUANTISTICHE</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">ETTORE VICARI</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2019/20</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">358BB</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">9</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Primo semestre</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>ASPETTI NON PERTURBATIVI DELLE TEORIE DI CAMPO QUANTISTICHE</TD><TD class='value-programma'>FIS/02</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>54</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>MASSIMO D'ELIA <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=87877' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>ETTORE VICARI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=4302' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>ALESSANDRO VICHI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=146424' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/esami2/pdfProgCorsoStu.php?language=it&c=41020" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p>Il corso "Aspetti non perturbativi delle teorie di campo quantistiche"<br />intende approfondire gli approcci piu' importanti che vengono<br />utilizzati nella fisica teorica per ottenere informazioni fisiche in<br />teorie interagenti dove gli accoppiamenti non sono deboli, quindi la<br />teoria delle perturbazioni non fornisce risultati affidabili.&nbsp; Nel<br />contesto della teoria delle interazioni fondamentali, questo succede<br />per la teorie delle interazioni forti (Cromodinamica Quantistica)<br />dove l'accoppiamento e' grande alle energie tipiche della fisica degli<br />adroni. Analogamente, approcci non-perturbativi sono richiesti<br />nell'ambito della teoria dello stato condensato e dei fenomeni<br />critici, dove i sistemi sono generalmente fortemente accoppiati.</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p>The purpose of the course is to provide a&nbsp;thorough knowledge about the main approaches used in theoretical physics to study strongly coupled system, which cannot be investigated by standard perturbative tools. Within the standard model of particle physics, this happens for Quantum Chromodynamics (QCD) at the low energy hadronic scale. Analogous non-perturbative approaches are required in condensed matter and in the theory of critical phenomena, where one usually deals with strongly coupled systems.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><p>L'accertamento delle conoscenze sara` basato su una discussione critica con il candidato riguardante gli argomenti del corso.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
+<span class="contenuto_programma"><p>It will be based on a critical discussion with the student regarding the main topics of the course.</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Capacit&agrave;</div>
+<span class="contenuto_programma"><p>Al termine del corso lo studente avra` acquisito conoscenze approfondite su alcuni argomenti avanzati di fisica teorica e padronanza di alcune tecniche utilizzate negli approcci non-perturbativi.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Skills</div>
+<span class="contenuto_programma"><p>Thorough knowledge about advanced topics in theoretical physics, mastery of non-perturbative techniques.</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle capacit&agrave;</div>
+<span class="contenuto_programma"><p>L'accertamento sara` basato su una discussione critica con il candidato riguardante gli argomenti del corso.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of skills</div>
+<span class="contenuto_programma"><p>It will be based on a critical discussion with the student regarding the main topics of the course.</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Comportamenti</div>
+<span class="contenuto_programma"><p>NA</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Behaviors</div>
+<span class="contenuto_programma"><p>NA</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica dei comportamenti</div>
+<span class="contenuto_programma"><p>NA</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of behaviors</div>
+<span class="contenuto_programma"><p>NA</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><p>Teoria quantistica dei campi.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites</div>
+<span class="contenuto_programma"><p>Quantum field theory</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni metodologiche</div>
+<span class="contenuto_programma"><p>Lezioni frontali</p>
+<p>Appunti dei docenti e/o articoli di rassegna resi disponibili su elearning</p>
+<p>Supporto diretto agli studenti tramite ricevimenti e per email</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Teaching methods</div>
+<span class="contenuto_programma"><p>Lectures</p>
+<p>Lecture notes and report papers will be available on elearning</p>
+<p>Direct support (meetings and emails)</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p>Nelle prime lezioni vengono introdotte le teorie di campo quantistiche<br />e statistiche, ripercorrendo brevemente gli aspetti fondamentali della<br />loro formulazione funzionale, degli sviluppi perturbativi, della teoria della<br />rinormalizzazione e del gruppo di rinormalizzazione nel contesto dello<br />sviluppo perturbativo (argomenti gia' sviluppati nel corso di Fisica<br />Teorica II, ma essenziali per fissare notazioni e argomenti<br />successivi).<br /><br />Da qui il corso prosegue, diviso in varie parti.<br /><br />(1) RENORMALIZATION GROUP THEORY.&nbsp; Viene sviluppata la teoria del<br />gruppo di rinormalizzazione alla Wilson, si presentano i paradigmi<br />fondamentali, quali i concetti di universalita', di flusso del gruppo<br />di rinormalizzazione nello spazio delle Hamiltoniane e dei suoi punti<br />fissi che descrivano molte proprieta' generali delle teorie. Vengono<br />illustrate le applicazioni nell'ambito dei fenomeni critici e delle<br />formulazioni delle teorie di campo quantistiche nel continuo, <br />vengono anche approfondite le relazioni le teorie di campo effettive<br />nell'ambito delle interazioni fondamentali.<br /><br />(2) LARGE N EXPANSION.&nbsp; Un approccio non-perturbativo molto utilizzato<br />nell'ambito delle teorie di campo fortemente interagenti e' quello<br />dello sviluppo rispetto all'inverso del numero di componenti del campo<br />fondamentale.&nbsp; Questo approccio permette di ottenere risultati<br />analitici basati sullo sviluppo del punto sella. Viene sviluppata in<br />dettaglio la soluzione per le teorie con simmetrie O(N) i cui campi<br />fondamentali sono scalari con N componenti, incluse le teorie di campo<br />nonlineari.&nbsp; Vengono illustrate le applicazioni ai fenomeni<br />critici. Inoltre si mostra come argomenti dello stesso tipo si<br />applichino alla teorie delle interazioni forti, fornendo informazioni<br />semiquantitative sulla fisica adronica, nonostante il limite di grande<br />N non sia stato analiticamente risolto.<br /><br />(3) LATTICE FIELD THEORY.&nbsp; Si approfondiscono le formulazioni non-perturbative <br />delle teorie di campo quantistiche in D dimensioni spaziali basate su <br />regolarizzazioni in uno spazio-tempo discretizzato (reticolo), dove il <br />limite del continuo si realizza nel limite critico di teorie statistiche <br />in D+1 dimensioni euclidee. Siamo nell'ambito delle cosiddette <br />Lattice Field Theories. In particolare, viene presentata la formulazione <br />su reticolo della QCD, che permette di ottenere risultati non-perturbativi <br />utilizzando tecniche numeriche tipiche delle teorie statistiche. <br />Vengono approfondite, in particolare, le seguenti problematiche:<br />i)&nbsp;&nbsp; formulazione di teorie con fermioni e realizzazione della simmetria chirale su reticolo; <br />ii)&nbsp; aspetti non-perturbativi del vuoto di QCD (proprieta` topologiche e confinanti);<br />iii) studio del diagramma di fase della QCD.<br />(n.b.: non verranno discussi gli aspetti piu` propriamente algoritmici e <br />numerici legati alla simulazione delle lattice field theories, <br />che sono trattati in altri corsi (Metodi Numerici della Fisica))<br /><br /><br />(4) CONFORMAL FIELD THEORY. Un punto fisso del gruppo di rinormalizzazione<br />possiede per definizione una simmetria di scala, in aggiunta alle solite simmetrie spaziali.<br />Queste simmetrie possono essere ulteriormente estese al gruppo di simmetria conforme,<br />ovvero l'insieme di trasformazioni che preserva gli angoli ma non le distanze.<br />Sfruttando a pieno questa proprieta`&nbsp; si possono estrarre informazioni generali sulle teorie di campo<br />che descrivono fenomeni critici e piu` in generale sul <br />comportamento a grandi o basse energie di una teoria di campo. <br />In alcuni casi e` anche possibile risolvere esattamente la teoria.<br />In questo modulo vengono affrontati i seguenti argomenti: <br />i)&nbsp;&nbsp; &nbsp;definizione di simmetria conforme;<br />ii)&nbsp;&nbsp; &nbsp;proprieta`&nbsp; delle teorie di campo conformi: ingredienti e condizioni di consistenza;<br />iii)&nbsp;&nbsp; &nbsp;esempi di teorie conformi: teorie di campo medio, teorie perturbative, <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; teorie esattamente solubili in 1+1 dimensioni;<br />iv)&nbsp;&nbsp; &nbsp;metodi numerici e analitici per estrarre informazioni: conformal bootstrap.<br /><br /></p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p>First lectures will focus on the main features of quantum and statistical field theories, on their functional formulation, on renormalization theory and the renormalization group treated within perturbation theory. This part will be essential to fix notations for the rest of the course, which will continue as follows.</p>
+<p>(1) RENORMALIZATION GROUP THEORY.&nbsp;</p>
+<p>Wilson renormalization group. Renormalization group flow and its fixed points. Universality. Applications to critical phenomena and to the continuum formulation of quantum field theories. Applications to effective field theories.</p>
+<p>(2) LARGE N EXPANSION.&nbsp;</p>
+<p>The expansion in the inverse number of the field components is one of the most used approaches in strongly interacting field theories. That permits to obtain analytical results based on a saddle point expansion. The method will be illustrated in detail for O(N) symmetric scalar field theories, including non-linear models and applications to critical phenomena. Applications to the theory of strong interactions will be discussed as well: in this case the large-N limit cannot be solved analytically, nonetheless the approach provides semiquantitative results which are useful for hadronic physics.</p>
+<p>(3) LATTICE FIELD THEORY.&nbsp;</p>
+<p>Quantum field theories will be regularized non-perturbatively on a discrete space time (lattice), where the continuum limit is achieved as the critical point of a statistical field theory in D+1 euclidean dimensions. The main focus will be on lattice QCD and on the following specific topics:</p>
+<p>i)&nbsp; discretization of fermion fields and realization of chiral symmetry on the lattice;</p>
+<p>ii)&nbsp; non-perturbative aspects of the QCD vacuum, topological properties and theta-dependence;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>iii) QCD phase diagram.</p>
+<p><br />(4) CONFORMAL FIELD THEORY.</p>
+<p>A fixed point of the renormalization group has, by definition, scale invariance in addition to usual space-time symmetries. These symmetries can be further extended to conformal symmetry, i.e. the group of transformations leaving angles (but not distances) unchanged. That implies the presence of many general properties regarding field theories close to a critical point, or more in general their behavior at low or at high energies; in some cases it is also possible to provide an exact solution to the theory. The main topics covered during the course will be:</p>
+<p>i)&nbsp;&nbsp;&nbsp; definition of conformal symmetry;</p>
+<p>ii)&nbsp;&nbsp; properties of conformal field theories and consistency conditions;</p>
+<p>iii)&nbsp; example of conformal field theories: mean field, perturbative field theories, exactly solvable theories in 1+1 dimensions;</p>
+<p>iv)&nbsp;&nbsp; numerical and analytical methods: the conformal bootstrap.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni per non frequentanti</div>
+<span class="contenuto_programma"><p>NA</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Non-attending students info</div>
+<span class="contenuto_programma"><p>NA</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p>Prova orale conclusiva consistente in una discussione critica riguardante gli argomenti del corso.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Assessment methods</div>
+<span class="contenuto_programma"><p>Final oral exam regarding a critical discussion about the topics of the course</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Stage e tirocini</div>
+<span class="contenuto_programma"><p>NA</p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 30/08/2019 11:03</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/esami2/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-4e345eba.js"></script>
+<script src="../_assets/jquery-ui.min-e93c00aa.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-19dbc6e0.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-c8ee7689.js"></script> 
+<script src="../_assets/tinymce.min-e9308fd1.js"></script>
+<script src="../_assets/jquery.tinymce.min-65f0b191.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-3beded5a.js"></script>
+<script src="../_assets/unipi-3293f5f6.js"></script>
+<script src="../_assets/dm-10a06b2c.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

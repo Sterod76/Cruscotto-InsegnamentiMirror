@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-dc764708.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5d307d3a.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-b777fb69.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-adef06ea.css" rel="stylesheet">
+		<link href="../_assets/style_v1-429eb70e.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-32df6655.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7c4d2527.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-57b8ccba.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-8e6319ba.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/esami2/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/esami2/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/esami2/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/esami2/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/esami2/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/esami2/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/esami2/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/esami2/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esami2/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/esami2/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/esami2/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/esami2/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/esami2/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/esami2/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/esami2/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/esami2/index.php">Home</a></li><li><a href="https://esami.unipi.it/esami2/programmi_insegnamenti.php?aa=2020&cid=1&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">FUNDAMENTAL INTERACTIONS / INTERAZIONI FONDAMENTALI</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">FRANCESCO FORTI</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2020/21</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">305BB</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">9</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Primo semestre</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>INTERAZIONI FONDAMENTALI</TD><TD class='value-programma'>FIS/04</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>54</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>FRANCESCO FORTI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=5452' target='_blank'>unimap</a></td></tr><tr><td class='value-programma'>GIOVANNI SIGNORELLI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=138692' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/esami2/pdfProgCorsoStu.php?language=it&c=44958" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Conoscenza&nbsp;quantitativa&nbsp;di base della&nbsp;&nbsp;fisica delle particelle elementari e delle loro interazioni, dal punto di vista fenomenologico e sperimentale. Conoscenza dello sviluppo temporale delle principale scoperte.</span></p>
+<p class="western">&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p>Basic quantitative knowledge of the the physics of elementary particles and of their interactions, from the phenomenological and experimental point of view. Knowledge of the time development of the main discoveries.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><p>La verifica delle conoscenze acquisite avviene attraverso un colloquio di esame.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
+<span class="contenuto_programma"><p>Acquired knowledge is verified through an oral exam.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Capacit&agrave;</div>
+<span class="contenuto_programma"><p>Valutazione quantitativa di processi di scattering e decadimento di particelle elementari. Progettazione concettuale di esperimenti di fisica delle particelle</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Skills</div>
+<span class="contenuto_programma"><p>Quantitative evaluation of scattering and decay processes of elementary particle. Conceptual design of particle physics experiments.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle capacit&agrave;</div>
+<span class="contenuto_programma"><p>La verifica delle capacit&agrave; acquisite avviene attraverso le&nbsp;discussioni degli esercizi proposti per casa e durante le esercitazioni e tramite un esame scritto che consiste nella risoluzione di alcuni esercizi.&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of skills</div>
+<span class="contenuto_programma"><p>Acquired skills are verified through the discussion of homework and classroom assignments and through a written exam consisting in the resolution of a few exercises.&nbsp;&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Conoscenze di elettromagnetismo avanzato, meccanica quantistica non relativistica e relativit&agrave; ristretta. Competenze di calcolo differenziale, algebra lineare, calcolo con matrici, analisi nel piano complesso</span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">. </span></span></p>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">La frequenza al corso presuppone il completamento della laurea triennale, e in particolare il superamento degli esami di Fisica 3 e </span><span lang="it-IT">Meccanica Quantistica.</span></span></p>
+<p class="western">&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites</div>
+<span class="contenuto_programma"><p>Advanced electromagnetism, non relativistic quantum mechanics and special relativity. Calculus, linear algebra, matrix calculation, complex plan analysis.&nbsp;</p>
+<p>This course assumes the completion of the bachelor degree, and with particular regard of the&nbsp;Physics 3 and Quantum mechancs courses.&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni metodologiche</div>
+<span class="contenuto_programma"><p>Il corso &egrave; organizzato con lezioni ed esercitazioni in aula con frequenza fortemente consigliata.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Teaching methods</div>
+<span class="contenuto_programma"><p>The course is organized with classroom lessons and exercise sessions, with strongly adviced in person attendance.&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p class="western"><span lang="it-IT">Modulo 1: </span> <span lang="it-IT">Metodologie di base </span><span lang="it-IT">(12)</span></p>
+<ul>
+<li>
+<p class="western"><span lang="it-IT">Richiami di cinematica relativistica. </span><span lang="it-IT">Notazione per i quadri-vettori. </span><span lang="it-IT">Invarianti relativistici di Mandelstam. Unit&agrave; di misura naturali.</span></p>
+</li>
+<li>
+<p class="western"><span lang="it-IT">Le equazioni relativistiche di </span><span lang="it-IT">Klein-Gordon e di Dirac. Classificazione delle particelle elementari: fermioni e bosoni; particelle ed antiparticelle </span><span lang="it-IT">[Esperimento di Anderson: s</span><span lang="it-IT">c</span><span lang="it-IT">operta del positrone]</span></p>
+</li>
+<li>
+<p class="western"><span lang="it-IT">Metodi sperimentali della fisica delle particelle. Sorgenti: raggi cosmici, reattori ed isotopi, acceleratori. Fasci estratti e collisori. Tecniche di rivelazione. </span><span lang="it-IT">[Esempi di acceleratori e rivelatori]</span></p>
+</li>
+<li>
+<p class="western"><span lang="it-IT">Decadimenti e </span><span lang="it-IT">collisioni</span><span lang="it-IT">: vita media, larghezza, sezione d'urto; matrice di transizione, spazio delle fasi, regola d'oro di Fermi.</span></p>
+</li>
+<li>
+<p class="western"><span lang="it-IT">Diagrammi di Fey</span><span lang="it-IT">nm</span><span lang="it-IT">an e metodi di calcolo.</span></p>
+</li>
+</ul>
+<p class="western"><br /> Modulo 2: Introduzione storica e fenomenologica (6)</p>
+<ul>
+<li>
+<p class="western"><span lang="it-IT">Breve storia della </span><span lang="it-IT">scoperta delle particelle elementari </span><span lang="it-IT">e della costruzione del modello standard.</span></p>
+</li>
+<li>
+<p class="western"><span lang="it-IT">F</span><span lang="it-IT">otone, mesoni, antiparticelle, barioni, leptoni, particelle strane, quarks e gluoni, i bosoni vettori intermedi, il bosone di Higgs.</span></p>
+</li>
+<li>
+<p class="western"><span lang="it-IT">Principali caratteristiche della f</span><span lang="it-IT">enomenologia delle interazioni fondamentali </span><span lang="it-IT">e del modello standard. </span></p>
+</li>
+</ul>
+<p class="western">&nbsp;</p>
+<p class="western">Modulo 3: <span style="font-family: Arial, sans-serif;"><span lang="it-IT">Simmetrie e leggi di conservazione. </span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">(12)</span></span></p>
+<ul>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">S</span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">immetrie, leggi di conservazione, rottura della simmetria.</span></span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">S</span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">immetrie discrete C,P e T. Enunciato del Teorema CPT.</span></span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">C</span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">oniugazione di carica intrinseca C. C del fotone e pi0</span></span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Parità spaziale e parità per scambio. Funzioni d'onda simmetriche ed antisimmetriche </span><span lang="it-IT">for bosoni e fermioni.</span><span lang="it-IT"> Principio di esclusione di Pauli.</span></span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">P</span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">arità intrinseca delle particelle </span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">(P)</span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">. </span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Parit&agrave; del pione.</span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT"><br /> </span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">[E</span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">sperimento di Chinowsky e Steinberger (1954) sulla cattura di pioni lenti da deuterio</span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">]</span></span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Simmetrie continue, </span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">e leggi di conservazione. </span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Enunciato t</span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">eorema di Noether.</span></span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Uso della teoria dei gruppi </span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">e loro rappresentazioni. Momenti angolari e regole di composizione.</span></span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Simmetria di isospin. Doppietti (nucleone) e tripletti (pione).</span></p>
+<p class="western" lang="it-IT">&nbsp;</p>
+</li>
+</ul>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Modulo 4: Elettrodinamica </span><span lang="it-IT">(6)</span></span></p>
+<ul>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Conservazione d</span><span lang="it-IT">ella</span><span lang="it-IT"> carica e simmetria di gauge</span></span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Interazione come scambio di particelle. Particelle virtuali. [Esperimento di Lamb e Retherford]</span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Diagrammi Feynman per la QED</span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Annichilazione e+e- in una coppia di mu.</span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Positronio, struttura dei livelli, canali di decadimento.</span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Evoluzione di alpha.</span></p>
+</li>
+</ul>
+<p class="western" lang="it-IT">&nbsp;</p>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Modulo 5: </span><span lang="it-IT">Gli a</span><span lang="it-IT">droni </span><span lang="it-IT">e </span><span lang="it-IT">le interazioni forti (</span><span lang="it-IT">1</span><span lang="it-IT">2</span><span lang="it-IT">)</span></span></p>
+<ul>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Risonanze adroniche. I barioni 3/2+. Il plot di Dalitz. </span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Momento angolare e parità degli stati finali a due e tre pioni carichi o neutri. </span><span lang="it-IT">Mesoni vettoriali e pseudo-scalari.</span><span lang="it-IT"> [Il puzzle theta-tau]</span></span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Produzione associata K0 &ndash; Lambda e la scoperta della stranezza. Simmetria SU(3) di flavor.</span> </span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Il modello a quark, mesoni e barioni. </span><span lang="it-IT">Numero barionico. </span><span lang="it-IT">Organizzazione in ottetti e decupletti.</span></span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Produzione adronica ai collisionatori </span><span lang="it-IT">e+e-</span><span lang="it-IT">. </span><span lang="it-IT">R</span><span lang="it-IT">apporto R tra processi adronici </span><span lang="it-IT">coppie di mu</span><span lang="it-IT">. Evidenz</span><span lang="it-IT">a</span><span lang="it-IT"> sperimentali del colore. </span></span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">L</span><span lang="it-IT">a scoperta della J/psi e dei suoi stati eccitati. </span><span lang="it-IT">[Esperimenti di Richter e Ting e la november revolution]</span></span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Distribuzione angolare dei jet e spin dei quark. Eventi a tre jet adronici ed evidenza dei gluoni. </span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Misure di alfa_s e dipendenza dall' energia. La regola di selezione O.Z.I. </span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">La terza famiglia ed il completamento del modello a quark.</span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Quarkonio.</span></p>
+</li>
+</ul>
+<p class="western" lang="it-IT">&nbsp;</p>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Modulo 6: </span><span lang="it-IT">Le interazioni deboli </span><span lang="it-IT">(12)</span></span></p>
+<ul>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Il decadimento del muone. P</span><span lang="it-IT">ro</span><span lang="it-IT">cesso a 4 fermioni e costante di Fermi.</span></span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Il decadimento del neutrone e del pione. </span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">I neutrini e la conservazione del flavor leptonico. [Esperimento nu_mu]</span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Limiti sulle masse dei neutrini. [Esp...]</span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Violazione della parit&agrave; nelle interazioni deboli. Elicit&agrave; e chiralit&agrave;. Violazione della coniugazione particella-antiparticella (CP)</span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">(Mi piacerebbe ma mi sembra troppa roba ?) Il sistema del K neutro, autostati di massa ed autostati di CP. Oscillazioni K-Kbar. [Esperimento di Cronin e Fitch (1964) sulla misura della violazione di CP]</span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Le correnti deboli cariche dei quark e l'angolo di Cabibbo. </span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">I</span><span lang="it-IT">l charm ed il meccanismo GIM. </span></span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">La matrice CKM di mescolamento dei quark.</span></p>
+</li>
+</ul></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p class="western"><span lang="it-IT">Modul</span><span lang="it-IT">e</span><span lang="it-IT"> 1: </span> <span lang="it-IT">Basic methodology</span> <span lang="it-IT">(12)</span></p>
+<ul>
+<li>
+<p class="western"><span lang="it-IT">Reminder of relativistic kinematics. Notation for 4-vectors. Mandelstam relativistic invariants. Natural units</span></p>
+</li>
+<li>
+<p class="western">Experimental methods in particle physics. Sources: cosmic rays, reactors and isotopes, accelerators. Extracted beams and colliders</p>
+</li>
+<li>
+<p class="western"><span lang="it-IT">Summary of radiation detection techniques and detectors. </span></p>
+</li>
+<li>
+<p class="western"><span lang="it-IT">Scattering and decay. Mean life, width, cross section. Lorentz-invariant phase space. Transition matrix. Fermi golden rule.</span></p>
+</li>
+<li>
+<p class="western"><span lang="it-IT">Relativistic equations: Klein-Gordon and Dirac. Classification of elementari particles: spin, fermions and bosons. Particles and anti-particles. </span><span lang="it-IT">[</span><span lang="it-IT">Anderson experiment and the discovery of the positron</span><span lang="it-IT">]</span></p>
+</li>
+<li>
+<p class="western"><span lang="it-IT">Concept of Feynman diagrams and calculation methods</span></p>
+</li>
+</ul>
+<p class="western">&nbsp;</p>
+<p class="western"><br /> Module 2: Historical and phenomenological introduction (6)</p>
+<ul>
+<li>
+<p class="western"><span lang="it-IT">Brief history of the discovery of elementary particles and construction of the Standar Model</span></p>
+</li>
+<li>
+<p class="western"><span lang="it-IT">Ph</span><span lang="it-IT">oton, meson</span><span lang="it-IT">s</span><span lang="it-IT">, antipartic</span><span lang="it-IT">les</span><span lang="it-IT">, barion</span><span lang="it-IT">s</span><span lang="it-IT">, lepton</span><span lang="it-IT">s</span><span lang="it-IT">, </span><span lang="it-IT">strange particles</span><span lang="it-IT">, quarks </span><span lang="it-IT">and</span><span lang="it-IT"> gluon</span><span lang="it-IT">s</span><span lang="it-IT">, </span><span lang="it-IT">intermediate vector bosons, Higgs bosons.</span></p>
+</li>
+<li>
+<p class="western"><span lang="it-IT">Main characteristics of the fundamental interactions and standard model phenomenology.</span></p>
+</li>
+</ul>
+<p class="western">&nbsp;</p>
+<p class="western">Module 3: Symmetries and conservation laws<span style="font-family: Arial, sans-serif;"><span lang="it-IT">. </span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">(12)</span></span></p>
+<ul>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Simmetries, invariance, conservation laws, symmetry breaking.</span></span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Discrete symmetries, </span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT"> C,P e T. </span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Statement of CPT theorem</span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">.</span></span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Intrinsic charge conjugation (C). C for photon and </span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">&pi;</span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">0</span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">. </span></span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Space and exchange parity. Symmetric and antisymmetric wave function. Pauli exclusion principle.</span></span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Intrinsic parity of particles (P). Parity of the pion.</span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">[</span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Chinowsky </span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">and</span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT"> Steinberger </span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">experiment</span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">(1954) </span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">on slow pion capture on deuteron</span></span><span style="font-family: Arial, sans-serif;"><span lang="it-IT">]</span></span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Continuous symmetries and conservation laws. Statement of Noether theorem.</span></span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Use of group theory and their representation. Angular momentum and composition rules.</span></span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Isospin symmetry. Doublets (nucleon) and triplets (pion). Flavor SU(2) symmetry and its breaking. </span></p>
+<p class="western" lang="it-IT">&nbsp;</p>
+</li>
+</ul>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Modul</span><span lang="it-IT">e</span><span lang="it-IT"> 4: </span><span lang="it-IT">Electrodynamics</span> <span lang="it-IT">(6)</span></span></p>
+<ul>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Charge conservaton and gauge symmetry. [Photon mass]</span></span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Interaction as exchange of mediator particle. [Lamb and Retherford experiment]</span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">QED Feynman diagrams. </span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">e+e- anihilation in a muon pair.</span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Positronium, level structure, decay channels. </span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Alpha QED evolution with energy. </span></p>
+</li>
+</ul>
+<p class="western" lang="it-IT">&nbsp;</p>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Modul</span><span lang="it-IT">e</span> <span lang="it-IT">5</span><span lang="it-IT">: </span><span lang="it-IT">Hadrons and strong interactions</span><span lang="it-IT"> (</span><span lang="it-IT">1</span><span lang="it-IT">2</span><span lang="it-IT">)</span></span></p>
+<ul>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Hadronic resonances. The 3/2+ barions. Dalitz plot. G-parity.</span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Angular momentum and parity of final states of two or three neutral or charged pions. Vector and pseudo-scalar mesons. Rho decay in two charged and neutral pions. [The theta-tay puzzle]</span></span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Associated production</span><span lang="it-IT"> K0 &ndash; Lambda </span><span lang="it-IT">and strangeness discovery. Approximate flavor SU(3) symmetry. </span></span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Quark model, mesons and barions. Barionic number. Organization in octets and decuplets. [Pointlike nature of quarks in Deep Inelastic Scattering] </span></span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Hadronic production at e+e- colliders. Ratio R of hadronic production to muon pairs. Experimental evidence of color.</span></span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Discovery of the J/psi (charm) and of its excited states. </span> <span lang="it-IT">[Richter </span><span lang="it-IT">and</span><span lang="it-IT"> Ting </span><span lang="it-IT">experiments and the november revolution] </span></span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Angular distribution of jets and quark spin. Events with tre hadronic jets and evidence of gluon.</span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Measurement of alfa_s and energy dependance. OZI selection rule. </span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">The third family and the completion of the quark model [Lederman experiment]</span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Quarkonium.</span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Feynman diagrams for hadronic processes. </span></p>
+</li>
+</ul>
+<p class="western" lang="it-IT">&nbsp;</p>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Modul</span><span lang="it-IT">e</span><span lang="it-IT"> 6: </span><span lang="it-IT">Weak interactions</span> <span lang="it-IT">(12)</span></span></p>
+<ul>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">Muon decay. Fermi constant and 4-fermion process. Nuetron and pion decay.</span></span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Neutrinos and conservation of leptonic flavor. Dirac and Majorana neutrino. Neutrinoless double beta decay [Experiment on muon neutrino flavor]</span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Limits on neutrino masses. [Measurement with tritium]</span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Parity violation in weak interactions. Helicity and chirality. Particle-antiparticle conjugation violation (CP) [Goldhaber experiment]</span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Neutral K system, mass and CP eigenstates. K-Kbar oscillations. [Cronin and Fitch experiment on CP violation measurement]</span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Weak charged currents in quarks and the Cabibbo angle. </span></p>
+</li>
+<li>
+<p class="western"><span style="font-family: Arial, sans-serif;"><span lang="it-IT">C</span><span lang="it-IT">harm </span><span lang="it-IT">and GIM mechanism. </span></span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Absence of Flavor Changing Neutral Currents (FCNC) </span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">CKM matrix and quark mixing</span></p>
+</li>
+<li>
+<p class="western" lang="it-IT"><span style="font-family: Arial, sans-serif;">Feynman diagrams for weak processes.</span></p>
+</li>
+</ul></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p class="western">Testi completi:</p>
+<p class="western"><span style="font-family: Arial, sans-serif;">A. Bettini, Introduction to Elementary Particle Physics, Cambridge U.P. (2014),<br /></span><span style="font-family: Arial, sans-serif;">D. Griffiths, Introduction to Elementary Particles, Wiley (2008),<br /></span><span style="font-family: Arial, sans-serif;">D.H. Perkins, Introduction to High Energy Physics, Cambridge U.P. (2000),<br /></span><span style="font-family: Arial, sans-serif;">D. Thomson, Modern Particle Physics, Cambridge U.P. (2013).</span></p>
+<p class="western"><span style="font-family: Arial, sans-serif;">Per consultazione:</span></p>
+<p class="western"><span style="font-family: Arial, sans-serif;">H.J. Lipkin, Lie Groups for Pedestrians, Dover (2002)<br /></span><span style="font-family: Arial, sans-serif;">Cahn, Goldhaber - The experimental foundations of Particle Physics - Cambridge U.P. (2009).<br /></span><span style="font-family: Arial, sans-serif;">M.S. Sozzi - Discrete symmetries and CP Violation - Oxford G.T. (2008).<br /></span><span style="font-family: Arial, sans-serif;">Povh, Rith, Scholz, Zetsche - Particles and nuclei - Springer 6-th Ed. (2015) o Boringhieri (2002)<br /></span><span style="font-family: Arial, sans-serif;">G.F. Giudice Odissea nello zeptospazio Springer (2010)</span>&nbsp;</p>
+<p class="western">Sull'interazione radiazione-materia ed i rivelatori di particelle</p>
+<p>D. Green - The physics of particle detectors - Cambridge U.P. (2000),<br />C. Grupen - Particle detectors - Cambridge U.P. (1996),<br />W.R. Leo -Techniques for nuclear and particle physics experiments - Springer-Verlag (1994).<br />J.D. Jackson - Classical Electrodynamics - Wiley (1998),<br />T. Ferbel (ed.) - Experimental techniques in HEP - Addison Wesley (1987),&nbsp;<br />K. Kleinknecht - Detectors for particle radiation - Cambridge U.P. (1998).</p>
+<p class="western"><span style="font-family: Arial, sans-serif;">Risorsa essenziale per tutti i dati sperimentali:&nbsp;</span><span style="font-family: Arial, sans-serif;">Particle Data Group - Review of particle physics - http://pdg.lbl.gov/</span></p>
+<p class="western" lang="it-IT">&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Bibliography</div>
+<span class="contenuto_programma"><p>Complete textbooks:</p>
+<p>A. Bettini - Introduction to Elementary Particle Physics - Cambridge U.P. (2012), <br />D. Griffiths - Introduction to elementary particles - Wiley (2008), <br />D.H. Perkins - Introduction to High Energy Physics -- Cambridge U.P. (2000),<br />D. Thomson, Modern Particle Physics, Cambridge U.P. (2013).</p>
+<p>Further reading:</p>
+<p>H.J. Lipkin, Lie Groups for Pedestrians, Dover (2002)<br />Cahn, Goldhaber - The experimental foundations of Particle Physics - Cambridge U.P. (2009). <br />M.S. Sozzi - Discrete symmetries and CP Violation - Oxford G.T. (2008). <br />Povh, Rith, Scholz, Zetsche - Particles and nuclei - Springer 6-th Ed. (2008).</p>
+<p>On the interactions of the radiation with matter and particle detectors:</p>
+<p>D. Green - The physics of particle detectors - Cambridge U.P. (2000),<br />C. Grupen - Particle detectors - Cambridge U.P. (1996),<br /> W.R. Leo -Techniques for nuclear and particle physics experiments - Springer-Verlag (1994).<br />J.D. Jackson - Classical Electrodynamics - Wiley (1998),<br />T. Ferbel (ed.) - Experimental techniques in HEP - Addison Wesley (1987), <br />K. Kleinknecht - Detectors for particle radiation - Cambridge U.P. (1998).</p>
+<p>Essential&nbsp;general reference: Particle Data Group - Review of particle physics - pdg.lbl.gov</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p class="western">L'esame finale &egrave; strutturato con una prova scritta ed una prova orale.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Assessment methods</div>
+<span class="contenuto_programma"><p>The final exam consists of a written test and an oral examination.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Additional web pages</div>
+<span class="contenuto_programma"><p>At the link: <a href="https://elearning.df.unipi.it/course/view.php?id=312">https://elearning.df.unipi.it/course/view.php?id=312</a> interested students will find texts and solutions of the previous years written tests and various additional scientific and historical papers and references.</p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 09/09/2020 10:01</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/esami2/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-4e345eba.js"></script>
+<script src="../_assets/jquery-ui.min-e93c00aa.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-19dbc6e0.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-c8ee7689.js"></script> 
+<script src="../_assets/tinymce.min-e9308fd1.js"></script>
+<script src="../_assets/jquery.tinymce.min-65f0b191.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-3beded5a.js"></script>
+<script src="../_assets/unipi-3293f5f6.js"></script>
+<script src="../_assets/dm-10a06b2c.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

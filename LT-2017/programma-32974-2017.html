@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-9d88d2d3.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5e6adf09.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-3e1acd97.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-0be77ad4.css" rel="stylesheet">
+		<link href="../_assets/style_v1-8d07d3cb.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-795b32e7.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7ea9ead7.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-ce428c17.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-23a80404.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/index.php">Home</a></li><li><a href="https://esami.unipi.it/programmi_insegnamenti.php?aa=2017&cid=135&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">ACUSTICA GENERALE</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">GAETANO LICITRA</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2017/18</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">178BB</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">6</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Primo semestre</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>ACUSTICA GENERALE</TD><TD class='value-programma'>FIS/07</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>48</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>GAETANO LICITRA <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=81129' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/pdfProgCorsoStu.php?language=it&c=32974" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p class="western" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%;" align="justify"><span style="color: #000000;"><span style="font-family: Times\ New\ Roman, serif;"><span style="font-size: medium;">Fornire le conoscenze di base dell'acustica ambientale, edilizia e negli ambienti di lavoro, della strumentazione specifica, dei fondamenti dell'acustica degli ambienti confinati e delle vibrazioni meccaniche.</span></span></span></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 120%;" align="justify">&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p lang="en-GB" style="margin-bottom: 0cm; font-weight: normal; line-height: 100%;">The students are expected to acquire basic knowledge on environmental acoustics, noise in buildings and working places, on the specific instruments, simulation methods and on the fundamental aspects of indoor acoustics and mechanical vibrations.</p>
+<p lang="en-GB" style="margin-bottom: 0cm; font-weight: normal; line-height: 100%;">&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p class="western" style="margin-bottom: 0cm; line-height: 120%;" align="justify"><span style="font-size: medium;"><span style="font-style: normal;">Fondamenti di acustica</span></span><span style="font-size: medium;"><span style="font-style: normal;">:</span></span> <span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">Principali grandezze acustiche - Pressione</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">, </span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">Potenza </span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">e </span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">Intensit&agrave; sonora</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;"> - </span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">Velocit&agrave; del suono - Impedenza acustica - Onde piane</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">,</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;"> sferiche</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">,</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;"> cilindriche </span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">-</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;"> Fenomeni acustici d&rsquo;interfaccia: assorbimento, riflessione, trasmissione, diffusione - Materiali e Sistemi fonoassorbenti e fonoisolanti - Assorbimento del suono nell&rsquo;aria.</span></span> <span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">Caratteristiche generali dei fenomeni acustici e del disturbo acustico. </span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">e p</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">arametri </span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">di</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;"> valutazione</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">. </span></span></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 120%;" align="justify"><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;"><span style="font-style: normal;">Rumore in ambiente esterno: La propagazione del suono</span></span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;"><span style="font-style: normal;"> - </span></span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">Divergenza geometrica - Cause di attenuazione </span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">sonora</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">: Atmosfera - Effetto dei gradienti di </span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">vento e </span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">temperatura - Effetto suolo - Vegetazione - </span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">presenza di </span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">Ostacoli - </span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">B</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">arriere acustiche: teoria e metodi di dimensionamento; analisi di casi reali e problemi di messa in opera.</span></span></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 120%;" align="justify"><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">Acustica degli ambienti </span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;"><span style="font-style: normal;">confinati</span></span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">:</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;"> Caratteristiche dei campi sonori diffusi e riverberanti. </span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">Formazione di o</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">nde stazionarie</span></span> <span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">- Riverberazione - Formula di Sabine - </span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">T</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">empo di riverberazione. Descrittori dell&rsquo;intelligibilit&agrave; del parlato - L&rsquo;acustica dei teatri</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">.</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;"> Insonorizzazione ed isolamento di macchinari e di ambienti. Esempi di bonifica di ambienti chiusi.</span></span></p>
+<p class="western" style="margin-bottom: 0cm; letter-spacing: -0.3pt; line-height: 120%;" align="justify"><span style="font-size: medium;">Livelli sonori - Scala dei decibel - Metrica dei livelli sonori - Spettri sonori - Acustica psicofisica: sistema uditivo umano - propriet&agrave; delle sensazioni uditive e loro valutazione - Disturbo e danno da rumore - Audiogramma - Curve di ponderazione spettrali e temporali - Isofoniche.</span></p>
+<p class="western" style="margin-bottom: 0cm; letter-spacing: -0.3pt; line-height: 120%;" align="justify"><span style="font-size: medium;">Strumenti per la misura e la caratterizzazione dei livelli sonori: fonometro integratore e analizzatore di spettro. Diagramma a blocchi di un misuratore acustico.</span></p>
+<p class="western" style="margin-bottom: 0cm; letter-spacing: -0.3pt; line-height: 120%;" align="justify"><span style="font-size: medium;">Normativa nazionale in materia di acustica: Legge 447 e decreti applicativi.</span></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 120%;" align="justify"><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">Normativa tecnica nazionale e internazionale e standard di riferimento (norme UNI</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">,</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;"> ISO</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">,</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;"> EN). Normativa regionale. Zonizzazione acustica: procedure</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">, </span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">metodi</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">,</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;"> analisi tecniche e problematiche possibili.</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;"> Parametri di valutazione dell&rsquo;inquinamento acustico. </span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">Valutazione di impatto acustico</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">.</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;"> Piani di risanamento: metodi per la scelta e la predisposizione degli interventi - valutazione delle priorit&agrave; e dei benefici. </span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">DPCM</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;"> 14.11.97. La Direttiva Europea 49/2002 e la sua implementazione in Italia con il DLgs 194/2005. Il Decreto Legislativo 42/2017 e l&rsquo;armonizzazione normativa</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">. M</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">appatura strategica e piani d&rsquo;azione e loro relazione con clima acustico e piani di risanamento</span></span><span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">.</span></span></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 120%;" align="justify"><span style="font-size: medium;">DPCM 5-12-1997. <span style="letter-spacing: -0.3pt;">Isolamento </span><span style="letter-spacing: -0.3pt;">tra differenti unit&agrave; immobiliari.</span><span style="letter-spacing: -0.3pt;"> Isolamento dai </span><span style="letter-spacing: -0.3pt;">rumori esterni.</span><span style="letter-spacing: -0.3pt;"> Isolamento dai </span><span style="letter-spacing: -0.3pt;">rumori di calpestio. </span><span style="letter-spacing: -0.3pt;">Isolamento dai </span><span style="letter-spacing: -0.3pt;">rumori di impianti</span><span style="letter-spacing: -0.3pt;"> a funzionamento continuo e discontinuo. Indici acustici ed edilizia scolastica e convenzionata</span><span style="letter-spacing: -0.3pt;">.</span></span></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 120%;" align="justify"><span style="font-size: medium;"><span style="font-style: normal;">Rumore e vibrazioni negli ambienti di lavoro</span></span><span style="font-size: medium;"><span style="font-style: normal;">.</span></span> <span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">DLgs 81/08: analisi di casi concreti</span></span> <span style="font-size: medium;"><span style="letter-spacing: -0.3pt;">- Valutazione dell&rsquo;esposizione personale - Controllo del rumore alla sorgente - metodi per la riduzione dell&rsquo;esposizione. Cenni al controllo attivo e passivo del rumore - Protettori individuali.</span></span></p>
+<p class="western" style="margin-bottom: 0cm; letter-spacing: -0.3pt; line-height: 120%;" align="justify"><span style="font-size: medium;">Vibrazioni meccaniche: Fisica elementare delle vibrazioni - Risonanza - Trasmissibilit&agrave; - Effetti e controllo delle vibrazioni dei macchinari nelle costruzioni e sull&rsquo;uomo - Misure di vibrazioni - Leggi e norme tecniche. Controllo delle vibrazioni negli ambienti di lavoro.</span></p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p lang="en-GB" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%;">Introduction: main physical quantities &ndash; pressure, power and intensity &ndash; speed of sound &ndash; acoustical impedance &ndash; plane, spherical and cylindrical waves &ndash; Interface acoustical phenomena: absorption, reflection, transmission, diffusion &ndash; noise-absorbent and noise-insulating materials and systems &ndash; Air absorption. General characteristics of acoustic phenomena and of acoustic annoyance; evaluation parameters</p>
+<p lang="en-GB" style="margin-bottom: 0cm; font-style: normal; font-weight: normal; line-height: 100%;">Outdoor propagation: sound propagation &ndash; geometric divergence &ndash; causes of sound attenuation: the atmosphere - effect of temperature and wind gradient &ndash; ground &ndash; vegetation &ndash; obstacles &ndash; acoustic barriers: theory and sizing methods, study of actual cases and realisation problems.</p>
+<p lang="en-GB" style="margin-bottom: 0cm; line-height: 100%;"><a name="tw-target-text"></a><a name="tw-target-text1"></a> <span style="font-style: normal;"><span style="font-weight: normal;">Indoor acoustics: diffused and reverberant sound field. Stationary waves &ndash; reverberation &ndash; Sabine&rsquo;s Formula &ndash; reverberation time - </span></span><span lang="en-US">speech intelligibility </span>parameters<span lang="en-US"> &ndash; </span>theatre<span lang="en-US"> acoustics. Insulation and soundproofing of machinery and indoor environments. Examples of acoustic </span><span lang="en-US">recovery of</span><span lang="en-US"> indoor environments.</span></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%;">Sound level &ndash; dB scale &ndash; sound level metrics &ndash; sound spectrum &ndash; psychophysics acoustics: human auditory system &ndash; properties of auditory sensations and their evaluation &ndash; annoyance and damage from noise exposure &ndash; audiogram &ndash; spectral and time domain weighting curves &ndash; equal loudness contour.</p>
+<p lang="en-GB" style="margin-bottom: 0cm; line-height: 100%;"><span lang="en-US">Measurement of sound levels: sound level meter, spectrum </span>analyser<span lang="en-US">. Block diagram of a sound level meter.</span></p>
+<p lang="en-GB" style="margin-bottom: 0cm; line-height: 100%;"><span lang="en-US">National normative regarding acoustics: Legge 447 and its </span><span lang="en-US">implementing </span><span lang="en-US">decrees.</span></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%;">National and international technical normative, reference standards (ISO, UNI, EN norms). Regional normative.</p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%;">Acoustic zones: procedures, methods, analysis and possible problems. Evaluation of acoustic pollution: parameters. Evaluation of acoustic impact. Recovery plans: procedures in order to perform the right actions &ndash; evaluation of priorities and benefits. DPCM 14.11.97. EU directive 49/2002 and its implementation in Italy according to the decree 194/2005. Legislative decree 42/2017 and legislative harmonisation. Strategic map and action plans and their relationship with the noise climate and recovery plans.</p>
+<p lang="en-GB" style="margin-bottom: 0cm; line-height: 100%;"><span lang="en-US">DPCM 5-12-97. Insulation between different building units. Insulation from external noise. </span><span lang="en-US">Ceiling i</span><span lang="en-US">nsulation. </span><span lang="en-US">Insulation from noise produced by continuous and discontinuous operation plants. Acoustic indices ad school acoustics.</span></p>
+<p lang="en-GB" style="margin-bottom: 0cm; line-height: 100%;"><span lang="en-US">Noise and vibrations within working environments. Legislative decree 81/08: case study &ndash; evaluation of individual exposure -</span><span style="font-weight: normal;">noise measurements at the source; exposure reduction methods. Overview on active and passive noise control &ndash; individual protection methods.</span></p>
+<p lang="en-GB" style="margin-bottom: 0cm; line-height: 100%;"><span style="font-weight: normal;">Mechanical vibrations: basic knowledge on vibration physics &ndash; resonances &ndash; transmissibility &ndash; effects and control of machinery vibrations on buildings and people &ndash; vibration measurements &ndash; laws and technical normatives. Vibration control within working environments.</span></p>
+<p lang="en-US" style="margin-bottom: 0cm; line-height: 100%;">&nbsp;</p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 22/03/2018 12:05</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-fcc1cd77.js"></script>
+<script src="../_assets/jquery-ui.min-083c88ac.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-bc864bd9.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-cbd4a7f1.js"></script> 
+<script src="../_assets/tinymce.min-2396adf9.js"></script>
+<script src="../_assets/jquery.tinymce.min-cf2ee483.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-8144b60d.js"></script>
+<script src="../_assets/unipi-635b458d.js"></script>
+<script src="../_assets/dm-4aacbbca.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

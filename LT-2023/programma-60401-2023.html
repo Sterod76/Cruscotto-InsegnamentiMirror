@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-9d88d2d3.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5e6adf09.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-3e1acd97.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-0be77ad4.css" rel="stylesheet">
+		<link href="../_assets/style_v1-8d07d3cb.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-795b32e7.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7ea9ead7.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-ce428c17.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-23a80404.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/index.php">Home</a></li><li><a href="https://esami.unipi.it/programmi_insegnamenti.php?aa=2023&cid=135&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">COMPLEMENTI DI ANALISI MATEMATICA</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">MASSIMO GOBBINO</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2023/24</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">637AA</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">6</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Primo semestre</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>COMPLEMENTI DI ANALISI MATEMATICA</TD><TD class='value-programma'>MAT/05</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>48</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>MASSIMO GOBBINO <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=4832' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/pdfProgCorsoStu.php?language=it&c=60401" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p>Al termine del corso lo studente avr&agrave; acquisito le nozioni di base del calcolo differenziale e integrale per funzioni di pi&ugrave; variabili.&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p>By the end of the course students will acquire the basic notions concerning differential and integral calculus for multi-variable functions.&nbsp;&nbsp;</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><p>L'acquisizione delle conoscenze sar&agrave; verificata tramite esercizi in un esame scritto e domande dirette&nbsp;in un esame orale.&nbsp;</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
+<span class="contenuto_programma"><p>Knowledge acquisition will be assessed with exercises in a written exam and direct&nbsp;questions during an oral exam.&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><ul>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Tutto il precorso, in particolare saper disegnare insiemi del piano descritti mediante equazioni e/o disequazioni e saper risolvere sistemi di equazioni. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Tutto il corso di Analisi Matematica I (studi di funzione, limiti, calcolo integrale). </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Tutto il corso di Algebra Lineare (vettori, geometria analitica nel piano e nello spazio, matrici, forme quadratiche). </span></span></li>
+</ul></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites</div>
+<span class="contenuto_programma"><ul>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Basic mathematics, and in particular drawing subsets of the plane described through equations/inequalities, and solving systems of equations. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Real analysis for one-variable functions (differential calculus, limits, integral calculus). </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Basic linear algebra (vectors, analytic geometry in the plane and in the space, matrices, quadratic forms). </span></span></li>
+</ul></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni metodologiche</div>
+<span class="contenuto_programma"><p>Lezioni registrate con messa a disposizione delle registrazioni.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Teaching methods</div>
+<span class="contenuto_programma"><p>Online lectures with available recordings.&nbsp;</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p style="margin-bottom: 0cm; line-height: 100%;">&nbsp;<strong><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Calcolo differenziale in pi&ugrave; variabili</span></span></strong></p>
+<ul>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Lo spazio R^n. Vettori e operazioni tra vettori. Norma, distanza, prodotto scalare. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Funzioni di pi&ugrave; variabili e loro grafico. Visualizzazione del grafico per funzioni di due variabili: linee di livello e restrizione alle rette (o curve) passanti per un punto. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Limiti e continuit&agrave; per funzioni di pi&ugrave; variabili. Relazione tra il limite ed il limite delle restrizioni. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Limiti all&rsquo;infinito per funzioni di pi&ugrave; variabili. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Derivate parziali e direzionali per una funzione di pi&ugrave; variabili e loro significato geometrico. Mancanza di relazioni tra l&rsquo;esistenza delle derivate parziali e direzionali in un punto e la continuit&agrave; nel punto stesso. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Differenziale per funzioni di pi&ugrave; variabili e sua interpretazione geometrica in termini di (iper)piano tangente al grafico. Relazione tra le derivate direzionali e le derivate parziali per una funzione differenziabile. Gradiente e suo significato geometrico. Teorema del differenziale totale. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Derivate successive per funzioni di pi&ugrave; variabili. Teorema di inversione dell&rsquo;ordine di derivazione. Formula di Taylor in due o pi&ugrave; variabili. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Massimi e minimi locali e globali per funzioni di pi&ugrave; variabili. Se in un punto di massimo o minimo interno una funzione &egrave; differenziabile, allora il suo gradiente si annulla. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Richiami sulle forme quadratiche in pi&ugrave; variabili: nozione di forma definita positiva e definita negativa. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Matrice Hessiana e comportamento locale di una funzione in un intorno di un punto stazionario. Convessit&agrave; e concavit&agrave; in pi&ugrave; variabili. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Insiemi compatti in R^n. Teorema di Weierstrass per funzioni di pi&ugrave; variabili. Generalizzazioni del teorema di Weierstrass nel caso di insiemi non limitati. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Massimi e minimi vincolati: metodo delle linee di livello.</span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Massimi e minimi vincolati: metodo di parametrizzazione del vincolo.</span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Massimi e minimi vincolati: metodo dei moltiplicatori di Lagrange.</span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Calcolo differenziale per funzioni da R^n ad R^m. Matrice Jacobiana.</span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Derivazione di funzioni composte. Derivazione di integrali dipendenti da parametro.</span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Teorema delle funzioni implicite.</span></span></li>
+</ul>
+<p>&nbsp;</p>
+<p><strong><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Calcolo integrale in pi&ugrave; variabili </span></span></strong></p>
+<ul>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Integrale di Riemann per funzioni di due o tre variabili e suo significato geometrico/fisico. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Formula di riduzione di un integrale doppio a due integrali semplici mediante sezioni. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Integrali tripli: formule di riduzione per sezioni e per colonne. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Sfruttamento delle simmetrie per semplificare il calcolo di integrali doppi o tripli. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Calcolo di aree, volumi e baricentri mediante integrali doppi e tripli. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Coordinate polari nel piano. Coordinate cilindriche e sferiche nello spazio. Utilizzo delle coordinate polari e sferiche per il calcolo di integrali multipli. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Formula generale per il cambio di variabili negli integrali doppi. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Solidi di rotazione. Teorema di Guldino per il volume dei solidi di rotazione. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Integrali impropri in pi&ugrave; variabili: definizioni e studio della convergenza. </span></span></li>
+</ul>
+<p>&nbsp;</p>
+<p><strong><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Curve, superfici, calcolo vettoriale</span></span></strong></p>
+<ul>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Curve: definizione. Curve chiuse e semplici. Vettore, versore e retta tangente. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Lunghezza di una curva: definizione e calcolo. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Integrali curvilinei (integrale di una funzione lungo una curva).</span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Forme differenziali. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Integrale di una forma differenziale lungo un curva. Forme differenziali esatte e potenziali. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Insiemi connessi, convessi, stellati, semplicemente connessi. Forme differenziali chiuse. Relazioni tra forme differenziali chiuse ed esatte. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Superfici: definizioni, versore normale, piano tangente. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Area di una superficie: definizione e calcolo. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Teorema di Guldino per il calcolo dell&rsquo;area di una superficie di rotazione. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Integrali superficiali (integrale di una funzione su una superficie). </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Operatori differenziali: divergenza, rotore, Laplaciano, gradiente. Relazioni tra gli operatori differenziali. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Orientazione di una superficie e del suo eventuale bordo. </span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Formula di Gauss-Green (teorema della divergenza): enunciati ed applicazioni.</span></span></li>
+<li><span style="font-family: Liberation Serif, serif;"><span style="font-size: large;">Formula di Stokes (teorema del rotore): enunciati ed applicazioni. </span></span></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p><span style="font-weight: 400;">&nbsp;</span><strong>Differential calculus for multi-variable functions</strong></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">The space R^n. Vectors and operations between vectors. Norm, distance, scalar product.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Multi-variable functions and their graph. Visualizing the graph of functions of two variables: level lines and restrictions to lines (or curves) through a point.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Limits and continuity for multi-variable functions. Relations between the limit of a function and the limits of the restrictions of the function.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Limits at infinity for multi-variable functions.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Partial derivatives and directional derivatives for multi-variable functions. Geometric interpretation. Lack of relations between existence of partial/directional derivatives in a point and continuity in the same point.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Differential of a multi-variable function and its geometric interpretation in terms of tangent (hyper)plane to the graph. Relations between directional and partial derivatives for a differentiable function. Gradient and its geometric interpretation. Sufficient conditions for differentiability.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Higher order derivatives for multi-variable functions. Symmetry of second order derivatives. Taylor polynomials in two or more variables.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Local and global maxima/minima for multi-variable functions. If a function is differentiable in an interior maximum/minimum point, then its gradient vanishes.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Recalls on multi-variable quadratic forms. Positive definite and negative definite quadratic forms.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Hessian matrix and behavior of a function in a neighborhood of a stationary point. Convexity and concavity for multi-variable functions.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Compact subsets of R^n. Weierstrass theorem for multi-variable functions. Generalizations of Weierstrass theorem to unbounded domains.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Constrained maxima/minima: level sets method.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Constrained maxima/minima: parametrization of the constraint.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Constrained maxima/minima: Lagrange multipliers method.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Differential calculus for functions from R^n to R^m. Jacobian matrix.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Chain rule for the differential of a composition of functions. Differentiation of parametric integrals.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Implicit function theorem.</span></li>
+</ul>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<p><strong>Integral calculus for multi-variable functions</strong></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Riemann integral for functions of two or three variables and its geometrical/physical interpretation.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Reduction of a double integral to two integrals in one variable through sections.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Triple integrals: "section-wise" and "column-wise" reduction formulae.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Exploiting symmetries in order to simplify the computation of double and triple integrals.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Computation of areas, volumes and barycenters through double and triple integrals.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Polar coordinates in the plane. Cylindrical and spherical coordinates in the space. Computation of multiple integrals by means of polar, cylindrical, and spherical coordinates.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">General variable change formula for double integrals.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Solids of revolution. Guldino's theorem for the volume of a revolution solid.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Improper integrals for multi-variable functions: definitions and discussion of the convergence.</span></li>
+</ul>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<p><strong>Curves, surfaces, vector calculus</strong></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Definition of curve. Closed and simple curves. Tangent vector, tangent versor and tangent line.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Length of a curve: definition and computation.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Line integrals (integral of a function along a line).</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Differential forms.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Integral of a differential form along a curve. Exact differential forms and potentials.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Connected, convex, star-shaped, simply connected sets. Closed differential forms. Relations between closed and exact differential forms.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Surfaces: definitions, normal versor, tangent plane.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Area of a surface: definition and computation.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Guldino's theorem for the area of a surface of revolution.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Surface integrals (integral of a function over a surface).</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Differential operators: divergence, curl, Laplacian, gradient. Relations among differential operators.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Orientation of a surface and its boundary.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Gauss-Green's formula (divergence theorem): statements and applications.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Stokes' formula (curl theorem): statements and applications.</span></li>
+</ul></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p><span class="contenuto_programma">Marina Ghisi, Massimo Gobbino. "Analisi Matematica II, Schede ed Esercizi", casa editrice Esculapio.</span></p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Bibliography</div>
+<span class="contenuto_programma"><p><span class="contenuto_programma">Marina Ghisi, Massimo Gobbino. "Analisi Matematica II, Schede ed Esercizi", casa editrice Esculapio.</span></p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p>L'esame consister&agrave; di una prova scritta e di una prova orale.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Assessment methods</div>
+<span class="contenuto_programma"><p>The exam will consist of a written test and an oral assessment.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Pagina web del corso</div>
+<span class="contenuto_programma"><p><a href='https://pagine.dm.unipi.it/gobbino/Home_Page/ArchivioDidattico.html'>https://pagine.dm.unipi.it/gobbino/Home_Page/ArchivioDidattico.html</a></p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Class web page</div>
+<span class="contenuto_programma"><p><a href='https://pagine.dm.unipi.it/gobbino/Home_Page/ArchivioDidattico.html'>https://pagine.dm.unipi.it/gobbino/Home_Page/ArchivioDidattico.html</a></p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 28/08/2023 17:01</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-fcc1cd77.js"></script>
+<script src="../_assets/jquery-ui.min-083c88ac.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-bc864bd9.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-cbd4a7f1.js"></script> 
+<script src="../_assets/tinymce.min-2396adf9.js"></script>
+<script src="../_assets/jquery.tinymce.min-cf2ee483.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-8144b60d.js"></script>
+<script src="../_assets/unipi-635b458d.js"></script>
+<script src="../_assets/dm-4aacbbca.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Universit&agrave; di Pisa - Valutazione della didattica e iscrizione agli esami</title>
+		<meta name="description" content="description">
+		<meta name="author" content="DevOOPS">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../_assets/bootstrap-dc764708.css" rel="stylesheet">
+		<link href="../_assets/jquery-ui.min-5d307d3a.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/font-awesome.min-b777fb69.css">
+		<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+		<link href="../_assets/select2-adef06ea.css" rel="stylesheet">
+		<link href="../_assets/style_v1-429eb70e.css" rel="stylesheet">
+		<link rel="stylesheet" href="../_assets/programmi-5b75d6d0.css" type="text/css" media="screen" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+		
+		
+ 		<link href="../_assets/unipi-32df6655.css" rel="stylesheet">
+	</head><body>
+<header class="navbar">
+	<div class="container-fluid expanded-panel">
+		<div class="row top-panel">
+			<div id="logo" class="col-sm-2 hidden-xs">
+				<a href="http://www.unipi.it">
+					<img src="../_assets/cherubino_white77-7c4d2527.gif" width="45" alt="Logo unipi">
+				</a>
+			</div>
+			<div class="col-xs-6 unipi-header">
+				Valutami <span class="unipi-subheader hidden-sm hidden-xs"><b>VALUT</b>azione della didattica ed iscrizione agli es<b>AMI</b></span>
+			</div>
+			<div class="col-xs-4">
+				<div class="top-panel-right pull-right login-box">
+<a style="float: right;" href="https://esami.unipi.it/auth/session.php">Login studente</a><br>
+					<span style="float: right;">				
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=it"><i class="fa"><img src="../_assets/ita-57b8ccba.gif" alt="Versione in italiano"></i></a>
+						<a href="https://esami.unipi.it/esami2/setlang.php?lang=en"><i class="fa"><img src="../_assets/uk-8e6319ba.gif" alt="English version"></i></a>
+					</span>
+				</div>
+			</div>
+		</div> 
+	</div>  
+</header>
+<div id="main" class="container-fluid shortmain"> 
+	<div class="row">
+		<div id="sidebar-left" class="col-xs-2 col-sm-2">
+			<ul class="nav main-menu">
+				<li>
+					<a href="https://esami.unipi.it/esami2/index.php">
+						<i class="fa fa-home"></i>
+						<span class="hidden-xs">Home</span>
+					</a>
+				</li>
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuEsami">
+						<i class="fa fa-calendar"></i>
+						<span class="hidden-xs">Esami</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuEsami">
+						<li><a id="menuNuovaIscrizione" href="https://esami.unipi.it/esami2/elencoappelli.php">Nuova iscrizione</a></li>
+						<li><a id="menuArchivioIscrizioni" href="https://esami.unipi.it/esami2/archivioiscrizioni.php">Archivio iscrizioni</a></li>
+						<li><a id="menuCalendarioCds" href="https://esami.unipi.it/esami2/calendariodipcds.php">Calendario CdS</a></li>
+						<li><a id="menuCalendario" href="https://esami.unipi.it/esami2/calendario.php">Calendario sessioni</a></li>
+					</ul>
+				</li>
+				
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuValutazione">
+						<i class="fa fa-pencil-square-o"></i>
+						<span class="hidden-xs">Valutazione</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuValutazione">
+						<li><a id="menuNuovoQuestionario"  href="https://esami.unipi.it/esami2/elencoquestionari.php">Valuta un corso</a></li>
+						<li><a id="menuArchivioCompilazioni"  href="https://esami.unipi.it/esami2/archiviocompilazioni.php">Questionari compilati</a></li>
+						<li><a id="menuNuovoQuestionarioOrganizzazione"  href="https://esami.unipi.it/esami2/surveyorg.php">Organizzazione e servizi</a></li>
+						<li><a id="menuEsitoValutazione"  href="https://esami.unipi.it/esami2/esitoValInsegnamenti.php">Report</a></li>
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuTD">
+						<i class="fa fa-cloud"></i>
+						<span class="hidden-xs">Aula virtuale</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuTD">
+						<li><a id="menuTDRicerca"  href="https://esami.unipi.it/esami2/td.php">Ricerca</a></li>
+						<!-- <li><a id="menuTDCds"  href="#">Elenco per cds</a></li> -->
+					</ul>
+				</li>
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuLauree">
+						<i class="fa fa-graduation-cap"></i>
+						<span class="hidden-xs">Sessioni di laurea</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuLauree">
+						<li><a id="menuLaureeRicerca"  href="https://esami.unipi.it/esami2/lauree.php">Ricerca</a></li>
+					</ul>
+				</li>
+
+
+				<li class="dropdown" >
+					<a href="#" class="dropdown-toggle" id="menuProgrammi">
+						<i class="fa fa-book"></i>
+						<span class="hidden-xs">Programmi</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuProgrammi">
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca.php">Ricerca</a></li>
+						<li><a id="menuProgrammiRicerca"  href="https://esami.unipi.it/esami2/programmi_ricerca_testo.php">Ricerca nel testo</a></li>
+						<li><a id="menuProgrammiCds"  href="https://esami.unipi.it/esami2/programmi_insegnamenti.php">Elenco per cds</a></li>
+					</ul>
+				</li>
+
+				
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="menuHelp">
+						<i class="fa fa-wrench"></i>
+						<span class="hidden-xs">Supporto</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="menuHelp">
+						<li><a id="menuFaq" href="https://esami.unipi.it/esami2/faq.php">FAQ</a></li>
+						<li><a id="menuAss" href="https://esami.unipi.it/esami2/assistenza.php">Assistenza</a></li>
+						<li><a id="menuPrivacy" href="https://esami.unipi.it/esami2/privacy.php">Privacy</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="https://esami.unipi.it/backoffice" >
+						<i class="fa fa-dashboard"></i>
+						<span class="hidden-xs">Docenti ed operatori</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div id="content" class="col-xs-12 col-sm-10"><div class="row">
+	<div id="breadcrumb" class="col-xs-12">
+		<a href="#" class="show-sidebar">
+			<i class="fa fa-bars"></i>
+		</a>
+		<ol class="breadcrumb pull-left hidden-xs">
+			<li><a href="https://esami.unipi.it/esami2/index.php">Home</a></li><li><a href="https://esami.unipi.it/esami2/programmi_insegnamenti.php?aa=2022&cid=1&did=4">Programmi</a></li>
+<li><a href="">Visualizzazione</a></li>
+	</ol>
+	</div>
+</div>
+<div class="row" id="insegnamenti">
+	<div id="dati_studente"></div>
+	<div class="col-xs-12">
+		<div class="box">
+			<div class="box-header">
+				<div class="box-name">
+					<i class="fa fa-book"></i>
+					<span>Scheda programma d'esame</span>
+				</div>
+				<div class="no-move"></div>
+			</div>
+			<div class="box-content" style="overflow-y:hidden; overflow:auto;  width:100%">
+				
+				<div style="margin-left:45px">
+					<div style="width:100%"><div class="div-table table-intestazione-programma">
+<div class="div-table-row">
+<div class="div-table-cell titolatura-insegnamento-programma">CELL BIOPHYSICS / BIOFISICA CELLULARE</div>
+</div>
+<div class="div-table-row">
+<div class="div-table-cell titolare-insegnamento-programma">RANIERI BIZZARRI</div>
+</div>
+
+								<div class="row">
+									<div class="col-md-6">
+										<span class="label-programma">Anno accademico</span><span class="value-programma">2022/23</span><br />
+										<span class="label-programma">CdS</span><span class="value-programma">FISICA</span><br />
+										<span class="label-programma">Codice</span><span class="value-programma">386BB</span><br />
+										<span class="label-programma">CFU</span><span class="value-programma">6</span><br />
+										<span class="label-programma">Periodo</span><span class="value-programma">Secondo semestre</span><br /><span class="label-programma">Lingua</span><span class="value-programma">Italiano</span></div>
+<div class="col-md-6"></div></div><div><br><table class='nomargin'><tr><td class='label-programma'>Moduli</td><td class='label-programma'>Settore/i</td><td class='label-programma'>Tipo</td><td class='label-programma'>Ore</td><td class='label-programma'>Docente/i</td></tr>
+<TR><TD class='value-programma'>BIOFISICA CELLULARE // CELL BIOPHYSICS</TD><TD class='value-programma'>FIS/03</TD><TD class='value-programma'>LEZIONI</TD><TD class='value-programma'>36</TD><TD class='value-programma' ><table class='nomargin'><tr><td class='value-programma'>RANIERI BIZZARRI <a href='http://unimap.unipi.it/cercapersone/dettaglio.php?ri=111488' target='_blank'>unimap</a></td></tr></table></TD></TR>
+</table></div>
+
+</div>
+<div style="display: inline-block;"><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/ita-896d1456.gif"> <input type="radio" name="language" value="it" checked></span><span class="prog-flags"><img style="vertical-align:baseline;" src="../_assets/uk-ce908003.gif" > <input type="radio" name="language" value="en" ></span><span class="prog-flags" style="vertical-align:baseline;"><a id="pdfProgramma" href="https://esami.unipi.it/esami2/pdfProgCorsoStu.php?language=it&c=53468" target="_blank"><i class="fa fa-file-pdf-o"></i> Esporta in pdf</a></span></div><div class="prog_it" >
+<div class="titolo-elemento-programma">Obiettivi di apprendimento</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Learning outcomes</div>
+<span class="contenuto_programma"></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Conoscenze</div>
+<span class="contenuto_programma"><p>Mario Ageno, il primo biofisico italiano, defin&igrave; la biofisica come la scienza che si occupa dello studio degli organismi viventi quali sistemi fisici complessi, con un&rsquo;impostazione concettuale che consenta di evidenziare il collegamento logico tra il mondo biologico e i principi generali e fondamentali della fisica. Secondo Ageno, i problemi fondamentali a cui la biofisica deve rispondere sono essenzialmente due: 1) proporre un modello fisico di organismo che riesca a dar conto di tutti quegli aspetti del vivente che la biologia funzionale e la biologia evolutiva descrivono, 2) spiegare il suo spontaneo formarsi, in appropriate condizioni, in un sistema complesso inizialmente sterile.</p>
+<p>L&rsquo;obiettivo di questo corso &egrave; quello di fornire le conoscenze che rispondono a queste domande, identificando nella cellula la base costitutiva degli esseri viventi e considerandola, secondo le parole dello stesso Ageno &ldquo; un sistema chimico coerente, dotato di programma&rdquo;</p>
+<p>Pi&ugrave; in particolare, il corso fornir&agrave; conoscenze sulle propriet&agrave; generali dei sistemi molecolari che caratterizzano la vita, tra cui:&nbsp;</p>
+<ul>
+<li>Il ruolo della struttura tridimensionale nelle interazioni molecolari e il modello allosterico come trasduttore di stimoli</li>
+<li>Il ruolo delle forze &ldquo;entropiche&rdquo; (es: effetto idrofobico, diffusione) alla nanoscala nei processi biologici</li>
+<li>La formazione e stabilit&agrave; dei processi biologici in condizioni non di equilibrio, inclusi i motori molecolari</li>
+<li>La fisiologia delle cellule eccitabili</li>
+<li>L&rsquo;organizzazione in nano/mesostrutture prive di membrana (raft lipidici, condensati molecolari)</li>
+<li>La regolazione dei processi biologici (in particolare: metabolismo e trascrizione) ed il ruolo dell&rsquo;informazione</li>
+<li>L&rsquo;evoluzione molecolare</li>
+</ul>
+<p>Si dar&agrave; anche rilevanza a metodologie biofisiche all&rsquo;avanguardia per lo studio biofisico dei fenomeni cellulari, specie nell&rsquo;ambito della microscopia ottica, con esempi dalla ricerca attuale del docente.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Knowledge</div>
+<span class="contenuto_programma"><p>Mario Ageno, the first Italian biophysicist, defined biophysics as the science that deals with the study of living organisms as complex physical systems, with a conceptual approach that allows to highlight the logical connection between the biological world and the general and fundamental principles of physics . According to Ageno, the fundamental problems that biophysics has to answer are essentially two: 1) to propose a physical model of an organism that is able to account for all those aspects of the living that functional biology and evolutionary biology describe, 2) to explain its spontaneously form, under appropriate conditions, in an initially sterile complex system.</p>
+<p>The objective of this course is to provide the knowledge that answers these questions, identifying the cell as the constitutive basis of living beings and considering it, in Ageno's own words, "a coherent chemical system, endowed with a program"</p>
+<p>More specifically, the course will provide knowledge on the general properties of the molecular systems that characterize life, including:</p>
+<ul>
+<li>The role of three-dimensional structure in molecular interactions and the allosteric model as transducer of stimuli</li>
+<li>The role of "entropic" forces (eg: hydrophobic effect, diffusion) at the nanoscale in biological processes</li>
+<li>The formation and stability of processes under non-equilibrium conditions, including molecular motors</li>
+<li>The physiology of excitable cells</li>
+<li>The organization in nano/mesostructures without membrane (lipid rafts, molecular condensates)</li>
+<li>The regulation of biological processes (in particular: metabolism and transcription) and the role of information</li>
+<li>Molecular evolution</li>
+</ul>
+<p>Relevance will also be given to cutting-edge biophysical methodologies for the biophysical study of cellular phenomena, especially in the field of optical microscopy, with examples from the teacher's current research.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle conoscenze</div>
+<span class="contenuto_programma"><p>La verifica delle conoscenze avverr&agrave; nella forma dell&rsquo;esame orale, oltre che attraverso gli incontri docente-studenti e il ricevimento.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of knowledge</div>
+<span class="contenuto_programma"><p>The verification of knowledge will take place in the form of an oral exam, as well as through teacher-student meetings and reception.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Capacit&agrave;</div>
+<span class="contenuto_programma"><p>Al termine del corso lo studente avr&agrave; acquisito conoscenze per interpretare il funzionamento di una cellula secondo un modello fisico. Tali conoscenze, oltre alla loro rilevanza intrinseca, sono molto importanti per capire e razionalizzare i fenomeni di disfunzione cellulare che sono implicati in patologie rilevanti (es. cancro).</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Skills</div>
+<span class="contenuto_programma"><p>At the end of the course the student will have acquired the knowledge to interpret the functioning of a cell according to a physical model. This knowledge, in addition to its intrinsic relevance, is very important for understanding and rationalizing the phenomena of cellular dysfunction that are implicated in relevant pathologies (e.g. cancer).</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica delle capacit&agrave;</div>
+<span class="contenuto_programma"><p>Saranno proposti piccoli test informali, in particolare nell&rsquo;ambito dell&rsquo;analisi dati, per verificare l&rsquo;acquisizione di conoscenze su particolari temi (e.s.: diffusione).</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of skills</div>
+<span class="contenuto_programma"><p>Small informal tests will be proposed, particularly in the field of data analysis, to verify the acquisition of knowledge on particular topics (e.g.: diffusion).</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Comportamenti</div>
+<span class="contenuto_programma"><p>Sar&agrave; acquisita sensibilit&agrave; nell&rsquo;ambito della raccolta e analisi di dati sperimentali relativamente a processi intracellulari ottenuti con modalit&agrave; biofisiche.</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Behaviors</div>
+<span class="contenuto_programma"><p>Sensitivity will be acquired in the collection and analysis of experimental data relating to intracellular processes obtained with biophysical methods.</p></span>
+</div>
+<div class="prog_it sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Modalit&agrave; di verifica dei comportamenti</div>
+<span class="contenuto_programma"><p>Saranno proposti piccoli test informali, in particolare nell&rsquo;ambito dell&rsquo;analisi dati, per verificare l&rsquo;acquisizione di sensibilit&agrave; su particolari temi (e.s.: imaging su cellule in condizioni vitali).</p></span>
+</div>
+<div class="prog_en sub-item-programma">
+<div class="titolatura-insegnamento-programma sub-title-insegnamento-programma">Assessment criteria of behaviors</div>
+<span class="contenuto_programma"><p>Small informal tests will be proposed, particularly in the context of data analysis, to verify the acquisition of sensitivity on particular topics (e.g.: imaging on living cells).</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti (conoscenze iniziali)</div>
+<span class="contenuto_programma"><p>Non &egrave; richiesto nessun specifico prerequisito, se non curiosit&agrave; riguardo alla comprensione analitica dei meccanismi cellulari e sensibilit&agrave; verso i metodi quantitativi di ricerca. Durante il corso verr&agrave; presentata una breve descrizione dei concetti fondamentali della termodinamica per la biologia per colmare eventuali lacune.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites</div>
+<span class="contenuto_programma"><p>No specific prerequisites are required, except curiosity about the analytical understanding of cellular mechanisms and sensitivity towards quantitative research methods. A short description of fundamental thermodynamics concepts for biology will be presented during the course to fill any background gaps.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Corequisiti</div>
+<span class="contenuto_programma"><p>E&rsquo; consigliabile, ma non necessario, integrare il corso con uno dei due corsi seguenti, a seconda della provenienza e del background culturale:</p>
+<ul>
+<li>Per Biologia: Microscopia di fluorescenza per l&rsquo;analisi di sistemi biologici alla nanoscala, 555EE WBO-LM</li>
+<li>Per Fisica: Fisica dei Biosistemi, 387BB WFI-LM</li>
+</ul></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Co-requisites</div>
+<span class="contenuto_programma"><p>It is advisable, but not necessary, to integrate the course with one of the following two courses, depending on the origin and background:</p>
+<ul>
+<li>For Biology: Fluorescence Microscopy for the Analysis of Biological Systems at the Nanoscale, 555EE WBO-LM</li>
+<li>For Physics: Physics of Biosystems, 387BB WFI-LM</li>
+</ul></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Prerequisiti per studi successivi</div>
+<span class="contenuto_programma"><p>N.A.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Prerequisites for further study</div>
+<span class="contenuto_programma"><p>N.A.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni metodologiche</div>
+<span class="contenuto_programma"><p>Le lezioni saranno svolte in modalit&agrave; frontale con l'ausilio di slides e filmati.</p>
+<p>Il materiale didattico (slides, eventuali articoli) sar&agrave; reso disponibile sul sito di elearning e su eventuali altri siti web.</p>
+<p>Il docente &egrave; disponibile per il ricevimento secondo le modalit&agrave; riportate sul sito unimap.</p>
+<p>Non sono previste prove in itinere.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Teaching methods</div>
+<span class="contenuto_programma"><p>The lessons will be carried out in frontal mode with the help of slides and movies.</p>
+<p>The teaching material (slides, any articles) will be made available on the elearning site and on any other websites.</p>
+<p>The teacher is available for reception according to the procedures indicated on the unimap website.</p>
+<p>There will be no ongoing tests.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Programma (contenuti dell'insegnamento)</div>
+<span class="contenuto_programma"><p>A &ndash; Il mondo biologico, un brevissimo viaggio in biologia e biochimica (~4 ore)</p>
+<ul>
+<li>Domanda preliminare: cos'&egrave; la vita? Un approccio pragmatico</li>
+<li>Teoria cellulare moderna: una finestra sulla struttura e l'organizzazione della cellula</li>
+<li>Microscopia ottica (fluorescenza) per studiare le cellule</li>
+</ul>
+<p>B &ndash; Vita all'equilibrio (~10 ore)</p>
+<ul>
+<li>Richiamodi termodinamica dell'equilibrio</li>
+<li>Forze di bilanciamento: lo spazio conformazionale delle macromolecole biologiche</li>
+<li>La proteina fluorescente verde: una rivoluzione colorata</li>
+<li>Le proteine sono i demoni di Maxwell: dalla conformazione spaziale all'integrazione del segnale attraverso l'allosteria e l'energy harvesting</li>
+<li>La vita in due dimensioni: le membrane</li>
+<li>La regolazione del legame: nanoconfinamento e affollamento</li>
+<li>Dettagli in nanoscala mediante microscopia a super-risoluzione ea singola molecola</li>
+</ul>
+<p>C &ndash; Vita vicina all'equilibrio (~8 ore)</p>
+<ul>
+<li>Richiamodi termodinamica dei processi irreversibili: sistemi vicini all&rsquo;equilibrio</li>
+<li>Diffusione ed equazione di Fick</li>
+<li>Trasportatori, canali ionici</li>
+<li>Potenziale di membrana ed eccitabilit&agrave; cellulare</li>
+<li>Trasporto nucleocitoplasmatico</li>
+<li>Come rintracciare le molecole? Tecniche ottiche per lo studio della diffusione</li>
+</ul>
+<p>D&ndash; Vita lontano dall'equilibrio (~4 ore)</p>
+<ul>
+<li>Richiamodi termodinamica dei processi irreversibili: sistemi lontani dall&rsquo;equilibrio</li>
+<li>Metabolismo energetico</li>
+<li>Interruttori e motori molecolari</li>
+</ul>
+<p>E&ndash; Strutture dissipative e loro regolazione (~8 ore)</p>
+<ul>
+<li>Richiamo di cinetica chimica</li>
+<li>Non linearit&agrave; enzimatica e cicli di feedback</li>
+<li>Oscillazione e caos nei bioprocessi</li>
+<li>Come regolare il flusso di informazioni dal genotipo al fenotipo e il codice epigenetico</li>
+</ul>
+<p>F &ndash; Evoluzione molecolare (~5 ore)</p>
+<ul>
+<li>Cos'&egrave; la selezione naturale?</li>
+<li>Selezione naturale applicata alle molecole: ipercicli e transizioni molecolari</li>
+<li>Il formalismo di Price e la teoria della selezione dei consanguinei</li>
+<li>Informazioni in biologia</li>
+</ul>
+<p>G &ndash; Conclusioni (1 ora)</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Syllabus</div>
+<span class="contenuto_programma"><p>A &ndash; The biological world, a very short journey in biology and biochemistry (~4 hours)</p>
+<ul>
+<li>Preliminary question: what is life? A pragmatic approach</li>
+<li>Modern cell theory: a window to cell&rsquo;s structure and organization</li>
+<li>Optical (fluorescence) microscopy to investigate cells</li>
+</ul>
+<p>B &ndash; Life at equilibrium (~10 hours)</p>
+<ul>
+<li>A recall of equilibrium thermodynamics</li>
+<li>Balancing forces: the conformational space of biological macromolecules</li>
+<li>The green fluorescent protein: a colorful revolution</li>
+<li>Proteins are Maxwell&rsquo;s demons: from spatial conformation to signal integration through allostery and energy harvesting</li>
+<li>Life in two-dimensions: membranes</li>
+<li>The regulation of binding: nanoconfinement and crowding</li>
+<li>Nanoscale details by super-resolution and single-molecule microscopy</li>
+</ul>
+<p>C &ndash; Life close to equilibrium (~8 hours)</p>
+<ul>
+<li>Recall of thermodynamics of irreversible processes: systems close to equilibrium</li>
+<li>Diffusion and the Fick equation</li>
+<li>Transporters, ionic channels</li>
+<li>Membrane potential and cell excitability</li>
+<li>Nuclecytoplasmic transport</li>
+<li>How to track molecules? Optical techniques to study diffusion</li>
+</ul>
+<p>D&ndash; Life far from equilibrium (~4 hours)</p>
+<ul>
+<li>Recall of thermodynamics of irreversible processes: systems close to equilibrium</li>
+<li>Energy metabolism</li>
+<li>Switches and molecular motors</li>
+</ul>
+<p>E&ndash; Dissipative structures and their regulation (~8 hours)</p>
+<ul>
+<li>A recall of chemical kinetics</li>
+<li>Enzyme non-linearity and feedback cycles</li>
+<li>Oscillation and chaos in bioprocesses</li>
+<li>How to regulate the flow of information from genotype to phenotype and the epigenetic code</li>
+</ul>
+<p>F &ndash; Molecular evolution (~5 hours)</p>
+<ul>
+<li>What is natural selection?</li>
+<li>Natural selection applied to molecules: hypercycles and molecular transitions</li>
+<li>The Price formalism and the kin selection theory</li>
+<li>Information in biology</li>
+</ul>
+<p><span style="font-weight: 400;">G &ndash; Conclusions (1 hour)</span></p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Bibliografia e materiale didattico</div>
+<span class="contenuto_programma"><p>Oltre alle slides del corso (che saranno messe a disposizione di tutti gli studenti al termine di ogni lezione), alcuni argomenti sono trattati dai seguenti libri:</p>
+<ul>
+<li>Phillips et al. "Physical Biology of the Cell", Garland Science-Taylor and Francis Group, 2nd edition, 2012</li>
+<li>B. Jackson "Molecular and Cellular Biophysics", Cambridge University Press, 2006</li>
+<li>M. A. Nowak "Evolutionary Dynamics", Harvard University Press, 2006</li>
+</ul></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Bibliography</div>
+<span class="contenuto_programma"><p>Beside the course slides (that will be made available to all students following each lesson), some topics are covered by the following books:</p>
+<ul>
+<li>Phillips et al. "Physical Biology of the Cell", Garland Science-Taylor and Francis Group, 2nd edition, 2012</li>
+<li>B. Jackson "Molecular and Cellular Biophysics", Cambridge University Press, 2006</li>
+<li>A. Nowak "Evolutionary Dynamics", Harvard University Press, 2006</li>
+</ul></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Indicazioni per non frequentanti</div>
+<span class="contenuto_programma"><p>N.A.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Non-attending students info</div>
+<span class="contenuto_programma"><p>N.A.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Modalit&agrave; d'esame</div>
+<span class="contenuto_programma"><p>La prova orale consiste in un colloquio tra il candidato e il docente. Il colloquio inizia con la la descrizione di un articolo che descrive -in maniera generale- un tema biofisico applicato alla cellula (es: i lipid raft di membrana). L&rsquo;articolo viene preventivamente scelto dallo studente in un gruppo pre-selezionato dal docente o proposto dallo studente stesso e approvato dal docente. A partire dall&rsquo;articolo, la prova si allarga a temi collegati presentati all&rsquo;interno del corso. La durata del colloquio &egrave; di circa 30-40 minuti.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Assessment methods</div>
+<span class="contenuto_programma"><p>The oral test consists of an interview between the candidate and the teacher. The interview begins with the description of an article that describes - in a general way - a biophysical theme applied to the cell (e.g.: membrane lipid rafts). The article is previously chosen by the student in a group pre-selected by the teacher or proposed by the student himself and approved by the teacher. Starting from the article, the test expands to connected themes presented within the course. The duration of the interview is approximately 30-40 minutes.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Stage e tirocini</div>
+<span class="contenuto_programma"><p>N.A.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Work placement</div>
+<span class="contenuto_programma"><p>N.A.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Altri riferimenti web</div>
+<span class="contenuto_programma"><p>N.A.</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Additional web pages</div>
+<span class="contenuto_programma"><p>N.A.</p></span>
+</div>
+<div class="prog_it" >
+<div class="titolo-elemento-programma">Note</div>
+<span class="contenuto_programma"><p>Nessuna</p></span>
+</div>
+<div class="prog_en" >
+<div class="titolo-elemento-programma">Notes</div>
+<span class="contenuto_programma"><p>None</p></span>
+</div>
+<div style="float:right; font-style:italic;">Ultimo aggiornamento 29/01/2023 16:16</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+		
+		</div> <!-- content -->
+	</div> <!-- row -->
+</div> <!-- main -->
+
+
+<div class="container-fluid"> 
+	<div class="row" id="unipiFooter">
+		<div class="col-md-5 col-md-offset-2 text-center hidden-xs"><br>
+			&copy; <a class="linkFooter" href="http://www.unipi.it">Universit&agrave; di Pisa</a> 2013-2026<br>
+			<a class="linkFooter" href="https://esami.unipi.it/esami2/privacy.php">Trattamento dei dati - Privacy policy</a>		
+		</div>
+		<div class="col-md-5 text-center hidden-xs"><br>
+			Sistema Informatico di Ateneo<br>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="../_assets/jquery.min-4e345eba.js"></script>
+<script src="../_assets/jquery-ui.min-e93c00aa.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../_assets/bootstrap.min-19dbc6e0.js"></script>
+<!-- 
+<script src="../_assets/jquery.justifiedGallery.min-c8ee7689.js"></script> 
+<script src="../_assets/tinymce.min-e9308fd1.js"></script>
+<script src="../_assets/jquery.tinymce.min-65f0b191.js"></script>
+-->
+<!-- All functions for this theme + document.ready processing -->
+<script src="../_assets/devoops-3beded5a.js"></script>
+<script src="../_assets/unipi-3293f5f6.js"></script>
+<script src="../_assets/dm-10a06b2c.js"></script>
+<!-- Embedding in outer iframe -->
+<script>
+	function adjustParentHeight() {
+		var elem = document.getElementById('insegnamenti');
+		if(elem != null) {
+			var windowHeight = elem.offsetHeight;
+			parent.postMessage({ message: windowHeight, action: 'adjustHeight' }, "*");
+		}
+	}
+	window.onload = adjustParentHeight;
+	window.addEventListener('resize', adjustParentHeight);
+</script>
+</body>
+</html>
+<script>
+	$(document).ready(function () {
+		$(".prog_en").hide();
+
+
+		$('input[type=radio][name=language]').change(function () {
+			link = $("#pdfProgramma").attr("href");
+			switch (this.value) {
+				case 'it':
+					$(".prog_it").show();
+					$(".prog_en").hide();
+					link = link.replace("language=en", "language=it");
+					break;
+				case 'en':
+					$(".prog_it").hide();
+					$(".prog_en").show();
+					link = link.replace("language=it", "language=en");
+					break;
+				default:
+			}
+			$("#pdfProgramma").attr("href", link);
+		});
+
+
+		$('input[type=radio]:checked').trigger("change");
+
+	});
+</script>
