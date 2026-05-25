@@ -1,0 +1,4911 @@
+[
+ {
+  "members": [
+   {
+    "cod": "087BB",
+    "titolo": "FISICA DEI SISTEMI A MOLTICORPI",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2014,
+     2015
+    ],
+    "norms": [
+     "FISICA SISTEMI MOLTICORPI"
+    ]
+   },
+   {
+    "cod": "276BB",
+    "titolo": "FISICA DEI SISTEMI A MOLTICORPI",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020
+    ],
+    "norms": [
+     "FISICA SISTEMI MOLTICORPI"
+    ]
+   },
+   {
+    "cod": "372BB",
+    "titolo": "FISICA DEI SISTEMI A MOLTI CORPI S",
+    "cfu": null,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2020
+    ],
+    "norms": [
+     "FISICA SISTEMI MOLTI CORPI S"
+    ]
+   },
+   {
+    "cod": "382BB",
+    "titolo": "QUANTUM LIQUIDS",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2021,
+     2022,
+     2023,
+     2024,
+     2025
+    ],
+    "norms": [
+     "QUANTUM LIQUIDS"
+    ]
+   },
+   {
+    "cod": "394BB",
+    "titolo": "QUANTUM LIQUIDS S",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2021
+    ],
+    "norms": [
+     "QUANTUM LIQUIDS S"
+    ]
+   },
+   {
+    "cod": "0061B",
+    "titolo": "QUANTUM MANY-BODY STATES OF MATTER",
+    "cfu": null,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2026
+    ],
+    "norms": [
+     "QUANTUM MANY BODY STATES MATTER"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "FISICA SISTEMI MOLTI CORPI S",
+   "FISICA SISTEMI MOLTICORPI",
+   "QUANTUM LIQUIDS",
+   "QUANTUM LIQUIDS S",
+   "QUANTUM MANY BODY STATES MATTER"
+  ],
+  "label": "QUANTUM LIQUIDS"
+ },
+ {
+  "members": [
+   {
+    "cod": "105BB",
+    "titolo": "LABORATORIO DI INTERAZIONI FONDAMENTALI",
+    "cfu": 12,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2014,
+     2015
+    ],
+    "norms": [
+     "LABORATORIO INTERAZIONI FONDAMENTALI"
+    ]
+   },
+   {
+    "cod": "183BB",
+    "titolo": "LABORATORIO DI INTERAZIONI FONDAMENTALI A",
+    "cfu": null,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "LABORATORIO INTERAZIONI FONDAMENTALI"
+    ]
+   },
+   {
+    "cod": "237BB",
+    "titolo": "LABORATORIO DI INTERAZIONI FONDAMENTALI A",
+    "cfu": null,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2014,
+     2015
+    ],
+    "norms": [
+     "LABORATORIO INTERAZIONI FONDAMENTALI"
+    ]
+   },
+   {
+    "cod": "280BB",
+    "titolo": "FUND INT LAB",
+    "cfu": 15,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021
+    ],
+    "norms": [
+     "FUND INT LAB"
+    ]
+   },
+   {
+    "cod": "413BB",
+    "titolo": "LABORATORIO DI INTERAZIONI FONDAMENTALI",
+    "cfu": 15,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "LABORATORIO INTERAZIONI FONDAMENTALI"
+    ]
+   },
+   {
+    "cod": "414BB",
+    "titolo": "LABORATORIO DI INTERAZIONI FONDAMENTALI S",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "LABORATORIO INTERAZIONI FONDAMENTALI S"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "FUND INT LAB",
+   "LABORATORIO INTERAZIONI FONDAMENTALI",
+   "LABORATORIO INTERAZIONI FONDAMENTALI S"
+  ],
+  "label": "LABORATORIO INTERAZIONI"
+ },
+ {
+  "members": [
+   {
+    "cod": "106BB",
+    "titolo": "LABORATORIO DI OTTICA QUANTISTICA",
+    "cfu": 12,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2014,
+     2015,
+     2016,
+     2017
+    ],
+    "norms": [
+     "LABORATORIO OTTICA QUANTISTICA"
+    ]
+   },
+   {
+    "cod": "184BB",
+    "titolo": "LABORATORIO DI OTTICA QUANTISTICA A",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "LABORATORIO OTTICA QUANTISTICA"
+    ]
+   },
+   {
+    "cod": "216BB",
+    "titolo": "LABORATORIO DI OTTICA QUANTISTICA A",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2014,
+     2015,
+     2021
+    ],
+    "norms": [
+     "LABORATORIO OTTICA QUANTISTICA"
+    ]
+   },
+   {
+    "cod": "282BB",
+    "titolo": "LABORATORIO DI OTTICA QUANTISTICA B",
+    "cfu": 15,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2018,
+     2019,
+     2020,
+     2021
+    ],
+    "norms": [
+     "LABORATORIO OTTICA QUANTISTICA B"
+    ]
+   },
+   {
+    "cod": "411BB",
+    "titolo": "PHYSICS OF MATTER AND NANOTECHNOLOGY LABORATORY/ LABORATORIO DI FISICA DELLA MATERIA E NANOTECNOLOGIE",
+    "cfu": 15,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "PHYSICS MATTER NANOTECHNOLOGY LABORATORY LABORATORIO FISICA MATERIA NANOTECNOLOGIE"
+    ]
+   },
+   {
+    "cod": "412BB",
+    "titolo": "LABORATORIO DI FISICA DELLA MATERIA E NANOTECNOLOGIE S",
+    "cfu": 9,
+    "tipo": "",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "LABORATORIO FISICA MATERIA NANOTECNOLOGIE S"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "LABORATORIO FISICA MATERIA NANOTECNOLOGIE S",
+   "LABORATORIO OTTICA QUANTISTICA",
+   "LABORATORIO OTTICA QUANTISTICA B",
+   "PHYSICS MATTER NANOTECHNOLOGY LABORATORY LABORATORIO FISICA MATERIA NANOTECNOLOGIE"
+  ],
+  "label": "LABORATORIO MATERIA"
+ },
+ {
+  "members": [
+   {
+    "cod": "167BB",
+    "titolo": "FLUIDODINAMICA",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "FLUIDODINAMICA"
+    ]
+   },
+   {
+    "cod": "215BB",
+    "titolo": "FLUIDODINAMICA",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016
+    ],
+    "norms": [
+     "FLUIDODINAMICA"
+    ]
+   },
+   {
+    "cod": "289BB",
+    "titolo": "FLUIDODINAMICA",
+    "cfu": 6,
+    "tipo": "LT",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "FLUIDODINAMICA"
+    ]
+   },
+   {
+    "cod": "0024B",
+    "titolo": "FLUIDODYNAMICS",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "MUT",
+    "mut_source": "289BB",
+    "aa_active": [
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "FLUIDODYNAMICS"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LT",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "FLUIDODINAMICA",
+   "FLUIDODYNAMICS"
+  ],
+  "label": "FLUIDODINAMICA"
+ },
+ {
+  "members": [
+   {
+    "cod": "320BB",
+    "titolo": "LA FISICA DI TUTTI I GIORNI",
+    "cfu": 3,
+    "tipo": "LT",
+    "stato": "OFF",
+    "mut_source": null,
+    "aa_active": [
+     2018,
+     2019,
+     2020,
+     2021
+    ],
+    "norms": [
+     "LA FISICA TUTTI I GIORNI"
+    ]
+   },
+   {
+    "cod": "416BB",
+    "titolo": "LA FISICA DI TUTTI I GIORNI",
+    "cfu": 6,
+    "tipo": "LT",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "LA FISICA TUTTI I GIORNI"
+    ]
+   },
+   {
+    "cod": "0039B",
+    "titolo": "THE PHYSICS OF EVERY DAY LIFE / LA FISICA DI TUTTI I GIORNI",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "MUT",
+    "mut_source": null,
+    "aa_active": [
+     2025
+    ],
+    "norms": [
+     "PHYSICS EVERY DAY LIFE LA FISICA TUTTI I GIORNI"
+    ]
+   },
+   {
+    "cod": "240BB",
+    "titolo": "FISICA DI TUTTI I GIORNI",
+    "cfu": 3,
+    "tipo": "LT",
+    "stato": "OFF",
+    "mut_source": null,
+    "aa_active": [],
+    "norms": [
+     "FISICA TUTTI I GIORNI"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LT",
+  "aa_total": [
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "FISICA TUTTI I GIORNI",
+   "LA FISICA TUTTI I GIORNI",
+   "PHYSICS EVERY DAY LIFE LA FISICA TUTTI I GIORNI"
+  ],
+  "label": "FISICA TUTTI GIORNI"
+ },
+ {
+  "members": [
+   {
+    "cod": "256BB",
+    "titolo": "FISICA DELLE ONDE GRAVITAZIONALI A",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2014,
+     2015,
+     2021,
+     2023,
+     2024
+    ],
+    "norms": [
+     "FISICA ONDE GRAVITAZIONALI"
+    ]
+   },
+   {
+    "cod": "257BB",
+    "titolo": "GRAVITATIONAL WAVE PHYSICS / FISICA DELLE ONDE GRAVITAZIONALI",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "norms": [
+     "GRAVITATIONAL WAVE PHYSICS FISICA ONDE GRAVITAZIONALI"
+    ]
+   },
+   {
+    "cod": "0046B",
+    "titolo": "PHYSICS AND DETECTORS OF GRAVITATIONAL WAVES /  FISICA E RILEVATORI DI ONDE GRAVITAZIONALI",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2025,
+     2026
+    ],
+    "norms": [
+     "PHYSICS DETECTORS GRAVITATIONAL WAVES FISICA RILEVATORI ONDE GRAVITAZIONALI"
+    ]
+   },
+   {
+    "cod": "0047B",
+    "titolo": "PHYSICS AND DETECTORS OF GRAVITATIONAL WAVES S / FISICA E RILEVATORI DI ONDE GRAVITAZIONALI S",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2025,
+     2026
+    ],
+    "norms": [
+     "PHYSICS DETECTORS GRAVITATIONAL WAVES S FISICA RILEVATORI ONDE GRAVITAZIONALI S"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "FISICA ONDE GRAVITAZIONALI",
+   "GRAVITATIONAL WAVE PHYSICS FISICA ONDE GRAVITAZIONALI",
+   "PHYSICS DETECTORS GRAVITATIONAL WAVES FISICA RILEVATORI ONDE GRAVITAZIONALI",
+   "PHYSICS DETECTORS GRAVITATIONAL WAVES S FISICA RILEVATORI ONDE GRAVITAZIONALI S"
+  ],
+  "label": "FISICA DELLE ONDE GRAVITAZIONALI"
+ },
+ {
+  "members": [
+   {
+    "cod": "171BB",
+    "titolo": "FISICA MUSICALE",
+    "cfu": 6,
+    "tipo": "LT",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018
+    ],
+    "norms": [
+     "FISICA MUSICALE"
+    ]
+   },
+   {
+    "cod": "027BB",
+    "titolo": "FISICA MUSICALE",
+    "cfu": 3,
+    "tipo": "LT",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2016,
+     2019,
+     2020,
+     2021
+    ],
+    "norms": [
+     "FISICA MUSICALE"
+    ]
+   },
+   {
+    "cod": "408BB",
+    "titolo": "FISICA DEL SUONO",
+    "cfu": 6,
+    "tipo": "LT",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "FISICA SUONO"
+    ]
+   },
+   {
+    "cod": "415BB",
+    "titolo": "PHYSICS OF SOUND",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "MUT",
+    "mut_source": "408BB",
+    "aa_active": [
+     2022,
+     2023,
+     2024,
+     2025
+    ],
+    "norms": [
+     "PHYSICS SOUND"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LT",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "FISICA MUSICALE",
+   "FISICA SUONO",
+   "PHYSICS SOUND"
+  ],
+  "label": "FISICA MUSICALE / FISICA DEL SUONO"
+ },
+ {
+  "members": [
+   {
+    "cod": "115BB",
+    "titolo": "PARTICELLE ELEMENTARI 2",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2014,
+     2015,
+     2016
+    ],
+    "norms": [
+     "PARTICELLE ELEMENTARI 2"
+    ]
+   },
+   {
+    "cod": "186BB",
+    "titolo": "PARTICELLE ELEMENTARI 2A",
+    "cfu": null,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2014,
+     2015
+    ],
+    "norms": [
+     "PARTICELLE ELEMENTARI 2A"
+    ]
+   },
+   {
+    "cod": "302BB",
+    "titolo": "PARTICLE PHYSICS / FISICA DELLE PARTICELLE",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "PARTICLE PHYSICS FISICA PARTICELLE"
+    ]
+   },
+   {
+    "cod": "373BB",
+    "titolo": "FISICA DELLE PARTICELLE S",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2020,
+     2021,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "FISICA PARTICELLE S"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "FISICA PARTICELLE S",
+   "PARTICELLE ELEMENTARI 2",
+   "PARTICELLE ELEMENTARI 2A",
+   "PARTICLE PHYSICS FISICA PARTICELLE"
+  ],
+  "label": "FISICA DELLE PARTICELLE"
+ },
+ {
+  "members": [
+   {
+    "cod": "118BB",
+    "titolo": "PLASMI - TEORIA FLUIDA",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "PLASMI TEORIA FLUIDA"
+    ]
+   },
+   {
+    "cod": "238BB",
+    "titolo": "PLASMI",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016
+    ],
+    "norms": [
+     "PLASMI"
+    ]
+   },
+   {
+    "cod": "303BB",
+    "titolo": "FONDAMENTI DI FISICA DEI PLASMI E DEI FLUIDI",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2017,
+     2018
+    ],
+    "norms": [
+     "FONDAMENTI FISICA PLASMI FLUIDI"
+    ]
+   },
+   {
+    "cod": "353BB",
+    "titolo": "PLASMA PHYSICS / FISICA DEI PLASMI",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "PLASMA PHYSICS FISICA PLASMI"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "FONDAMENTI FISICA PLASMI FLUIDI",
+   "PLASMA PHYSICS FISICA PLASMI",
+   "PLASMI",
+   "PLASMI TEORIA FLUIDA"
+  ],
+  "label": "PLASMI"
+ },
+ {
+  "members": [
+   {
+    "cod": "032BB",
+    "titolo": "LABORATORIO 1",
+    "cfu": 12,
+    "tipo": "LT",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019
+    ],
+    "norms": [
+     "LABORATORIO 1"
+    ]
+   },
+   {
+    "cod": "367BB",
+    "titolo": "LABORATORIO 1 CON ELEMENTI DI COMPUTAZIONE",
+    "cfu": 15,
+    "tipo": "LT",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "norms": [
+     "LABORATORIO 1 ELEMENTI COMPUTAZIONE"
+    ]
+   },
+   {
+    "cod": "0044B",
+    "titolo": "LABORATORIO 1 ED ELEMENTI DI COMPUTAZIONE",
+    "cfu": 15,
+    "tipo": "LT",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2025,
+     2026
+    ],
+    "norms": [
+     "LABORATORIO 1 ELEMENTI COMPUTAZIONE"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LT",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "LABORATORIO 1",
+   "LABORATORIO 1 ELEMENTI COMPUTAZIONE"
+  ],
+  "label": "LABORATORIO 1"
+ },
+ {
+  "members": [
+   {
+    "cod": "112BB",
+    "titolo": "MODELLO STANDARD DELLE INTERAZIONI FONDAMENTALI",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "MODELLO STANDARD INTERAZIONI FONDAMENTALI"
+    ]
+   },
+   {
+    "cod": "219BB",
+    "titolo": "MODELLO STANDARD DELLE INTERAZIONI FONDAMENTALI",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "OFF",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016
+    ],
+    "norms": [
+     "MODELLO STANDARD INTERAZIONI FONDAMENTALI"
+    ]
+   },
+   {
+    "cod": "0062B",
+    "titolo": "MODELLO STANDARD DELLE INTERAZIONI FONDAMENTALI S",
+    "cfu": null,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2026
+    ],
+    "norms": [
+     "MODELLO STANDARD INTERAZIONI FONDAMENTALI S"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2026
+  ],
+  "common_norms": [
+   "MODELLO STANDARD INTERAZIONI FONDAMENTALI",
+   "MODELLO STANDARD INTERAZIONI FONDAMENTALI S"
+  ],
+  "label": "MODELLO STANDARD INTERAZIONI FONDAMENTALI"
+ },
+ {
+  "members": [
+   {
+    "cod": "036BB",
+    "titolo": "MECCANICA QUANTISTICA",
+    "cfu": 12,
+    "tipo": "LT",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2014
+    ],
+    "norms": [
+     "MECCANICA QUANTISTICA"
+    ]
+   },
+   {
+    "cod": "258BB",
+    "titolo": "MECCANICA QUANTISTICA",
+    "cfu": 15,
+    "tipo": "LT",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "MECCANICA QUANTISTICA"
+    ]
+   },
+   {
+    "cod": "283BB",
+    "titolo": "MECCANICA QUANTISTICA A",
+    "cfu": 9,
+    "tipo": "LT",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2021
+    ],
+    "norms": [
+     "MECCANICA QUANTISTICA"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LT",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "MECCANICA QUANTISTICA"
+  ],
+  "label": "MECCANICA QUANTISTICA"
+ },
+ {
+  "members": [
+   {
+    "cod": "064BB",
+    "titolo": "BIOFISICA",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "BIOFISICA"
+    ]
+   },
+   {
+    "cod": "196BB",
+    "titolo": "BIOFISICA",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2022
+    ],
+    "norms": [
+     "BIOFISICA"
+    ]
+   },
+   {
+    "cod": "386BB",
+    "titolo": "BIOFISICA CELLULARE / CELL BIOPHYSICS",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "OFF",
+    "mut_source": null,
+    "aa_active": [
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "norms": [
+     "BIOFISICA CELLULARE CELL BIOPHYSICS"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024
+  ],
+  "common_norms": [
+   "BIOFISICA",
+   "BIOFISICA CELLULARE CELL BIOPHYSICS"
+  ],
+  "label": "BIOFISICA"
+ },
+ {
+  "members": [
+   {
+    "cod": "072BB",
+    "titolo": "COMPUTAZIONE QUANTISTICA",
+    "cfu": 3,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2014,
+     2015,
+     2016,
+     2017
+    ],
+    "norms": [
+     "COMPUTAZIONE QUANTISTICA"
+    ]
+   },
+   {
+    "cod": "321BB",
+    "titolo": "COMPUTAZIONE E TECNOLOGIE QUANTISTICHE",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2018,
+     2019
+    ],
+    "norms": [
+     "COMPUTAZIONE TECNOLOGIE QUANTISTICHE"
+    ]
+   },
+   {
+    "cod": "376BB",
+    "titolo": "QUANTUM COMPUTING AND TECHNOLOGIES",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "QUANTUM COMPUTING TECHNOLOGIES"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "COMPUTAZIONE QUANTISTICA",
+   "COMPUTAZIONE TECNOLOGIE QUANTISTICHE",
+   "QUANTUM COMPUTING TECHNOLOGIES"
+  ],
+  "label": "COMPUTAZIONE QUANTISTICA"
+ },
+ {
+  "members": [
+   {
+    "cod": "081BB",
+    "titolo": "FISICA AI COLLISIONATORI ADRONICI",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "FISICA AI COLLISIONATORI ADRONICI"
+    ]
+   },
+   {
+    "cod": "201BB",
+    "titolo": "HADRON COLLIDER PHYSICS / FISICA AI COLLISIONATORI ADRONICI",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "HADRON COLLIDER PHYSICS FISICA AI COLLISIONATORI ADRONICI"
+    ]
+   },
+   {
+    "cod": "371BB",
+    "titolo": "FISICA AI COLLISIONATORI ADRONICI S",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2020,
+     2021,
+     2023,
+     2024,
+     2025
+    ],
+    "norms": [
+     "FISICA AI COLLISIONATORI ADRONICI S"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "FISICA AI COLLISIONATORI ADRONICI",
+   "FISICA AI COLLISIONATORI ADRONICI S",
+   "HADRON COLLIDER PHYSICS FISICA AI COLLISIONATORI ADRONICI"
+  ],
+  "label": "FISICA AI COLLISIONATORI ADRONICI"
+ },
+ {
+  "members": [
+   {
+    "cod": "276EE",
+    "titolo": "ELEMENTI DI FISIOLOGIA E FISIOPATOLOGIA",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2014,
+     2015,
+     2016,
+     2017
+    ],
+    "norms": [
+     "ELEMENTI FISIOLOGIA FISIOPATOLOGIA"
+    ]
+   },
+   {
+    "cod": "086EE",
+    "titolo": "ELEMENTI DI FISIOLOGIA E FISIOPATOLOGIA",
+    "cfu": 3,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2018
+    ],
+    "norms": [
+     "ELEMENTI FISIOLOGIA FISIOPATOLOGIA"
+    ]
+   },
+   {
+    "cod": "478EE",
+    "titolo": "ELEMENTS OF PHYSIOLOGY, PHYSIOPATHOLOGY AND DIAGNOSTICS / ELEMENTI DI FISIOLOGIA, FISIOPATOLOGIA E DIAGNOSTICA",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "ELEMENTS PHYSIOLOGY PHYSIOPATHOLOGY DIAGNOSTICS ELEMENTI FISIOLOGIA FISIOPATOLOGIA DIAGNOSTICA"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "ELEMENTI FISIOLOGIA FISIOPATOLOGIA",
+   "ELEMENTS PHYSIOLOGY PHYSIOPATHOLOGY DIAGNOSTICS ELEMENTI FISIOLOGIA FISIOPATOLOGIA DIAGNOSTICA"
+  ],
+  "label": "ELEMENTI DI FISIOLOGIA E FISIOPATOLOGIA"
+ },
+ {
+  "members": [
+   {
+    "cod": "094BB",
+    "titolo": "FISICA MEDICA",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "FISICA MEDICA"
+    ]
+   },
+   {
+    "cod": "205BB",
+    "titolo": "FISICA MEDICA",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2025,
+     2026
+    ],
+    "norms": [
+     "FISICA MEDICA"
+    ]
+   },
+   {
+    "cod": "381BB",
+    "titolo": "MEDICAL PHYSICS 1/ FISICA MEDICA 1",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "norms": [
+     "MEDICAL PHYSICS 1 FISICA MEDICA 1"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "FISICA MEDICA",
+   "MEDICAL PHYSICS 1 FISICA MEDICA 1"
+  ],
+  "label": "FISICA MEDICA 1"
+ },
+ {
+  "members": [
+   {
+    "cod": "114BB",
+    "titolo": "PARTICELLE ELEMENTARI 1",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "PARTICELLE ELEMENTARI 1"
+    ]
+   },
+   {
+    "cod": "222BB",
+    "titolo": "PARTICELLE ELEMENTARI 1",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016
+    ],
+    "norms": [
+     "PARTICELLE ELEMENTARI 1"
+    ]
+   },
+   {
+    "cod": "305BB",
+    "titolo": "FUNDAMENTAL INTERACTIONS / INTERAZIONI FONDAMENTALI",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "FUNDAMENTAL INTERACTIONS INTERAZIONI FONDAMENTALI"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "FUNDAMENTAL INTERACTIONS INTERAZIONI FONDAMENTALI",
+   "PARTICELLE ELEMENTARI 1"
+  ],
+  "label": "INTERAZIONI FONDAMENTALI"
+ },
+ {
+  "members": [
+   {
+    "cod": "117BB",
+    "titolo": "PLASMI - TEORIA CINETICA",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "PLASMI TEORIA CINETICA"
+    ]
+   },
+   {
+    "cod": "224BB",
+    "titolo": "PLASMI B",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018
+    ],
+    "norms": [
+     "PLASMI B"
+    ]
+   },
+   {
+    "cod": "355BB",
+    "titolo": "KINETIC THEORY OF PLASMAS/PLASMI TEORIA CINETICA",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "norms": [
+     "KINETIC THEORY PLASMAS PLASMI TEORIA CINETICA"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024
+  ],
+  "common_norms": [
+   "KINETIC THEORY PLASMAS PLASMI TEORIA CINETICA",
+   "PLASMI B",
+   "PLASMI TEORIA CINETICA"
+  ],
+  "label": "PLASMI 2"
+ },
+ {
+  "members": [
+   {
+    "cod": "122BB",
+    "titolo": "REAZIONI NUCLEARI DI INTERESSE ASTROFISICO",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "REAZIONI NUCLEARI INTERESSE ASTROFISICO"
+    ]
+   },
+   {
+    "cod": "227BB",
+    "titolo": "REAZIONI NUCLEARI DI INTERESSE ASTROFISICO",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "OFF",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022
+    ],
+    "norms": [
+     "REAZIONI NUCLEARI INTERESSE ASTROFISICO"
+    ]
+   },
+   {
+    "cod": "377BB",
+    "titolo": "REAZIONI NUCLEARI DI INTERESSE ASTROFISICO S",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "OFF",
+    "mut_source": null,
+    "aa_active": [
+     2020,
+     2021
+    ],
+    "norms": [
+     "REAZIONI NUCLEARI INTERESSE ASTROFISICO S"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022
+  ],
+  "common_norms": [
+   "REAZIONI NUCLEARI INTERESSE ASTROFISICO",
+   "REAZIONI NUCLEARI INTERESSE ASTROFISICO S"
+  ],
+  "label": "REAZIONI NUCLEARI INTERESSE ASTROFISICO"
+ },
+ {
+  "members": [
+   {
+    "cod": "165BB",
+    "titolo": "ASTROFISICA",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "ASTROFISICA"
+    ]
+   },
+   {
+    "cod": "194BB",
+    "titolo": "ASTROFISICA",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "OFF",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019
+    ],
+    "norms": [
+     "ASTROFISICA"
+    ]
+   },
+   {
+    "cod": "195BB",
+    "titolo": "ASTROFISICA A",
+    "cfu": null,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015
+    ],
+    "norms": [
+     "ASTROFISICA"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019
+  ],
+  "common_norms": [
+   "ASTROFISICA"
+  ],
+  "label": "ASTROFISICA"
+ },
+ {
+  "members": [
+   {
+    "cod": "235AA",
+    "titolo": "ANALISI MATEMATICA 1",
+    "cfu": 9,
+    "tipo": "LT",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "ANALISI MATEMATICA 1"
+    ]
+   },
+   {
+    "cod": "506AA",
+    "titolo": "ANALISI MATEMATICA 1",
+    "cfu": 15,
+    "tipo": "LT",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2014,
+     2015,
+     2016
+    ],
+    "norms": [
+     "ANALISI MATEMATICA 1"
+    ]
+   },
+   {
+    "cod": "632AA",
+    "titolo": "ANALISI MATEMATICA",
+    "cfu": 15,
+    "tipo": "LT",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "ANALISI MATEMATICA"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LT",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "ANALISI MATEMATICA",
+   "ANALISI MATEMATICA 1"
+  ],
+  "label": "ANALISI MATEMATICA"
+ },
+ {
+  "members": [
+   {
+    "cod": "0016B",
+    "titolo": "THEORY OF NUCLEAR INTERACTION S / TEORIA DELL'INTERAZIONE NUCLEARE S",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2025,
+     2026
+    ],
+    "norms": [
+     "THEORY NUCLEAR INTERACTION S TEORIA DELL INTERAZIONE NUCLEARE S"
+    ]
+   },
+   {
+    "cod": "0015B",
+    "titolo": "THEORY OF NUCLEAR INTERACTION / TEORIA DELL'INTERAZIONE NUCLEARE",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "SBY",
+    "mut_source": null,
+    "aa_active": [],
+    "norms": [
+     "THEORY NUCLEAR INTERACTION TEORIA DELL INTERAZIONE NUCLEARE"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "THEORY NUCLEAR INTERACTION S TEORIA DELL INTERAZIONE NUCLEARE S",
+   "THEORY NUCLEAR INTERACTION TEORIA DELL INTERAZIONE NUCLEARE"
+  ],
+  "label": "TEORIA DELL INTERAZIONE NUCLEARE"
+ },
+ {
+  "members": [
+   {
+    "cod": "0017B",
+    "titolo": "TEORIE DI CAMPO STATISTICHE",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "SBY",
+    "mut_source": null,
+    "aa_active": [],
+    "norms": [
+     "TEORIE CAMPO STATISTICHE"
+    ]
+   },
+   {
+    "cod": "0018B",
+    "titolo": "TEORIE DI CAMPO STATISTICHE S",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [],
+    "norms": [
+     "TEORIE CAMPO STATISTICHE S"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [],
+  "common_norms": [
+   "TEORIE CAMPO STATISTICHE",
+   "TEORIE CAMPO STATISTICHE S"
+  ],
+  "label": "TEORIE DI CAMPO STATISTICHE"
+ },
+ {
+  "members": [
+   {
+    "cod": "366BB",
+    "titolo": "INFORMATICA CON LABORATORIO",
+    "cfu": 6,
+    "tipo": "LT",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "INFORMATICA LABORATORIO"
+    ]
+   },
+   {
+    "cod": "0033A",
+    "titolo": "INFORMATICA CON LABORATORIO",
+    "cfu": 6,
+    "tipo": "",
+    "stato": "MUT",
+    "mut_source": null,
+    "aa_active": [],
+    "norms": [
+     "INFORMATICA LABORATORIO"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LT",
+  "aa_total": [
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "INFORMATICA LABORATORIO"
+  ],
+  "label": "INFORMATICA CON LABORATORIO"
+ },
+ {
+  "members": [
+   {
+    "cod": "393BB",
+    "titolo": "MEDICAL PHYSICS 2 / FISICA MEDICA 2",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "norms": [
+     "MEDICAL PHYSICS 2 FISICA MEDICA 2"
+    ]
+   },
+   {
+    "cod": "0037B",
+    "titolo": "MOLECULAR IMAGING",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2025,
+     2026
+    ],
+    "norms": [
+     "MOLECULAR IMAGING"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "MEDICAL PHYSICS 2 FISICA MEDICA 2",
+   "MOLECULAR IMAGING"
+  ],
+  "label": "MEDICA 2 / MOLECULAR IMAGING"
+ },
+ {
+  "members": [
+   {
+    "cod": "043BB",
+    "titolo": "SPECTROSCOPY ALGORITHMS / ALGORITMI DI SPETTROSCOPIA",
+    "cfu": 3,
+    "tipo": "LT",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2014,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "norms": [
+     "SPECTROSCOPY ALGORITHMS ALGORITMI SPETTROSCOPIA"
+    ]
+   },
+   {
+    "cod": "0042B",
+    "titolo": "GRAPHICS AND ANIMATION WITH PYTHON",
+    "cfu": 3,
+    "tipo": "LT",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2025,
+     2026
+    ],
+    "norms": [
+     "GRAPHICS ANIMATION WITH PYTHON"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LT",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "GRAPHICS ANIMATION WITH PYTHON",
+   "SPECTROSCOPY ALGORITHMS ALGORITMI SPETTROSCOPIA"
+  ],
+  "label": "PYTHON"
+ },
+ {
+  "members": [
+   {
+    "cod": "384BB",
+    "titolo": "SPETTROSCOPIA OTTICA DEI MATERIALI",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "MUT",
+    "mut_source": null,
+    "aa_active": [
+     2021,
+     2022,
+     2023,
+     2024,
+     2025
+    ],
+    "norms": [
+     "SPETTROSCOPIA OTTICA MATERIALI"
+    ]
+   },
+   {
+    "cod": "0043B",
+    "titolo": "PHOTONICS AND MATERIALS / FOTONICA E MATERIALI",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "MUT",
+    "mut_source": null,
+    "aa_active": [
+     2025
+    ],
+    "norms": [
+     "PHOTONICS MATERIALS FOTONICA MATERIALI"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "common_norms": [
+   "PHOTONICS MATERIALS FOTONICA MATERIALI",
+   "SPETTROSCOPIA OTTICA MATERIALI"
+  ],
+  "label": "SPETTROSCOPIA OTTICA / FOTONICA E MATERIALI"
+ },
+ {
+  "members": [
+   {
+    "cod": "426BB",
+    "titolo": "ENTANGLEMENT: ADVANCED THEORETICAL CONCEPTS AND APPLICATIONS IN QUANTUM TECHNOLOGIES",
+    "cfu": 3,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2023,
+     2024,
+     2025
+    ],
+    "norms": [
+     "ENTANGLEMENT ADVANCED THEORETICAL CONCEPTS APPLICATIONS QUANTUM TECHNOLOGIES"
+    ]
+   },
+   {
+    "cod": "0060B",
+    "titolo": "QUANTUM FOUNDATIONS FOR QUANTUM TECHNOLOGY",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2026
+    ],
+    "norms": [
+     "QUANTUM FOUNDATIONS QUANTUM TECHNOLOGY"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "ENTANGLEMENT ADVANCED THEORETICAL CONCEPTS APPLICATIONS QUANTUM TECHNOLOGIES",
+   "QUANTUM FOUNDATIONS QUANTUM TECHNOLOGY"
+  ],
+  "label": "ENTANGLEMENT / QUANTUM FOUNDATIONS"
+ },
+ {
+  "members": [
+   {
+    "cod": "030BB",
+    "titolo": "FISICA 3B",
+    "cfu": 12,
+    "tipo": "LT",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2014
+    ],
+    "norms": [
+     "FISICA 3B"
+    ]
+   },
+   {
+    "cod": "248BB",
+    "titolo": "FISICA 3",
+    "cfu": 9,
+    "tipo": "LT",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "FISICA 3"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LT",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "FISICA 3",
+   "FISICA 3B"
+  ],
+  "label": "FISICA 3"
+ },
+ {
+  "members": [
+   {
+    "cod": "034BB",
+    "titolo": "LABORATORIO 3",
+    "cfu": 12,
+    "tipo": "LT",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "LABORATORIO 3"
+    ]
+   },
+   {
+    "cod": "284BB",
+    "titolo": "LABORATORIO 3 S",
+    "cfu": 6,
+    "tipo": "LT",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [],
+    "norms": [
+     "LABORATORIO 3 S"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LT",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "LABORATORIO 3",
+   "LABORATORIO 3 S"
+  ],
+  "label": "LABORATORIO 3"
+ },
+ {
+  "members": [
+   {
+    "cod": "039BB",
+    "titolo": "STORIA DELLA FISICA",
+    "cfu": 6,
+    "tipo": "LT",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2018
+    ],
+    "norms": [
+     "STORIA FISICA"
+    ]
+   },
+   {
+    "cod": "341BB",
+    "titolo": "STORIA DELLA FISICA",
+    "cfu": 6,
+    "tipo": "LT",
+    "stato": "OFF",
+    "mut_source": null,
+    "aa_active": [
+     2019
+    ],
+    "norms": [
+     "STORIA FISICA"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LT",
+  "aa_total": [
+   2018,
+   2019
+  ],
+  "common_norms": [
+   "STORIA FISICA"
+  ],
+  "label": "STORIA FISICA"
+ },
+ {
+  "members": [
+   {
+    "cod": "040BB",
+    "titolo": "STORIA CONCETTUALE DELLA FISICA",
+    "cfu": 3,
+    "tipo": "LT",
+    "stato": "OFF",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2021
+    ],
+    "norms": [
+     "STORIA CONCETTUALE FISICA"
+    ]
+   },
+   {
+    "cod": "342BB",
+    "titolo": "STORIA CONCETTUALE DELLA FISICA",
+    "cfu": 6,
+    "tipo": "LT",
+    "stato": "OFF",
+    "mut_source": null,
+    "aa_active": [
+     2020,
+     2021,
+     2022,
+     2023
+    ],
+    "norms": [
+     "STORIA CONCETTUALE FISICA"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LT",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2020,
+   2021,
+   2022,
+   2023
+  ],
+  "common_norms": [
+   "STORIA CONCETTUALE FISICA"
+  ],
+  "label": "STORIA CONCETTUALE FISICA"
+ },
+ {
+  "members": [
+   {
+    "cod": "044BB",
+    "titolo": "ANALISI STATISTICA DEI DATI",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "ANALISI STATISTICA DATI"
+    ]
+   },
+   {
+    "cod": "193BB",
+    "titolo": "ANALISI STATISTICA DEI DATI",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "ANALISI STATISTICA DATI"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "ANALISI STATISTICA DATI"
+  ],
+  "label": "ANALISI STATISTICA DATI"
+ },
+ {
+  "members": [
+   {
+    "cod": "045BB",
+    "titolo": "ASTROFISICA EXTRAGALATTICA E COSMOLOGIA",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019
+    ],
+    "norms": [
+     "ASTROFISICA EXTRAGALATTICA COSMOLOGIA"
+    ]
+   },
+   {
+    "cod": "369BB",
+    "titolo": "EXTRAGALACTIC ASTROPHYSICS AND COSMOLOGY / ASTROFISICA EXTRAGALATTICA E COSMOLOGIA",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "EXTRAGALACTIC ASTROPHYSICS COSMOLOGY ASTROFISICA EXTRAGALATTICA COSMOLOGIA"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "ASTROFISICA EXTRAGALATTICA COSMOLOGIA",
+   "EXTRAGALACTIC ASTROPHYSICS COSMOLOGY ASTROFISICA EXTRAGALATTICA COSMOLOGIA"
+  ],
+  "label": "ASTROFISICA EXTRAGALATTICA COSMOLOGIA"
+ },
+ {
+  "members": [
+   {
+    "cod": "058CC",
+    "titolo": "CHIMICA FISICA MOLECOLARE",
+    "cfu": 6,
+    "tipo": "",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "CHIMICA FISICA MOLECOLARE"
+    ]
+   },
+   {
+    "cod": "244CC",
+    "titolo": "CHIMICA FISICA MOLECOLARE",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "CHIMICA FISICA MOLECOLARE"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "CHIMICA FISICA MOLECOLARE"
+  ],
+  "label": "CHIMICA FISICA MOLECOLARE"
+ },
+ {
+  "members": [
+   {
+    "cod": "063BB",
+    "titolo": "ASTROPARTICELLE A",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "ASTROPARTICELLE"
+    ]
+   },
+   {
+    "cod": "192BB",
+    "titolo": "ASTROPARTICLE PHYSICS /ASTROPARTICELLE",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "ASTROPARTICLE PHYSICS ASTROPARTICELLE"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "ASTROPARTICELLE",
+   "ASTROPARTICLE PHYSICS ASTROPARTICELLE"
+  ],
+  "label": "ASTROPARTICELLE"
+ },
+ {
+  "members": [
+   {
+    "cod": "074BB",
+    "titolo": "CROMODINAMICA QUANTISTICA",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "CROMODINAMICA QUANTISTICA"
+    ]
+   },
+   {
+    "cod": "197BB",
+    "titolo": "CROMODINAMICA QUANTISTICA",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "CROMODINAMICA QUANTISTICA"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "CROMODINAMICA QUANTISTICA"
+  ],
+  "label": "CROMODINAMICA QUANTISTICA"
+ },
+ {
+  "members": [
+   {
+    "cod": "079BB",
+    "titolo": "ELABORAZIONE DEI SEGNALI",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "ELABORAZIONE SEGNALI"
+    ]
+   },
+   {
+    "cod": "199BB",
+    "titolo": "ELABORAZIONE DEI SEGNALI",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018
+    ],
+    "norms": [
+     "ELABORAZIONE SEGNALI"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018
+  ],
+  "common_norms": [
+   "ELABORAZIONE SEGNALI"
+  ],
+  "label": "ELABORAZIONE SEGNALI"
+ },
+ {
+  "members": [
+   {
+    "cod": "181BB",
+    "titolo": "FISICA DELL'ATMOSFERA",
+    "cfu": 6,
+    "tipo": "LT",
+    "stato": "SBY",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023
+    ],
+    "norms": [
+     "FISICA DELL ATMOSFERA"
+    ]
+   },
+   {
+    "cod": "090BB",
+    "titolo": "FISICA DELL'ATMOSFERA",
+    "cfu": 3,
+    "tipo": "LT",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [],
+    "norms": [
+     "FISICA DELL ATMOSFERA"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LT",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023
+  ],
+  "common_norms": [
+   "FISICA DELL ATMOSFERA"
+  ],
+  "label": "FISICA DELL ATMOSFERA"
+ },
+ {
+  "members": [
+   {
+    "cod": "091BB",
+    "titolo": "FISICA DELLE STELLE COMPATTE S",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2014,
+     2017,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "norms": [
+     "FISICA STELLE COMPATTE S"
+    ]
+   },
+   {
+    "cod": "278BB",
+    "titolo": "FISICA DELLE STELLE COMPATTE",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "OFF",
+    "mut_source": null,
+    "aa_active": [
+     2016
+    ],
+    "norms": [
+     "FISICA STELLE COMPATTE"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2016,
+   2017,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024
+  ],
+  "common_norms": [
+   "FISICA STELLE COMPATTE",
+   "FISICA STELLE COMPATTE S"
+  ],
+  "label": "FISICA STELLE COMPATTE"
+ },
+ {
+  "members": [
+   {
+    "cod": "093BB",
+    "titolo": "FISICA DELLO STATO SOLIDO",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "FISICA STATO SOLIDO"
+    ]
+   },
+   {
+    "cod": "204BB",
+    "titolo": "SOLID STATE PHYSICS / FISICA DELLO STATO SOLIDO",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "SOLID STATE PHYSICS FISICA STATO SOLIDO"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "FISICA STATO SOLIDO",
+   "SOLID STATE PHYSICS FISICA STATO SOLIDO"
+  ],
+  "label": "FISICA DELLO STATO SOLIDO"
+ },
+ {
+  "members": [
+   {
+    "cod": "096BB",
+    "titolo": "FISICA NUCLEARE",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "FISICA NUCLEARE"
+    ]
+   },
+   {
+    "cod": "206BB",
+    "titolo": "FISICA NUCLEARE",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "FISICA NUCLEARE"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "FISICA NUCLEARE"
+  ],
+  "label": "FISICA NUCLEARE"
+ },
+ {
+  "members": [
+   {
+    "cod": "097BB",
+    "titolo": "FISICA STATISTICA",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "FISICA STATISTICA"
+    ]
+   },
+   {
+    "cod": "207BB",
+    "titolo": "FISICA STATISTICA",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "FISICA STATISTICA"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "FISICA STATISTICA"
+  ],
+  "label": "FISICA STATISTICA"
+ },
+ {
+  "members": [
+   {
+    "cod": "098BB",
+    "titolo": "STELLAR PHYSICS S",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2021,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "STELLAR PHYSICS S"
+    ]
+   },
+   {
+    "cod": "211BB",
+    "titolo": "STELLAR PHYSICS/ FISICA STELLARE",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "STELLAR PHYSICS FISICA STELLARE"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "STELLAR PHYSICS FISICA STELLARE",
+   "STELLAR PHYSICS S"
+  ],
+  "label": "FISICA STELLARE"
+ },
+ {
+  "members": [
+   {
+    "cod": "099BB",
+    "titolo": "FISICA TEORICA 1",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "FISICA TEORICA 1"
+    ]
+   },
+   {
+    "cod": "213BB",
+    "titolo": "FISICA TEORICA 1",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "FISICA TEORICA 1"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "FISICA TEORICA 1"
+  ],
+  "label": "FISICA TEORICA 1"
+ },
+ {
+  "members": [
+   {
+    "cod": "104BB",
+    "titolo": "LABORATORIO DI FISICA MEDICA I",
+    "cfu": 12,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "norms": [
+     "LABORATORIO FISICA MEDICA I"
+    ]
+   },
+   {
+    "cod": "281BB",
+    "titolo": "MEDICAL PHYSICS LABORATORY B / LABORATORIO DI FISICA MEDICA B",
+    "cfu": 15,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2025,
+     2026
+    ],
+    "norms": [
+     "MEDICAL PHYSICS LABORATORY B LABORATORIO FISICA MEDICA B"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "LABORATORIO FISICA MEDICA I",
+   "MEDICAL PHYSICS LABORATORY B LABORATORIO FISICA MEDICA B"
+  ],
+  "label": "LABORATORIO MEDICA"
+ },
+ {
+  "members": [
+   {
+    "cod": "107BB",
+    "titolo": "ACCELERATOR PHYSICS S / MACCHINE ACCELERATRICI S",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2014,
+     2015,
+     2021,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "ACCELERATOR PHYSICS S MACCHINE ACCELERATRICI S"
+    ]
+   },
+   {
+    "cod": "217BB",
+    "titolo": "ACCELERATOR PHYSICS / MACCHINE ACCELERATRICI",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "ACCELERATOR PHYSICS MACCHINE ACCELERATRICI"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "ACCELERATOR PHYSICS MACCHINE ACCELERATRICI",
+   "ACCELERATOR PHYSICS S MACCHINE ACCELERATRICI S"
+  ],
+  "label": "MACCHINE ACCELERATRICI"
+ },
+ {
+  "members": [
+   {
+    "cod": "111BB",
+    "titolo": "MODELLIZZAZIONE DEI SISTEMI COMPLESSI",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2022
+    ],
+    "norms": [
+     "MODELLIZZAZIONE SISTEMI COMPLESSI"
+    ]
+   },
+   {
+    "cod": "425BB",
+    "titolo": "QUANTUM THERMODYNAMICS/ TERMODINAMICA QUANTISTICA",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "QUANTUM THERMODYNAMICS TERMODINAMICA QUANTISTICA"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "MODELLIZZAZIONE SISTEMI COMPLESSI",
+   "QUANTUM THERMODYNAMICS TERMODINAMICA QUANTISTICA"
+  ],
+  "label": "TERMODINAMICA QUANTISTICA"
+ },
+ {
+  "members": [
+   {
+    "cod": "113BB",
+    "titolo": "OTTICA QUANTISTICA",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "OTTICA QUANTISTICA"
+    ]
+   },
+   {
+    "cod": "220BB",
+    "titolo": "OTTICA QUANTISTICA",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018
+    ],
+    "norms": [
+     "OTTICA QUANTISTICA"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018
+  ],
+  "common_norms": [
+   "OTTICA QUANTISTICA"
+  ],
+  "label": "OTTICA QUANTISTICA"
+ },
+ {
+  "members": [
+   {
+    "cod": "123BB",
+    "titolo": "RELATIVITA' GENERALE",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "RELATIVITA GENERALE"
+    ]
+   },
+   {
+    "cod": "228BB",
+    "titolo": "RELATIVITA' GENERALE",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "RELATIVITA GENERALE"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "RELATIVITA GENERALE"
+  ],
+  "label": "RELATIVITA GENERALE"
+ },
+ {
+  "members": [
+   {
+    "cod": "1259Z",
+    "titolo": "PROGETTAZIONE E REALIZZAZIONE DI ESPERIENZE DI FISICA",
+    "cfu": 3,
+    "tipo": "LT",
+    "stato": "OFF",
+    "mut_source": null,
+    "aa_active": [
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019
+    ],
+    "norms": [
+     "PROGETTAZIONE REALIZZAZIONE ESPERIENZE FISICA"
+    ]
+   },
+   {
+    "cod": "350BB",
+    "titolo": "PROGETTAZIONE E REALIZZAZIONE DI ESPERIENZE DI FISICA",
+    "cfu": 6,
+    "tipo": "LT",
+    "stato": "OFF",
+    "mut_source": null,
+    "aa_active": [
+     2018,
+     2019,
+     2020,
+     2021,
+     2022
+    ],
+    "norms": [
+     "PROGETTAZIONE REALIZZAZIONE ESPERIENZE FISICA"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LT",
+  "aa_total": [
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022
+  ],
+  "common_norms": [
+   "PROGETTAZIONE REALIZZAZIONE ESPERIENZE FISICA"
+  ],
+  "label": "PROGETTAZIONE REALIZZAZIONE ESPERIENZE FISICA"
+ },
+ {
+  "members": [
+   {
+    "cod": "129BB",
+    "titolo": "STRUTTURA DELLA MATERIA 2",
+    "cfu": 6,
+    "tipo": "",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "STRUTTURA MATERIA 2"
+    ]
+   },
+   {
+    "cod": "232BB",
+    "titolo": "STRUTTURA DELLA MATERIA 2",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "OFF",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016
+    ],
+    "norms": [
+     "STRUTTURA MATERIA 2"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016
+  ],
+  "common_norms": [
+   "STRUTTURA MATERIA 2"
+  ],
+  "label": "STRUTTURA MATERIA 2"
+ },
+ {
+  "members": [
+   {
+    "cod": "131BB",
+    "titolo": "TECNICHE ASTROFISICHE 1",
+    "cfu": 6,
+    "tipo": "",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "TECNICHE ASTROFISICHE 1"
+    ]
+   },
+   {
+    "cod": "233BB",
+    "titolo": "TECNICHE ASTROFISICHE 1",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "OFF",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016
+    ],
+    "norms": [
+     "TECNICHE ASTROFISICHE 1"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016
+  ],
+  "common_norms": [
+   "TECNICHE ASTROFISICHE 1"
+  ],
+  "label": "TECNICHE ASTROFISICHE 1"
+ },
+ {
+  "members": [
+   {
+    "cod": "137BB",
+    "titolo": "TEORIA DELLE REAZIONI NUCLEARI",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2014,
+     2015
+    ],
+    "norms": [
+     "TEORIA REAZIONI NUCLEARI"
+    ]
+   },
+   {
+    "cod": "277BB",
+    "titolo": "TEORIA DELLE REAZIONI NUCLEARI",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "OFF",
+    "mut_source": null,
+    "aa_active": [
+     2015,
+     2016,
+     2017,
+     2018
+    ],
+    "norms": [
+     "TEORIA REAZIONI NUCLEARI"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018
+  ],
+  "common_norms": [
+   "TEORIA REAZIONI NUCLEARI"
+  ],
+  "label": "TEORIA REAZIONI NUCLEARI"
+ },
+ {
+  "members": [
+   {
+    "cod": "139BB",
+    "titolo": "TEORIA QUANTISTICA DEI SOLIDI",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "TEORIA QUANTISTICA SOLIDI"
+    ]
+   },
+   {
+    "cod": "235BB",
+    "titolo": "TEORIA QUANTISTICA DEI SOLIDI",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "OFF",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022
+    ],
+    "norms": [
+     "TEORIA QUANTISTICA SOLIDI"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022
+  ],
+  "common_norms": [
+   "TEORIA QUANTISTICA SOLIDI"
+  ],
+  "label": "TEORIA QUANTISTICA SOLIDI"
+ },
+ {
+  "members": [
+   {
+    "cod": "251BB",
+    "titolo": "TEORIE DELLA GRAVITAZIONE",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "TEORIE GRAVITAZIONE"
+    ]
+   },
+   {
+    "cod": "140BB",
+    "titolo": "TEORIE DELLA GRAVITAZIONE A",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2021,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "TEORIE GRAVITAZIONE"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "TEORIE GRAVITAZIONE"
+  ],
+  "label": "TEORIE DELLA GRAVITAZIONE"
+ },
+ {
+  "members": [
+   {
+    "cod": "166BB",
+    "titolo": "FISICA TEORICA 2",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012
+    ],
+    "norms": [
+     "FISICA TEORICA 2"
+    ]
+   },
+   {
+    "cod": "214BB",
+    "titolo": "FISICA TEORICA 2",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "FISICA TEORICA 2"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "FISICA TEORICA 2"
+  ],
+  "label": "FISICA TEORICA 2"
+ },
+ {
+  "members": [
+   {
+    "cod": "169BB",
+    "titolo": "PROCESSI ASTROFISICI",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2015
+    ],
+    "norms": [
+     "PROCESSI ASTROFISICI"
+    ]
+   },
+   {
+    "cod": "226BB",
+    "titolo": "ASTROPHYSICAL PROCESSES/ PROCESSI ASTROFISICI",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "ASTROPHYSICAL PROCESSES PROCESSI ASTROFISICI"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "ASTROPHYSICAL PROCESSES PROCESSI ASTROFISICI",
+   "PROCESSI ASTROFISICI"
+  ],
+  "label": "PROCESSI ASTROFISICI"
+ },
+ {
+  "members": [
+   {
+    "cod": "170BB",
+    "titolo": "EXOPLANETARY SYSTEMS / SISTEMI PLANETARI",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "SBY",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025
+    ],
+    "norms": [
+     "EXOPLANETARY SYSTEMS SISTEMI PLANETARI"
+    ]
+   },
+   {
+    "cod": "410BB",
+    "titolo": "SISTEMI PLANETARI S",
+    "cfu": 3,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2022
+    ],
+    "norms": [
+     "SISTEMI PLANETARI S"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "common_norms": [
+   "EXOPLANETARY SYSTEMS SISTEMI PLANETARI",
+   "SISTEMI PLANETARI S"
+  ],
+  "label": "SISTEMI PLANETARI"
+ },
+ {
+  "members": [
+   {
+    "cod": "229BB",
+    "titolo": "REOLOGIA",
+    "cfu": 3,
+    "tipo": "LM",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2017,
+     2018,
+     2019,
+     2020
+    ],
+    "norms": [
+     "REOLOGIA"
+    ]
+   },
+   {
+    "cod": "395BB",
+    "titolo": "REOLOGIA",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "OFF",
+    "mut_source": null,
+    "aa_active": [
+     2021,
+     2022,
+     2023
+    ],
+    "norms": [
+     "REOLOGIA"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023
+  ],
+  "common_norms": [
+   "REOLOGIA"
+  ],
+  "label": "REOLOGIA"
+ },
+ {
+  "members": [
+   {
+    "cod": "240AA",
+    "titolo": "GEOMETRIA 1",
+    "cfu": 9,
+    "tipo": "LT",
+    "stato": "CHG",
+    "mut_source": null,
+    "aa_active": [
+     2012,
+     2013,
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019
+    ],
+    "norms": [
+     "GEOMETRIA 1"
+    ]
+   },
+   {
+    "cod": "718AA",
+    "titolo": "GEOMETRIA E ALGEBRA LINEARE",
+    "cfu": 12,
+    "tipo": "LT",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "GEOMETRIA ALGEBRA LINEARE"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LT",
+  "aa_total": [
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "GEOMETRIA 1",
+   "GEOMETRIA ALGEBRA LINEARE"
+  ],
+  "label": "GEOMETRIA E ALGEBRA LINEARE"
+ },
+ {
+  "members": [
+   {
+    "cod": "274BB",
+    "titolo": "COSMOLOGIA DEL PRIMO UNIVERSO/COSMOLOGY OF THE EARLY UNIVERSE",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "COSMOLOGIA PRIMO UNIVERSO COSMOLOGY EARLY UNIVERSE"
+    ]
+   },
+   {
+    "cod": "275BB",
+    "titolo": "COSMOLOGIA DEL PRIMO UNIVERSO A",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2021,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "COSMOLOGIA PRIMO UNIVERSO"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "COSMOLOGIA PRIMO UNIVERSO",
+   "COSMOLOGIA PRIMO UNIVERSO COSMOLOGY EARLY UNIVERSE"
+  ],
+  "label": "COSMOLOGIA DEL PRIMO UNIVERSO"
+ },
+ {
+  "members": [
+   {
+    "cod": "285BB",
+    "titolo": "TECNOLOGIE DIGITALI S",
+    "cfu": 6,
+    "tipo": "LT",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024
+    ],
+    "norms": [
+     "TECNOLOGIE DIGITALI S"
+    ]
+   },
+   {
+    "cod": "340BB",
+    "titolo": "TECNOLOGIE DIGITALI AVANZATO",
+    "cfu": 6,
+    "tipo": "LT",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2025,
+     2026
+    ],
+    "norms": [
+     "TECNOLOGIE DIGITALI AVANZATO"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LT",
+  "aa_total": [
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "TECNOLOGIE DIGITALI AVANZATO",
+   "TECNOLOGIE DIGITALI S"
+  ],
+  "label": "TECNOLOGIE DIGITALI AVANZATO"
+ },
+ {
+  "members": [
+   {
+    "cod": "287BB",
+    "titolo": "TEORIA DEI GRUPPI A",
+    "cfu": 3,
+    "tipo": "LT",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2015,
+     2016,
+     2018
+    ],
+    "norms": [
+     "TEORIA GRUPPI"
+    ]
+   },
+   {
+    "cod": "286BB",
+    "titolo": "TEORIA DEI GRUPPI",
+    "cfu": 6,
+    "tipo": "LT",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "TEORIA GRUPPI"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LT",
+  "aa_total": [
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "TEORIA GRUPPI"
+  ],
+  "label": "TEORIA GRUPPI"
+ },
+ {
+  "members": [
+   {
+    "cod": "288BB",
+    "titolo": "ASTROFISICA GENERALE",
+    "cfu": 6,
+    "tipo": "LT",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "ASTROFISICA GENERALE"
+    ]
+   },
+   {
+    "cod": "368BB",
+    "titolo": "ASTROFISICA GENERALE",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "MUT",
+    "mut_source": null,
+    "aa_active": [
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025
+    ],
+    "norms": [
+     "ASTROFISICA GENERALE"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LT",
+  "aa_total": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "ASTROFISICA GENERALE"
+  ],
+  "label": "ASTROFISICA GENERALE"
+ },
+ {
+  "members": [
+   {
+    "cod": "306BB",
+    "titolo": "EXPERIMENTAL METHODS FOR ASTROPARTICLE PHYSICS/ METODOLOGIE SPERIMENTALI PER LA FISICA DELLE ASTROPARTICELLE",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "EXPERIMENTAL METHODS ASTROPARTICLE PHYSICS METODOLOGIE SPERIMENTALI LA FISICA ASTROPARTICELLE"
+    ]
+   },
+   {
+    "cod": "307BB",
+    "titolo": "METODOLOGIE SPERIMENTALI PER LA FISICA DELLE ASTROPARTICELLE A",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2021,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "METODOLOGIE SPERIMENTALI LA FISICA ASTROPARTICELLE"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "EXPERIMENTAL METHODS ASTROPARTICLE PHYSICS METODOLOGIE SPERIMENTALI LA FISICA ASTROPARTICELLE",
+   "METODOLOGIE SPERIMENTALI LA FISICA ASTROPARTICELLE"
+  ],
+  "label": "METODOLOGIE SPERIMENTALI PER LA FISICA DELLE ASTROPARTICELLE"
+ },
+ {
+  "members": [
+   {
+    "cod": "325BB",
+    "titolo": "MATERIALI INNOVATIVI",
+    "cfu": 3,
+    "tipo": "LM",
+    "stato": "OFF",
+    "mut_source": null,
+    "aa_active": [
+     2018
+    ],
+    "norms": [
+     "MATERIALI INNOVATIVI"
+    ]
+   },
+   {
+    "cod": "352BB",
+    "titolo": "FISICA DEI MATERIALI IN BASSA DIMENSIONALITÀ",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "OFF",
+    "mut_source": null,
+    "aa_active": [
+     2019,
+     2020,
+     2021,
+     2022
+    ],
+    "norms": [
+     "FISICA MATERIALI BASSA DIMENSIONALIT"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2018,
+   2019,
+   2020,
+   2021,
+   2022
+  ],
+  "common_norms": [
+   "FISICA MATERIALI BASSA DIMENSIONALIT",
+   "MATERIALI INNOVATIVI"
+  ],
+  "label": "FISICA DEI MATERIALI IN BASSA DIMENSIONALITÀ"
+ },
+ {
+  "members": [
+   {
+    "cod": "326BB",
+    "titolo": "METODI NUMERICI PER LA FISICA",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "METODI NUMERICI LA FISICA"
+    ]
+   },
+   {
+    "cod": "374BB",
+    "titolo": "METODI NUMERICI PER LA FISICA S",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2020,
+     2021,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "METODI NUMERICI LA FISICA S"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "METODI NUMERICI LA FISICA",
+   "METODI NUMERICI LA FISICA S"
+  ],
+  "label": "METODI NUMERICI FISICA"
+ },
+ {
+  "members": [
+   {
+    "cod": "358BB",
+    "titolo": "NONPERTURBATIVE APPROACHES TO QUANTUM FIELD THEORIES / ASPETTI NON PERTURBATIVI DELLE TEORIE DI CAMPO QUANTISTICHE",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "NONPERTURBATIVE APPROACHES QUANTUM FIELD THEORIES ASPETTI NON PERTURBATIVI TEORIE CAMPO QUANTISTICHE"
+    ]
+   },
+   {
+    "cod": "404BB",
+    "titolo": "ASPETTI NON PERTURBATIVI DELLE TEORIE DI CAMPO QUANTISTICHE S",
+    "cfu": 6,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2023,
+     2024,
+     2026
+    ],
+    "norms": [
+     "ASPETTI NON PERTURBATIVI TEORIE CAMPO QUANTISTICHE S"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "ASPETTI NON PERTURBATIVI TEORIE CAMPO QUANTISTICHE S",
+   "NONPERTURBATIVE APPROACHES QUANTUM FIELD THEORIES ASPETTI NON PERTURBATIVI TEORIE CAMPO QUANTISTICHE"
+  ],
+  "label": "ASPETTI NON PERTURBATIVI TEORIE CAMPO QUANTISTICHE"
+ },
+ {
+  "members": [
+   {
+    "cod": "360BB",
+    "titolo": "COMPUTING METHODS FOR EXPERIMENTAL PHYSICS AND DATA ANALYSIS",
+    "cfu": 9,
+    "tipo": "LM",
+    "stato": "ON",
+    "mut_source": null,
+    "aa_active": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "COMPUTING METHODS EXPERIMENTAL PHYSICS DATA ANALYSIS"
+    ]
+   },
+   {
+    "cod": "365BB",
+    "titolo": "COMPUTING METHODS FOR EXPERIMENTAL PHYSICS AND DATA ANALYSIS S",
+    "cfu": null,
+    "tipo": "LM",
+    "stato": "SHT",
+    "mut_source": null,
+    "aa_active": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025,
+     2026
+    ],
+    "norms": [
+     "COMPUTING METHODS EXPERIMENTAL PHYSICS DATA ANALYSIS S"
+    ]
+   }
+  ],
+  "tipo_gruppo": "LM",
+  "aa_total": [
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "common_norms": [
+   "COMPUTING METHODS EXPERIMENTAL PHYSICS DATA ANALYSIS",
+   "COMPUTING METHODS EXPERIMENTAL PHYSICS DATA ANALYSIS S"
+  ],
+  "label": "COMPUTING METHODS FOR EXPERIMENTAL PHYSICS AND DATA ANALYSIS"
+ }
+]
