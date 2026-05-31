@@ -237,6 +237,8 @@
 </script>
 
 
+
+
 <!-- ===== TABLE SORT INJECTION ===== -->
 <style>
   /* Header con thead: cursor pointer su <th> */
@@ -290,6 +292,14 @@
       });
     });
   }
+  function isNonEmptyRow(tr) {
+    var tds = tr.querySelectorAll('td');
+    if (!tds.length) return false;
+    for (var i = 0; i < tds.length; i++) {
+      if ((tds[i].textContent || '').trim()) return true;
+    }
+    return false;
+  }
   document.querySelectorAll('table').forEach(function(table) {
     // Caso A: tabella con <thead><th> + <tbody>
     var ths = table.querySelectorAll('thead th');
@@ -305,17 +315,35 @@
     var firstRow = table.querySelector('tr');
     if (!firstRow) return;
     var labels = firstRow.querySelectorAll('td.label-programma');
-    if (labels.length < 2) return;  // tabella troppo piccola o non format-programma
-    attachSorter(table, Array.prototype.slice.call(labels),
-      function() {
-        // tutte le tr eccetto la prima
-        var all = Array.prototype.slice.call(table.querySelectorAll('tr'));
-        return all.filter(function(r) { return r !== firstRow; });
-      },
-      function() {
-        // append nel parent (tbody se esiste, altrimenti table direttamente)
-        return firstRow.parentNode;
+    if (labels.length >= 2) {
+      attachSorter(table, Array.prototype.slice.call(labels),
+        function() {
+          var all = Array.prototype.slice.call(table.querySelectorAll('tr'));
+          return all.filter(function(r) { return r !== firstRow; });
+        },
+        function() { return firstRow.parentNode; });
+      return;
+    }
+    // Caso C: formato Drupal vecchio (snapshot Wayback ≤2015/16).
+    // Header row = prima <tr> con 2+ celle bgcolor="#CCCCCC" (case-insensitive).
+    var rows = Array.prototype.slice.call(table.querySelectorAll('tr'));
+    var headerRow = null, headerCells = null;
+    for (var i = 0; i < rows.length; i++) {
+      var cells = Array.prototype.slice.call(rows[i].querySelectorAll('td'));
+      var grayCells = cells.filter(function(td) {
+        var bg = (td.getAttribute('bgcolor') || '').toLowerCase();
+        return bg === '#cccccc';
       });
+      if (grayCells.length >= 2) { headerRow = rows[i]; headerCells = grayCells; break; }
+    }
+    if (!headerRow) return;
+    var headerIdx = rows.indexOf(headerRow);
+    attachSorter(table, headerCells,
+      function() {
+        // solo le righe dati: dopo header, non vuote
+        return rows.slice(headerIdx + 1).filter(isNonEmptyRow);
+      },
+      function() { return headerRow.parentNode; });
   });
 })();
 </script>
