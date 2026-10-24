@@ -1,0 +1,42 @@
+.tablefooter
+{
+padding-bottom: 0px;
+padding-right: 25%;
+padding-left: 25%;
+right: 0px;
+left: 0px;
+width: 100%;
+background-color: #003366;
+text-align: left;
+	height: 250px;
+	margin-top: 15px;
+
+}
+.tablefooter ul
+{
+padding-left: 5%;
+padding-bottom: 0;
+padding-right: 0;
+padding-top: 0;
+float:left;
+margin:0;
+}
+.tablefooter ul li
+{
+list-style:none;
+padding:5px 10px;
+}
+.tablefooter ul li.title
+{
+font-weight: bold;
+font-variant: small-caps;
+color: #339980;
+}
+.tablefooter ul li.even
+{
+color: #ffc32b;
+}
+.tablefooter ul li.odd
+{
+color: white;
+}

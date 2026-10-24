@@ -25,7 +25,7 @@ Wayback Machine.
 |------|---:|---:|
 | LT | 2016-2023 (8 AA) | 359 |
 | LM | 2016-2023 (8 AA) | 613 |
-| LT, LM | 2012-2015 | solo elenchi (Wayback) |
+| LT, LM | 2012-2015 | elenchi (Wayback), con lo stile in `_wayback/`; per la LM 2015/16 anche le 67 schede di valutami |
 
 Asset condivisi (CSS/JS/img/font UNIPI): ~130 file.
 
@@ -38,7 +38,36 @@ la Magistrale), preservando i link reciproci tra lista e dettagli e gli
 asset grafici originali. I link a risorse esterne (docenti su unimap,
 libri citati nei programmi) restano come URL assoluti e si aprono online.
 
-Script di generazione (`mirror_esami.py`, `mirror_wayback.py`, `inject_sort.py`)
+### Gli anni dalla Wayback Machine (2012/13 → 2015/16)
+
+Le otto pagine `LT-2012` … `LM-2015` sono gli elenchi del vecchio sito del
+Dipartimento (`www.df.unipi.it/didatticanuova/…`, Drupal) come li ha
+conservati la Wayback Machine. Dal 2026-10-24 portano con sé il loro stile:
+fogli di stile e immagini del vecchio sito sono copiati in `_wayback/`
+(`tools/mirror_wayback_stile.py`), senza script, così il layout si vede anche
+dove la pagina non può caricare nulla da web.archive.org (l'archivio su
+ADM HUB è in sandbox).
+
+La colonna **Info extra** puntava alle pagine dei corsi su Claroline
+(`corsidf.df.unipi.it`), che la Wayback non ha conservato (ne ha una sola,
+del 2017); nemmeno le schede dei corsi del sito Drupal (`node/1416`,
+`node/1029`) sono state archiviate. Ora il link porta alla fonte originale
+migliore che esiste per quel codice e quell'anno, e il `title` dice quale:
+
+- il **registro delle lezioni** su unimap (dal database del censimento, il
+  registro con più ore), che dice lezione per lezione cosa si è fatto in aula;
+- altrimenti, solo per la **LM 2015/16**, la scheda su valutami, copiata qui
+  (`LM-2015/programma-*.html`, più la lista in `LM-2015/valutami.html`):
+  docente, moduli e ore, ma il programma per quell'anno valutami non lo ha
+  («Programma non disponibile» in tutte e 67); per gli anni prima valutami
+  non ha nulla;
+- altrimenti resta il link di prima (la Wayback dirà che la pagina non c'è).
+
+Il link originale resta nell'attributo `data-originale`. I link ai registri
+dei docenti del 2012/13 e 2013/14 (`unimap.unipi.it/registri/registri.php`)
+vanno a unimap direttamente: funzionano ancora.
+
+Script di generazione (`mirror_esami.py`, `mirror_wayback.py`, `mirror_wayback_stile.py`, `inject_sort.py`)
 in `tools/` del repo
 [Cruscotto-Insegnamenti](https://github.com/Sterod76/Cruscotto-Insegnamenti),
 che contiene questo repository in `sources/mirror/`.

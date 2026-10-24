@@ -1,0 +1,41 @@
+ @charset "UTF-8";
+/* CSS Document */
+  
+.colore_dipartimento {
+	background-color: #339980;
+ }
+
+#menu_top .current {
+	border-bottom: 4px solid #339980;
+}
+
+.menu_secondario {
+border-bottom: 3px solid #339980;	
+}
+
+#menu_top .current {
+	border-bottom: 4px solid #339980;
+}
+
+.gradiente {
+	 height: 100%;
+
+	 /* Opera 11.10+ */
+	 background: -o-linear-gradient(top, rgba(59,174,146,1), rgba(45,133,112,1));
+	 /* Firefox 3.6+ */
+	 background: -moz-linear-gradient(top, rgba(59,174,146,1), rgba(45,133,112,1));
+	 /* Chrome 7+ & Safari 5.03+ */
+	 background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(59,174,146,1)), color-stop(1, rgba(45,133,112,1)));
+	 /* IE5.5 - IE7 */
+	 filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#FF3BAE92,EndColorStr=#FF2D8570);
+	 /* IE8 */
+	 -ms-filter: "progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#FF3BAE92,EndColorStr=#FF2D8570)"
+}
+
+.evento, .evento a {
+	background-color: #339980;
+}
+
+.form-submit {
+	background-color: #339980;
+}
